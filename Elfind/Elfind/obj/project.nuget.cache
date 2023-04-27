@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "G6onvmWEKqmyGG7Swg6gpVBRduPWCn/70v+0n4Kslodhz3LI4EK5baqPafkHfvNkYhSoi/YmNS6qiHpZVvGScA==",
   "success": true,
   "projectFilePath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+=======
+  "dgSpecHash": "ASxi895ojjZdrh95yNQ3N2lkxt1X7oMclwOCPrimUGaiKVYAX5iQQ/R2SPIKKkJkmTAhHkh70w0sklImkXfrgQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+>>>>>>> 4c87d790ad212dc11ab60c31d66ec1cfed1a328c
   "expectedPackageFiles": [],
   "logs": []
 }
