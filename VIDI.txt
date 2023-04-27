@@ -1,0 +1,21 @@
+wtp ovde ulaziš da radiš delove projekta zajedničke za sve 3 (vs ugl)
+
+!u granu ulaziš preko bash-a sa git checkout imegr
+
+!git status proverava da li ima izmena 
+
+!nakon unošenja izmena u neki fajl ili dodavanja/ brisanja nečega, push, vlasniku repos stiže zahtev i on može da uradi merge
+
+!ako baca grešku na push da ne postoji upstream branch uradi:
+	git push --set-upstream origin Andjelija
+(ali valjda sam globalno podesila pa ne mora)
+
+!u commit "dodato xxx" 
+
+!merge (za anđ)
+u grani koja je izmenjena: 
+	git merge main 
+	git status 
+	(ako je rezultat directory clean-> sve ostalo isto onda niko drugi nije menjao u međuvremenu i safe to merge) -> git merge main, git chekout main, git merge izmGr
+
+	(ako je rezultat nešto drugo, više nas je izmenilo nešto) -> svaka u svojoj grani treba da uradi git merge main pre nastavka
