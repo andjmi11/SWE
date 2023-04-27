@@ -9673,7 +9673,7 @@
 											"top": 206,
 											"width": 191.826171875,
 											"height": 13,
-											"text": "-tip_lab",
+											"text": "-tip_lab: String",
 											"horizontalAlignment": 0
 										}
 									],
@@ -15141,7 +15141,8 @@
 								"$ref": "AAAAAAGHuxnG9sZz1DM="
 							},
 							"name": "tip_lab",
-							"visibility": "private"
+							"visibility": "private",
+							"type": "String"
 						}
 					],
 					"operations": [
