@@ -1,15 +1,25 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "G6onvmWEKqmyGG7Swg6gpVBRduPWCn/70v+0n4Kslodhz3LI4EK5baqPafkHfvNkYhSoi/YmNS6qiHpZVvGScA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+=======
   "dgSpecHash": "ASxi895ojjZdrh95yNQ3N2lkxt1X7oMclwOCPrimUGaiKVYAX5iQQ/R2SPIKKkJkmTAhHkh70w0sklImkXfrgQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+>>>>>>> 166ce3698831272332d3e00e0da383502a60ef67
   "expectedPackageFiles": [],
   "logs": [
     {
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+<<<<<<< HEAD
+      "message": "Problem reading the cache file C:\\Users\\krist\\SWE\\Elfind\\Elfind\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+=======
       "message": "Problem reading the cache file C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+>>>>>>> 166ce3698831272332d3e00e0da383502a60ef67
     }
   ]
 }
