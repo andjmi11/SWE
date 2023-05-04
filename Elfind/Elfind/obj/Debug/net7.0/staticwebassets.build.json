@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ET/Cd1FADpHbKz4FSaaXV/0R5DhRY1yhL3fsxfXrLok=",
+  "Hash": "7jYTNVHzotn4tqb6B0zdFp3xyKtD8l4R2vNfMf5aafI=",
   "Source": "Elfind",
   "BasePath": "_content/Elfind",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "SourceId": "Elfind",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\wwwroot\\",
+      "BasePath": "_content/Elfind",
+      "RelativePath": "css/open-iconic/FONT-LICENSE",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
@@ -185,23 +202,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
-    },
-    {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
-      "SourceId": "Elfind",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\wwwroot\\",
-      "BasePath": "_content/Elfind",
-      "RelativePath": "css/open-iconic/FONT-LICENSE",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\open-iconic\\FONT-LICENSE"
     },
     {
       "Identity": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
