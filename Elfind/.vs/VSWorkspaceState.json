@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Elfind",
+    "\\Elfind\\Data",
     "\\Elfind\\Pages"
   ],
-  "SelectedNode": "\\Elfind\\Data",
+  "SelectedNode": "\\Elfind\\Pages\\Login.razor",
   "PreviewInSolutionExplorer": false
 }
