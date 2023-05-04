@@ -12,9 +12,12 @@ build_property.RootNamespace = Elfind
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\AndjelijaMijajlovic\SWE\Elfind\Elfind\
 =======
 <<<<<<< HEAD
+>>>>>>> cb988c9fb8451c72a214468bc29aca9b577f5aa9
 build_property.ProjectDir = C:\Users\krist\SWE\Elfind\Elfind\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
@@ -38,8 +41,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/krist/SWE/Elfind/Elfind/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/krist/SWE/Elfind/Elfind/Pages/Menjam.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVuamFtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krist/SWE/Elfind/Elfind/Pages/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/krist/SWE/Elfind/Elfind/Shared/SurveyPrompt.razor]
@@ -63,6 +74,8 @@ build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/krist/SWE/Elfind/Elfind/Pages/_Host.cshtml]
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> 729fba86ff5b0cc6f61039bdf1241e47558af42d
 build_property.ProjectDir = C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\
@@ -122,5 +135,6 @@ build_metadata.AdditionalFiles.CssScope =
 >>>>>>> 166ce3698831272332d3e00e0da383502a60ef67
 >>>>>>> b06a3053c1a590a80608186e608c55b1bf96d9e4
 >>>>>>> 729fba86ff5b0cc6f61039bdf1241e47558af42d
+>>>>>>> cb988c9fb8451c72a214468bc29aca9b577f5aa9
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

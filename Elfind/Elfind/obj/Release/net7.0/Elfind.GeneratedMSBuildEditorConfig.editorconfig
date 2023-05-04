@@ -82,8 +82,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/krist/SWE/Elfind/Elfind/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/krist/SWE/Elfind/Elfind/Pages/Menjam.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVuamFtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krist/SWE/Elfind/Elfind/Pages/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/krist/SWE/Elfind/Elfind/Shared/SurveyPrompt.razor]
