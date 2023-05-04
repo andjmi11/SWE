@@ -2,6 +2,6 @@
 {
     public class Kancelarija
     {
-        //nesto sam kucala 
+        public List<NastavnoOsoblje> NastavnoOsoblje = new List<NastavnoOsoblje>();   
     }
 }

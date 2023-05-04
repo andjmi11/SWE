@@ -2,6 +2,6 @@
 {
     public class Anketa
     {
-        private List<int> glasovi = new List<int>();
+        public Dictionary<string, int> ListaOpcija = new Dictionary<string, int>();
     }
 }
