@@ -1,4 +1,6 @@
-﻿namespace Elfind.Data
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Elfind.Data
 {
     public enum Dan
     {
@@ -12,6 +14,7 @@
     }
     public class Cas
     {
+        [Key]
         public int ID { get; set; }
 
         public string Naziv { get; set; }
@@ -24,8 +27,8 @@
 
         public string TipCasa { get; set; }
 
-        public int ProstorijaID { get; set; }
+        public Prostorija UProstoriji { get; set; }
 
-        public int RasporedID { get; set; }
+        public RasporedCasova RasporedCasova { get; set; }
     }
 }

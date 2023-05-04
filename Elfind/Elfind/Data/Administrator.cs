@@ -1,6 +1,6 @@
 ﻿namespace Elfind.Data
 {
-    public class Administrator
+    public class Administrator : Korisnik
     {
         
     }

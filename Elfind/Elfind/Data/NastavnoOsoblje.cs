@@ -4,12 +4,13 @@
     {
         public string Tip { get; set; }
 
-        public int ProstorijaID { get; set; }
+        public Prostorija Kancelarija { get; set; }
+        public List<Prostorija> ZakazaneProstorije = new List<Prostorija>();
 
         public List<Objava> Objave = new List<Objava>();
 
         public List<RasporedCasova> RasporedCasova = new List<RasporedCasova> ();
         
-        public List<Kurs> Kursevi { get; set; }
+        public List<Kurs> Kursevi = new List<Kurs> ();
     }
 }

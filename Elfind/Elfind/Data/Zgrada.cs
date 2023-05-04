@@ -1,4 +1,6 @@
-﻿namespace Elfind.Data
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Elfind.Data
 {
     public enum TipZgrade
     {
@@ -8,9 +10,10 @@
     }
     public class Zgrada
     {
+        [Key]
         public int ID { get; set; }
         public TipZgrade Tip { get; set; }
-        List<Prostorija> Prostorije { get; set;}
+        List<Prostorija> Prostorije = new List<Prostorija>();
 
     }
 }

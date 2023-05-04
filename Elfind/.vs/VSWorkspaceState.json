@@ -2,13 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Elfind",
-    "\\Elfind\\Data",
-    "\\Elfind\\Pages"
+    "\\Elfind\\Data"
   ],
-<<<<<<< HEAD
-  "SelectedNode": "\\Elfind\\Pages\\Login.razor",
-=======
-  "SelectedNode": "\\Elfind\\Data\\Zgrada.cs",
->>>>>>> cb988c9fb8451c72a214468bc29aca9b577f5aa9
+  "SelectedNode": "\\Elfind\\Data\\Student.cs",
   "PreviewInSolutionExplorer": false
 }
