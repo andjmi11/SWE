@@ -8,24 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Anita\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "projectUniqueName": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
       "projectName": "Elfind",
-      "projectPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
-      "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\obj\\",
+      "projectPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "packagesPath": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\AndjelijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -69,16 +64,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
