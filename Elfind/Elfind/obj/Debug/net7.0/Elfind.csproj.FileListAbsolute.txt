@@ -62,3 +62,14 @@ C:\Users\AndjelijaMijajlovic\SWE\Elfind\Elfind\obj\Debug\net7.0\refint\Elfind.dl
 C:\Users\AndjelijaMijajlovic\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.pdb
 C:\Users\AndjelijaMijajlovic\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.genruntimeconfig.cache
 C:\Users\AndjelijaMijajlovic\SWE\Elfind\Elfind\obj\Debug\net7.0\ref\Elfind.dll
+C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.csproj.AssemblyReference.cache
+C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.AssemblyInfoInputs.cache
+C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.AssemblyInfo.cs
+C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.csproj.CoreCompileInputs.cache
+C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.RazorAssemblyInfo.cache
+C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.RazorAssemblyInfo.cs
+C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.dll
+C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\obj\Debug\net7.0\refint\Elfind.dll
+C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.pdb

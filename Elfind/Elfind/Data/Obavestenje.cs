@@ -1,6 +1,7 @@
 ﻿namespace Elfind.Data
 {
-    public class Obavestenje
+    public class Obavestenje : Objava
     {
+
     }
 }
