@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Elfind",
+    "\\Elfind\\Data",
     "\\Elfind\\Pages"
   ],
-  "SelectedNode": "\\Elfind\\Pages\\Menjam.razor",
+  "SelectedNode": "\\Elfind\\Data\\Zgrada.cs",
   "PreviewInSolutionExplorer": false
 }
