@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Elfind"
+    "\\Elfind",
+    "\\Elfind\\Pages"
   ],
-  "SelectedNode": "\\Elfind\\Elfind.csproj",
+  "SelectedNode": "\\Elfind\\Pages\\Menjam.razor",
   "PreviewInSolutionExplorer": false
 }
