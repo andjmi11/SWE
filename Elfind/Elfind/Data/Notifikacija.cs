@@ -2,5 +2,6 @@
 {
     public class Notifikacija
     {
+        //i ovde isto
     }
 }
