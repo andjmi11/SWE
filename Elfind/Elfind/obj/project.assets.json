@@ -9,15 +9,36 @@
   },
   "packageFolders": {
 <<<<<<< HEAD
+    "C:\\Users\\Anita\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
     "C:\\Users\\krist\\.nuget\\packages\\": {}
 =======
     "C:\\Users\\Anita\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> 4c87d790ad212dc11ab60c31d66ec1cfed1a328c
+>>>>>>> 166ce3698831272332d3e00e0da383502a60ef67
+>>>>>>> b06a3053c1a590a80608186e608c55b1bf96d9e4
+>>>>>>> 729fba86ff5b0cc6f61039bdf1241e47558af42d
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "projectName": "Elfind",
+      "projectPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "packagesPath": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\AndjelijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
 <<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
       "projectName": "Elfind",
@@ -25,23 +46,24 @@
       "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\obj\\",
 =======
+>>>>>>> 729fba86ff5b0cc6f61039bdf1241e47558af42d
       "projectUniqueName": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
       "projectName": "Elfind",
       "projectPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
       "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\obj\\",
->>>>>>> 4c87d790ad212dc11ab60c31d66ec1cfed1a328c
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\krist\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
         "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> 4c87d790ad212dc11ab60c31d66ec1cfed1a328c
+<<<<<<< HEAD
+=======
+>>>>>>> 166ce3698831272332d3e00e0da383502a60ef67
+>>>>>>> b06a3053c1a590a80608186e608c55b1bf96d9e4
+>>>>>>> 729fba86ff5b0cc6f61039bdf1241e47558af42d
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -86,11 +108,28 @@
           }
         },
 <<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
 =======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
->>>>>>> 4c87d790ad212dc11ab60c31d66ec1cfed1a328c
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
+=======
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+=======
+>>>>>>> 729fba86ff5b0cc6f61039bdf1241e47558af42d
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
+>>>>>>> b06a3053c1a590a80608186e608c55b1bf96d9e4
 }

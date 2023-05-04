@@ -2,7 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\Elfind",
+<<<<<<< HEAD
     "\\Elfind\\Data"
   ],
+=======
+    "\\Elfind\\Data",
+    "\\Elfind\\Pages"
+  ],
+  "SelectedNode": "\\Elfind\\Data\\Zgrada.cs",
+>>>>>>> main
   "PreviewInSolutionExplorer": false
 }
