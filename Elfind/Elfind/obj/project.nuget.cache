@@ -1,5 +1,20 @@
 {
   "version": 2,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "cJ317z/r27Gi+6HNc1oWkMxSsEGOiRYyPkHpFq6mJq8Ncyr20fz3ov6nS2RqLGwvwc+QiTag4ddjxzqUqmBf2w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+  "expectedPackageFiles": [],
+  "logs": []
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "G6onvmWEKqmyGG7Swg6gpVBRduPWCn/70v+0n4Kslodhz3LI4EK5baqPafkHfvNkYhSoi/YmNS6qiHpZVvGScA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+=======
+>>>>>>> 729fba86ff5b0cc6f61039bdf1241e47558af42d
   "dgSpecHash": "ASxi895ojjZdrh95yNQ3N2lkxt1X7oMclwOCPrimUGaiKVYAX5iQQ/R2SPIKKkJkmTAhHkh70w0sklImkXfrgQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
@@ -12,4 +27,5 @@
       "message": "Problem reading the cache file C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
+>>>>>>> b06a3053c1a590a80608186e608c55b1bf96d9e4
 }

@@ -1,14 +1,42 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj": {}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj": {
+    "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+        "projectUniqueName": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
         "projectName": "Elfind",
+        "projectPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+        "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\obj\\",
+=======
+>>>>>>> 729fba86ff5b0cc6f61039bdf1241e47558af42d
+    "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj": {}
+>>>>>>> b06a3053c1a590a80608186e608c55b1bf96d9e4
+  },
+  "projects": {
+    "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+        "projectName": "Elfind",
+<<<<<<< HEAD
+        "projectPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+        "packagesPath": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\AndjelijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
         "projectPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
         "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\obj\\",
@@ -19,6 +47,11 @@
         "configFilePaths": [
           "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+<<<<<<< HEAD
+=======
+>>>>>>> 166ce3698831272332d3e00e0da383502a60ef67
+>>>>>>> b06a3053c1a590a80608186e608c55b1bf96d9e4
+>>>>>>> 729fba86ff5b0cc6f61039bdf1241e47558af42d
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -62,7 +95,19 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+=======
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+=======
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+>>>>>>> 166ce3698831272332d3e00e0da383502a60ef67
+>>>>>>> b06a3053c1a590a80608186e608c55b1bf96d9e4
+>>>>>>> 729fba86ff5b0cc6f61039bdf1241e47558af42d
         }
       }
     }
