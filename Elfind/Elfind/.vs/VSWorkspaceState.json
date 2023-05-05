@@ -1,8 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Data"
+    "\\bin\\Debug",
+    "\\bin\\Release",
+    "\\Data",
+    "\\Data\\Models",
+    "\\obj",
+    "\\Pages",
+    "\\Shared"
   ],
-  "SelectedNode": "\\Data\\WeatherForecastService.cs",
+  "SelectedNode": "\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

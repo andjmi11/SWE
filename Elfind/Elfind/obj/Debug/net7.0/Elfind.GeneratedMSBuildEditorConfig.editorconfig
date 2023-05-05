@@ -9,7 +9,11 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Elfind
 build_property.RootNamespace = Elfind
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\
+=======
+build_property.ProjectDir = C:\Users\krist\SWE\Elfind\Elfind\
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -24,7 +28,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Pages/FetchData.razor]
+=======
+<<<<<<< HEAD
+[C:/Users/AndjelijaMijajlovic/SWE/Elfind/Elfind/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/AndjelijaMijajlovic/SWE/Elfind/Elfind/Pages/Menjam.razor]
+=======
+[C:/Users/krist/SWE/Elfind/Elfind/Pages/FetchData.razor]
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -36,7 +51,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Pages/Menjam.razor]
+=======
+[C:/Users/krist/SWE/Elfind/Elfind/Pages/Menjam.razor]
+>>>>>>> f8ac80cd266ffd55432cac5033bee792baf5be05
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVuamFtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -64,6 +84,10 @@ build_metadata.AdditionalFiles.CssScope = b-761ltm08kf
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Pages/_Host.cshtml]
+=======
+[C:/Users/krist/SWE/Elfind/Elfind/Pages/_Host.cshtml]
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

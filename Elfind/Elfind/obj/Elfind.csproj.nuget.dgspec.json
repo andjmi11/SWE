@@ -1,7 +1,11 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj": {}
+=======
+    "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj": {}
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
   },
   "projects": {
     "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj": {
@@ -9,6 +13,7 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
         "projectName": "Elfind",
+<<<<<<< HEAD
         "projectPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
         "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\obj\\",
@@ -19,6 +24,14 @@
         "configFilePaths": [
           "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+        "projectPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+        "packagesPath": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\AndjelijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +57,23 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+<<<<<<< HEAD
+=======
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -68,7 +98,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
         }
       }
     }

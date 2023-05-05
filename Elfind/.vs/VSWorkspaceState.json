@@ -1,7 +1,15 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     ""
   ],
   "SelectedNode": "\\Elfind.sln",
+=======
+    "",
+    "\\Elfind",
+    "\\Elfind\\Pages"
+  ],
+  "SelectedNode": "\\Elfind\\Pages\\Index.razor",
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
   "PreviewInSolutionExplorer": false
 }
