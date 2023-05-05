@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Elfind",
-    "\\Elfind\\Pages"
+    "\\Elfind\\Pages",
+    "\\Elfind\\Properties",
+    "\\Elfind\\Shared"
   ],
-  "SelectedNode": "\\Elfind\\Pages\\Index.razor",
+  "SelectedNode": "\\Elfind",
   "PreviewInSolutionExplorer": false
 }

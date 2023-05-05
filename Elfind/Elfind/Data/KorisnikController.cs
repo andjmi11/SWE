@@ -3,15 +3,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Elfind.Data
 {
+    [Route("KorisnikKontroler/[controller]")]
+    [ApiController]
     public class KorisnikController : Controller
     {
+
         // GET: KorisnikController
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
         // GET: KorisnikController/Details/5
+        [HttpGet("{id}", Name = "Get")]
         public ActionResult Details(int id)
         {
             return View();
