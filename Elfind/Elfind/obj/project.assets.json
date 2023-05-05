@@ -2,6 +2,8 @@
   "version": 3,
   "targets": {
     "net7.0": {
+<<<<<<< HEAD
+=======
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -276,6 +278,7 @@
           }
         }
       },
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
         "type": "package",
         "build": {
@@ -287,6 +290,8 @@
           "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
         }
       },
+<<<<<<< HEAD
+=======
       "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -625,6 +630,7 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
       "Microsoft.OpenApi/1.2.3": {
         "type": "package",
         "compile": {
@@ -638,6 +644,8 @@
           }
         }
       },
+<<<<<<< HEAD
+=======
       "Microsoft.SqlServer.Server/1.0.0": {
         "type": "package",
         "compile": {
@@ -708,6 +716,7 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
         }
       },
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
       "Swashbuckle.AspNetCore/6.5.0": {
         "type": "package",
         "dependencies": {
@@ -770,6 +779,8 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+<<<<<<< HEAD
+=======
       },
       "System.Buffers/4.5.1": {
         "type": "package",
@@ -1266,10 +1277,13 @@
             "rid": "win"
           }
         }
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
       }
     }
   },
   "libraries": {
+<<<<<<< HEAD
+=======
     "Azure.Core/1.24.0": {
       "sha512": "+/qI1j2oU1S4/nvxb2k/wDsol00iGf1AyJX5g3epV7eOpQEP/2xcgh/cxgKMeFgn3U2fmgSiBnQZdkV+l5y0Uw==",
       "type": "package",
@@ -1620,6 +1634,7 @@
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "sha512": "Ckb5EDBUNJdFWyajfXzUIMRkhf52fHZOQuuZg/oiu8y7zDCVwD0iHhew6MnThjHmevanpxL3f5ci2TtHQEN6bw==",
       "type": "package",
@@ -1851,6 +1866,8 @@
         "tools/netcoreapp2.1/System.Diagnostics.DiagnosticSource.dll"
       ]
     },
+<<<<<<< HEAD
+=======
     "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
       "sha512": "IeimUd0TNbhB4ded3AbgBLQv2SnsiVugDyGV1MvspQFVlA07nDC7Zul7kcwH5jWN3JiTcp/ySE83AIJo8yfKjg==",
       "type": "package",
@@ -2381,6 +2398,7 @@
         "runtime.json"
       ]
     },
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
     "Microsoft.OpenApi/1.2.3": {
       "sha512": "Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
       "type": "package",
@@ -2398,6 +2416,8 @@
         "microsoft.openapi.nuspec"
       ]
     },
+<<<<<<< HEAD
+=======
     "Microsoft.SqlServer.Server/1.0.0": {
       "sha512": "N4KeF3cpcm1PUHym1RmakkzfkEv3GRMyofVv40uXsQhCQeglr2OHNcUk2WOG51AKpGO8ynGpo9M/kFXSzghwug==",
       "type": "package",
@@ -2501,6 +2521,7 @@
         "mono.texttemplating.nuspec"
       ]
     },
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
     "Swashbuckle.AspNetCore/6.5.0": {
       "sha512": "FK05XokgjgwlCI6wCT+D4/abtQkL1X1/B9Oas6uIwHFmYrIO9WUD5aLC9IzMs9GnHfUXOtXZ2S43gN1mhs5+aA==",
       "type": "package",
@@ -2590,6 +2611,8 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+<<<<<<< HEAD
+=======
     },
     "System.Buffers/4.5.1": {
       "sha512": "Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
@@ -3968,30 +3991,66 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+<<<<<<< HEAD
+=======
       "Microsoft.EntityFrameworkCore.Design >= 7.0.5",
       "Microsoft.EntityFrameworkCore.Proxies >= 7.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.5",
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\krist\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\Anita\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+    "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\": {}
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
+>>>>>>> e82731b6a0d83d28b264046db617bdac6ebcf794
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "projectName": "Elfind",
+      "projectPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+      "projectUniqueName": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+>>>>>>> e82731b6a0d83d28b264046db617bdac6ebcf794
       "projectName": "Elfind",
       "projectPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
       "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\krist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\AndjelijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
+>>>>>>> e82731b6a0d83d28b264046db617bdac6ebcf794
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4017,6 +4076,8 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+<<<<<<< HEAD
+=======
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -4031,6 +4092,7 @@
             "target": "Package",
             "version": "[7.0.5, )"
           },
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.5.0, )"
@@ -4055,7 +4117,15 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+=======
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+>>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
+>>>>>>> e82731b6a0d83d28b264046db617bdac6ebcf794
       }
     }
   }
