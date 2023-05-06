@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//Add services to the container.
 //builder.Services.AddRazorPages();
 //builder.Services.AddServerSideBlazor();
 builder.Services.AddCors(p =>
@@ -41,10 +41,12 @@ builder.Services.AddDbContext<ElfindContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Elfind"));
 });
 
-builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddHttpsRedirection(x => { x.HttpsPort = 5001; }) ; 
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

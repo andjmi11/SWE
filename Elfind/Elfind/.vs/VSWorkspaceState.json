@@ -1,14 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\bin\\Debug",
-    "\\bin\\Release",
-    "\\Data",
-    "\\Data\\Models",
-    "\\obj",
-    "\\Pages",
-    "\\Shared"
+    ""
   ],
-  "SelectedNode": "\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
