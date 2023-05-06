@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Elfind.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Elfind.Data.Model
 {
@@ -10,7 +11,8 @@ namespace Elfind.Data.Model
         public string TipObjave { get; set; }
         public string Tekst { get; set; }
 
-        //public Dictionary<string, int> ListaOpcija = new Dictionary<string, int>();
+        public List<Opcija> Opcije { get; set; }
+  
         public NastavnoOsoblje OdNastavnogOsoblja { get; set; }
         public Forum Forum { get; set; }
     }

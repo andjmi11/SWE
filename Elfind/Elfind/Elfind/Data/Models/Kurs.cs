@@ -11,5 +11,6 @@ namespace Elfind.Data.Model
         [Range(1, 5)]
         public int Godina { get; set; }
 
+        public List<Cas> Casovi = new List<Cas>();
     }
 }

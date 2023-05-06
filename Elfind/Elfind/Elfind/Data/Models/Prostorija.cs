@@ -22,7 +22,7 @@ namespace Elfind.Data.Model
         public string TipProstorije { get; set; }
         public string TipLaboratorije { get; set; }
         public Zgrada PripadaZgradi { get; set; }
-        //public List<Cas> Casovi = new List<Cas>();
+      
         public List<NastavnoOsoblje> NastavnoOsobljeZaRezervaciju = new List<NastavnoOsoblje>();
 
 

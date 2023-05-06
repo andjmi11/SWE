@@ -5,6 +5,7 @@ namespace Elfind.Data.Model
     {
         [Key]
         public int ID { get; set; }
-        //public List<Objava> Objave = new List<Objava>();
+
+        public List<Objava> Objave = new List<Objava>();
     }
 }

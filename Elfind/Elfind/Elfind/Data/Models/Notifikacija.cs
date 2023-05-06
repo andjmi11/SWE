@@ -9,6 +9,6 @@ namespace Elfind.Data.Model
         public string Poruka { get; set; }
 
         public NastavnoOsoblje Posiljalac { get; set; }
-        //public List<Student> Primaoci = new List<Student>();
+    
     }
 }

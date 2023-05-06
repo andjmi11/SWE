@@ -13,14 +13,11 @@ namespace Elfind.Data.Model
         public string HashLozinka { get; set; }
 
         public string Tip { get; set; }
+
         public Prostorija RezervisanaProstorija { get; set; }
         public Prostorija Kancelarija { get; set; }
-       // public List<Prostorija> ZakazaneProstorije = new List<Prostorija>();
-
+ 
         public List<Objava> Objave = new List<Objava>();
-
-       // public List<RasporedCasova> RasporedCasova = new List<RasporedCasova>();
-
-       // public List<Kurs> Kursevi = new List<Kurs>();
+        public List<Notifikacija> Notifikacije { get; set; }
     }
 }

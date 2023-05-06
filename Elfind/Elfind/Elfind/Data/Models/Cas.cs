@@ -16,7 +16,8 @@ namespace Elfind.Data.Model
     {
         Predavanje, 
         Vezba, 
-        Lab_vezba
+        Lab_vezba,
+        Vanredno_predavanje
     }
     public class Cas
     {
@@ -33,9 +34,9 @@ namespace Elfind.Data.Model
 
         public TipCasa TipCasa { get; set; }
 
-        public Prostorija Ucionica { get; set; }
+        public Prostorija Prostorija { get; set; }
 
-        public RasporedCasova RasporedCasova { get; set; }
+        public RasporedCasova URasporeduCasova { get; set; }
 
         public Kurs ZaKurs { get; set; }
     }

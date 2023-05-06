@@ -26,7 +26,7 @@ namespace Elfind.Data.Model
         [Range(1, 5)]
         public int Godina { get; set; }
         public RasporedCasova RasporedCasova { get; set; }
-       // public List<Kurs> Kursevi { get; set; }
+     
     }
 
 }
