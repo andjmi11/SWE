@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Elfind.Migrations
 {
     [DbContext(typeof(ElfindDbContext))]
-    [Migration("20230505232912_V1")]
+    [Migration("20230506114908_V1")]
     partial class V1
     {
         /// <inheritdoc />
@@ -67,13 +67,13 @@ namespace Elfind.Migrations
                     b.Property<string>("Naziv")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("RasporedCasovaID")
+                    b.Property<int?>("ProstorijaID")
                         .HasColumnType("int");
 
                     b.Property<int>("TipCasa")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UcionicaID")
+                    b.Property<int?>("URasporeduCasovaID")
                         .HasColumnType("int");
 
                     b.Property<TimeSpan>("VremeDo")
@@ -87,9 +87,9 @@ namespace Elfind.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("RasporedCasovaID");
+                    b.HasIndex("ProstorijaID");
 
-                    b.HasIndex("UcionicaID");
+                    b.HasIndex("URasporeduCasovaID");
 
                     b.HasIndex("ZaKursID");
 
@@ -387,6 +387,30 @@ namespace Elfind.Migrations
                     b.ToTable("KursSmerSpoj");
                 });
 
+            modelBuilder.Entity("Elfind.Data.Models.Opcija", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+
+                    b.Property<int?>("AnketaID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BrojGlasova")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Tekst")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("AnketaID");
+
+                    b.ToTable("Opcija");
+                });
+
             modelBuilder.Entity("Elfind.Data.Models.OsobljeKurs", b =>
                 {
                     b.Property<int>("ID")
@@ -458,21 +482,21 @@ namespace Elfind.Migrations
 
             modelBuilder.Entity("Elfind.Data.Model.Cas", b =>
                 {
-                    b.HasOne("Elfind.Data.Model.RasporedCasova", "RasporedCasova")
+                    b.HasOne("Elfind.Data.Model.Prostorija", "Prostorija")
                         .WithMany()
-                        .HasForeignKey("RasporedCasovaID");
+                        .HasForeignKey("ProstorijaID");
 
-                    b.HasOne("Elfind.Data.Model.Prostorija", "Ucionica")
+                    b.HasOne("Elfind.Data.Model.RasporedCasova", "URasporeduCasova")
                         .WithMany()
-                        .HasForeignKey("UcionicaID");
+                        .HasForeignKey("URasporeduCasovaID");
 
                     b.HasOne("Elfind.Data.Model.Kurs", "ZaKurs")
                         .WithMany()
                         .HasForeignKey("ZaKursID");
 
-                    b.Navigation("RasporedCasova");
+                    b.Navigation("Prostorija");
 
-                    b.Navigation("Ucionica");
+                    b.Navigation("URasporeduCasova");
 
                     b.Navigation("ZaKurs");
                 });
@@ -495,7 +519,7 @@ namespace Elfind.Migrations
             modelBuilder.Entity("Elfind.Data.Model.Notifikacija", b =>
                 {
                     b.HasOne("Elfind.Data.Model.NastavnoOsoblje", "Posiljalac")
-                        .WithMany()
+                        .WithMany("Notifikacije")
                         .HasForeignKey("PosiljalacID");
 
                     b.Navigation("Posiljalac");
@@ -564,6 +588,15 @@ namespace Elfind.Migrations
                     b.Navigation("Smer");
                 });
 
+            modelBuilder.Entity("Elfind.Data.Models.Opcija", b =>
+                {
+                    b.HasOne("Elfind.Data.Model.Objava", "Anketa")
+                        .WithMany("Opcije")
+                        .HasForeignKey("AnketaID");
+
+                    b.Navigation("Anketa");
+                });
+
             modelBuilder.Entity("Elfind.Data.Models.OsobljeKurs", b =>
                 {
                     b.HasOne("Elfind.Data.Model.Kurs", "Kurs")
@@ -607,6 +640,16 @@ namespace Elfind.Migrations
                     b.Navigation("Kurs");
 
                     b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("Elfind.Data.Model.NastavnoOsoblje", b =>
+                {
+                    b.Navigation("Notifikacije");
+                });
+
+            modelBuilder.Entity("Elfind.Data.Model.Objava", b =>
+                {
+                    b.Navigation("Opcije");
                 });
 #pragma warning restore 612, 618
         }

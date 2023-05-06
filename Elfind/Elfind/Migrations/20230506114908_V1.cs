@@ -192,8 +192,8 @@ namespace Elfind.Migrations
                     VremeOd = table.Column<TimeSpan>(type: "time", nullable: false),
                     VremeDo = table.Column<TimeSpan>(type: "time", nullable: false),
                     TipCasa = table.Column<int>(type: "int", nullable: false),
-                    UcionicaID = table.Column<int>(type: "int", nullable: true),
-                    RasporedCasovaID = table.Column<int>(type: "int", nullable: true),
+                    ProstorijaID = table.Column<int>(type: "int", nullable: true),
+                    URasporeduCasovaID = table.Column<int>(type: "int", nullable: true),
                     ZaKursID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -205,13 +205,13 @@ namespace Elfind.Migrations
                         principalTable: "Kursevi",
                         principalColumn: "ID");
                     table.ForeignKey(
-                        name: "FK_Casovi_Prostorije_UcionicaID",
-                        column: x => x.UcionicaID,
+                        name: "FK_Casovi_Prostorije_ProstorijaID",
+                        column: x => x.ProstorijaID,
                         principalTable: "Prostorije",
                         principalColumn: "ID");
                     table.ForeignKey(
-                        name: "FK_Casovi_ResporediCasova_RasporedCasovaID",
-                        column: x => x.RasporedCasovaID,
+                        name: "FK_Casovi_ResporediCasova_URasporeduCasovaID",
+                        column: x => x.URasporeduCasovaID,
                         principalTable: "ResporediCasova",
                         principalColumn: "ID");
                 });
@@ -363,15 +363,35 @@ namespace Elfind.Migrations
                         principalColumn: "ID");
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Casovi_RasporedCasovaID",
-                table: "Casovi",
-                column: "RasporedCasovaID");
+            migrationBuilder.CreateTable(
+                name: "Opcija",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Tekst = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BrojGlasova = table.Column<int>(type: "int", nullable: false),
+                    AnketaID = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Opcija", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Opcija_Objave_AnketaID",
+                        column: x => x.AnketaID,
+                        principalTable: "Objave",
+                        principalColumn: "ID");
+                });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Casovi_UcionicaID",
+                name: "IX_Casovi_ProstorijaID",
                 table: "Casovi",
-                column: "UcionicaID");
+                column: "ProstorijaID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Casovi_URasporeduCasovaID",
+                table: "Casovi",
+                column: "URasporeduCasovaID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Casovi_ZaKursID",
@@ -412,6 +432,11 @@ namespace Elfind.Migrations
                 name: "IX_Objave_OdNastavnogOsobljaID",
                 table: "Objave",
                 column: "OdNastavnogOsobljaID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Opcija_AnketaID",
+                table: "Opcija",
+                column: "AnketaID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OsobljeKursSpoj_KursID",
@@ -477,7 +502,7 @@ namespace Elfind.Migrations
                 name: "Notifikacije");
 
             migrationBuilder.DropTable(
-                name: "Objave");
+                name: "Opcija");
 
             migrationBuilder.DropTable(
                 name: "OsobljeKursSpoj");
@@ -489,10 +514,7 @@ namespace Elfind.Migrations
                 name: "StudentKursSpoj");
 
             migrationBuilder.DropTable(
-                name: "Forum");
-
-            migrationBuilder.DropTable(
-                name: "NastavnaOsoblja");
+                name: "Objave");
 
             migrationBuilder.DropTable(
                 name: "Kursevi");
@@ -501,19 +523,25 @@ namespace Elfind.Migrations
                 name: "Studenti");
 
             migrationBuilder.DropTable(
-                name: "Prostorije");
+                name: "Forum");
+
+            migrationBuilder.DropTable(
+                name: "NastavnaOsoblja");
 
             migrationBuilder.DropTable(
                 name: "ResporediCasova");
 
             migrationBuilder.DropTable(
-                name: "Zgrada");
+                name: "Prostorije");
 
             migrationBuilder.DropTable(
                 name: "Administratori");
 
             migrationBuilder.DropTable(
                 name: "Smerovi");
+
+            migrationBuilder.DropTable(
+                name: "Zgrada");
         }
     }
 }
