@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Wsc86QtdmbNI0K40QOtj2v8aIN5ntsiR1vBNwVvoQtkM1SUrt2KHXeO9h3fDDPj6mbUky7fwF5finDc7fxE+zA==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind\\Elfind.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "libraryId": "Microsoft.EntityFrameworkCore.Tools"
+    }
+  ]
+}

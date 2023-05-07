@@ -12,6 +12,11 @@ a, .btn-link {
     color: #0071c1;
 }
 
+/*beskorisno al sta sad*/
+label, InputText, InputNumber{
+    padding:2px;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;

@@ -2,22 +2,5 @@
   "ExpandedNodes": [
     ""
   ],
-  "SelectedNode": "\\Elfind.sln",
-<<<<<<< HEAD
-=======
-=======
-    "",
-    "\\Elfind",
-    "\\Elfind\\Pages",
-    "\\Elfind\\Properties",
-    "\\Elfind\\Shared"
-  ],
-<<<<<<< HEAD
-  "SelectedNode": "\\Elfind",
-=======
-  "SelectedNode": "\\Elfind\\Pages\\Index.razor",
->>>>>>> 597059e83cf9f361baabffca568c9220aa98187d
->>>>>>> e82731b6a0d83d28b264046db617bdac6ebcf794
->>>>>>> 2a130042186bd92f95aed87953f69672b6efd9fb
   "PreviewInSolutionExplorer": false
 }
