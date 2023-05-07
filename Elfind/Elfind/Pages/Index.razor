@@ -1,9 +1,53 @@
 ﻿@page "/"
+@using Elfind.Data.Model;
+@using Elfind.Data.Services;
+@inject ProstorijaService prostorijaService;
+
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<EditForm Model="@prostorija" OnValidSubmit="ProstorijaSubmit">
+    <div>Prostorija</div>
+    <label for="OznakaInput">Oznaka</label>
+    <InputText id="OznakaInput" @bind-Value="@prostorija.Oznaka"> </InputText>
+    <br/>
+
+    <label for="SpratInput">Sprat</label>
+    <InputText id="SpratInput" @bind-Value="@prostorija.Sprat"> </InputText>
+    <br />
+
+    @*razmisliti kako unosimo coord*@
+    <label for="DownRightXInput">DownRightX</label>
+    <InputNumber id="DownRightXInput" @bind-Value="@prostorija.DownRightX"> </InputNumber>
+    <br />
+
+    <label for="DownRightYInput">DownRightY</label>
+    <InputNumber id="DownRightYInput" @bind-Value="@prostorija.DownRightY"> </InputNumber>
+    <br />
+
+    <label for="KapacitetInput">Kapacitet</label>
+    <InputNumber id="KapacitetInput" @bind-Value="@prostorija.Kapacitet"> </InputNumber>
+    <br />
+
+    <label for="TipProstorijeInput">TipProstorije</label>
+    <InputText id="TipProstorijeInput" @bind-Value="@prostorija.TipProstorije"> </InputText>
+    <br />
+
+    @*sta se desava sa atributima koji su objekti videcemo*@
+    
+    <button type="submit" class="btn-primary">Create</button>
+    <br />
+</EditForm>
+
+@code{
+    Prostorija prostorija = new Prostorija();
+
+    public void ProstorijaSubmit(EditContext editContext)
+    {
+        Prostorija novaProstorija = (Prostorija)editContext.Model;
+
+        prostorijaService.dodajProstoriju(novaProstorija);
+    }
+}

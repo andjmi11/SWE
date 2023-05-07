@@ -244,9 +244,6 @@ namespace Elfind.Migrations
                     b.Property<string>("Sprat")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TipLaboratorije")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("TipProstorije")
                         .HasColumnType("nvarchar(max)");
 
