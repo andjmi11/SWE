@@ -3592,16 +3592,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\krist\\.nuget\\packages\\": {}
->>>>>>> 5ebdeb52aa5a8dfb6a2b197be6a7f2c729ad1784
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
       "projectName": "Elfind",
       "projectPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
@@ -3610,16 +3605,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AndjelijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
-      "projectName": "Elfind",
-      "projectPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
-      "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\krist\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 5ebdeb52aa5a8dfb6a2b197be6a7f2c729ad1784
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3646,8 +3631,6 @@
         "targetAlias": "net7.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
-<<<<<<< HEAD
-=======
             "target": "Package",
             "version": "[7.0.5, )"
           },
@@ -3658,7 +3641,6 @@
             "version": "[7.0.5, )"
           },
           "Microsoft.EntityFrameworkCore.Proxies": {
->>>>>>> 5ebdeb52aa5a8dfb6a2b197be6a7f2c729ad1784
             "target": "Package",
             "version": "[7.0.5, )"
           },
@@ -3692,12 +3674,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
->>>>>>> 5ebdeb52aa5a8dfb6a2b197be6a7f2c729ad1784
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
