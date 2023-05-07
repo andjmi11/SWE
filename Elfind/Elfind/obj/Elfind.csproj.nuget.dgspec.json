@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj": {}
   },
   "projects": {
@@ -19,6 +20,39 @@
         "configFilePaths": [
           "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+<<<<<<< HEAD
+    "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+        "projectName": "Elfind",
+        "projectPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+        "packagesPath": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\AndjelijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+        "projectName": "Elfind",
+        "projectPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+        "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\krist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 5ebdeb52aa5a8dfb6a2b197be6a7f2c729ad1784
+>>>>>>> 8bb07d53ab583735317406304e51b25995c74fad
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,6 +76,38 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+<<<<<<< HEAD
+=======
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+<<<<<<< HEAD
+=======
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+>>>>>>> 5ebdeb52aa5a8dfb6a2b197be6a7f2c729ad1784
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            }
+          },
+>>>>>>> 8bb07d53ab583735317406304e51b25995c74fad
           "imports": [
             "net461",
             "net462",
@@ -54,6 +120,12 @@
           "assetTargetFallback": true,
           "warn": true,
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+<<<<<<< HEAD
+=======
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+>>>>>>> 5ebdeb52aa5a8dfb6a2b197be6a7f2c729ad1784
+>>>>>>> 8bb07d53ab583735317406304e51b25995c74fad
         }
       }
     }

@@ -20,7 +20,6 @@ namespace Elfind.Data.Model
         public float leftUpY { get; set; }
         public int Kapacitet { get; set; }
         public string TipProstorije { get; set; }
-        public string TipLaboratorije { get; set; }
         public Zgrada PripadaZgradi { get; set; }
       
         public List<NastavnoOsoblje> NastavnoOsobljeZaRezervaciju = new List<NastavnoOsoblje>();
