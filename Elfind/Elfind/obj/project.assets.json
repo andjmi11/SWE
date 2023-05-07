@@ -1,6 +1,9 @@
 {
   "version": 3,
   "targets": {
+<<<<<<< HEAD
+    "net7.0": {}
+=======
     "net7.0": {
       "Azure.Core/1.24.0": {
         "type": "package",
@@ -3581,8 +3584,17 @@
         "version.txt"
       ]
     }
+>>>>>>> 8bb07d53ab583735317406304e51b25995c74fad
   },
+  "libraries": {},
   "projectFileDependencyGroups": {
+<<<<<<< HEAD
+    "net7.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Anita\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
     "net7.0": [
       "Microsoft.EntityFrameworkCore >= 7.0.5",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.5",
@@ -3593,10 +3605,35 @@
   },
   "packageFolders": {
     "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\": {}
+<<<<<<< HEAD
+=======
+=======
+    "C:\\Users\\krist\\.nuget\\packages\\": {}
+>>>>>>> 5ebdeb52aa5a8dfb6a2b197be6a7f2c729ad1784
+>>>>>>> 8bb07d53ab583735317406304e51b25995c74fad
+>>>>>>> 50fa4424c8bad66687ecca02df2a852a53e7df7d
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "projectName": "Elfind",
+      "projectPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+<<<<<<< HEAD
+>>>>>>> 50fa4424c8bad66687ecca02df2a852a53e7df7d
       "projectUniqueName": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
       "projectName": "Elfind",
       "projectPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
@@ -3605,13 +3642,26 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AndjelijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+=======
+=======
+      "projectUniqueName": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "projectName": "Elfind",
+      "projectPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\krist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 5ebdeb52aa5a8dfb6a2b197be6a7f2c729ad1784
+>>>>>>> 8bb07d53ab583735317406304e51b25995c74fad
+>>>>>>> 50fa4424c8bad66687ecca02df2a852a53e7df7d
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3629,6 +3679,8 @@
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
+<<<<<<< HEAD
+=======
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -3655,6 +3707,7 @@
             "version": "[7.0.5, )"
           }
         },
+>>>>>>> 8bb07d53ab583735317406304e51b25995c74fad
         "imports": [
           "net461",
           "net462",
@@ -3666,6 +3719,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+<<<<<<< HEAD
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -3675,6 +3729,15 @@
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+<<<<<<< HEAD
+=======
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+>>>>>>> 5ebdeb52aa5a8dfb6a2b197be6a7f2c729ad1784
+>>>>>>> 8bb07d53ab583735317406304e51b25995c74fad
+>>>>>>> 50fa4424c8bad66687ecca02df2a852a53e7df7d
       }
     }
   },
