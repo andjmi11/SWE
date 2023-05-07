@@ -9,18 +9,13 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Elfind
 build_property.RootNamespace = Elfind
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\AndjelijaMijajlovic\SWE\Elfind\Elfind\
-=======
-build_property.ProjectDir = C:\Users\Anita\SWEApp\SWE\Elfind\Elfind\
->>>>>>> a4cf04dadfa9d565f32ca9c4af2c1e66739d4c33
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\AndjelijaMijajlovic\SWE\Elfind\Elfind
 build_property._RazorSourceGeneratorDebug = 
 
-<<<<<<< HEAD
 [C:/Users/AndjelijaMijajlovic/SWE/Elfind/Elfind/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -59,44 +54,4 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/AndjelijaMijajlovic/SWE/Elfind/Elfind/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
-=======
-[C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Elfind/App.razor]
-build_metadata.AdditionalFiles.TargetPath = RWxmaW5kXEFwcC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Elfind/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = RWxmaW5kXFBhZ2VzXENvdW50ZXIucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Elfind/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = RWxmaW5kXFBhZ2VzXEZldGNoRGF0YS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Elfind/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = RWxmaW5kXFBhZ2VzXEluZGV4LnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Elfind/Shared/SurveyPrompt.razor]
-build_metadata.AdditionalFiles.TargetPath = RWxmaW5kXFNoYXJlZFxTdXJ2ZXlQcm9tcHQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Elfind/_Imports.razor]
-build_metadata.AdditionalFiles.TargetPath = RWxmaW5kXF9JbXBvcnRzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Elfind/Shared/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = RWxmaW5kXFNoYXJlZFxNYWluTGF5b3V0LnJhem9y
-build_metadata.AdditionalFiles.CssScope = b-n68s0t5oe4
-
-[C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Elfind/Shared/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = RWxmaW5kXFNoYXJlZFxOYXZNZW51LnJhem9y
-build_metadata.AdditionalFiles.CssScope = b-5htwoayd55
-
-[C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Elfind/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = RWxmaW5kXFBhZ2VzXEVycm9yLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Anita/SWEApp/SWE/Elfind/Elfind/Elfind/Pages/_Host.cshtml]
-build_metadata.AdditionalFiles.TargetPath = RWxmaW5kXFBhZ2VzXF9Ib3N0LmNzaHRtbA==
->>>>>>> a4cf04dadfa9d565f32ca9c4af2c1e66739d4c33
 build_metadata.AdditionalFiles.CssScope = 
