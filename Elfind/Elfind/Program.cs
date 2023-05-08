@@ -15,6 +15,15 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
 
 builder.Services.AddTransient<ProstorijaService>();
+builder.Services.AddTransient<ZgradaService>();
+builder.Services.AddTransient<StudentService>();
+builder.Services.AddTransient<AdministratorService>();
+builder.Services.AddTransient<CasService>();
+builder.Services.AddTransient<ForumService>();
+builder.Services.AddTransient<NastavnoOsobljeService>();
+builder.Services.AddTransient<NotifikacijaService>();
+builder.Services.AddTransient<ObjavaService>();
+builder.Services.AddTransient<KursService>();
 
 builder.Services.AddDbContextFactory<ElfindDbContext>((DbContextOptionsBuilder options) =>
 options.UseSqlServer(connectionString));

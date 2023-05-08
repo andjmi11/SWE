@@ -2,6 +2,7 @@
 @using Elfind.Data.Model;
 @using Elfind.Data.Services;
 @inject ProstorijaService prostorijaService;
+@inject ZgradaService zgradaService;
 
 
 <PageTitle>Index</PageTitle>
@@ -27,12 +28,25 @@
     <InputNumber id="DownRightYInput" @bind-Value="@prostorija.DownRightY"> </InputNumber>
     <br />
 
+    <label for="LeftUpXInput">LeftUpX</label>
+    <InputNumber id="LeftUpXInput" @bind-Value="@prostorija.LeftUpX"> </InputNumber>
+    <br />
+
+    <label for="LeftUpYInput">LeftUpY</label>
+    <InputNumber id="LeftUpYInput" @bind-Value="@prostorija.LeftUpY"> </InputNumber>
+    <br />
+
     <label for="KapacitetInput">Kapacitet</label>
     <InputNumber id="KapacitetInput" @bind-Value="@prostorija.Kapacitet"> </InputNumber>
     <br />
 
     <label for="TipProstorijeInput">TipProstorije</label>
-    <InputText id="TipProstorijeInput" @bind-Value="@prostorija.TipProstorije"> </InputText>
+    <InputSelect id="TipProstorijeInput" @bind-Value="@prostorija.TipProstorije"> 
+        @foreach(var tip in Enum.GetValues(typeof(TipP)))
+        {
+            <option value="@tip">@prostorija.TipProstorije</option>
+        }
+    </InputSelect>
     <br />
 
     @*sta se desava sa atributima koji su objekti videcemo*@
@@ -49,5 +63,32 @@
         Prostorija novaProstorija = (Prostorija)editContext.Model;
 
         prostorijaService.dodajProstoriju(novaProstorija);
+    }
+}
+
+<EditForm Model="@zgrada" OnValidSubmit="ZgradaSubmit">
+    <div>Zgrada</div>
+    <label for="TipInput">Tip</label>
+    <InputSelect id="TipInput" @bind-Value="@zgrada.Tip">
+        @foreach (var tip in Enum.GetValues(typeof(TipZgrade)))
+        {
+            <option value="@tip">@zgrada.Tip</option>
+        }
+    </InputSelect>
+    <br />
+
+    <button type="submit" class="btn-primary">Create</button>
+    <br />
+
+</EditForm>
+
+@code {
+    Zgrada zgrada = new Zgrada();
+
+    public void ZgradaSubmit(EditContext editContext)
+    {
+        Zgrada novaZgrada = (Zgrada)editContext.Model;
+
+        zgradaService.dodajZgradu(novaZgrada);
     }
 }
