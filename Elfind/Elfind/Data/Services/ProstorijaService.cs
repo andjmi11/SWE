@@ -5,6 +5,7 @@ namespace Elfind.Data.Services
 {
     public class ProstorijaService
     {
+
         private IDbContextFactory<ElfindDbContext> dbContextFactory;
 
         public ProstorijaService(IDbContextFactory<ElfindDbContext> dbContextFactory)
@@ -35,10 +36,10 @@ namespace Elfind.Data.Services
             Prostorija prostorija = preuzmiProstoriju(ID);
             if (prostorija == null)
             {
-                throw new Exception("Prostorija sa datim ID-jem ne postoji");
+                throw new Exception("Prostorija sa datim ID-jem ne postoji!");
             }
             prostorija.Oznaka = oznaka;
-            using(var context =  dbContextFactory.CreateDbContext())
+            using (var context = dbContextFactory.CreateDbContext())
             {
                 context.Update(prostorija);
                 context.SaveChanges();
@@ -50,11 +51,12 @@ namespace Elfind.Data.Services
             Prostorija prostorija = preuzmiProstoriju(ID);
             if (prostorija == null)
             {
-                throw new Exception("Prostorija sa datim ID-jem ne postoji");
+                throw new Exception("Prostorija sa datim ID-jem ne postoji!");
             }
-            using(var context = dbContextFactory.CreateDbContext())
+            using (var context = dbContextFactory.CreateDbContext())
             {
                 context.Remove(prostorija);
+                context.SaveChanges();
             }
         }
     }

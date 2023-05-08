@@ -152,3 +152,5 @@ C:\Users\krist\SWE\Elfind\Elfind\obj\Debug\net7.0\refint\Elfind.dll
 C:\Users\krist\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.pdb
 C:\Users\krist\SWE\Elfind\Elfind\obj\Debug\net7.0\Elfind.genruntimeconfig.cache
 C:\Users\krist\SWE\Elfind\Elfind\obj\Debug\net7.0\ref\Elfind.dll
+C:\Users\krist\SWE\Elfind\Elfind\bin\Debug\net7.0\Elfind\obj\Elfind.csproj.nuget.dgspec.json
+C:\Users\krist\SWE\Elfind\Elfind\bin\Debug\net7.0\Elfind\obj\project.assets.json

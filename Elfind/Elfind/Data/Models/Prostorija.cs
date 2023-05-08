@@ -2,6 +2,13 @@
 
 namespace Elfind.Data.Model
 {
+    public enum TipP
+    {
+        Ucionica,
+        Amfiteatar,
+        Laboratorija,
+        Kancelarija
+    }
     public class Prostorija
     {
         [Key]
@@ -15,11 +22,11 @@ namespace Elfind.Data.Model
         [Required]
         public float DownRightY { get; set; }
         [Required]
-        public float leftUpX { get; set; }
+        public float LeftUpX { get; set; }
         [Required]
-        public float leftUpY { get; set; }
+        public float LeftUpY { get; set; }
         public int Kapacitet { get; set; }
-        public string TipProstorije { get; set; }
+        public TipP TipProstorije { get; set; }
         public Zgrada PripadaZgradi { get; set; }
       
         public List<NastavnoOsoblje> NastavnoOsobljeZaRezervaciju = new List<NastavnoOsoblje>();
