@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj": {}
+    "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind\\Elfind.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj": {
+    "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind\\Elfind.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+        "projectUniqueName": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind\\Elfind.csproj",
         "projectName": "Elfind",
-        "projectPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
-        "packagesPath": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\obj\\",
+        "projectPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind\\Elfind.csproj",
+        "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\AndjelijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -41,16 +45,6 @@
           "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[7.0.5, )"
             },
@@ -84,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
