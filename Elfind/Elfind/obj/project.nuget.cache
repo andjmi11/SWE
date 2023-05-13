@@ -1,25 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "6FtepJM2equwzl4wi6blv4FJ295fJEPMuoC3atoCxnmO/O8eW5XuJbNTOk9h+2zTh9hdK6K4MqiKxol6mol1Yg==",
-=======
-<<<<<<< HEAD
-  "dgSpecHash": "i5owQLfOIpc1rFuhY7nFLZdLKnFBzBSIPhDHcb2BIpgOAIrPE8/GI9jHcNmLGamoIO4o/Hs79XQCI4F4R/VRNw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\Elfind.csproj",
-  "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\Anita\\SWEApp\\SWE\\Elfind\\Elfind\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
-=======
-<<<<<<< HEAD
-  "dgSpecHash": "Vcd8T9T3YRsFoyI8/87zfzXmVKGmrKD/3+pNeos8/7LdXTm33WMQ4Kt3HzjiaX02WA4q3bR4cjnYFsKRj4t9Cw==",
->>>>>>> 50fa4424c8bad66687ecca02df2a852a53e7df7d
   "success": true,
   "projectFilePath": "C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\Elfind.csproj",
   "expectedPackageFiles": [
@@ -94,7 +75,6 @@
     "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-<<<<<<< HEAD
   "logs": [
     {
       "code": "Undefined",
@@ -103,8 +83,4 @@
       "message": "Problem reading the cache file C:\\Users\\AndjelijaMijajlovic\\SWE\\Elfind\\Elfind\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
-=======
-  "logs": []
->>>>>>> 8bb07d53ab583735317406304e51b25995c74fad
->>>>>>> 50fa4424c8bad66687ecca02df2a852a53e7df7d
 }
