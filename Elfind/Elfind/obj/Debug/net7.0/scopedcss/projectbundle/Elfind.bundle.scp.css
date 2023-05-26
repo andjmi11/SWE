@@ -79,6 +79,10 @@ main[b-ki87sz4i9n] {
     background-color: rgba(0,0,0,0.4);
 }
 
+.row3[b-761ltm08kf]{
+    align-self:end;
+}
+
 .navbar-brand[b-761ltm08kf] {
     font-size: 1.1rem;
 }
@@ -88,6 +92,10 @@ main[b-ki87sz4i9n] {
     font-size: 1.1rem;
     vertical-align: text-top;
     top: -2px;
+}
+
+.flex-column[b-761ltm08kf]{
+    justify-content:space-between;
 }
 
 .nav-item[b-761ltm08kf] {
@@ -121,6 +129,8 @@ main[b-ki87sz4i9n] {
     background-color: rgba(255,255,255,0.1);
     color: white;
 }
+
+
 
 @media (min-width: 641px) {
     .navbar-toggler[b-761ltm08kf] {

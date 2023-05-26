@@ -32,6 +32,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/krist/SWE1/SWE/Elfind/Elfind/Pages/Kalendar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS2FsZW5kYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krist/SWE1/SWE/Elfind/Elfind/Pages/Sidebar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2lkZWJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/krist/SWE1/SWE/Elfind/Elfind/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +58,10 @@ build_metadata.AdditionalFiles.CssScope = b-761ltm08kf
 
 [C:/Users/krist/SWE1/SWE/Elfind/Elfind/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/krist/SWE1/SWE/Elfind/Elfind/Pages/Glavna.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2xhdm5hLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/krist/SWE1/SWE/Elfind/Elfind/Pages/_Host.cshtml]

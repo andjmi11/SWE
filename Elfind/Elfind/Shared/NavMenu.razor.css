@@ -7,6 +7,10 @@
     background-color: rgba(0,0,0,0.4);
 }
 
+.row3{
+    align-self:end;
+}
+
 .navbar-brand {
     font-size: 1.1rem;
 }
@@ -16,6 +20,10 @@
     font-size: 1.1rem;
     vertical-align: text-top;
     top: -2px;
+}
+
+.flex-column{
+    justify-content:space-between;
 }
 
 .nav-item {
@@ -49,6 +57,8 @@
     background-color: rgba(255,255,255,0.1);
     color: white;
 }
+
+
 
 @media (min-width: 641px) {
     .navbar-toggler {

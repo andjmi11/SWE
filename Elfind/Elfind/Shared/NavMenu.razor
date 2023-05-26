@@ -9,19 +9,33 @@
 
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
+        <nav class="row2">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+                <span class="oi oi-home" aria-hidden="true"></span> Home 
+                @*oi oi su klase preko kojih su ikonice uredjene uz bootstrap, to ako cemo da menjamo treba ceo bootstrap da se obrise i izmeni*@
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+            <NavLink class="nav-link" href="mapa">
+                <span class="oi oi-plus" aria-hidden="true"></span> Mapa
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            <NavLink class="nav-link" href="ankete">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Ankete
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="forum">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Forum
+            </NavLink>
+        </div>
+        </nav>
+        @*Iz nekog razloga ne mogu da zalepim ovo za dno tako da eto to mi je problem*@
+        <div class="nav-item px-3 row3">
+            <NavLink class="nav-link" href="logout">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Log out
             </NavLink>
         </div>
     </nav>

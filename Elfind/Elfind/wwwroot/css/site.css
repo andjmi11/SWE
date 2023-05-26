@@ -17,6 +17,19 @@ label, InputText, InputNumber{
     padding:2px;
 }
 
+/*jos jedna proba*/
+
+th, td{
+    border:1px solid black;
+    border-collapse:collapse;
+    padding:1px;
+    width:35px;
+    text-align:center;
+}
+button{
+    margin:3px;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
