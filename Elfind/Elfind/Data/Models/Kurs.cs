@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Elfind.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Elfind.Data.Model
 {
@@ -12,5 +13,8 @@ namespace Elfind.Data.Model
         public int Godina { get; set; }
 
         public List<Cas> Casovi = new List<Cas>();
+        public List<KursSmer> Smerovi = new List<KursSmer>();
+        public List<OsobljeKurs> NastavnoOsoblje = new List<OsobljeKurs>();
+        public List<StudentKurs> Studenti = new List<StudentKurs>();
     }
 }

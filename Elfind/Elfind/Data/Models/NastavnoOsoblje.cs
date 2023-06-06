@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Elfind.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Elfind.Data.Model
 {
@@ -8,16 +9,18 @@ namespace Elfind.Data.Model
         public int ID { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        public string KorsinickoIme { get; set; }
-        public int Salt { get; set; }
-        public string HashLozinka { get; set; }
+        public string KorisnickoIme { get; set; }
 
         public string Tip { get; set; }
 
-        public Prostorija RezervisanaProstorija { get; set; }
+        //public Prostorija RezervisanaProstorija { get; set; }
         public Prostorija Kancelarija { get; set; }
  
         public List<Objava> Objave = new List<Objava>();
-        public List<Notifikacija> Notifikacije { get; set; }
+        public List<Notifikacija> Notifikacije = new List<Notifikacija>();
+        public List<OsobljeKurs> Kursevi = new List<OsobljeKurs>();
+        public List<OsobljeProstorijaR> RezProstorije = new List<OsobljeProstorijaR>();
+        public List<OsobljeRaspored> Raspored = new List<OsobljeRaspored>();
+
     }
 }

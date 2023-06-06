@@ -6,47 +6,106 @@ namespace Elfind.Data.Services
 {
     public class KursService
     {
-        private IDbContextFactory<ElfindDbContext> dbContextFactory;
+        private IDbContextFactory<ElfindContext> dbContextFactory;
 
-        public KursService(IDbContextFactory<ElfindDbContext> dbContextFactory)
+        public KursService(IDbContextFactory<ElfindContext> dbContextFactory)
         {
             dbContextFactory = dbContextFactory;
         }
 
-        public void dodajKurs(Kurs kurs)
+        public async Task DodajKursAsync(Kurs kurs)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                context.Kursevi.Add(kurs);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Kursevi.Add(kurs);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public Kurs preuzmiKurs(int ID)
+        public async Task<Kurs> PreuzmiKursAsync(int ID)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                Kurs kurs = context.Kursevi.SingleOrDefault(k => k.ID == ID);
-                return kurs;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Kurs kurs = await context.Kursevi.SingleOrDefaultAsync(k => k.ID == ID);
+                    return kurs;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null; 
             }
         }
 
-        /*public void azurirajKurs(int ID)
+        public async Task AzurirajKursAsync(int ID, string Naziv, int Godina)
         {
-
-        }*/
-        public void obrisiKurs(int ID)
-        {
-            Kurs kurs = preuzmiKurs(ID);
-            if(kurs == null)
+            try
             {
-                throw new Exception("Kurs sa datim ID-jem ne postoji!");
+                Kurs kurs = await PreuzmiKursAsync(ID);
+                if (kurs == null)
+                {
+                    throw new Exception("Kurs sa datim ID-jem ne postoji!");
+                }
+                kurs.Naziv = Naziv;
+                kurs.Godina = Godina;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Update(kurs);
+                    await context.SaveChangesAsync();
+                }
             }
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Remove(kurs);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
             }
         }
+
+        public async Task ObrisiKursAsync(int ID)
+        {
+            try
+            {
+                Kurs kurs = await PreuzmiKursAsync(ID);
+                if (kurs == null)
+                {
+                    throw new Exception("Kurs sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Remove(kurs);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task<List<Kurs>> VratiSveKurseveAsync()
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    List<Kurs> kursevi = await context.Kursevi.ToListAsync();
+                    return kursevi;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new List<Kurs>(); 
+            }
+        }
+
     }
 }

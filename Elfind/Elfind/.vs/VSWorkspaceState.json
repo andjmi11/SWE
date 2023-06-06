@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Data",
-    "\\Data\\Models",
-    "\\Elfind",
-    "\\Migrations"
+    "\\Data"
   ],
-  "SelectedNode": "\\Data\\Models\\Forum.cs",
+  "SelectedNode": "\\Elfind.csproj",
   "PreviewInSolutionExplorer": false
 }

@@ -1,3 +1,6 @@
+@import '_content/Blazor.Bootstrap/Blazor.Bootstrap.bundle.scp.css';
+@import '_content/BlazorStrap/BlazorStrap.bundle.scp.css';
+
 /* _content/Elfind/Shared/MainLayout.razor.rz.scp.css */
 .page[b-ki87sz4i9n] {
     position: relative;
@@ -13,19 +16,37 @@ main[b-ki87sz4i9n] {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
 }
 
+
+.zajednicki[b-ki87sz4i9n] {
+    display: flex;
+    justify-content: space-between;
+    background-image: url('cool-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.logic[b-ki87sz4i9n]{
+    padding-left:10px;
+}
+.login[b-ki87sz4i9n] {
+    margin-left:10px;
+}
+
 .top-row[b-ki87sz4i9n] {
-    background-color: #f7f7f7;
+    /*background-color: #08143c;*/
+    background-image: linear-gradient(90deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    /*background-color: rgb(5, 39, 103);*/ /*#f7f7f7*/
     border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
+    justify-content: space-between;
     height: 3.5rem;
     display: flex;
     align-items: center;
 }
 
-
     .top-row[b-ki87sz4i9n]  a, .top-row .btn-link[b-ki87sz4i9n] {
         white-space: nowrap;
-        margin-left: 1.5rem;
+        /*margin-left: 1.5rem;*/
     }
 
     .top-row a:first-child[b-ki87sz4i9n] {
@@ -70,7 +91,26 @@ main[b-ki87sz4i9n] {
         padding-right: 1.5rem !important;
     }
 }
+
+.profil[b-ki87sz4i9n]{
+    padding:5px;
+}
+
+.goreDesno[b-ki87sz4i9n]{
+    display:flex;
+}
+
+.custom-btn[b-ki87sz4i9n] {
+    background-color: lightpink; /* Prilagodite boju pozadine */
+    color: #000000; /* Prilagodite boju teksta */
+    border: 2px solid #fc9fad; /* Prilagodite boju bordera i debljinu */
+    /* Dodajte ostale stilove po potrebi */
+}
 /* _content/Elfind/Shared/NavMenu.razor.rz.scp.css */
+
+.row3[b-761ltm08kf]{
+    align-self:end;
+}
 .navbar-toggler[b-761ltm08kf] {
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -78,10 +118,6 @@ main[b-ki87sz4i9n] {
 .top-row[b-761ltm08kf] {
     height: 3.5rem;
     background-color: rgba(0,0,0,0.4);
-}
-
-.row3[b-761ltm08kf]{
-    align-self:end;
 }
 
 .navbar-brand[b-761ltm08kf] {
@@ -93,10 +129,6 @@ main[b-ki87sz4i9n] {
     font-size: 1.1rem;
     vertical-align: text-top;
     top: -2px;
-}
-
-.flex-column[b-761ltm08kf]{
-    justify-content:space-between;
 }
 
 .nav-item[b-761ltm08kf] {
@@ -121,17 +153,15 @@ main[b-ki87sz4i9n] {
         line-height: 3rem;
     }
 
-.nav-item[b-761ltm08kf]  a.active {
-    background-color: rgba(255,255,255,0.25);
-    color: white;
-}
+        .nav-item[b-761ltm08kf]  a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: white;
+        }
 
-.nav-item[b-761ltm08kf]  a:hover {
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-}
-
-
+        .nav-item[b-761ltm08kf]  a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
 
 @media (min-width: 641px) {
     .navbar-toggler[b-761ltm08kf] {
@@ -140,12 +170,27 @@ main[b-ki87sz4i9n] {
 
     .collapse[b-761ltm08kf] {
         /* Never collapse the sidebar for wide screens */
-        display: block;
+        display: block !important;
     }
-    
+
     .nav-scrollable[b-761ltm08kf] {
         /* Allow sidebar to scroll for tall menus */
         height: calc(100vh - 3.5rem);
         overflow-y: auto;
     }
+}
+
+
+.nav-scrollable[b-761ltm08kf] {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+}
+/* _content/Elfind/Shared/RightSidebar.razor.rz.scp.css */
+/*ne vidi ovo iz nekog razloga nzm*/
+
+.sidebar2[b-jpxquko7r7] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }

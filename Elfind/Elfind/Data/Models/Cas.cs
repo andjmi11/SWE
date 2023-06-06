@@ -32,12 +32,13 @@ namespace Elfind.Data.Model
 
         public TimeSpan VremeDo { get; set; }
 
-        public TipCasa TipCasa { get; set; }
+        public TipCasa TipCasa { get; set; } 
 
         public Prostorija Prostorija { get; set; }
 
         public RasporedCasova URasporeduCasova { get; set; }
 
         public Kurs ZaKurs { get; set; }
+
     }
 }

@@ -1,53 +1,260 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">Elfind</a>
+        <a class="navbar-brand" href="">
+            <h2 style="color:white">Elfind</h2>
+        </a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
 </div>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+<div class="@NavMenuCssClass nav-scrollable " @onclick="ToggleNavMenu">
+    @*@NavMenuCssClass kad se doda ispred nav-scrollable sve nestane*@
+    @*navbar navbar-expand-sm navbar-toggleable-sm ovako je header u login*@
     <nav class="flex-column">
         <nav class="row2">
-        <div class="nav-item px-3">
+
+            @*<div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home 
-                @*oi oi su klase preko kojih su ikonice uredjene uz bootstrap, to ako cemo da menjamo treba ceo bootstrap da se obrise i izmeni*@
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="mapa">
-                <span class="oi oi-plus" aria-hidden="true"></span> Mapa
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="ankete">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Ankete
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="forum">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Forum
-            </NavLink>
-        </div>
+            <span class="oi oi-home" aria-hidden="true"></span> Home
+            @*oi oi su klase preko kojih su ikonice uredjene uz bootstrap, to ako cemo da menjamo treba ceo bootstrap da se obrise i izmeni*@
+            @*</NavLink>
+            </div>*@
+
+            @*mapa*@
+            <div class="nav-item px-2">
+                <NavLink class="nav-link" href="mapa" Match="NavLinkMatch.All" @onclick="ToggleMapaPanel">
+                    <span class="mapaNav" aria-hidden="true"></span> Mapa
+                </NavLink>
+            </div>
+
+            @*paneli u mapi*@
+            <div id="panel" class="@panelClass">
+
+                <div class="nav-item px-4">
+                    <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="TogglePanel1">
+                        <span class="mapaNav" aria-hidden="true"></span> Glavna zgrada
+                    </NavLink>
+                </div>
+
+                <div id="panel1" class="@panel1Class">
+                    <!-- Sadržaj sakrivajućeg panela za glavnu zgradu -->
+                    <div class="nav-item px-5">
+                        <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="@(() => { TogglePanel1(); ChangePicture("Prizemlje"); })">
+                            <span class="mapaNav" aria-hidden="true"></span> Prizemlje
+                        </NavLink>
+                    </div>
+                    <div class="nav-item px-5">
+                        <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="@(() => { TogglePanel1(); ChangePicture("M1"); })">
+                            <span class="mapaNav" aria-hidden="true"></span> M1
+                        </NavLink>
+                    </div>
+                    <div class="nav-item px-5">
+                        <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="@(() => { TogglePanel1(); ChangePicture("1LK"); })">
+                            <span class="mapaNav" aria-hidden="true"></span> LK1
+                        </NavLink>
+                    </div>
+                    <div class="nav-item px-5">
+                        <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="@(() => { TogglePanel1(); ChangePicture("M2"); })">
+                            <span class="mapaNav" aria-hidden="true"></span> M2
+                        </NavLink>
+                    </div>
+                    <div class="nav-item px-5">
+                        <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="@(() => { TogglePanel1(); ChangePicture("2LK"); })">
+                            <span class="mapaNav" aria-hidden="true"></span> LK2
+                        </NavLink>
+                    </div>
+                    <div class="nav-item px-5">
+                        <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="TogglePanel1">
+                            <span class="mapaNav" aria-hidden="true"></span> Prvi sprat
+                        </NavLink>
+                    </div>
+                    <div class="nav-item px-5">
+                        <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="TogglePanel1">
+                            <span class="mapaNav" aria-hidden="true"></span> Drugi sprat
+                        </NavLink>
+                    </div>
+                    <div class="nav-item px-5">
+                        <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="TogglePanel1">
+                            <span class="mapaNav" aria-hidden="true"></span> Treci sprat
+                        </NavLink>
+                    </div>
+                    <div class="nav-item px-5">
+                        <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="TogglePanel1">
+                            <span class="mapaNav" aria-hidden="true"></span> Cetvrti sprat
+                        </NavLink>
+                    </div>
+                    <div class="nav-item px-5">
+                        <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="TogglePanel1">
+                            <span class="mapaNav" aria-hidden="true"></span> Peti sprat
+                        </NavLink>
+                    </div>
+                </div>
+
+                <div class="nav-item px-4">
+                    <NavLink class="nav-link" href="#" Match="NavLinkMatch.All">
+                        <span class="mapaNav" aria-hidden="true"></span> Stara zgrada
+                    </NavLink>
+                </div>
+
+                @*<div id="panel2" class="@panel2Class">
+                <!-- Sadržaj sakrivajućeg panela za staru zgradu -->
+                <div class="nav-item px-3">
+                <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="TogglePanel1">
+                <span class="mapaNav" aria-hidden="true"></span> Prizemlje samo ne mora panel?
+                </NavLink>
+                </div>
+                </div>*@
+
+                <div class="nav-item px-4">
+                    <NavLink class="nav-link" href="#" Match="NavLinkMatch.All" @onclick="TogglePanel3">
+                        <span class="mapaNav" aria-hidden="true"></span> Nova zgrada
+                    </NavLink>
+                </div>
+
+                <div id="panel3" class="@panel3Class">
+                    <!-- Sadržaj sakrivajućeg panela za novu zgradu -->
+                    <h7 style="color: white;">Cekaju se mape!</h7>
+                </div>
+
+
+
+            </div>
+            @*OVO SE NE VIDI NE ZNAM STO VISE*@
+            @* <div class="dropdown @(showDropdown ? "show" : "")">
+            <div class="dropdown-content">
+            <a href="#">Dropdown Item 1</a>
+            <a href="#">Dropdown Item 2</a>
+            <a href="#">Dropdown Item 3</a>
+            </div>
+            </div>*@
+
+            <div class="nav-item px-2">
+                <NavLink class="nav-link" href="ankete">
+                    <span class="anketeNav" aria-hidden="true"></span> Ankete
+                </NavLink>
+            </div>
+            <div class="nav-item px-2">
+                <NavLink class="nav-link" href="forum">
+                    <span class="forumNav" aria-hidden="true"></span> Forum  @* aria-hidden="true" je pisalo svuda*@
+                </NavLink>
+            </div>
+
         </nav>
+
         @*Iz nekog razloga ne mogu da zalepim ovo za dno tako da eto to mi je problem*@
-        <div class="nav-item px-3 row3">
-            <NavLink class="nav-link" href="logout">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Log out
-            </NavLink>
-        </div>
+
+
+        @if (collapseNavMenu == true)
+        {
+
+            <nav class="row3 fixed-bottom">
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="logout">
+                        @*kada neko klikne da se izloguje ucitava mu se login strana da izabere da je gost *za sada**@
+                        <span class="logoutNav" aria-hidden="true"></span> Log out
+                    </NavLink>
+                </div>
+            </nav>
+        }
+        else
+        {
+            <nav class="row3">
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="logout">
+
+                        @*kada neko klikne da se izloguje ucitava mu se login strana da izabere da je gost *za sada**@
+                        <span class="logoutNav" aria-hidden="true"></span> Log out
+                    </NavLink>
+                </div>
+            </nav>
+        }
     </nav>
 </div>
+
+
+
 
 @code {
     private bool collapseNavMenu = true;
 
+#nullable enable
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+#nullable disable
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    private string panelClass = "d-none";
+
+    private void ToggleMapaPanel()
+    {
+        panelClass = panelClass == "d-none" ? "" : "d-none";
+    }
+
+    private string panel1Class = "d-none";
+    private string panel2Class = "d-none";
+    private string panel3Class = "d-none";
+
+    private void TogglePanel1()
+    {
+        panel1Class = panel1Class == "d-none" ? "" : "d-none";
+    }
+
+    //private void TogglePanel2()
+    //{
+    //    panel2Class = panel2Class == "d-none" ? "" : "d-none";
+    //}
+
+    private void TogglePanel3()
+    {
+        panel3Class = panel3Class == "d-none" ? "" : "d-none";
+    }
+    //private bool showDropdown;
+
+    //private void ShowOptions()
+    //{
+    //    showDropdown = !showDropdown;
+    //}
+
+    private string currentPicture = "/resized/Prizemlje.jpg";
+    private bool option1 = true;
+    private bool option2;
+
+    private void ChangePicture(string path)
+    {
+        string picB = currentPicture;
+        currentPicture = $"/resized/{path}.jpg";
+        showLists(picB);
+    }
+
+
+    private void showLists(string pictureBefore)
+    {
+        if (String.Compare(@currentPicture, pictureBefore) == 0)
+        {
+            return;
+        }
+        if (String.Compare(@currentPicture, $"/resized/Prizemlje.jpg") == 0)
+        {
+            option1 = !option1;
+            option2 = false;
+        }
+        else
+        {
+            if (String.Compare(@currentPicture, $"/resized/Prvi sprat.jpg") == 0)
+            {
+                option1 = false;
+                option2 = !option2;
+            }
+            else
+            {
+                option1 = false;
+                option2 = false;
+            }
+        }
     }
 }

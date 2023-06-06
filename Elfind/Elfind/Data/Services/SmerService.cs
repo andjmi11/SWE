@@ -6,44 +6,105 @@ namespace Elfind.Data.Services
 {
     public class SmerService
     {
-        private IDbContextFactory<ElfindDbContext> dbContextFactory;
+        private IDbContextFactory<ElfindContext> dbContextFactory;
 
-        public SmerService(IDbContextFactory<ElfindDbContext> dbContextFactory)
+        public SmerService(IDbContextFactory<ElfindContext> dbContextFactory)
         {
             this.dbContextFactory = dbContextFactory;
         }
 
-        public void dodajSmer(Smer smer)
+        public async Task DodajSmer(Smer smer)
         {
-            using(var context = dbContextFactory.CreateDbContext())
+            try
             {
-                context.Smerovi.Add(smer);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Smerovi.Add(smer);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public Smer preuzmiSmer(int ID)
+        public async Task<Smer> PreuzmiSmer(int ID)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                Smer smer = context.Smerovi.SingleOrDefault(s => s.ID == ID);
-                return smer;
-                
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Smer smer = await context.Smerovi.SingleOrDefaultAsync(s => s.ID == ID);
+                    return smer;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
 
-        public void obrisiSmer(int ID)
+        public async Task AzurirajSmer(int ID, string naziv)
         {
-            Smer smer = preuzmiSmer(ID);
-            if(smer == null)
+            try
             {
-                throw new Exception("Smer sa datim ID-jem ne postoji!");
+                Smer smer = await PreuzmiSmer(ID);
+                if (smer == null)
+                {
+                    throw new Exception("Smer sa datim ID-jem ne postoji!");
+                }
+                smer.Naziv = naziv;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Update(smer);
+                    await context.SaveChangesAsync();
+                }
             }
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Remove(smer);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
             }
         }
+
+        public async Task ObrisiSmer(int ID)
+        {
+            try
+            {
+                Smer smer = await PreuzmiSmer(ID);
+                if (smer == null)
+                {
+                    throw new Exception("Smer sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Remove(smer);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task<List<Smer>> VratiSveSmerove()
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    List<Smer> smerovi = await context.Smerovi.ToListAsync();
+                    return smerovi;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new List<Smer>();
+            }
+        }
+
     }
 }

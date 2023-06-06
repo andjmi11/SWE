@@ -6,45 +6,131 @@ namespace Elfind.Data.Services
 {
     public class StudentService
     {
-        private IDbContextFactory<ElfindDbContext> dbContextFactory;
+        private IDbContextFactory<ElfindContext> dbContextFactory;
 
-        public StudentService(IDbContextFactory<ElfindDbContext> dbContextFactory)
-        {
-            this.dbContextFactory = dbContextFactory;
-        }
+         public StudentService(IDbContextFactory<ElfindContext> dbContextFactory)
+         {
+             this.dbContextFactory = dbContextFactory;
+         }
 
-        public void dodajStudenta(Student student) 
+        public async Task DodajStudenta(Student student)
         {
-            using(var context = dbContextFactory.CreateDbContext())
+            try
             {
-                context.Studenti.Add(student);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    student.NaSmeru = context.Smerovi.SingleOrDefault(s=>s.ID==student.NaSmeru.ID);
+                    student.RasporedCasova = context.ResporediCasova.SingleOrDefault(s => s.ID == student.RasporedCasova.ID);
+                    context.Studenti.Add(student);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public Student preuzmiStudenta(int ID)
+        public async Task<Student> PreuzmiStudentaPoKorisnickomImenu(string korisnickoIme)
         {
-            using(var context = dbContextFactory.CreateDbContext())
+            try
             {
-                Student student  = context.Studenti.SingleOrDefault(x => x.ID == ID);
-                return student;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Student student = await context.Studenti.FirstOrDefaultAsync(x => x.KorisnickoIme == korisnickoIme);
+                    return student;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
 
-        //public void azurirajStudenta(int ID, )
-
-        public void obrisiStudenta(int ID)
+        public async Task<Student> PreuzmiStudenta(int ID)
         {
-            Student student = preuzmiStudenta(ID);
-            if(student == null)
+            try
             {
-                throw new Exception("Student sa datim ID-jem ne postoji!");
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Student student = await context.Studenti.FirstOrDefaultAsync(x => x.ID == ID);
+                    return student;
+                }
             }
-            using(var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Remove(student);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
+
+        public async Task AzurirajStudenta(int ID, string ime, string prezime, string korisnickoIme)
+        {
+            try
+            {
+                Student student = await PreuzmiStudenta(ID);
+                if (student == null)
+                {
+                    throw new Exception("Student sa datim ID-jem ne postoji!");
+                }
+                student.Ime = ime;
+                student.Prezime = prezime;
+                student.KorisnickoIme = korisnickoIme;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Update(student);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task ObrisiStudenta(int ID)
+        {
+            try
+            {
+                Student student = await PreuzmiStudenta(ID);
+                if (student == null)
+                {
+                    throw new Exception("Student sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Remove(student);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task<List<Student>> VratiSveStudente()
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    List<Student> studenti = await context.Studenti
+                        .Include(s => s.NaSmeru)
+                        .Include(s => s.RasporedCasova)
+                        .ToListAsync();
+                    return studenti;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new List<Student>();
+            }
+        }
+
+
     }
+
 }

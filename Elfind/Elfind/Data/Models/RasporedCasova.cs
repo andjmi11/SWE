@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Elfind.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Elfind.Data.Model
 {
@@ -9,5 +10,6 @@ namespace Elfind.Data.Model
         public List<Cas> SpisakCasova = new List<Cas>();
         public Smer ZaSmer { get; set; }
         public Administrator Administrator { get; set; }
+        public List<OsobljeRaspored> NastavnoOsoblje = new List<OsobljeRaspored>();
     }
 }

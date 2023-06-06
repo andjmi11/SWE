@@ -5,47 +5,88 @@ namespace Elfind.Data.Services
 {
     public class NotifikacijaService
     {
-        private IDbContextFactory<ElfindDbContext> dbContextFactory;
+        private IDbContextFactory<ElfindContext> dbContextFactory;
 
-        public NotifikacijaService(IDbContextFactory<ElfindDbContext> dbContextFactory)
+        public NotifikacijaService(IDbContextFactory<ElfindContext> dbContextFactory)
         {
             this.dbContextFactory = dbContextFactory;
         }
 
-        public void dodajNotifikaciju(Notifikacija notifikacija)
+
+
+        public async Task DodajNotifikacijuAsync(Notifikacija notifikacija)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                context.Notifikacije.Add(notifikacija);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    notifikacija.Posiljalac = context.NastavnoOsoblje.SingleOrDefault(n => n.ID == notifikacija.Posiljalac.ID);
+                    notifikacija.ZaObjavu = context.Objave.SingleOrDefault(n => n.ID == notifikacija.ZaObjavu.ID);
+                    context.Notifikacije.Add(notifikacija);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public Notifikacija preuzmiNotifikaciju(int ID)
+        public async Task<Notifikacija> PreuzmiNotifikacijuAsync(int ID)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                Notifikacija notifikacija = context.Notifikacije.SingleOrDefault(n => n.ID == ID);
-                return notifikacija;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Notifikacija notifikacija = await context.Notifikacije.SingleOrDefaultAsync(n => n.ID == ID);
+                    return notifikacija;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null; 
             }
         }
 
-        /*public void azurirajNotifikaciju(int ID)
+        public async Task ObrisiNotifikacijuAsync(int ID)
         {
-
-        }*/
-
-        public void obrisiNotifikaciju(int ID)
-        {
-            Notifikacija notifikacija = preuzmiNotifikaciju(ID);
-            if(notifikacija == null)
+            try
             {
-                throw new Exception("Notifikacija sa datim ID-jem ne postoji!");
+                Notifikacija notifikacija = await PreuzmiNotifikacijuAsync(ID);
+                if (notifikacija == null)
+                {
+                    throw new Exception("Notifikacija sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Notifikacije.Remove(notifikacija);
+                    await context.SaveChangesAsync();
+                }
             }
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Remove(notifikacija);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task<List<Notifikacija>> VratiSveNotifikacijeAsync()
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    List<Notifikacija> notifikacije = await context.Notifikacije
+                        .Include(n=>n.Posiljalac)
+                        .Include(n=>n.ZaObjavu)
+                        .ToListAsync();
+                    return notifikacije;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null; 
             }
         }
     }

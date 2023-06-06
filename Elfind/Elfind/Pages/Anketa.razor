@@ -1,0 +1,174 @@
+﻿@using Elfind.Data.Model
+@using Elfind.Data.Models
+@using Elfind.Data.Services
+@inject ObjavaService ObjavaService
+@inject OpcijaService OpcijaService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject StudentService StudentService
+@inject NastavnoOsobljeService NastavnoOsobljeService
+@inject ForumService ForumService
+
+
+@if (!showRadioButtons) {
+    <h4>Nova anketa</h4>
+}
+else{
+    <h4>Anketa</h4>
+}
+<div class="anketa">
+    @if (showRadioButtons)
+    {
+        <div class="tekstAnkete">
+            <p>@questionText</p>
+        </div>
+
+        <div class="opcijeAnkete">
+            @foreach (var option in options)
+            {
+                <div>
+                    <input type="radio" id="@option.Text" name="options" value="@option.Text" class="opcijaAnkete" @onchange="HandleRadioButtonChange">
+                    <label for="@option.Text" class="imeOpcije">@option.Text</label><br>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="tekstAnkete">
+            <label for="text-input">Unesite pitanje:</label>
+            <input type="text" id="text-input" @bind="@questionText" />
+            <button @onclick="SetQuestionText">Ok</button>
+        </div>
+
+        <div class="opcijeAnkete">
+            @foreach (var option in options)
+            {
+                <div>
+                    <input type="text" @bind="@option.Text" class="opcijaAnkete" />
+                    <button @onclick="() => RemoveOption(option)">Remove</button>
+                </div>
+            }
+            <div>
+             
+                <button @onclick="AddOption">Add new option</button>
+            </div>
+        </div>
+
+        <div>
+            <button @onclick="ConvertToRadioButtons">Done</button>
+        </div>
+    }
+</div>
+
+@code {
+    private int sID;
+    private int nID;
+    private int anketaID;
+    private string questionText;
+    private string selectedOption;
+    private List<OptionModel> options = new List<OptionModel>();
+    private bool showRadioButtons = false;
+
+    private void AddOption()
+    {
+        options.Add(new OptionModel());
+
+    } 
+
+
+
+    private void RemoveOption(OptionModel option)
+    {
+        options.Remove(option);
+    }
+
+    private void ConvertToRadioButtons()
+    {
+        //Data.Model.Objava anketa = ObjavaService.PreuzmiObjavu(anketaID);
+
+        foreach(var op in options)
+        {
+
+            var novaOpcija = new Data.Models.Opcija
+            {
+                Tekst = op.Text,
+                BrojGlasova = 0,
+                //Anketa = anketa
+            };
+
+            OpcijaService.DodajOpciju(novaOpcija);
+        }
+
+        showRadioButtons = true;
+    }
+
+    private async Task SetQuestionText()
+    {
+        //Task<NastavnoOsoblje> nastavnoOsoblje = NastavnoOsobljeService.PreuzmiNastavnoOsobljeAsync(nID);
+        //Task<Data.Model.Forum> forum = ForumService.PreuzmiForumAsync(1);
+
+        Elfind.Data.Model.NastavnoOsoblje nastavnoOsoblje = await NastavnoOsobljeService.PreuzmiNastavnoOsobljeAsync(nID);
+        Data.Model.Forum forum = await ForumService.PreuzmiForumAsync(1);
+        //ovde treba da ubacimo u bazu u tekst
+        var novaAnketa = new Data.Model.Objava()
+            {
+                TipObjave = Data.Model.TipObjave.Anketa,
+                Tekst = questionText,
+                OdNastavnogOsoblja = nastavnoOsoblje,
+                Forum = forum
+            };
+
+        // nastavnoOsoblje.Objave.Add(novaAnketa);
+        // forum.Objave.Add(novaAnketa);
+        //anketaID = ObjavaService.DodajObjavu(novaAnketa);
+
+
+        showRadioButtons = false;
+    }
+
+    public class OptionModel
+    {
+        public string Text { get; set; }
+    }
+
+    private void HandleRadioButtonChange(ChangeEventArgs e)
+    {
+        selectedOption = e.Value.ToString();
+        Console.WriteLine("Selected Option: " + selectedOption);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        var userName = user.Identity.Name;
+
+        if(userName.EndsWith("elfak.rs"))
+        {
+            var studenti =  await StudentService.VratiSveStudente();
+            foreach(var s in studenti)
+            {
+                if (s.KorisnickoIme == userName)
+                {
+                    sID = s.ID;
+                    break;
+                }
+            }
+        }
+
+        else
+        {
+            var nastavnici = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
+            foreach (var s in nastavnici)
+            {
+                if (s.KorisnickoIme == userName)
+                {
+                    nID = s.ID;
+                    break;
+                }
+            }
+        }
+    }
+}

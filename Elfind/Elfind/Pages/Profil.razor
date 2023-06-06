@@ -1,0 +1,110 @@
+﻿@page "/profil"
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@using Elfind.Data.Model
+@using Elfind.Data.Services
+@inject StudentService StudentService 
+@inject NastavnoOsobljeService NastavnoOsobljeService
+@inject SmerService SmerService
+@inject RasporedCasovaService RasporedCasovaService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<h3>Profil</h3>
+
+<div class="profile-container">
+   
+
+    @if (stud != null)
+    {
+        <h4>Student</h4>
+        <p>Ime: @stud.Ime</p>
+        <p>Prezime: @stud.Prezime</p>
+        <p>Korisničko ime: @stud.KorisnickoIme</p>
+        <p>Indeks: @stud.Indeks</p>
+        <p>Smer: @stud.NaSmeru.Naziv.ToString()</p>
+        <p>Tip studija: @stud.TipStudija</p>
+        <p>Godina: @stud.Godina</p>
+        <p>Raspored časova: ovde cemo da postavimo raspored nemam pojma kako</p>
+    }
+    else if (nast != null)
+    {
+        <h4>Nastavno osoblje</h4>
+        <p>Ime: @nast.Ime</p>
+        <p>Prezime: @nast.Prezime</p>
+        <p>Korisničko ime: @nast.KorisnickoIme</p>
+        <p>Tip: @nast.Tip</p>
+        <p>Kancelarija: @nast.Kancelarija.Oznaka</p>
+      
+    }
+</div>
+
+@code {
+    //treba da se vrate podaci na stranicu samo
+
+    private string userName;
+    private string userEmail;
+    private Student stud = null;
+    private NastavnoOsoblje nast = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        userName = user.Identity.Name; // Dohvati korisničko ime
+        userEmail = user.FindFirstValue(ClaimTypes.Email); // Dohvati e-mail adresu
+
+        if(userName.EndsWith("elfak.rs"))
+        {
+            var studenti = await StudentService.VratiSveStudente();
+
+            foreach(var student in studenti)
+            {
+                if (student.KorisnickoIme == userName)
+                {
+                    var smer =  await SmerService.PreuzmiSmer(student.NaSmeru.ID);
+                    var raspored = await RasporedCasovaService.PreuzmiRasporedCasova(student.RasporedCasova.ID);
+                    stud = new Student
+                        {
+                            ID = student.ID,
+                            Ime = student.Ime,
+                            Prezime = student.Prezime,
+                            KorisnickoIme = student.KorisnickoIme,
+                            Indeks = student.Indeks,
+                            NaSmeru = smer,
+                            TipStudija = student.TipStudija,
+                            Godina = student.Godina,
+                            RasporedCasova = raspored
+                        };
+
+                    break;
+                }
+            }
+        }
+        else
+        {
+            var nastavnoOsoblje = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
+            foreach(var n in nastavnoOsoblje)
+            {
+                if (n.KorisnickoIme == userName)
+                {
+                    nast = new NastavnoOsoblje()
+                        {
+                            ID = n.ID,
+                            Ime = n.Ime,
+                            Prezime = n.Prezime,
+                            KorisnickoIme = n.KorisnickoIme,
+                            Tip = n.Tip,
+                            Kancelarija = n.Kancelarija,
+                            Objave = n.Objave,
+                            Notifikacije = n.Notifikacije
+                        };
+                        break;
+                }
+            }
+        }
+
+    }
+}
+

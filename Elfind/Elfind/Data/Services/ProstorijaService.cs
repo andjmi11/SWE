@@ -1,4 +1,6 @@
 ﻿using Elfind.Data.Model;
+using Elfind.Data.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace Elfind.Data.Services
@@ -6,57 +8,134 @@ namespace Elfind.Data.Services
     public class ProstorijaService
     {
 
-        private IDbContextFactory<ElfindDbContext> dbContextFactory;
+        private IDbContextFactory<ElfindContext> dbContextFactory;
 
-        public ProstorijaService(IDbContextFactory<ElfindDbContext> dbContextFactory)
+        public ProstorijaService(IDbContextFactory<ElfindContext> dbContextFactory)
         {
             this.dbContextFactory = dbContextFactory;
         }
 
-        public void dodajProstoriju(Prostorija prostorija)
+        public void DodajProstoriju(Prostorija prostorija)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                context.Prostorije.Add(prostorija);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    prostorija.Sprat = context.Spratovi.SingleOrDefault(p=>p.ID==prostorija.Sprat.ID);
+                    prostorija.PripadaZgradi = context.Zgrade.SingleOrDefault(p => p.ID == prostorija.PripadaZgradi.ID);
+                  
+                    context.Prostorije.Add(prostorija);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public Prostorija preuzmiProstoriju(int ID)
+        public Prostorija PreuzmiProstoriju(int ID)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                Prostorija prostorija = context.Prostorije.SingleOrDefault(p => p.ID == ID);
-                return prostorija;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Prostorija prostorija = context.Prostorije.SingleOrDefault(p => p.ID == ID);
+                    return prostorija;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null; 
             }
         }
 
-        public void azurirajProstoriju(int ID, string oznaka)
+        public Prostorija PreuzmiProstorijuPoOznaci(string oznaka)
         {
-            Prostorija prostorija = preuzmiProstoriju(ID);
-            if (prostorija == null)
+            try
             {
-                throw new Exception("Prostorija sa datim ID-jem ne postoji!");
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Prostorija prostorija = context.Prostorije.SingleOrDefault(p => p.Oznaka == oznaka);
+                    return prostorija;
+                }
             }
-            prostorija.Oznaka = oznaka;
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Update(prostorija);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
 
-        public void obrisiProstoriju(int ID)
+        public void AzurirajProstoriju(int ID, string oznaka, Sprat sprat, float downRightX, float downRightY, float leftUpX, float leftUpY, int kapacitet, TipP tipProstorije, Zgrada pripadaZgradi)
         {
-            Prostorija prostorija = preuzmiProstoriju(ID);
-            if (prostorija == null)
+            try
             {
-                throw new Exception("Prostorija sa datim ID-jem ne postoji!");
+                Prostorija prostorija = PreuzmiProstoriju(ID);
+                if (prostorija == null)
+                {
+                    throw new Exception("Prostorija sa datim ID-jem ne postoji!");
+                }
+                prostorija.Oznaka = oznaka;
+                prostorija.Sprat = sprat;
+                prostorija.TipProstorije = tipProstorije;
+                prostorija.PripadaZgradi = pripadaZgradi;
+                prostorija.DownRightX = downRightX;
+                prostorija.DownRightY = downRightY;
+                prostorija.LeftUpX = leftUpX;
+                prostorija.LeftUpY = leftUpY;
+                prostorija.Kapacitet = kapacitet;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Update(prostorija);
+                    context.SaveChanges();
+                }
             }
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Remove(prostorija);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public void ObrisiProstoriju(int ID)
+        {
+            try
+            {
+                Prostorija prostorija = PreuzmiProstoriju(ID);
+                if (prostorija == null)
+                {
+                    throw new Exception("Prostorija sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Remove(prostorija);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task<List<Prostorija>> VratiSveProstorije()
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    List<Prostorija> prostorije = await context.Prostorije
+                        .Include(s => s.Sprat)
+                        .Include(s => s.PripadaZgradi)
+                        .ToListAsync();
+                    return prostorije;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new List<Prostorija>();
             }
         }
     }

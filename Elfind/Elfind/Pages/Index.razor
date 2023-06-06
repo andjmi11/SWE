@@ -1,16 +1,90 @@
-﻿@page "/"
-@using Elfind.Data.Model;
-@using Elfind.Data.Services;
-@inject ProstorijaService prostorijaService;
-@inject ZgradaService zgradaService;
+﻿@*@page "/"*@
+@using Elfind.Data.Services
+@using Elfind.Data.Model
+@inject StudentService studentService
+@inject KursService kursService
+@inject CasService casService
+@inject ProstorijaService prostorijaService
+@inject ZgradaService zgradaService
+@inject IJSRuntime js
 
 
 <PageTitle>Index</PageTitle>
-<Kalendar />
-<button type="button" onclick="location.href = '/Glavna'">Go to New Page</button>
 
 
-<EditForm Model="@prostorija" OnValidSubmit="ProstorijaSubmit">
+@*<AuthorizeView>
+    <Authorized>
+        <h1>Hello, @context.User.Identity.Name!</h1>
+    </Authorized>
+    <NotAuthorized>
+        <h1>Hello, Guest!</h1>
+    </NotAuthorized>
+</AuthorizeView>
+
+Welcome to your new app.
+
+
+<AuthorizeView>
+    <Authorized>
+        <br /><br />
+        <button class="btn btn-outline-primary" @onclick="DisplayGreetingAlert">Display Greeting Alert</button>
+    </Authorized>
+</AuthorizeView>
+*@
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationState { get; set; }
+
+    private async Task DisplayGreetingAlert()
+    {
+        var authState = await authenticationState;
+        var message = $"Hello {authState.User.Identity.Name}";
+        await js.InvokeVoidAsync("alert", message);
+    }
+}
+
+@*ako nekom nesto treba nek otkomentarise s tim sto nista nece da se vidi jer sam stavila da je putanja do mape isto /,
+tako da obrisite drugi @page iz Mapa.razor ako smeta i ubacite to u index*@
+
+
+@*<EditForm Model="@student" OnValidSubmit="StudentSubmit">
+    <div>Student</div>
+    <label for="ImeInput">Ime</label>
+    <InputText id="ImeUnput" @bind-Value="@student.Ime"> </InputText>
+    <br/>
+
+    <label for="PrezimeInput">Prezime</label>
+    <InputText id="PrezimeInpit" @bind-Value="@student.Prezime"> </InputText>
+    <br />
+
+     <label for="RoleInput">Role</label>
+    <InputText id="RoleInput" @bind-Value="@student.Role"> </InputText>
+    <br />
+
+    <label for="KorisnickoImeInput">Korisnicko ime</label>
+    <InputText id="KorisnickoImeInput" @bind-Value="@student.KorisnickoIme"> </InputText>
+    <br />
+
+    <label for="PassInput">Lozinka</label>
+    <InputText id="PassInput" @bind-Value="@student.HashLozinka"> </InputText>
+    <br />
+
+    <button type="submit" class="btn-primary">Create</button>
+    <br />
+</EditForm>*@
+
+   @* @code{
+        Student student = new Student();
+
+    public void StudentSubmit(EditContext editContext)
+    {
+        Student noviStudent = (Student)editContext.Model;
+
+        studentService.dodajStudenta(noviStudent);
+    }
+}*@
+
+@*<EditForm Model="@prostorija" OnValidSubmit="ProstorijaSubmit">
     <div>Prostorija</div>
     <label for="OznakaInput">Oznaka</label>
     <InputText id="OznakaInput" @bind-Value="@prostorija.Oznaka"> </InputText>
@@ -20,7 +94,9 @@
     <InputText id="SpratInput" @bind-Value="@prostorija.Sprat"> </InputText>
     <br />
 
+
     @*razmisliti kako unosimo coord*@
+    @*
     <label for="DownRightXInput">DownRightX</label>
     <InputNumber id="DownRightXInput" @bind-Value="@prostorija.DownRightX"> </InputNumber>
     <br />
@@ -45,18 +121,18 @@
     <InputSelect id="TipProstorijeInput" @bind-Value="@prostorija.TipProstorije"> 
         @foreach(var tip in Enum.GetValues(typeof(TipP)))
         {
-            <option value="@tip">@prostorija.TipProstorije</option>
+            <option value="@tip">@tip</option>
         }
     </InputSelect>
     <br />
 
     @*sta se desava sa atributima koji su objekti videcemo*@
     
-    <button type="submit" class="btn-primary">Create</button>
+   @* <button type="submit" class="btn-primary">Create</button>
     <br />
-</EditForm>
+</EditForm>*@
 
-@code{
+@*@code{
     Prostorija prostorija = new Prostorija();
 
     public void ProstorijaSubmit(EditContext editContext)
@@ -65,15 +141,16 @@
 
         prostorijaService.dodajProstoriju(novaProstorija);
     }
-}
+}*@
 
-<EditForm Model="@zgrada" OnValidSubmit="ZgradaSubmit">
+
+@*<EditForm Model="@zgrada" OnValidSubmit="ZgradaSubmit">
     <div>Zgrada</div>
     <label for="TipInput">Tip</label>
     <InputSelect id="TipInput" @bind-Value="@zgrada.Tip">
         @foreach (var tip in Enum.GetValues(typeof(TipZgrade)))
         {
-            <option value="@tip">@zgrada.Tip</option>
+            <option value="@tip">@tip</option>
         }
     </InputSelect>
     <br />
@@ -81,9 +158,9 @@
     <button type="submit" class="btn-primary">Create</button>
     <br />
 
-</EditForm>
+</EditForm>*@
 
-@code {
+@*@code {
     Zgrada zgrada = new Zgrada();
 
     public void ZgradaSubmit(EditContext editContext)
@@ -92,4 +169,43 @@
 
         zgradaService.dodajZgradu(novaZgrada);
     }
+}*@
+@*<EditForm Model="@cas" OnValidSubmit="CasSubmit">
+    <div>Cas</div>
+
+    <label for="NazivInput">Naziv</label>
+    <InputText id="NazivInput" @bind-value="@cas.Naziv"></InputText>
+    <br />
+
+
+</EditForm>
+
+@code {
+    Cas cas = new Cas();
+
+    public void CasSubmit(EditContext editContext)
+    {
+        Cas noviCas = (Cas)editContext.Model;
+
+        casService.dodajCas(noviCas);
+    }
 }
+
+<EditForm Model="@kurs" OnValidSubmit="KursSubmit">
+
+
+</EditForm>
+
+@code{
+    Kurs kurs = new Kurs();
+
+    public void KursSubmit(EditContext editContext)
+    {
+        Kurs noviKurs = (Kurs)editContext.Model;
+
+        kursService.dodajKurs(noviKurs);
+    }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+}*@

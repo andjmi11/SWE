@@ -1,27 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\krist\\SWE1\\SWE\\Elfind\\Elfind\\Elfind.csproj": {}
+    "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\Elfind.csproj": {}
   },
   "projects": {
-    "C:\\Users\\krist\\SWE1\\SWE\\Elfind\\Elfind\\Elfind.csproj": {
+    "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\Elfind.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krist\\SWE1\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+        "projectUniqueName": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\Elfind.csproj",
         "projectName": "Elfind",
-        "projectPath": "C:\\Users\\krist\\SWE1\\SWE\\Elfind\\Elfind\\Elfind.csproj",
-        "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krist\\SWE1\\SWE\\Elfind\\Elfind\\obj\\",
+        "projectPath": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\Elfind.csproj",
+        "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\krist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +39,30 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Blazor.Bootstrap": {
+              "target": "Package",
+              "version": "[1.8.0, )"
+            },
+            "BlazorStrap": {
+              "target": "Package",
+              "version": "[5.1.101, )"
+            },
+            "Blazored.SessionStorage": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.AppCenter.Analytics": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.5, )"
@@ -63,6 +86,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.6, )"
             }
           },
           "imports": [
@@ -84,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

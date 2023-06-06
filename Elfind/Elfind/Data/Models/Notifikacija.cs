@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Elfind.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Elfind.Data.Model
 {
@@ -9,6 +10,9 @@ namespace Elfind.Data.Model
         public string Poruka { get; set; }
 
         public NastavnoOsoblje Posiljalac { get; set; }
+
+        public Objava ZaObjavu { get; set; }
+        public List<NotifikacijaStudent> Studenti { get; set; }
     
     }
 }
