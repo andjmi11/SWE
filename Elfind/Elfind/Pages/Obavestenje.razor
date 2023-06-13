@@ -1,5 +1,16 @@
+<<<<<<< HEAD
 ﻿<h3>Obavestenje</h3>
 
+=======
+﻿@if (notClicked)
+{
+    <h4>Novo obavestenje</h4>
+}
+else
+{
+    <h4>Obavestenje</h4> 
+}
+>>>>>>> cd61e18c61a4bebe0a5f4a7f0fbabb9457c7484f
 <div class="obavestenje">
     @if (!showQuestionText)
     {
@@ -17,17 +28,32 @@
     }
 
     <div>
+<<<<<<< HEAD
         <button @onclick="ShowQuestionText">Done</button>
+=======
+        @if (notClicked)
+        {
+            <button @onclick="ShowQuestionText">Done</button>
+        }
+>>>>>>> cd61e18c61a4bebe0a5f4a7f0fbabb9457c7484f
     </div>
 </div>
 
 @code {
     private string text;
     private bool showQuestionText = false;
+<<<<<<< HEAD
+=======
+    private bool notClicked = true;
+>>>>>>> cd61e18c61a4bebe0a5f4a7f0fbabb9457c7484f
 
     private void ShowQuestionText()
     {
         showQuestionText = true;
+<<<<<<< HEAD
+=======
+        notClicked = false;
+>>>>>>> cd61e18c61a4bebe0a5f4a7f0fbabb9457c7484f
     }
 
     private void SetText()

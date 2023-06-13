@@ -1,15 +1,7 @@
-@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-h1:focus {
-    outline: none;
-}
-
-a, .btn-link {
-    color: #0071c1;
+/*ANDJELIJA JA SAM STAVILA DA BI SE VIDELO, AKO TREBA MENJAJ KAKO HOCES*/
+.row{
+    width:800px; /*fiksna sirina forme za login*/
 }
 
 /*beskorisno al sta sad*/
@@ -17,23 +9,41 @@ label, InputText, InputNumber{
     padding:2px;
 }
 
-/*jos jedna proba*/
+/*ovo na dole je ok*/
 
-th, td{
-    border:1px solid black;
-    border-collapse:collapse;
-    padding:1px;
-    width:35px;
-    text-align:center;
+.glavni{
+    display:flex;
+    justify-content:space-evenly;
+    flex-direction:column;
 }
-button{
-    margin:3px;
+
+.zajednicki{
+    flex-wrap:wrap; /*glupo ali neka ga za sad da je responsive bar tako*/
+}
+
+th, td {
+    border:1px solid black !important;
+    border-collapse:collapse !important;
+    padding:1px !important;
+    width:35px !important;
+    text-align:center !important;
 }
 
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
+}
+
+.pin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button{
+    margin:2px;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -84,3 +94,91 @@ button{
     .blazor-error-boundary::after {
         content: "An error has occurred."
     }
+
+/*odavde proba*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background-color: #f8f9fa;
+    border: none;
+    color: #212529;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 0;
+    min-width: 10rem;
+    z-index: 1;
+    display: none;
+}
+
+    .dropdown-menu.show {
+        display: block;
+    }
+
+.dropdown-item {
+    display: block;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: thin groove gray;
+}
+
+.gornji{
+    display:flex;
+}
+
+.mapaIOstalo{
+    display:flex;
+}
+
+.dropdown-submenu {
+    background-color: lightgray;
+}
+
+.anketa, obavestenje{
+    border: 1 px solid black;
+}
+
+.prikazivanje{
+    margin: 5px;
+}
+
+.prikazivanjeForum{
+    display:flex;
+}
+
+a{
+    padding:5px;
+}
+
+.objavaGore, .biranjeAnkete{
+    display:flex;
+}
+
+.izaberiAnketu{
+    margin:5px;
+}
+
+.dugmiciForum{
+    margin:5px;
+}
+
+.jednaObjava{
+    padding: 5px;
+    margin: 5px;
+    border:1px solid pink;
+}

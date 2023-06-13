@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Elfind.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Elfind.Data.Model
 {
@@ -13,25 +14,23 @@ namespace Elfind.Data.Model
     {
         [Key]
         public int ID { get; set; }
-        [MaxLength(4)]
+        [MaxLength(5)]
         public string Oznaka { get; set; }
-
-        public string Sprat { get; set; }
-        [Required]
-        public float DownRightX { get; set; }
-        [Required]
-        public float DownRightY { get; set; }
+        public Sprat Sprat { get; set; }
+        public Zgrada PripadaZgradi { get; set; }
+        public TipP TipProstorije { get; set; }
+        public int Kapacitet { get; set; }
         [Required]
         public float LeftUpX { get; set; }
         [Required]
         public float LeftUpY { get; set; }
-        public int Kapacitet { get; set; }
-        public TipP TipProstorije { get; set; }
-        public Zgrada PripadaZgradi { get; set; }
-      
-        public List<NastavnoOsoblje> NastavnoOsobljeZaRezervaciju = new List<NastavnoOsoblje>();
+        [Required]
+        public float DownRightX { get; set; }
+        [Required]
+        public float DownRightY { get; set; }        
 
+        public List<NastavnoOsoblje> NastavnoOsobljeUKancelariji = new List<NastavnoOsoblje>();
 
-
+        public List<OsobljeProstorijaR> NastavnoOsobljeR = new List<OsobljeProstorijaR>();
     }
 }

@@ -1,32 +1,52 @@
+
 using Elfind.Data;
 using Elfind.Data.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using BlazorBootstrap;
+using Microsoft.AspNetCore.Identity;
+using Elfind.Areas.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Default")
     ?? throw new NullReferenceException("No connection string in config!");
 
 // Add services to the container.
+builder.Services.AddAuthenticationCore();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddScoped<ProtectedSessionStorage>();
+//builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+builder.Services.AddScoped<TokenProvider>();
 
-builder.Services.AddTransient<ProstorijaService>();
-builder.Services.AddTransient<ZgradaService>();
-builder.Services.AddTransient<StudentService>();
 builder.Services.AddTransient<AdministratorService>();
 builder.Services.AddTransient<CasService>();
 builder.Services.AddTransient<ForumService>();
+builder.Services.AddTransient<KursService>();
 builder.Services.AddTransient<NastavnoOsobljeService>();
 builder.Services.AddTransient<NotifikacijaService>();
 builder.Services.AddTransient<ObjavaService>();
-builder.Services.AddTransient<KursService>();
+builder.Services.AddTransient<OpcijaService>();
+builder.Services.AddTransient<ProstorijaService>();
+builder.Services.AddTransient<RasporedCasovaService>();
+builder.Services.AddTransient<SmerService>();
+builder.Services.AddTransient<SpratService>();
+builder.Services.AddSingleton<StudentService>();
+builder.Services.AddTransient<ZgradaService>();
 
-builder.Services.AddDbContextFactory<ElfindDbContext>((DbContextOptionsBuilder options) =>
+
+builder.Services.AddBlazorBootstrap();
+
+builder.Services.AddDbContextFactory<ElfindContext>((DbContextOptionsBuilder options) =>
 options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<ElfindContext>();
 
 var app = builder.Build();
 
@@ -43,6 +63,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");

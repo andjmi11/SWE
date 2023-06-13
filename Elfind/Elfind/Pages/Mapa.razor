@@ -1,0 +1,339 @@
+﻿@page "/mapa"
+@page "/"
+@using Elfind.Data.Services
+@using Elfind.Data.Model
+@using Elfind.Data.Models
+@inject ProstorijaService prostorijaService
+
+<div class="glavni">
+
+    <div class="gornji  justify-content-center">
+        @*d-flex*@
+        <form @onsubmit="Search" class="pretraga">
+            <input type="text" style="border: 2px solid #fc9fad" @bind="searchQuery" placeholder="Search..." />
+            <button type="submit" style="background-color: #ffb6c1; color: #000000; border: 2px solid #fc9fad;">Search</button>
+        </form>
+    </div>
+
+    @*<style>
+    html,
+    body {
+    height: 100%;
+
+    }
+
+    .container {
+    height: 100%;
+    overflow-x: scroll;
+    }
+    </style>*@
+
+
+    <div class="container-fluid">
+        @*<div class="mapaIOstalo">*@
+
+        @*<div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" @onclick="ToggleDropdown">
+        Izabrati zgradu
+        </button>
+
+        <div class="dropdown-menu @(showDropdown ? "show" : "")">
+        <a class="dropdown-item" href="#" @onclick="ToggleSubmenu">Glavna zgrada</a>
+        @if (showSubmenu)
+        {
+        <div class="dropdown-submenu">*@
+        @*ovo ce biti naravno preuzeto iz baze*@
+        @*<a class="dropdown-item" href="#" @onclick='() => ChangePicture("Prizemlje")'>Prizemlje</a>
+        <a class="dropdown-item" href="#" @onclick='() => ChangePicture("1LK")'>LK1</a>
+        <a class="dropdown-item" href="#" @onclick='() => ChangePicture("2LK")'>LK2</a>
+        <a class="dropdown-item" href="#" @onclick='() => ChangePicture("M1")'>M1</a>
+        <a class="dropdown-item" href="#" @onclick='() => ChangePicture("M2")'>M2</a>
+        <a class="dropdown-item" href="#" @onclick='() => ChangePicture("Prvi sprat")'>Prvi sprat</a>
+        </div>
+        }
+
+        <a class="dropdown-item" href="#" @onclick='() => ChangePicture("Stare laboratorije")'>Stara zgrada</a>
+        </div>
+        </div>*@
+
+        @*sklonila sam ga inace sa sajta jer realno koji ce nam, treba samo da se prikaze na mapi, ako se prikaze ikad ne mogu*@
+        @*<div class="pin">
+        <img id="my-img "src="pin.png" alt="Pin" />
+        </div>*@
+
+        <div class="row justify-content-center">
+            @*align-items-center*@
+            <div class="slikeMape">
+                @*style="overflow: auto;"*@
+                @*<img src="@currentPicture" alt="Picture" class="img-responsive" @onclick="HandlePictureClick" />*@
+
+                <img src="@currentPicture" alt="Picture" class="img-fluid" @onclick="HandlePictureClick" style="position: relative;  border: 5px solid #ffb6c1; margin: 20px;" /> @*left: 100px; display: flex; justify-content: center; align-items: center;*@
+
+                @if (!string.IsNullOrEmpty(searchQuery))
+                {
+                    <div class="pin" style="position: absolute; left: @pinLeft%; top: @pinTop%; z-index: 1">
+                        <img src="pin.png" alt="Pin" />
+                    </div>
+                }
+            </div>
+        </div> <!-- Kraj prvog reda -->
+
+
+
+        <div class="liste">
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div class="amfiteatri">
+                        <label>Amfiteatri</label>
+                        <ul>
+                            @if (option1)
+                            {
+                                <li>A1</li>
+                                <li>A3</li>
+                                <li>A4</li>
+                            }
+                        </ul>
+                    </div>
+                </div> <!-- Kraj kolone za "amfiteatri" -->
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="laboratorije">
+                        <label>Laboratorije</label>
+                    </div>
+                </div> <!-- Kraj kolone za "laboratorije" -->
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="kancelarije">
+                        <label>Kancelarije</label>
+                    </div>
+                </div> <!-- Kraj kolone za "kancelarije" -->
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="ucionice">
+                        <label>Učionice</label>
+                    </div>
+                </div> <!-- Kraj kolone za "ucionice" -->
+            </div>
+        </div> <!-- Kraj drugog reda -->
+    </div>
+
+
+    <Modal @ref="modal" Title="Modal title">
+        <BodyTemplate>
+            @poruka
+        </BodyTemplate>
+        <FooterTemplate>
+            <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+            <Button Color="ButtonColor.Primary">Save changes</Button>
+        </FooterTemplate>
+    </Modal>
+
+    @*<Button Color="ButtonColor.Primary" @onclick="OnShowModalClick">Show Modal</Button>*@
+
+
+</div>
+
+@code {
+    private bool showDropdown;
+    private bool showSubmenu;
+
+    private string currentPicture = "/resized/Prizemlje.jpg";
+    private bool option1 = true;
+    private bool option2;
+
+    private string poruka;
+    //private bool roomInfo; //za sad ipak ne
+
+    private string searchQuery;
+
+    private double pinLeft = 0;
+    private double pinTop = 0;
+
+    private void Search()
+    {
+        var prostorija = prostorijaService.PreuzmiProstorijuPoOznaci(searchQuery);
+
+        if(prostorija != null)
+        {
+            currentPicture = GetPictureForSprat(prostorija.Sprat);
+
+            var imgW = 320;
+            var imgH = 320;
+
+            var mapWidth = 800;
+            var mapHeight = 520;
+
+            //dakle ne radi ne znam, ali ostali deo je okej sve nadje kako treba
+            pinLeft = ((prostorija.LeftUpX + prostorija.DownRightX) / 2) * (100.0 / imgW);
+            pinTop = ((prostorija.LeftUpY + prostorija.DownRightY) / 2) * (100.0 / imgH);
+            //kada se izracunaju ove dve NEKAD NEKAKO onda se iste koriste za mouseclick za prikaz info o odredjenoj prostoriji
+
+
+        }
+        else
+        {
+            //nije pronadjena slika
+        }
+    }
+
+    private string GetPictureForSprat(Sprat sprat)
+    {
+        //zbog ovoga i slicnih stvari je mozda bolje da sprat postoji kao klasa, gomilamo kod 
+        //ali moze i ovako da ostane samo za sve slike da se ispite ovo je bila proba
+        if (sprat.Naziv == "0")//prizemlje
+            return "/resized/Prizemlje.jpg";
+        else if (sprat.Naziv == "1") //prvi
+            return "/resized/Prvi sprat.jpg";
+        return "/resized/Prizemlje.jpg"; 
+    }
+
+    private void ToggleDropdown()
+    {
+        showDropdown = !showDropdown;
+    }
+
+    private void ChangePicture(string path)
+    {
+        string picB = currentPicture;
+        currentPicture = $"/resized/{path}.jpg";
+        showLists(picB);
+    }
+
+
+    private void showLists(string pictureBefore)
+    {
+        if (String.Compare(@currentPicture, pictureBefore) == 0)
+        {
+            return;
+        }
+        if (String.Compare(@currentPicture, $"/resized/Prizemlje.jpg") == 0)
+        { 
+            option1 = !option1;
+            option2 = false;
+        }
+        else
+        {
+            if (String.Compare(@currentPicture, $"/resized/Prvi sprat.jpg") == 0)
+            {
+                option1 = false;
+                option2 = !option2;
+            }
+            else
+            {
+                option1 = false;
+                option2 = false;
+            }
+        }
+    }
+
+    private void ToggleSubmenu()
+    {
+        showSubmenu = !showSubmenu;
+    }
+
+    private async Task HandlePictureClick(MouseEventArgs e)
+    {
+        double clickX = e.ClientX;
+        double clickY = e.ClientY;
+
+        ProcessPictureClick(clickX, clickY);
+    }
+
+    private async Task<Prostorija> findClickProstorija(double x, double y)
+    {
+        var prostorije = await prostorijaService.VratiSveProstorije();
+
+        foreach (var prostorija in prostorije)
+        {
+            if (x >= prostorija.LeftUpX && x <= prostorija.DownRightX && y >= prostorija.LeftUpY && y <= prostorija.DownRightY)
+            {
+                return prostorija;
+            }
+        }
+
+        return null; 
+    }
+    private async Task ProcessPictureClick(double x, double y)
+    {
+        //vrsi se provera koja je slika, a u ondosu na to posebna funkcija koja proverava koordinate p da bi postavila parametre, nakon cega se poziva ShowModal
+        switch (currentPicture)
+        {
+            case "/resized/Prizemlje.jpg":
+                Prostorija clickProstorija = await findClickProstorija(x, y);
+                if(clickProstorija != null)
+                {
+                    poruka = "Podaci o prostoriji";
+                    ShowModal();
+                }
+                
+                break;
+
+            case "/resized/1LK.jpg":
+                poruka = "ne znam gdy smo";
+                ShowModal();
+                break;
+
+            case "/resized/2LK.jpg":
+
+                break;
+
+            case "/resized/M1.jpg":
+
+                break;
+
+            case "/resized/M2.jpg":
+
+                break;
+
+            case "/resized/Prvi sprat.jpg":
+
+                if(x> 200 && x<300 && y> 500 && y < 600)
+                {
+                    Console.WriteLine("nesto random");
+                }
+
+                break;
+
+            case "/resized/Drugi sprat.jpg":
+
+                break;
+
+            case "/resized/Treci sprat.jpg":
+
+                break;
+
+            case "/resized/Cetvrti sprat.jpg":
+
+                break;
+
+            case "/resized/Peti sprat.jpg":
+
+                break;
+
+            default:
+
+                break;
+        }
+    }
+
+    //private void ShowRoomInfo() //param zavise
+    //{
+    //    roomInfo = !roomInfo; //da se prikaze prozor, a to kakav je -> RenderFragment
+    //}
+
+    //private void CloseInfo()
+    //{
+    //    roomInfo = false;
+    //    //StateHasChanged();
+    //}
+
+    private Modal modal;
+    private async Task ShowModal()
+    {
+        await modal?.ShowAsync();
+    }
+    private async Task OnHideModalClick()
+    {
+        await modal?.HideAsync();
+    }
+}

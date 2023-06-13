@@ -6,49 +6,129 @@ namespace Elfind.Data.Services
 {
     public class NastavnoOsobljeService
     {
-        private IDbContextFactory<ElfindDbContext> dbContextFactory;
+        private IDbContextFactory<ElfindContext> dbContextFactory;
 
-        public NastavnoOsobljeService(IDbContextFactory<ElfindDbContext> dbContextFactory)
+        public NastavnoOsobljeService(IDbContextFactory<ElfindContext> dbContextFactory)
         {
             this.dbContextFactory = dbContextFactory;
         }
 
-        public void dodajNastavnoOsoblje(NastavnoOsoblje nastavnoOsoblje)
+        public async Task DodajNastavnoOsobljeAsync(NastavnoOsoblje nastavnoOsoblje)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                context.NastavnoOsoblje.Add(nastavnoOsoblje);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    nastavnoOsoblje.Kancelarija = context.Prostorije.SingleOrDefault(n => n.ID == nastavnoOsoblje.Kancelarija.ID);
+                    context.NastavnoOsoblje.Add(nastavnoOsoblje);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public NastavnoOsoblje preuzmiNastavnoOsoblje(int ID)
+        public async Task<NastavnoOsoblje> PreuzmiNastavnoOsobljeAsync(int ID)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                NastavnoOsoblje nastavnoOsoblje = context.NastavnoOsoblje.SingleOrDefault(n => n.ID == ID);
-                return nastavnoOsoblje;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    NastavnoOsoblje nastavnoOsoblje = await context.NastavnoOsoblje.SingleOrDefaultAsync(n => n.ID == ID);
+                    return nastavnoOsoblje;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null; 
             }
         }
 
-        //public void azurirajNastavnoOsoblje(int ID)
-        //{
-
-        //}
-
-        public void obrisiNastavnoOsoblje(int ID)
+        public async Task<NastavnoOsoblje> PreuzmiNastavnoOsobljePoKorisnickomImenuAsync(string korisnickoIme)
         {
-            NastavnoOsoblje nastavnoOsoblje = preuzmiNastavnoOsoblje(ID);
-            if(nastavnoOsoblje == null)
+            try
             {
-                throw new Exception("Nastavno osoblje sa datim ID-jem ne postoji!");
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    NastavnoOsoblje n = await context.NastavnoOsoblje.FirstAsync(x => x.KorisnickoIme == korisnickoIme);
+                    NastavnoOsoblje nasOsoblje = await context.NastavnoOsoblje.SingleOrDefaultAsync(x => x.KorisnickoIme == korisnickoIme);
+                    return n;
+                }
             }
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.NastavnoOsoblje.Remove(nastavnoOsoblje);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
+                return null;
             }
+        }
 
+        public async Task AzurirajNastavnoOsobljeAsync(int ID, string ime, string prezime, string korisnickoIme, string tip, Prostorija kancelarija)
+        {
+            try
+            {
+                NastavnoOsoblje nastavnoOsoblje = await PreuzmiNastavnoOsobljeAsync(ID);
+                if (nastavnoOsoblje == null)
+                {
+                    throw new Exception("Nastavno osoblje sa datim ID-jem ne postoji!");
+                }
+                nastavnoOsoblje.Ime = ime;
+                nastavnoOsoblje.Prezime = prezime;
+                nastavnoOsoblje.KorisnickoIme = korisnickoIme;
+                nastavnoOsoblje.Tip = tip;
+                nastavnoOsoblje.Kancelarija = kancelarija;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.NastavnoOsoblje.Update(nastavnoOsoblje);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task ObrisiNastavnoOsobljeAsync(int ID)
+        {
+            try
+            {
+                NastavnoOsoblje nastavnoOsoblje = await PreuzmiNastavnoOsobljeAsync(ID);
+                if (nastavnoOsoblje == null)
+                {
+                    throw new Exception("Nastavno osoblje sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.NastavnoOsoblje.Remove(nastavnoOsoblje);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task<List<NastavnoOsoblje>> VratiSveNastavnikeAsync()
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    List<NastavnoOsoblje> nastavnoOsoblje = await context.NastavnoOsoblje
+                        .Include(n=>n.Kancelarija)
+                        .ToListAsync();
+                    return nastavnoOsoblje;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null; 
+            }
         }
 
     }

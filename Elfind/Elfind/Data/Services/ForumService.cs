@@ -1,53 +1,99 @@
 ﻿using Elfind.Data.Model;
+using Elfind.Data.Models;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace Elfind.Data.Services
 {
     public class ForumService
     {
-        private IDbContextFactory<ElfindDbContext> dbContextFactory;
+        private IDbContextFactory<ElfindContext> dbContextFactory;
 
-        public ForumService(IDbContextFactory<ElfindDbContext> dbContextFactory)
+        public ForumService(IDbContextFactory<ElfindContext> dbContextFactory)
         {
             this.dbContextFactory = dbContextFactory;
-        }   
+        }
 
-        public void dodajForum(Forum forum)
+        public async Task DodajForumAsync(Forum forum)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                context.Forum.Add(forum);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Forum.Add(forum);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public Forum preuzmiForum(int ID)
+        public async Task<Forum> PreuzmiForumAsync(int ID)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                Forum forum = context.Forum.SingleOrDefault(x => x.ID == ID);
-                return forum;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Forum forum = await context.Forum.SingleOrDefaultAsync(x => x.ID == ID);
+                    return forum;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
 
-        //public void azurirajForum(int ID)
-        //{
-
-        //}
-
-        public void obrisiForum(int ID)
+        public async Task ObrisiForumAsync(int ID)
         {
-            Forum forum = preuzmiForum(ID);
-            if (forum == null)
+            try
             {
-                throw new Exception("Forum sa datim ID-jem ne postoji!");
+                Model.Forum forum = await PreuzmiForumAsync(ID);
+                if (forum == null)
+                {
+                    throw new Exception("Forum sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Remove(forum);
+                    await context.SaveChangesAsync();
+                }
             }
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Remove(forum);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
             }
-
         }
+
+        public async Task<List<Objava>> VratiSveObjave(int forumId)
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Forum forum = await context.Forum
+                        .Include(f => f.Objave)
+                        .SingleOrDefaultAsync(f => f.ID == forumId);
+
+                    if (forum != null)
+                    {
+                        return forum.Objave.ToList();
+                    }
+                    else
+                    {
+                        throw new Exception("Forum sa datim ID-jem ne postoji!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
     }
 }

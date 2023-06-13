@@ -1,6 +1,7 @@
 {
   "Files": [
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Elfind.bundle.scp.css",
       "PackagePath": "staticwebassets\\Elfind.bundle.scp.css"
     },
@@ -54,7 +55,94 @@
     },
     {
       "Id": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\wwwroot\\favicon.png",
+=======
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Elfind.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Elfind.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\cool-background.png",
+      "PackagePath": "staticwebassets\\cool-background.png"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\favicon.png",
+>>>>>>> cd61e18c61a4bebe0a5f4a7f0fbabb9457c7484f
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\logo.png",
+      "PackagePath": "staticwebassets\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\moje-srce.jpg",
+      "PackagePath": "staticwebassets\\moje-srce.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\pin.png",
+      "PackagePath": "staticwebassets\\pin.png"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\1LK.jpg",
+      "PackagePath": "staticwebassets\\resized\\1LK.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\2LK.jpg",
+      "PackagePath": "staticwebassets\\resized\\2LK.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\Cetvrti sprat.jpg",
+      "PackagePath": "staticwebassets\\resized\\Cetvrti sprat.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\Drugi sprat.jpg",
+      "PackagePath": "staticwebassets\\resized\\Drugi sprat.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\M1.jpg",
+      "PackagePath": "staticwebassets\\resized\\M1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\M2.jpg",
+      "PackagePath": "staticwebassets\\resized\\M2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\Peti sprat.jpg",
+      "PackagePath": "staticwebassets\\resized\\Peti sprat.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\Prizemlje.jpg",
+      "PackagePath": "staticwebassets\\resized\\Prizemlje.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\Prvi sprat.jpg",
+      "PackagePath": "staticwebassets\\resized\\Prvi sprat.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\Stare laboratorije.jpg",
+      "PackagePath": "staticwebassets\\resized\\Stare laboratorije.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\Treci sprat.jpg",
+      "PackagePath": "staticwebassets\\resized\\Treci sprat.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\rsz_11rsz_pin.png",
+      "PackagePath": "staticwebassets\\resized\\rsz_11rsz_pin.png"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1logo.png",
+      "PackagePath": "staticwebassets\\resized\\rsz_1logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1pin.png",
+      "PackagePath": "staticwebassets\\resized\\rsz_1pin.png"
+    },
+    {
+      "Id": "C:\\Users\\Anita\\Desktop\\New folder\\si.23.68.elfind\\Aplikacija\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1rsz_pin.png",
+      "PackagePath": "staticwebassets\\resized\\rsz_1rsz_pin.png"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Elfind.Microsoft.AspNetCore.StaticWebAssets.props",

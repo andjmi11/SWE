@@ -5,47 +5,104 @@ namespace Elfind.Data.Services
 {
     public class AdministratorService
     {
-        private IDbContextFactory<ElfindDbContext> dbContextFactory;
-        public AdministratorService(IDbContextFactory<ElfindDbContext> dbContextFactory)
+        private IDbContextFactory<ElfindContext> dbContextFactory;
+        public AdministratorService(IDbContextFactory<ElfindContext> dbContextFactory)
         {
             this.dbContextFactory = dbContextFactory;
         }
 
-        public void dodajAdministratora(Administrator administrator)
+        public async Task dodajAdministratora(Administrator administrator)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                context.Administratori.Add(administrator);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Administratori.Add(administrator);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public Administrator preuzmiAdministratora(int ID)
+        public async Task<Administrator> preuzmiAdministratora(int ID)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                Administrator administrator = context.Administratori.SingleOrDefault(a => a.ID == ID);
-                return administrator;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Administrator administrator = await context.Administratori.SingleOrDefaultAsync(a => a.ID == ID);
+                    return administrator;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null; 
             }
         }
 
-        //azuriraj slicno kao za studenta kopiraj
-        //public void azurirajAdministratora(int ID)
-        //{
-
-        //}
-
-        public void obrisiAdministratora(int ID)
+        public async Task azurirajAdministratora(int ID, string ime, string prezime, string korisnickoIme)
         {
-            Administrator administrator = preuzmiAdministratora(ID);
-            if(administrator == null)
+            try
             {
-                throw new Exception("Administrator sa datim ID-jem ne postoji!");
+                Administrator administrator = await preuzmiAdministratora(ID);
+                if (administrator == null)
+                {
+                    throw new Exception("Administrator sa datim ID-jem ne postoji!");
+                }
+                administrator.Ime = ime;
+                administrator.Prezime = prezime;
+                administrator.KorisnickoIme = korisnickoIme;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Update(administrator);
+                    await context.SaveChangesAsync();
+                }
             }
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Remove(administrator);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task obrisiAdministratora(int ID)
+        {
+            try
+            {
+                Administrator administrator = await preuzmiAdministratora(ID);
+                if (administrator == null)
+                {
+                    throw new Exception("Administrator sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Remove(administrator);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task<List<Administrator>> VratiSveAdministratore()
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    List<Administrator> administratori = await context.Administratori.ToListAsync();
+                    return administratori;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new List<Administrator>();
             }
         }
     }

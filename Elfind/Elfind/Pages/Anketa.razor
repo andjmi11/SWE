@@ -1,5 +1,25 @@
+<<<<<<< HEAD
 ﻿<h3>Anketa</h3>
 
+=======
+﻿@using Elfind.Data.Model
+@using Elfind.Data.Models
+@using Elfind.Data.Services
+@inject ObjavaService ObjavaService
+@inject OpcijaService OpcijaService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject StudentService StudentService
+@inject NastavnoOsobljeService NastavnoOsobljeService
+@inject ForumService ForumService
+
+
+@if (!showRadioButtons) {
+    <h4>Nova anketa</h4>
+}
+else{
+    <h4>Anketa</h4>
+}
+>>>>>>> cd61e18c61a4bebe0a5f4a7f0fbabb9457c7484f
 <div class="anketa">
     @if (showRadioButtons)
     {
@@ -34,6 +54,10 @@
                 </div>
             }
             <div>
+<<<<<<< HEAD
+=======
+             
+>>>>>>> cd61e18c61a4bebe0a5f4a7f0fbabb9457c7484f
                 <button @onclick="AddOption">Add new option</button>
             </div>
         </div>
@@ -45,6 +69,12 @@
 </div>
 
 @code {
+<<<<<<< HEAD
+=======
+    private int sID;
+    private int nID;
+    private int anketaID;
+>>>>>>> cd61e18c61a4bebe0a5f4a7f0fbabb9457c7484f
     private string questionText;
     private string selectedOption;
     private List<OptionModel> options = new List<OptionModel>();
@@ -52,9 +82,17 @@
 
     private void AddOption()
     {
+<<<<<<< HEAD
         //ovde treba da dodamo u bazu opciju
         options.Add(new OptionModel());
     }
+=======
+        options.Add(new OptionModel());
+
+    } 
+
+
+>>>>>>> cd61e18c61a4bebe0a5f4a7f0fbabb9457c7484f
 
     private void RemoveOption(OptionModel option)
     {
@@ -63,6 +101,7 @@
 
     private void ConvertToRadioButtons()
     {
+<<<<<<< HEAD
         showRadioButtons = true;
     }
 
@@ -70,6 +109,48 @@
     {
         //ovde treba da ubacimo u bazu u tekst
         showRadioButtons = true;
+=======
+        //Data.Model.Objava anketa = ObjavaService.PreuzmiObjavu(anketaID);
+
+        foreach(var op in options)
+        {
+
+            var novaOpcija = new Data.Models.Opcija
+            {
+                Tekst = op.Text,
+                BrojGlasova = 0,
+                //Anketa = anketa
+            };
+
+            OpcijaService.DodajOpciju(novaOpcija);
+        }
+
+        showRadioButtons = true;
+    }
+
+    private async Task SetQuestionText()
+    {
+        //Task<NastavnoOsoblje> nastavnoOsoblje = NastavnoOsobljeService.PreuzmiNastavnoOsobljeAsync(nID);
+        //Task<Data.Model.Forum> forum = ForumService.PreuzmiForumAsync(1);
+
+        Elfind.Data.Model.NastavnoOsoblje nastavnoOsoblje = await NastavnoOsobljeService.PreuzmiNastavnoOsobljeAsync(nID);
+        Data.Model.Forum forum = await ForumService.PreuzmiForumAsync(1);
+        //ovde treba da ubacimo u bazu u tekst
+        var novaAnketa = new Data.Model.Objava()
+            {
+                TipObjave = Data.Model.TipObjave.Anketa,
+                Tekst = questionText,
+                OdNastavnogOsoblja = nastavnoOsoblje,
+                Forum = forum
+            };
+
+        // nastavnoOsoblje.Objave.Add(novaAnketa);
+        // forum.Objave.Add(novaAnketa);
+        //anketaID = ObjavaService.DodajObjavu(novaAnketa);
+
+
+        showRadioButtons = false;
+>>>>>>> cd61e18c61a4bebe0a5f4a7f0fbabb9457c7484f
     }
 
     public class OptionModel
@@ -82,4 +163,42 @@
         selectedOption = e.Value.ToString();
         Console.WriteLine("Selected Option: " + selectedOption);
     }
+<<<<<<< HEAD
+=======
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        var userName = user.Identity.Name;
+
+        if(userName.EndsWith("elfak.rs"))
+        {
+            var studenti =  await StudentService.VratiSveStudente();
+            foreach(var s in studenti)
+            {
+                if (s.KorisnickoIme == userName)
+                {
+                    sID = s.ID;
+                    break;
+                }
+            }
+        }
+
+        else
+        {
+            var nastavnici = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
+            foreach (var s in nastavnici)
+            {
+                if (s.KorisnickoIme == userName)
+                {
+                    nID = s.ID;
+                    break;
+                }
+            }
+        }
+    }
+>>>>>>> cd61e18c61a4bebe0a5f4a7f0fbabb9457c7484f
 }

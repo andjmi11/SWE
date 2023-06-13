@@ -1,0 +1,221 @@
+﻿@using Elfind.Data.Model
+@using Elfind.Data.Models
+@using Elfind.Data.Services
+@inject ObjavaService ObjavaService
+@inject OpcijaService OpcijaService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject StudentService StudentService
+@inject NastavnoOsobljeService NastavnoOsobljeService
+@inject ForumService ForumService
+
+
+@*<h3>Objava</h3>*@
+<AuthorizeView>
+ <h3>Kreiraj objavu</h3>
+
+<div class="row">
+    <div class="biranjeAnkete">
+        <input type="checkbox" class="izaberiAnketu" @onclick="AnketaIzabrana" />
+        <label>Anketa</label>
+    </div>
+</div>
+<br />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="objava ">
+            <div class="objavaGore konstantno">
+                <div class="row">
+                    <div class="col-12">
+                        <input type="text" id="text-input" style="height: 150px; width: 100%;" @bind="@text" />
+                    </div>
+                    @*<button @onclick="SetQuestionText">Ok</button>*@
+                </div>
+            </div>
+
+            @if (unosenjeOpcija)
+            {
+                <div class="objavaDole">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="opcijeAnkete">
+                                @foreach (var opcija in opcije)
+                                {
+                                    <div class="jednaOpcija">
+                                        <input type="text" style="width: 50%" @bind="@opcija.Text" class="opcijaAnkete" />
+                                        <button class="dugmiciForum" style="background-color: #ffb6c1; color: #000000; border: 2px solid #fc9fad;" @onclick="() => ObrisiOpciju(opcija)">Izbrisi</button>
+                                    </div>
+                                }
+                                <div>
+                                    <button class="dugmiciForum" style="background-color: #ffb6c1; color: #000000; border: 2px solid #fc9fad;" @onclick="DodajOpciju">Dodaj opciju</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                <button class="konstantno dugmiciForum" style="background-color: #ffb6c1; color: #000000; border: 2px solid #fc9fad;" @onclick="PrikaziNovuObjavu">Postavi</button>
+            </div>
+
+            @if (objave.Count > 0)
+            {
+                <div>
+                    <h4>Sve objave:</h4>
+                    @foreach (var objava in objave.Reverse())
+                    {
+                        <div class="jednaObjava">
+                            <p>@objava.Key</p>
+                            <div class="opcijeAnkete">
+                                @foreach (var option in objava.Value)
+                                {
+                                    <div>
+                                        <input type="radio" id="@option.Text" name="options" value="@option.Text" class="opcijaAnkete" @onchange="HandleRadioButtonChange">
+                                        <label for="@option.Text" class="imeOpcije">@option.Text</label><br>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+   
+</AuthorizeView>
+
+@code{
+    private int sID;
+    private int nID;
+    private int anketaID;
+    private string text;
+    private string odabranaOpcija;
+    private bool unosenjeOpcija = false;
+    private List<Opcija> opcije = new List<Opcija>();
+    private bool objavaVidljiva = false;
+    private Dictionary<string, List<Opcija>> objave = new Dictionary<string, List<Opcija>>();
+
+    private void AnketaIzabrana()
+    {
+        unosenjeOpcija = !unosenjeOpcija;
+    }
+
+    private async Task PrikaziNovuObjavu()
+    {
+        try
+        {
+            //dodavanje objave
+            NastavnoOsoblje nastavnoOsoblje = await NastavnoOsobljeService.PreuzmiNastavnoOsobljeAsync(nID);
+            Data.Model.Forum forum = await ForumService.PreuzmiForumAsync(1);
+
+            var tipObjave = Data.Model.TipObjave.Anketa;
+            if (unosenjeOpcija == true) tipObjave = Data.Model.TipObjave.Anketa;
+            else tipObjave = Data.Model.TipObjave.Obavestenje;
+
+            //ovde treba da ubacimo u bazu u tekst
+            var novaAnketa = new Data.Model.Objava()
+                {
+                    TipObjave = tipObjave,
+                    Tekst = text,
+                    OdNastavnogOsoblja = nastavnoOsoblje,
+                    Forum = forum
+                };
+
+            // nastavnoOsoblje.Objave.Add(novaAnketa);
+            // forum.Objave.Add(novaAnketa);
+            //anketaID = ObjavaService.DodajObjavu(novaAnketa);
+
+            
+
+            //dodavanje opcija
+            //Data.Model.Objava anketa = ObjavaService.PreuzmiObjavu(anketaID);
+
+            foreach (var op in opcije)
+            {
+
+                var novaOpcija = new Data.Models.Opcija
+                    {
+                        Tekst = op.Text,
+                        BrojGlasova = 0,
+                        //Anketa = anketa
+                    };
+
+                OpcijaService.DodajOpciju(novaOpcija);
+            }
+
+
+            objave.Add(text, opcije);
+            text = string.Empty;
+            opcije = new List<Opcija>();
+
+            objavaVidljiva = true;
+
+        }
+        catch(Exception e)
+        {
+            Console.WriteLine("Objava vec postoji.");
+        }
+    }
+
+    private void DodajOpciju()
+    {
+        opcije.Add(new Opcija());
+
+      
+    }
+
+    private void ObrisiOpciju(Opcija opcija)
+    {
+        opcije.Remove(opcija);
+    }
+
+    public class Opcija
+    {
+        public string Text { get; set; }
+    }
+
+    private void HandleRadioButtonChange(ChangeEventArgs e)
+    {
+        odabranaOpcija = e.Value.ToString();
+        Console.WriteLine("Selected Option: " + odabranaOpcija);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        var userName = user.Identity.Name;
+
+        if (userName.EndsWith("elfak.rs"))
+        {
+            var studenti =  await StudentService.VratiSveStudente();
+            foreach (var s in studenti)
+            {
+                if (s.KorisnickoIme == userName)
+                {
+                    sID = s.ID;
+                    break;
+                }
+            }
+        }
+
+        else
+        {
+            var nastavnici = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
+            foreach (var s in nastavnici)
+            {
+                if (s.KorisnickoIme == userName)
+                {
+                    nID = s.ID;
+                    break;
+                }
+            }
+        }
+
+    }
+
+}

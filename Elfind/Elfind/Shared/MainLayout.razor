@@ -1,19 +1,65 @@
-﻿@inherits LayoutComponentBase
+﻿
+@using System.Security.Policy;
+@inherits LayoutComponentBase
+
+@inject NavigationManager navManager
 
 <PageTitle>Elfind</PageTitle>
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+            <div class="sidebar">
+                <NavMenu />
+            </div>
 
     <main>
         <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <div>
+                <h4 style="color:white">@tabName</h4>
+            </div>
+
+            <div class="goreDesno">
+                <LoginDisplay/>
+    @*            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+    *@          
+                <img src="/resized/rsz_1logo.png" alt="Logo" class="logic"/>
+                <a class="profil" href="profil">Profil</a>
+
+
+             @*   <AuthorizeView>
+                    <Authorized>
+                            <p>Zdravoooo</p>
+                        <a @onclick="Logout" href="javascript:void(0)">Logout</a>
+                    </Authorized>
+                    <NotAuthorized>
+                        <a href="/login" class="login">Login</a>
+                    </NotAuthorized>
+                </AuthorizeView>*@
+            </div>
         </div>
 
-        <article class="content px-4">
-            @Body
-        </article>
+        <div class="zajednicki">
+            <article class="content px-4">
+                @Body
+            </article>
+
+            <div class="sidebar2">
+                <RightSidebar />
+            </div>
+        </div>
     </main>
+
 </div>
+
+@code{
+    private string tabName = "stranica za sada";
+}
+
+@*@code{
+    private async Task Logout()
+    {
+        var customStateProvider = (CustomAuthenticationStateProvider)authStateprovider;
+        await customStateProvider.UpdateAuthenticationState(null);
+        navManager.NavigateTo("/", true);
+    }
+}
+*@

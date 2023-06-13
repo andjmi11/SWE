@@ -1,52 +1,127 @@
 ﻿using Elfind.Data.Model;
+using Elfind.Pages;
 using Microsoft.EntityFrameworkCore;
 
 namespace Elfind.Data.Services
 {
     public class CasService
     {
-        private IDbContextFactory<ElfindDbContext> dbContextFactory;
+        private IDbContextFactory<ElfindContext> dbContextFactory;
 
-        public CasService(IDbContextFactory<ElfindDbContext> dbContextFactory) 
+        public CasService(IDbContextFactory<ElfindContext> dbContextFactory) 
         {
             this.dbContextFactory = dbContextFactory;
         }
 
-        public void dodajCas(Cas cas)
+        public async Task DodajCas(Cas cas)
         {
-            using(var context = dbContextFactory.CreateDbContext())
+            try
             {
-                context.Casovi.Add(cas);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    cas.Prostorija = context.Prostorije.SingleOrDefault(n => n.ID == cas.Prostorija.ID);
+                    cas.URasporeduCasova = context.ResporediCasova.SingleOrDefault(n => n.ID == cas.URasporeduCasova.ID);
+                    cas.ZaKurs = context.Kursevi.SingleOrDefault(n => n.ID == cas.ZaKurs.ID);
+
+                    context.Casovi.Add(cas);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public Cas preuzmiCas(int ID)
+        public async Task<Cas> PreuzmiCas(int ID)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                Cas cas = context.Casovi.SingleOrDefault(c  => c.ID == ID);
-                return cas;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+
+                    Cas cas = await context.Casovi.SingleOrDefaultAsync(c => c.ID == ID);
+                    return cas;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
 
-        //public void azurirajCas(int ID)
-        //{
-
-        //}
-
-        public void obrisiCas(int ID)
+        public async Task AzurirajCas(int ID, string naziv, Dan dan, TimeSpan vremeOd, TimeSpan vremeDo, TipCasa tipCasa, Prostorija prostorija, RasporedCasova uRasporeduCasova, Kurs zaKurs)
         {
-            Cas cas = preuzmiCas(ID);
-            if(cas == null)
+            try
             {
-                throw new Exception("Cas sa datim ID-jem ne postoji!");
+                Cas cas = await PreuzmiCas(ID);
+                if (cas == null)
+                {
+                    throw new Exception("Cas sa datim ID-jem ne postoji!");
+                }
+                cas.ID = ID;
+                cas.Naziv = naziv;
+                cas.Dan = dan;
+                cas.VremeOd = vremeOd;
+                cas.VremeDo = vremeDo;
+                cas.TipCasa = tipCasa;
+                cas.Prostorija = prostorija;
+                cas.URasporeduCasova = uRasporeduCasova;
+                cas.ZaKurs = zaKurs;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Update(cas);
+                    await context.SaveChangesAsync();
+                }
             }
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Remove(cas);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
             }
         }
+
+        public async Task ObrisiCas(int ID)
+        {
+            try
+            {
+                Cas cas = await PreuzmiCas(ID);
+                if (cas == null)
+                {
+                    throw new Exception("Cas sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Remove(cas);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task<List<Cas>> VratiSveCasove()
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    List<Cas> casovi = await context.Casovi
+                        .Include(c=>c.Prostorija)
+                        .Include(c=>c.URasporeduCasova)
+                        .Include(c=>c.ZaKurs)
+                        .ToListAsync();
+                    return casovi;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new List<Cas>(); 
+            }
+        }
+
     }
 }

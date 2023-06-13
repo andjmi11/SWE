@@ -5,58 +5,105 @@ namespace Elfind.Data.Services
 {
     public class ZgradaService
     {
-        private IDbContextFactory<ElfindDbContext> dbContextFactory;
+        private IDbContextFactory<ElfindContext> dbContextFactory;
 
-        public ZgradaService(IDbContextFactory<ElfindDbContext> dbContextFactory)
+        public ZgradaService(IDbContextFactory<ElfindContext> dbContextFactory)
         {
             this.dbContextFactory = dbContextFactory;
         }
 
-        public void dodajZgradu(Zgrada zgrada)
+        public async Task DodajZgradu(Zgrada zgrada)
         {
-            using(var context = dbContextFactory.CreateDbContext()) 
+            try
             {
-                context.Zgrade.Add(zgrada);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Zgrade.Add(zgrada);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public Zgrada preuzmiZgradu(int ID) 
+        public async Task<Zgrada> PreuzmiZgradu(int ID)
         {
-            using(var context = dbContextFactory.CreateDbContext())
+            try
             {
-                Zgrada zgrada = context.Zgrade.SingleOrDefault(z => z.ID == ID);
-                return zgrada;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Zgrada zgrada = await context.Zgrade.SingleOrDefaultAsync(z => z.ID == ID);
+                    return zgrada;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
 
-        public void azurirajZgradu(int ID, TipZgrade tip)
+        public async Task AzurirajZgradu(int ID, string tip)
         {
-            Zgrada zgrada = preuzmiZgradu(ID);
-            if(zgrada == null) 
+            try
             {
-                throw new Exception("Zgrada sa datim ID-jem ne postoji!");
+                Zgrada zgrada = await PreuzmiZgradu(ID);
+                if (zgrada == null)
+                {
+                    throw new Exception("Zgrada sa datim ID-jem ne postoji!");
+                }
+                zgrada.Tip = tip;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Update(zgrada);
+                    await context.SaveChangesAsync();
+                }
             }
-            zgrada.Tip = tip;
-            using(var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Update(zgrada);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public void obrisiZgradu(int ID)
+        public async Task ObrisiZgradu(int ID)
         {
-            Zgrada zgrada = preuzmiZgradu(ID);
-            if (zgrada == null)
+            try
             {
-                throw new Exception("Zgrada sa datim ID-jem ne postoji!");
+                Zgrada zgrada = await PreuzmiZgradu(ID);
+                if (zgrada == null)
+                {
+                    throw new Exception("Zgrada sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Remove(zgrada);
+                    await context.SaveChangesAsync();
+                }
             }
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Remove(zgrada);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
             }
         }
+
+        public async Task<List<Zgrada>> VratiSveZgrade()
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    List<Zgrada> zgrade = await context.Zgrade.ToListAsync();
+                    return zgrade;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new List<Zgrada>();
+            }
+        }
+
     }
 }

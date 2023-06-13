@@ -5,48 +5,111 @@ namespace Elfind.Data.Services
 {
     public class RasporedCasovaService
     {
-        private IDbContextFactory<ElfindDbContext> dbContextFactory;
+        private IDbContextFactory<ElfindContext> dbContextFactory;
 
-        public RasporedCasovaService(IDbContextFactory<ElfindDbContext> dbContextFactory)
+        public RasporedCasovaService(IDbContextFactory<ElfindContext> dbContextFactory)
         {
             this.dbContextFactory = dbContextFactory;
         }
 
-        public void dodajRasporedCasova(RasporedCasova rasporedCasova)
+        public async Task DodajRasporedCasova(RasporedCasova rasporedCasova)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                context.ResporediCasova.Add(rasporedCasova);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    rasporedCasova.ZaSmer = context.Smerovi.SingleOrDefault(r => r.ID == rasporedCasova.ZaSmer.ID);
+                    rasporedCasova.Administrator = context.Administratori.SingleOrDefault(r => r.ID == rasporedCasova.Administrator.ID);
+                    context.ResporediCasova.Add(rasporedCasova);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public RasporedCasova preuzmiRasporedCasova(int ID)
+        public async Task<RasporedCasova> PreuzmiRasporedCasova(int ID)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                RasporedCasova rasporedCasova = context.ResporediCasova.SingleOrDefault(r => r.ID == ID);
-                return rasporedCasova;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    RasporedCasova rasporedCasova = await context.ResporediCasova.SingleOrDefaultAsync(r => r.ID == ID);
+                    return rasporedCasova;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
             }
         }
 
-        /*public void azurirajRasporedCasova(int ID)
+        public async Task AzurirajRasporedCasova(int ID, Smer zaSmer, Administrator administrator)
         {
-
-        }*/
-
-        public void obrisiRasporedCasova(int ID)
-        {
-            RasporedCasova rasporedCasova = preuzmiRasporedCasova(ID);
-            if (rasporedCasova == null)
+            try
             {
-                throw new Exception("Raspored casova sa datim ID-jem ne postoji!");
+                RasporedCasova rasporedCasova = await PreuzmiRasporedCasova(ID);
+                if (rasporedCasova == null)
+                {
+                    throw new Exception("Raspored casova sa datim ID-jem ne postoji!");
+                }
+                rasporedCasova.ZaSmer = zaSmer;
+                rasporedCasova.Administrator = administrator;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Update(rasporedCasova);
+                    await context.SaveChangesAsync();
+                }
             }
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Remove(rasporedCasova);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
             }
         }
+
+        public async Task ObrisiRasporedCasova(int ID)
+        {
+            try
+            {
+                RasporedCasova rasporedCasova = await PreuzmiRasporedCasova(ID);
+                if (rasporedCasova == null)
+                {
+                    throw new Exception("Raspored casova sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Remove(rasporedCasova);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task<List<RasporedCasova>> VratiSveRasporedeCasova()
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    List<RasporedCasova> rasporediCasova = await context.ResporediCasova
+                        .Include(r=>r.ZaSmer)
+                        .Include(r=>r.Administrator)
+                        .ToListAsync();
+                    return rasporediCasova;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return new List<RasporedCasova>();
+            }
+        }
+
     }
 }

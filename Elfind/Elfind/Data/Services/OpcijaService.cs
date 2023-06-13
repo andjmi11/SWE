@@ -1,53 +1,130 @@
 ﻿using Elfind.Data.Model;
 using Elfind.Data.Models;
+using Elfind.Pages;
 using Microsoft.EntityFrameworkCore;
 
 namespace Elfind.Data.Services
 {
     public class OpcijaService
     {
-       /* private IDbContextFactory<ElfindDbContext> dbContextFactory;
+        private IDbContextFactory<ElfindContext> dbContextFactory;
 
-        public OpcijaService(IDbContextFactory<ElfindDbContext> dbContextFactory)
+        public OpcijaService(IDbContextFactory<ElfindContext> dbContextFactory)
         {
             this.dbContextFactory = dbContextFactory;
         }
-
-        public void dodajOpciju(Opcija opcija)
+        public void DodajOpciju(Opcija opcija)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                context.Opcija.Add(opcija);
-                context.SaveChanges();
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    opcija.Anketa = context.Objave.SingleOrDefault(f => f.ID == opcija.Anketa.ID);
+
+                    context.Opcije.Add(opcija);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
-        public Opcija preuzmiOpciju(int ID)
+        public Opcija PreuzmiOpciju(int ID)
         {
-            using (var context = dbContextFactory.CreateDbContext())
+            try
             {
-                Opcija opcija = context.Opcija.SingleOrDefault(o => o.ID == ID);
-                return opcija;
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Opcija opcija = context.Opcije.SingleOrDefault(o => o.ID == ID);
+                    return opcija;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null; 
             }
         }
 
-        *//*public void azurirajObjavu(int ID)
+        public Opcija PreuzmiOpciju(string tekst)
         {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    Opcija opcija = context.Opcije.SingleOrDefault(o => o.Tekst == tekst);
+                    return opcija;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null; 
+            }
+        }
 
-        }*//*
-
-        public void obrisiObjavu(int ID)
+        public void ObrisiOpciju(string tekst)
         {
-            Objava objava = preuzmiObjavu(ID);
-            if (objava == null)
+            try
             {
-                throw new Exception("Notifikacija sa datim ID-jem ne postoji!");
+                Opcija opcija = PreuzmiOpciju(tekst);
+                if (opcija == null)
+                {
+                    throw new Exception("Opcija ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Remove(opcija);
+                    context.SaveChanges();
+                }
             }
-            using (var context = dbContextFactory.CreateDbContext())
+            catch (Exception ex)
             {
-                context.Remove(objava);
-                context.SaveChanges();
+                Console.WriteLine(ex.Message);
             }
-        }*/
+        }
+
+        public void ObrisiOpciju(int ID)
+        {
+            try
+            {
+                Opcija opcija = PreuzmiOpciju(ID);
+                if (opcija == null)
+                {
+                    throw new Exception("Opcija sa datim ID-jem ne postoji!");
+                }
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    context.Remove(opcija);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public List<Opcija> VratiSveOpcije()
+        {
+            try
+            {
+                using (var context = dbContextFactory.CreateDbContext())
+                {
+                    List<Opcija> opcije = context.Opcije
+                        .Include(o=>o.Anketa)
+                        .ToList();
+                    return opcije;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null; 
+            }
+        }
+
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using Elfind.Data.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Elfind.Data.Model
 {
@@ -8,25 +10,24 @@ namespace Elfind.Data.Model
         MAS,
         DAS
     }
-    public class Student
+    public class Student 
     {
         [Key]
         public int ID { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        public string KorsinickoIme { get; set; }
-        public int Salt { get; set; }
-        public string HashLozinka { get; set; }
-
+        public string KorisnickoIme { get; set; }
+   
         [Range(10000, 1000000)]
         [Required]
         public int Indeks { get; set; }
-
+        public Smer NaSmeru { get; set; }
         public TipStudija TipStudija { get; set; }
         [Range(1, 5)]
         public int Godina { get; set; }
-        public RasporedCasova RasporedCasova { get; set; }
-     
+        public  RasporedCasova RasporedCasova { get; set; }    
+        public List<NotifikacijaStudent> Notifikacije { get; set; }
+        public List<StudentKurs> Kursevi = new List<StudentKurs>();
     }
 
 }
