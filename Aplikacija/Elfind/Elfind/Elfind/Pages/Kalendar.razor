@@ -1,0 +1,100 @@
+﻿<div class="ceoKalendar">
+    <h5>@MonthYear</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var week in CalendarWeeks)
+            {
+                <tr>
+                    @foreach (var day in week)
+                    {
+                        <td @onclick="() => OnDayClick.InvokeAsync(new DateTime(CurrentMonthYear.Year, CurrentMonthYear.Month, day))">@day</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button style="background-color: #ffb6c1; color: #000000; border: 2px solid #fc9fad;" @onclick="PreviousMonth">Prethodni</button>
+    <button style="background-color: #ffb6c1; color: #000000; border: 2px solid #fc9fad;" @onclick="NextMonth">Sledeci</button>@*position: absolute; right: 0;*@
+</div>
+
+@code {
+    private DateTime CurrentMonthYear { get; set; } = DateTime.Today;
+    private string MonthYear => CurrentMonthYear.ToString("MMMM yyyy");
+    private List<List<int>> CalendarWeeks => GenerateCalendarWeeks(CurrentMonthYear);
+
+    [Parameter]
+    public EventCallback<DateTime> OnDayClick { get; set; }
+    
+
+    private List<List<int>> GenerateCalendarWeeks(DateTime monthYear)
+    {
+        List<List<int>> calendarWeeks = new List<List<int>>();
+
+        DateTime firstDayOfMonth = new DateTime(monthYear.Year, monthYear.Month, 1);
+        int daysInMonth = DateTime.DaysInMonth(monthYear.Year, monthYear.Month);
+
+        int startDayIndex = (int)firstDayOfMonth.DayOfWeek;
+        if (startDayIndex == 0)
+        {
+            startDayIndex = 6;
+        }
+        else
+        {
+            startDayIndex -= 1;
+        }
+
+        List<int> currentWeek = new List<int>();
+
+        // Calculate the preceding days from the previous month
+        DateTime previousMonth = firstDayOfMonth.AddMonths(-1);
+        int daysInPreviousMonth = DateTime.DaysInMonth(previousMonth.Year, previousMonth.Month);
+        int precedingDaysCount = startDayIndex;
+
+        for (int i = daysInPreviousMonth - precedingDaysCount + 1; i <= daysInPreviousMonth; i++)
+        {
+            currentWeek.Add(i);
+        }
+
+        for (int day = 1; day <= daysInMonth; day++)
+        {
+            currentWeek.Add(day);
+
+            if (currentWeek.Count == 7)
+            {
+                calendarWeeks.Add(currentWeek);
+                currentWeek = new List<int>();
+            }
+        }
+
+        int nextMonthDay = 1;
+        while (currentWeek.Count < 7)
+        {
+            currentWeek.Add(nextMonthDay);
+            nextMonthDay++;
+        }
+        calendarWeeks.Add(currentWeek);
+
+        return calendarWeeks;
+    }
+
+    private void PreviousMonth()
+    {
+        CurrentMonthYear = CurrentMonthYear.AddMonths(-1);
+    }
+
+    private void NextMonth()
+    {
+        CurrentMonthYear = CurrentMonthYear.AddMonths(1);
+    }
+}

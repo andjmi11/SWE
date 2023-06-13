@@ -1,0 +1,626 @@
+﻿@page "/objava"
+@using Elfind.Data.Model
+@using Elfind.Data.Models
+@using Elfind.Data.Services
+@using Elfind.Data
+@using Microsoft.AspNetCore.SignalR.Client
+@using System.Collections.Generic;
+@inject NavigationManager NavigationManager
+@inject ObjavaService ObjavaService
+@inject OpcijaService OpcijaService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject StudentService StudentService
+@inject NastavnoOsobljeService NastavnoOsobljeService
+@inject ForumService ForumService
+@inject SmerService SmerService
+@inject KursService KursService
+@inject ObjavaStudentService ObjavaStudentService
+@attribute [Authorize(Roles = "Student, NastavnoOsoblje, Administrator")]
+
+<h2>Forum</h2>
+
+<AuthorizeView Roles="NastavnoOsoblje">
+    <Authorized>
+
+        <br />
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 align-items-start">
+                    <h4>Kreiraj objavu</h4>
+                </div>
+                <div />
+            </div>
+        </div>
+        <br />
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-md-4 col-sm-12">
+                    <h5>Izaberite tip studija:</h5>
+                    <div class="tipStudija">
+                        <input type="radio" id="oas" name="tipStudija" value="OAS" @onchange="HandleTipStudijaChange">
+                        <label for="oas">OAS</label>
+
+                        <input type="radio" id="mas" name="tipStudija" value="MAS" @onchange="HandleTipStudijaChange">
+                        <label for="mas">MAS</label>
+
+                        <input type="radio" id="das" name="tipStudija" value="DAS" @onchange="HandleTipStudijaChange">
+                        <label for="das">DAS</label>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12">
+                    <h5>Izaberite smerove:</h5>
+                    @if (smerovi.Count > 0)
+                    {
+                        @foreach (var smer in smerovi)
+                        {
+                            <div>
+                                <input type="checkbox" @bind="@smeroviSelected[smer]" /> @smer.Naziv
+                            </div>
+                        }
+                    }
+                    <div>
+                        <input type="checkbox" @onchange="SelectAllSmerovi" /> Svi smerovi
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 ">
+                    <h5>Izaberite predmet:</h5>
+                    <select @bind="izabraniPredmet">
+                        <option value=""></option>
+                        @foreach (var kurs in filteredKursevi)
+                        {
+                            <option value="@kurs.Naziv">@kurs.Naziv</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="container">
+            <div class="row">
+            </div>
+
+        </div>
+
+        <br />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 align-items-start">
+                    <div class="biranjeAnkete">
+                        <input type="checkbox" class="izaberiAnketu" @onclick="AnketaIzabrana" />
+                        <label>Anketa</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="objava">
+                    <div class="objavaGore konstantno">
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="text" id="text-input" style="height: 150px; width: 100%;" @bind="@text" />
+                            </div>
+                        </div>
+                    </div>
+
+                    @if (unosenjeOpcija)
+                    {
+                        notificationMessage.MsgBody = "je postavio novu anketu!";
+                        <div class="objavaDole">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="opcijeAnkete">
+
+                                        @foreach (var opcija in opcije)
+                                        {
+                                            <div class="jednaOpcija">
+                                                <input type="text" style="width: 50%" @bind="@opcija.Text" class="opcijaAnkete" />
+                                                <button class="dugmiciForum" @onclick="() => ObrisiOpciju(opcija)">Izbrisi</button>
+                                            </div>
+                                        }
+
+                                        <div>
+                                            <button class="dugmiciForum" @onclick="DodajOpciju">Dodaj opciju</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        notificationMessage.MsgBody = "je postavio novo obavestenje!";
+                    }
+
+
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 element-style">
+                    <button class="konstantno dugmiciForum" @onclick="PrikaziNovuObjavu" disabled="@(!IsConnected)">Postavi</button>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <div class="container sveObjave-style">
+
+            @if (sveObjave != null && sveObjave.Count > 0)
+            {
+                @*<h4>Sve objave:</h4>*@
+                <br />
+                <div>
+                    @foreach (Data.Model.Objava obj in sveObjave)
+                    {
+                        <div class="jednaObjava">
+                            <div class="imePrezime">
+                                @if (!string.IsNullOrEmpty(izabraniPredmet))
+                                {
+                                    <p>@obj.OdNastavnogOsoblja.Ime @obj.OdNastavnogOsoblja.Prezime je postavio @(obj.TipObjave.ToString() == "anketa" ? "anketu" : "objavu") za predmet: @izabraniPredmet!</p>
+                                }
+                                else
+                                {
+                                    <p>@obj.OdNastavnogOsoblja.Ime @obj.OdNastavnogOsoblja.Prezime je postavio @(obj.TipObjave.ToString() == "anketa" ? "anketu" : "objavu")!</p>
+                                }
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="tekstObjave tekstObjave-style">
+                                        <p style="padding-left: 30px;">@obj.Tekst</p>
+                                    </div>
+                                </div>
+                            </div>
+                            @if (obj.TipObjave == Data.Model.TipObjave.Anketa)
+                            {
+                                <div class="opcijeAnkete">
+                                    @foreach (var opc in obj.Opcije)
+                                    {
+                                        <div class="row opcijaAnkete opcija-style" style="margin: auto;margin-bottom: 10px;">
+                                            <div class="col-md-10">
+                                                <p>@opc.Tekst</p>
+                                            </div>
+                                            <div class="col-md-2 glasovi-style">
+                                                <p>@opc.BrojGlasova glasova</p>
+                                            </div>
+
+                                        </div>
+                                    }
+                                </div>
+                            }
+
+
+                            <!-- Dodajte dugme za brisanje objave -->
+                            <div class="col-md-12 element-style">
+                                <button class="dugmiciForum" @onclick="() => ObrisiObjavu(obj)">Obriši objavu</button>
+                            </div>
+
+                        </div>
+                    }
+
+                </div>
+            }
+
+        </div>
+    </Authorized>
+</AuthorizeView>
+
+<AuthorizeView Roles="Student">
+    <Authorized>
+        @if (sveObjave != null && sveObjave.Count > 0)
+        {
+            <h4 style="padding-left: 25px;">Objave:</h4>
+            <div class="sveObjave" style="padding-left: 30px;">
+                @foreach (Data.Model.Objava obj in sveObjave)
+                {
+                    <div class="row jednaObjava">
+                        <div class="col-md-12">
+                            <div class="tekstObjave tekstObjave-style">
+                                <p>@obj.OdNastavnogOsoblja.Ime @obj.OdNastavnogOsoblja.Prezime @(!string.IsNullOrEmpty(@izabraniPredmet) ? $"za predmet: {izabraniPredmet}" : "")</p>
+                                <p style="padding-left: 30px;">@obj.Tekst</p>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="opcijeAnkete">
+                            @foreach (var opc in obj.Opcije)
+                            {
+                                <div class="row opcijaAnkete opcija-style" style="margin: auto;margin-bottom: 10px;">
+                                    <div class="col-md-10 .kolona">
+                                        <input type="radio" name="opcijeNove" value="@opc.Tekst" class="opcijaAnkete" data-objava-id="@obj.ID" @onchange="HandleRadioButtonChange" disabled="@sacuvano">
+                                        <label for="@opc.ID" class="imeOpcije">@opc.Tekst</label><br />
+                                    </div>
+                                    <div class="col-md-2 glasovi-style">
+                                        <p>@opc.BrojGlasova glasova</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <div class="col-md-12 element-style">
+                            <button class="dugmiciForum" @onclick="() => SacuvajIzbor(odabranaOpcijaTekst)" disabled="@sacuvano">Sacuvaj izbor</button> @*zovi submit*@
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </Authorized>
+</AuthorizeView>
+<AuthorizeView Roles="Administrator">
+    <Authorized>
+        <div class="container sveObjave-style">
+
+            @if (sveObjave != null && sveObjave.Count > 0)
+            {
+                @*<h4>Sve objave:</h4>*@
+                <br />
+                <div>
+                    @foreach (Data.Model.Objava obj in sveObjave)
+                    {
+                        <div class="jednaObjava">
+                            <div class="imePrezime">
+                                @if (!string.IsNullOrEmpty(izabraniPredmet))
+                                {
+                                    <p>@obj.OdNastavnogOsoblja.Ime @obj.OdNastavnogOsoblja.Prezime je postavio @(obj.TipObjave.ToString() == "anketa" ? "anketu" : "objavu") za predmet: @izabraniPredmet!</p>
+                                }
+                                else
+                                {
+                                    <p>@obj.OdNastavnogOsoblja.Ime @obj.OdNastavnogOsoblja.Prezime je postavio @(obj.TipObjave.ToString() == "anketa" ? "anketu" : "objavu")!</p>
+                                }
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="tekstObjave tekstObjave-style">
+                                        <p style="padding-left: 30px;">@obj.Tekst</p>
+                                    </div>
+                                </div>
+                            </div>
+                            @if (obj.TipObjave == Data.Model.TipObjave.Anketa)
+                            {
+                                <div class="opcijeAnkete">
+                                    @foreach (var opc in obj.Opcije)
+                                    {
+                                        <div class="row opcijaAnkete opcija-style" style="margin: auto;margin-bottom: 10px;">
+                                            <div class="col-md-10">
+                                                <p>@opc.Tekst</p>
+                                            </div>
+                                            <div class="col-md-2 glasovi-style">
+                                                <p>@opc.BrojGlasova glasova</p>
+                                            </div>
+
+                                        </div>
+                                    }
+                                </div>
+                            }
+
+
+                            <!-- Dodajte dugme za brisanje objave -->
+                            <div class="col-md-12 element-style">
+                                <button class="dugmiciForum" @onclick="() => ObrisiObjavu(obj)">Obriši objavu</button>
+                            </div>
+
+                        </div>
+                    }
+
+                </div>
+            }
+
+        </div>
+</Authorized>
+</AuthorizeView>
+
+@code {
+    private int sID;
+    private int nID;
+    private int anketaID;
+    private string text;
+    private string odabranaOpcija;
+    private bool unosenjeOpcija = false;
+    private List<Opcija> opcije = new List<Opcija>();
+    private bool objavaVidljiva = false;
+    private Dictionary<string, List<Opcija>> objave = new Dictionary<string, List<Opcija>>();
+    private string tags; // Dodato polje za tagove
+    private List<Data.Model.Objava> sveObjave = new List<Data.Model.Objava>();
+    //private string pomIzabranPredmet;
+
+    //private string firstOption; //prvobitno je samo jedno polje, na klik se dodaje u bazu i dugme i novo polje i tako za svaku
+
+    private List<Smer> smerovi = new List<Smer>();
+    private List<Smer> sacuvaniSmerovi = new List<Smer>();
+    private string izabraniPredmet;
+    private string[] smeroviZaObjavu;
+
+    private List<Kurs> filteredKursevi = new List<Kurs>();
+    private Dictionary<Smer, bool> smeroviSelected = new Dictionary<Smer, bool>();
+
+    private string tipStudija = "OAS";
+
+    private async Task ObrisiObjavu(Data.Model.Objava objava)
+    {
+        await ObjavaService.ObrisiObjavu(objava.ID);
+        StateHasChanged();
+    }
+
+
+    private async Task HandleTipStudijaChange(ChangeEventArgs e)
+    {
+        tipStudija = e.Value.ToString();
+        smerovi = await SmerService.VratiSveSmerovePoTipuStudija(tipStudija);
+
+        foreach (var smer in smerovi)//ovde ce da pukne, ovde valjda nece
+        {
+            smeroviSelected[smer] = false;
+        }
+    }
+
+    private void AnketaIzabrana()
+    {
+        unosenjeOpcija = !unosenjeOpcija;
+    }
+
+    private async Task PrikaziNovuObjavu()
+    {
+        try
+        {
+            sacuvaniSmerovi = smerovi.Where(s => smeroviSelected[s]).ToList(); // čuvam smerove za slanje
+                                                                               // Dodavanje objave
+            NastavnoOsoblje nastavnoOsoblje = await NastavnoOsobljeService.PreuzmiNastavnoOsobljeAsync(nID);
+            Data.Model.Forum forum = await ForumService.PreuzmiForumAsync(1);
+
+            var tipObjave = Data.Model.TipObjave.Anketa;
+            if (unosenjeOpcija == true) tipObjave = Data.Model.TipObjave.Anketa;
+            else tipObjave = Data.Model.TipObjave.Obavestenje;
+
+
+
+            // Ovde treba da ubacimo u bazu u tekst
+            var novaAnketa = new Data.Model.Objava()
+                {
+                    TipObjave = tipObjave,
+                    Tekst = text,
+                    OdNastavnogOsoblja = nastavnoOsoblje,
+                    Forum = forum,
+
+                    //Tags = tags // Dodato polje za tagove
+                };
+
+            //    anketaID = await ObjavaService.DodajObjavu(novaAnketa); //kad dodajem objavu, treba da dodam i selektovane smerove u niz iz objave
+
+            // Data.Model.Objava novaObjava = await ObjavaService.PreuzmiObjavu(anketaID);//ovo ide na klik postavi\
+            Data.Model.Objava novaObjava = await ObjavaService.DodajObjavu(novaAnketa);
+
+            foreach (var s in sacuvaniSmerovi)
+            {
+                List<Student> st = await StudentService.VratiStudentePoSmeru(s.Naziv);
+
+                foreach (var ss in st)
+                {
+                    ObjavaStudent objs = new ObjavaStudent()
+                        {
+                            Objava = novaObjava,
+                            Student = ss
+                        };
+                    await ObjavaStudentService.DodajObjavaStudent(objs);
+
+                }
+            }
+
+
+            // Dodavanje opcija
+            Data.Model.Objava anketa = await ObjavaService.PreuzmiObjavu(novaObjava.ID);
+
+            foreach (var op in opcije)
+            {
+                var novaOpcija = new Data.Models.Opcija
+                    {
+                        Anketa = anketa,
+                        Tekst = op.Text,
+                        BrojGlasova = 0
+                    };
+
+                await OpcijaService.DodajOpciju(novaOpcija);
+            }
+
+            objave.Add(text, opcije);
+            text = string.Empty;
+            opcije = new List<Opcija>();
+
+            objavaVidljiva = true;
+
+
+            //sveObjave = await ObjavaService.VratiSveObjave(); ubaci za administratora
+            if (nID > 0)
+            {
+                sveObjave = await ObjavaService.VratiSveObjaveZaNastavnoOsoblje(nID);
+            }
+            else if (sID > 0)
+            {
+                //vratim studenta po ID
+                Student sObjava = await StudentService.PreuzmiStudenta(sID);
+
+                //uzmem mu smer i dodam u fju novu za objave -> je l sam ovo uradila?
+                sveObjave = await ObjavaService.VratiSveObjaveZaSmer(sObjava.NaSmeru.Naziv);
+                //u fji kroz listu objava, koje dodajem na dodaj objava, trazim da li je u listi prosledjeni smer, ako nije preksoci, ako ne vrati tu objavu
+                //ako se vrati null nema obavestenja za njega
+            }
+            else
+            {
+                sveObjave = await ObjavaService.VratiSveObjave();
+            }
+
+
+            notificationMessage.Smerovi = new string[sacuvaniSmerovi.Count]; // Kreiraj novi niz sa odgovarajućom veličinom
+
+            for (int i = 0; i < sacuvaniSmerovi.Count; i++)
+            {
+                notificationMessage.Smerovi[i] = sacuvaniSmerovi[i].Naziv;
+            }
+
+            Kurs izabraniKurs = await KursService.PreuzmiKursPoNazivuAsync(izabraniPredmet);
+
+            notificationMessage.Kurs = izabraniKurs.Naziv;
+            await Send();
+            StateHasChanged();
+
+
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Objava već postoji.");
+        }
+    }
+
+    private void DodajOpciju()
+    //ogranici da ne dodaje prazne
+    {
+        opcije.Add(new Opcija());
+    }
+
+    private void ObrisiOpciju(Opcija opcija)
+    {
+        opcije.Remove(opcija);
+    }
+
+    public class Opcija
+    {
+        public string Text { get; set; }
+    }
+
+    string odabranaOpcijaTekst = " ";
+    bool sacuvano = false;
+    private async Task HandleRadioButtonChange(ChangeEventArgs e)
+    {
+        odabranaOpcijaTekst = e.Value.ToString();
+
+    }
+
+    private async Task SacuvajIzbor(string op)
+    {
+        sacuvano = true;
+        var objava = sveObjave.FirstOrDefault(obj => obj.Opcije.Any(o => o.Tekst == op));
+        if (objava != null)
+        {
+            // Pronalaženje odabrane opcije
+            var opcija = objava.Opcije.FirstOrDefault(o => o.Tekst == op);
+            if (opcija != null)
+            {
+                // Povećavanje broja glasova za 1
+                opcija.BrojGlasova++;
+
+                // Ažuriranje objave u bazi podataka (koristite odgovarajući servis)
+                await OpcijaService.AzurirajOpciju(opcija);
+            }
+        }
+
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        hubConnection = new HubConnectionBuilder().WithUrl(NavigationManager.ToAbsoluteUri("/notificationhub")).Build();
+        await hubConnection.StartAsync();
+
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        var userName = user.Identity.Name;
+
+        if (userName.EndsWith("elfak.rs"))
+        {
+            var studenti = await StudentService.VratiSveStudente();
+            foreach (var s in studenti)
+            {
+                if (s.KorisnickoIme == userName)
+                {
+                    sID = s.ID;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            var nastavnici = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
+            foreach (var s in nastavnici)
+            {
+                if (s.KorisnickoIme == userName)
+                {
+                    nID = s.ID;
+                    break;
+                }
+            }
+        }
+
+        NastavnoOsoblje nastavno = await NastavnoOsobljeService.PreuzmiNastavnoOsobljeAsync(nID);
+        string imeProfesora = "";
+        if (nastavno != null)
+        {
+            imeProfesora = nastavno.Ime + " " + nastavno.Prezime;
+            notificationMessage.SenderName = imeProfesora;
+        }
+
+        if (nID > 0)
+        {
+            sveObjave = await ObjavaService.VratiSveObjaveZaNastavnoOsoblje(nID);
+            filteredKursevi = await KursService.VratiKurseveNastavnogOsoblja(userName); //ovde treba da se prikazu samo kursevi tog nastavnika
+        }
+        else if (sID > 0)
+        {
+            //vratim studenta po ID
+            Student sObjava = await StudentService.PreuzmiStudenta(sID);
+
+            //uzmem mu smer i dodam u fju novu za objave -> je l sam ovo uradila?
+            sveObjave = await ObjavaService.VratiSveObjaveZaSmer(sObjava.NaSmeru.Naziv);
+            //u fji kroz listu objava, koje dodajem na dodaj objava, trazim da li je u listi prosledjeni smer, ako nije preksoci, ako ne vrati tu objavu
+            //ako se vrati null nema obavestenja za njega
+        }
+        else
+        {
+            sveObjave = await ObjavaService.VratiSveObjave();
+        }
+
+
+
+
+
+    }
+
+    private void SelectAllSmerovi(ChangeEventArgs e)
+    {
+        bool selectAll = (bool)e.Value;
+
+        foreach (var smer in smerovi)
+        {
+            smeroviSelected[smer] = selectAll;
+        }
+    }
+
+    //deo za notifikacije
+
+    private List<NotificationMessage> allNotificationMsg = new List<NotificationMessage>();
+    private List<NotificationMessage> currentUserMsgList = new List<NotificationMessage>();
+    private NotificationMessage notificationMessage = new NotificationMessage();
+
+    private HubConnection hubConnection;
+
+    public bool IsConnected => hubConnection.State == HubConnectionState.Connected;
+
+    private async Task Send()
+    {
+        await hubConnection.SendAsync("SendNotificationForObjava", notificationMessage.SenderName, notificationMessage.MsgBody,
+
+                                                                   notificationMessage.Smerovi,
+
+                                                                    notificationMessage.Kurs);
+
+        notificationMessage.MsgBody = "";
+    }
+}

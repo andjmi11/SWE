@@ -1,0 +1,390 @@
+﻿@using Elfind.Data
+@using Microsoft.AspNetCore.SignalR.Client
+@using Elfind.Data.Model
+@using Elfind.Data.Models
+@using Elfind.Data.Services
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+@using System.Security.Policy;
+@inherits LayoutComponentBase
+@inject NotificationMessageService NotificationMessageService
+@inject NotificationMessageProfService NotificationMessageProfService
+@inject NavigationManager navManager
+@inject StudentService StudentService
+@inject NastavnoOsobljeService NastavnoOsobljeService
+@inject ObjavaService ObjavaService
+@inject NotifikacijaStudentService NotifikacijaStudentService
+@inject KursService KursService
+@inject IJSRuntime JSRuntime
+
+@using Elfind.Pages
+
+@*@inject MainLayoutState LayoutState
+*@
+
+<PageTitle>Elfind</PageTitle>
+
+<CascadingValue Value="currentPicture">
+    <div class="page">
+        <div class="sidebar">
+            <NavMenu CurrentPicture="@currentPicture" OnPictureChanged="UpdatePicture" />
+        </div>
+
+        <main>
+            <div class="top-row px-4">
+                <div>
+                    <img src="\resized\rsz_3logoimgtransparent.png" alt="Logo" class="logic" />
+                    @* <img src="/resized/elfind.png" alt="Logo" class="logic"/> treba da se resize*@
+                    @*<h4 style="color:white">@tabName</h4>*@
+                </div>
+                @*za studente, pa napravi isto za prof*@
+
+
+                <div class="goreDesno">
+                    <AuthorizeView Roles="Student">
+                        <Authorized>
+
+                    <div id="noti-Container">
+                        @if (currentUserMsgList.Count() > 0)
+                        {
+                            <div class="ikrNoti_Counter">@(neprocitanePoruke.Count() + currentUserMsgList.Count())</div>
+                        }
+                        else
+                        {
+                            <div class="ikrNoti_Counter">@neprocitanePoruke.Count()</div>
+                        }
+                        <div>
+                            <img src="round_notifications_white_24dp.png" alt="ringbell" class="zvonce" @onclick="NotificationHideShow" />
+                        </div>
+                        <div class="ikrNotifications" style="display:@BoxCSS !important">
+                            <h3>Notifications (<span class="notiCounterOnHead">@neprocitanePoruke.Count()</span>)</h3>
+                            <div class="ikrNotificationItems">
+                                @foreach (var obj in currentUserMsgList)
+                                {
+
+                                    <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" style="background-color:yellowgreen">
+                                        <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+
+                                        <div class="ikrNotificationBody">@obj.MsgBody</div>
+                                        <div class="ikrNotiCreateDate">@obj.MsgDate</div>
+                                    </div>
+                                }
+                                @foreach (var obj in neprocitanePoruke)
+                                {
+                                    <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" style="background-color:yellowgreen">
+                                        <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+
+                                        <div class="ikrNotificationBody">@obj.MsgBody</div>
+                                        <div class="ikrNotiCreateDate">@obj.MsgDate</div>
+                                    </div>
+                                }
+                                @foreach (var obj in procitanePoruke)
+                                {
+                                    <div class="ikrSingleNotiDiv" notiId="@obj.MsgID">
+                                        <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+
+                                        <div class="ikrNotificationBody">@obj.MsgBody</div>
+                                        <div class="ikrNotiCreateDate">@obj.MsgDate</div>
+                                    </div>
+                                }
+                            </div>
+                            <div class="ikrSeeAll"><a href="#">See All</a></div>
+
+                        </div>
+                 
+                    </div>
+                        </Authorized>
+                    </AuthorizeView>
+                    <AuthorizeView Roles="NastavnoOsoblje">
+                        <Authorized>
+
+                              <div id="noti-Container">
+                        @if (currNotProf.Count() > 0)
+                        {
+                            <div class="ikrNoti_Counter">@(neprProf.Count() + currNotProf.Count())</div>
+                        }
+                        else
+                        {
+                            <div class="ikrNoti_Counter">@neprProf.Count()</div>
+                        }
+                        <div>
+                            <img src="round_notifications_white_24dp.png" alt="ringbell" class="zvonce" @onclick="NotificationHideShow" />
+                        </div>
+                        <div class="ikrNotifications" style="display:@BoxCSS !important">
+                            <h3>Notifications (<span class="notiCounterOnHead">@neprProf.Count()</span>)</h3>
+                            <div class="ikrNotificationItems">
+                                @foreach (var obj in currNotProf)
+                                {
+
+                                    <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" style="background-color:yellowgreen">
+                                        <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+
+                                        <div class="ikrNotificationBody">@obj.MsgBody</div>
+                                        <div class="ikrNotificationBody">@obj.Cas</div>
+                                        <div class="ikrNotiCreateDate">@obj.MsgDate</div>
+                                    </div>
+                                }
+                                @foreach (var obj in neprProf)
+                                {
+                                    <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" style="background-color:yellowgreen">
+                                        <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+
+                                        <div class="ikrNotificationBody">@obj.MsgBody</div>
+                                        <div class="ikrNotiCreateDate">@obj.MsgDate</div>
+                                    </div>
+                                }
+                                @foreach (var obj in procProf)
+                                {
+                                    <div class="ikrSingleNotiDiv" notiId="@obj.MsgID">
+                                        <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+
+                                        <div class="ikrNotificationBody">@obj.MsgBody</div>
+                                        <div class="ikrNotiCreateDate">@obj.MsgDate</div>
+                                    </div>
+                                }
+                            </div>
+                            <div class="ikrSeeAll"><a href="#">See All</a></div>
+
+                        </div>
+                 
+                    </div>
+                        </Authorized>
+                    </AuthorizeView>
+
+                    <LoginDisplay /> @*@LayoutState.CurrentPic*@ @*pitanje sta se ovde desava*@
+
+                    <AuthorizeView>
+                        <Authorized>
+                            <img src="round_logout_white_24dp.png" alt="logout" class="izadji" /> @*onclick za logout da se doda*@
+
+                        </Authorized>
+                        <NotAuthorized>
+                            <img src="round_login_white_24dp.png" alt="logout" class="udji" />
+                        </NotAuthorized>
+                    </AuthorizeView>
+
+
+
+                    @*            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+                    *@
+                    @* <a class="profil" href="profil">Profil</a>*@
+
+
+                    @*   <AuthorizeView>
+                    <Authorized>
+                    <p>Zdravoooo</p>
+                    <a @onclick="Logout" href="javascript:void(0)">Logout</a>
+                    </Authorized>
+                    <NotAuthorized>
+                    <a href="/login" class="login">Login</a>
+                    </NotAuthorized>
+                    </AuthorizeView>*@
+
+                </div>
+            </div>
+
+            <div class="zajednicki content-item" id="backgroundContainer">
+                @*<div id="content"> @*added*@
+                <article class="content px-4">
+                    @*                    <CascadingValue Value="@currentPicture" Name="Picture">
+                    *@
+                    @*                        <div>@currentPicture</div>
+                    <CascadingValue Value="UpdatePicture">
+                    *@                        @Body
+                    @*                    </CascadingValue>
+                    *@
+                </article>
+
+                <div class="sidebar2">
+                    <RightSidebar />
+                </div>
+
+                @*</div>*@
+            </div>
+        </main>
+
+    </div>
+</CascadingValue>
+
+@code {
+    private string tabName = "stranica za sada";
+
+    public string currentPicture { get; set; } = "/resized/Prizemlje.jpg";
+
+    public void UpdatePicture(string newPicture)
+    {
+        currentPicture = newPicture;
+        StateHasChanged();
+    }
+
+    //dodato
+
+
+    //private async Task HandlePictureChanged(string newPicture)
+    //{
+    //    currentPicture = newPicture;
+    //    await InvokeAsync(StateHasChanged); // Update the UI
+    //}
+
+    //EventCallback UpdateStyle => EventCallback.Factory.Create(this, UpdateAlertStyle);
+    //public void UpdateAlertStyle()
+    //{
+    //    if (applicationState.IsDirty)
+    //    {
+    //        //promena slike?
+    //        StateHasChanged();
+    //    }
+    //}
+
+
+    private List<NotificationMessage> allNotificationMsg = new List<NotificationMessage>();
+    private List<NotificationMessage> currentUserMsgList = new List<NotificationMessage>();
+    private List<NotificationMessage> neprocitanePoruke = new List<NotificationMessage>();
+    private List<NotificationMessage> procitanePoruke = new List<NotificationMessage>();
+    private NotificationMessage notificationMessage = new NotificationMessage();
+
+    private List<NotificationMessageProf> allNotProf = new List<NotificationMessageProf>();
+    private List<NotificationMessageProf> currNotProf = new List<NotificationMessageProf>();
+    private List<NotificationMessageProf> neprProf = new List<NotificationMessageProf>();
+    private List<NotificationMessageProf> procProf = new List<NotificationMessageProf>();
+    private NotificationMessageProf notificationMessageProf = new NotificationMessageProf();
+
+    private HubConnection hubConnection;
+    private string BoxCSS = "none";
+
+
+    private string userName;
+    private string userEmail;
+    private string stud;
+    private string nast;
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(NavigationManager.ToAbsoluteUri("/notificationhub"))
+            .Build();
+
+        hubConnection.On<string, string, string[], string>("ReceiveMessage", (senderName, title, sm, k) =>
+        {
+            allNotificationMsg.Add(new NotificationMessage()
+                {
+                    MsgID = allNotificationMsg.Count() + 1,
+                    SenderName = senderName,
+                    MsgBody = title,
+                    Smerovi = sm,
+                    Kurs = k
+
+                });
+            currentUserMsgList = allNotificationMsg.Where(x => x.SenderName != notificationMessage.SenderName).ToList();
+
+            InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
+        });
+
+        hubConnection.On<string, string, string>("ReceiveMessageForZahtev", (senderName, title, c) =>
+        {
+            allNotProf.Add(new NotificationMessageProf()
+                {
+                    MsgID = allNotProf.Count() + 1,
+                    SenderName = senderName,
+                    MsgBody = title,
+                    Cas = c
+                });
+            currNotProf = allNotProf.Where(x => x.SenderName != notificationMessage.SenderName).ToList();
+
+            InvokeAsync(() =>
+    {
+        StateHasChanged();
+    });
+        });
+
+
+        // currentUserMsgList = await NotificationMessageService.VratiNotifikacije();
+
+        await InvokeAsync(async () =>
+        {
+            await hubConnection.StartAsync();
+        });
+
+
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        userName = user.Identity.Name;
+
+        if (userName != null)
+        {
+            if (userName.EndsWith("elfak.rs"))
+            {
+                var studenti = await StudentService.VratiSveStudente();
+
+                foreach (var student in studenti)
+                {
+                    if (student.KorisnickoIme == userName)
+                    {
+                        stud = student.KorisnickoIme;
+                    }
+                    await AddToGroup(student.NaSmeru.Naziv);
+
+
+                    List<Kurs> kurseviZaSmer = await KursService.VratiKurseveNaSmeru(student.NaSmeru.Naziv);
+                    foreach (var k in kurseviZaSmer)
+                    {
+                        await AddToGroup(k.Naziv);
+                    }
+                }
+            }
+            else
+            {
+                var nastavnoOsoblje = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
+                foreach (var n in nastavnoOsoblje)
+                {
+                    if (n.KorisnickoIme == userName)
+                    {
+                        stud = n.KorisnickoIme;
+                    }
+                    await AddToGroup(n.KorisnickoIme);//za slanje po prof
+
+                }
+                await AddToGroup("NastavnoOsoblje"); //kunem se ne znam sta cu s ovim
+            }
+        }
+
+        if (stud != null && stud.EndsWith("elfak.rs"))
+        {
+            neprocitanePoruke = await NotificationMessageService.VratiNeprocitanePoruke(stud);
+            procitanePoruke = await NotificationMessageService.VratiProcitanePoruke(stud);
+        }
+
+        if(nast != null && nast.EndsWith("elfak.ni.ac.rs"))
+        {
+            neprProf = await NotificationMessageProfService.VratiNeprocitanePoruke(nast);
+            procProf = await NotificationMessageProfService.VratiProcitanePoruke(nast);
+        }
+
+        // LayoutState.CurrentPicChanged += PicChanged;
+
+    }
+
+    //void PicChanged(object sender, string e) => StateHasChanged(); //da li je sig string
+
+    //public void Dispose() => LayoutState.CurrentPicChanged -= PicChanged;
+
+    private async Task AddToGroup(string groupName)
+    {
+        await hubConnection.InvokeAsync("AddToGroup", groupName);
+    }
+
+    private void NotificationHideShow()
+    {
+        if (BoxCSS == "none") BoxCSS = "block";
+        else BoxCSS = "none";
+    }
+
+}
+
+

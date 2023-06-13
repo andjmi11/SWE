@@ -1,0 +1,8 @@
+﻿@inject NavigationManager navigation
+@code {
+    protected override void OnInitialized()
+    {
+        navigation.NavigateTo("Identity/Account/Login?returnUrl=" +
+        Uri.EscapeDataString(navigation.Uri), true);
+    }
+}

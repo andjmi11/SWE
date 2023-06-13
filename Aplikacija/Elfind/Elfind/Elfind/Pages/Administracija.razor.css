@@ -1,0 +1,47 @@
+﻿.custom-button {
+    background-color: #ffb6c1;
+    width: 200px;
+    height: 50px;
+    color: #000000;
+    border: 2px solid #fc9fad;
+    margin: 15px;
+}
+
+.custom-btn {
+    background-color: #ffb6c1;
+    width: 200px;
+    height: 40px;
+    color: #000000;
+    border: 2px solid #fc9fad;
+    margin: 15px;
+}
+
+.table-responsive-md {
+    border: 2px solid #fc9fad;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.invalid-textbox {
+    border: 1px solid red;
+    background-color: #FFC0CB; /* Crvena pozadina */
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    display: @(nevalidnoKImeN ? "block" : "none"); /* Prikazuje se samo kada je flag true */
+}
+
+namespace Elfind.Pages {
+    public class Administracija
+
+{
+}
+
+}
+
+.thAdm, .trAdm {
+    padding 15px !important;
+    width: 165px !important;
+}

@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Elfind",
+    "\\Elfind\\Areas",
+    "\\Elfind\\Areas\\Identity",
+    "\\Elfind\\Areas\\Identity\\Data",
+    "\\Elfind\\Areas\\Identity\\Pages\\Account",
+    "\\Elfind\\Data",
+    "\\Elfind\\Migrations"
+  ],
+  "SelectedNode": "\\Elfind.sln",
+  "PreviewInSolutionExplorer": false
+}

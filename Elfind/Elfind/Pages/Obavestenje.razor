@@ -1,0 +1,37 @@
+﻿<h3>Obavestenje</h3>
+
+<div class="obavestenje">
+    @if (!showQuestionText)
+    {
+        <div class="tekstObavestenja">
+            <label for="text-input">Unesite obavestenje:</label>
+            <input type="text" id="text-input" @bind="@text" />
+            <button @onclick="SetText">Ok</button>
+        </div>
+    }
+    else
+    {
+        <div class="tekstObavestenja">
+            <p>@text</p>
+        </div>
+    }
+
+    <div>
+        <button @onclick="ShowQuestionText">Done</button>
+    </div>
+</div>
+
+@code {
+    private string text;
+    private bool showQuestionText = false;
+
+    private void ShowQuestionText()
+    {
+        showQuestionText = true;
+    }
+
+    private void SetText()
+    {
+        showQuestionText = false;
+    }
+}

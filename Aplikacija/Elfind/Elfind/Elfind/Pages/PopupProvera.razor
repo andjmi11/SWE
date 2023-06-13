@@ -1,0 +1,119 @@
+﻿@using Microsoft.AspNetCore.Components
+@using System
+@using System.Threading.Tasks
+@using Elfind.Data.Model
+@using Elfind.Data.Models
+@using Elfind.Data.Services
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@using Elfind.Data
+@inject NastavnoOsobljeService NastavnoOsobljeService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<div class="popup-overlay" style="display: @(IsOpen ? "block" : "none")">
+    <div class="popup">
+        <div class="popupClose">
+            @*<button class="popup-close" @onclick="ClosePopup" style="background-color: #ffb6c1; color:#000000;border: 2px solid #fc9fad; width: 25px; height: 25px; display: flex; align-items: center;">
+                x
+            </button>*@
+        </div>
+        <div class="popup-content">
+            <p>@Question</p>
+        </div>
+        <div class="popup-actions">
+            <button class="popup-button" @onclick="OnYesClick" style=" background-color: #ffb6c1; color:#000000;border: 2px solid #fc9fad;">Da</button>
+            <button class="popup-button" @onclick="OnNoClick" style="background-color: #ffb6c1; color:#000000;border: 2px solid #fc9fad;">Ne</button>
+@*            <button class="popup-button" @onclick="ClosePopup">Close</button>
+*@        </div>
+    </div>
+</div>
+
+@code {
+
+
+    [Parameter]
+    public string Question { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> OnConfirmation { get; set; }
+
+    private bool IsOpen = true;
+
+    public async Task Show()
+    {
+        IsOpen = true;
+        StateHasChanged();
+    }
+
+    private async Task OnYesClick()
+    {
+        NastavnoOsoblje nastavnoOsoblje = await NastavnoOsobljeService.PreuzmiNastavnoOsobljePoKorisnickomImenuAsync(nast.KorisnickoIme);
+        nastavnoOsoblje.Prisustvo = true;
+        await NastavnoOsobljeService.AzurirajNastavnoOsobljeAsync(nastavnoOsoblje);
+
+     
+
+        await OnConfirmation.InvokeAsync(true);
+        ClosePopup();
+    }
+
+    private async Task OnNoClick()
+    {
+        NastavnoOsoblje nastavnoOsoblje = await NastavnoOsobljeService.PreuzmiNastavnoOsobljePoKorisnickomImenuAsync(nast.KorisnickoIme);
+        if (nastavnoOsoblje.Prisustvo == true)
+        {
+            nastavnoOsoblje.Prisustvo = false;
+            await NastavnoOsobljeService.AzurirajNastavnoOsobljeAsync(nastavnoOsoblje);
+        }
+
+
+        await OnConfirmation.InvokeAsync(false);
+        ClosePopup();
+    }
+
+    private void ClosePopup()
+    {
+        IsOpen = false;
+        StateHasChanged();
+    }
+
+
+    private string userName;
+    private string userEmail;
+    private NastavnoOsoblje nast = null;
+    private bool IsPopupShown;
+    protected override async Task OnInitializedAsync()
+    {
+     
+
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        userName = user.Identity.Name; // Dohvati korisničko ime
+        userEmail = user.FindFirstValue(ClaimTypes.Email); // Dohvati e-mail adresu
+
+
+        if (userName.EndsWith("elfak.ni.ac.rs"))
+        {
+            var nastavnoOsoblje = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
+            foreach (var n in nastavnoOsoblje)
+            {
+                if (n.KorisnickoIme == userName)
+                {
+                    nast = new NastavnoOsoblje()
+                        {
+                            ID = n.ID,
+                            Ime = n.Ime,
+                            Prezime = n.Prezime,
+                            KorisnickoIme = n.KorisnickoIme,
+                            Tip = n.Tip,
+                            Kancelarija = n.Kancelarija,
+                            Objave = n.Objave
+                        };
+                    break;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,74 @@
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+#nullable disable
+
+using System;
+using System.Threading.Tasks;
+using Elfind.Data;
+using Elfind.Data.Model;
+using Elfind.Data.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.Extensions.Logging;
+
+namespace Elfind.Areas.Identity.Pages.Account
+{
+    public class LogoutModel : PageModel
+    {
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly ILogger<LogoutModel> _logger;
+        private readonly NastavnoOsobljeService nastavnoOsobljeService;
+        private readonly ElfindContext _context;
+        private readonly IDbContextFactory<ElfindContext> _dbContextFactory;
+        private readonly UserManager<IdentityUser> _userManager;
+
+        public LogoutModel(SignInManager<IdentityUser> signInManager, ILogger<LogoutModel> logger, 
+            NastavnoOsobljeService nastavnoOsobljeService, ElfindContext elfindContext, IDbContextFactory<ElfindContext> dbContextFactory,UserManager<IdentityUser> userManager )
+        {
+            _signInManager = signInManager;
+            _logger = logger;
+            this.nastavnoOsobljeService = nastavnoOsobljeService;
+            _context = elfindContext;
+            _dbContextFactory = dbContextFactory;
+            _userManager = userManager;
+        }
+
+        public async Task<IActionResult> OnPost(string returnUrl = null)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var user = await _userManager.GetUserAsync(User);
+
+                using (var context = _dbContextFactory.CreateDbContext())
+                { 
+                    NastavnoOsoblje nastavnoOsoblje = await nastavnoOsobljeService.PreuzmiNastavnoOsobljePoKorisnickomImenuAsync(user.Email);
+                    if (nastavnoOsoblje != null && nastavnoOsoblje.Prisustvo == true)
+                    {
+                        nastavnoOsoblje.Prisustvo = false;
+                        await nastavnoOsobljeService.AzurirajNastavnoOsobljeAsync(nastavnoOsoblje);
+
+                    }
+                }
+            }
+                await _signInManager.SignOutAsync();
+            _logger.LogInformation("User logged out.");
+
+            
+
+            if (returnUrl != null)
+            {
+                return LocalRedirect(returnUrl);
+            }
+            else
+            {
+                // This needs to be a redirect so that the browser performs a new
+                // request and the identity for the user gets updated.
+                return RedirectToPage();
+            }
+        }
+    }
+}

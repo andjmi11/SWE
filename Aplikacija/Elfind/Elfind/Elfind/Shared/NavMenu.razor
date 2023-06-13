@@ -1,0 +1,210 @@
+﻿@using Elfind.Data.Model
+@using Elfind.Data.Models
+@using Elfind.Data.Services
+@inject ZgradaService ZgradaService
+@inject SpratService SpratService
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">
+            <h2 style="color:white">Elfind</h2>
+        </a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+
+<div class="@NavMenuCssClass nav-scrollable " @onclick="ToggleNavMenu">
+    @*@NavMenuCssClass kad se doda ispred nav-scrollable sve nestane*@
+    @*navbar navbar-expand-sm navbar-toggleable-sm ovako je header u login*@
+    <nav class="flex-column">
+        <nav class="row2">
+
+            @*mapa*@
+            <div class="nav-item px-2">
+                <NavLink class="nav-link" href="mapa" Match="NavLinkMatch.All" @onclick="ToggleMapaPanel">
+                    <img src="baseline_map_white_24dp.png" alt="mapico" class="icon"/>
+                    <span class="mapaNav" aria-hidden="true"></span> Mapa
+                </NavLink>
+            </div>
+
+            @*paneli u mapi*@
+            <div id="panel" class="@panelClass">
+
+                @foreach (var z in zgrade)
+                {
+                    if(z.ID==3)
+                    {
+                        <div class="nav-item px-4">
+                            <NavLink class="nav-link" href="mapa" Match="NavLinkMatch.All" @onclick="TogglePanel1">
+                                <span class="mapaNav" aria-hidden="true"></span> @z.Tip
+                            </NavLink>
+                        </div>
+
+                        foreach (var s in spratovi)
+                        {
+                            <div id="panel1" class="@panel1Class">
+                            <div class="nav-item px-5">
+                                <NavLink class="nav-link" href="mapa" Match="NavLinkMatch.All" @onclick="@(() => { TogglePanel1(); ChangePicture(@s.Slika); })">
+                                    <span class="mapaNav" aria-hidden="true"></span> @s.Naziv
+                                </NavLink>
+                            </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="nav-item px-4">
+                            <NavLink class="nav-link" href="mapa" Match="NavLinkMatch.All">
+                                <span class="mapaNav" aria-hidden="true"></span> @z.Tip
+                            </NavLink>
+                        </div>
+                    }
+                  
+                  #region andjKom 
+                       @* <div class="nav-item px-4">
+                            <NavLink class="nav-link" href="mapa" Match="NavLinkMatch.All">
+                                <span class="mapaNav" aria-hidden="true"></span> @z.Tip
+                            </NavLink>
+                        </div>*@
+                        @*ovo sam ostavila jer ako bi se tipa nekad dodala neka druga dodala
+
+                bi se samo da postoji, iskreno ovo je malo hardcode ali nmg zbog fja da menjam*@
+                    
+                #endregion
+
+                }
+                </div>
+
+                @* <div class="nav-item px-5">
+                    <NavLink class="nav-link" href="mapa" Match="NavLinkMatch.All" @onclick="@(() => { TogglePanel1(); ChangePicture(@s.Slika); })">
+                        <span class="mapaNav" aria-hidden="true"></span> @s.Naziv
+                    </NavLink>
+                </div>*@
+
+    <AuthorizeView Roles="Student, NastavnoOsoblje, Administrator">
+        <Authorized>
+
+            <div class="nav-item px-2">
+                <NavLink class="nav-link" href="forum">
+                    <img src="baseline_forum_white_24dp.png" alt="forumico" class="icon"/>
+                    <span class="forumNav" aria-hidden="true"></span> Forum 
+                </NavLink>
+            </div>
+
+        </Authorized>
+    </AuthorizeView>
+
+   <AuthorizeView Roles="Student, NastavnoOsoblje">
+        <Authorized>
+            @*<div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <span class="oi oi-home" aria-hidden="true"></span> Home
+            @*oi oi su klase preko kojih su ikonice uredjene uz bootstrap, to ako cemo da menjamo treba ceo bootstrap da se obrise i izmeni*@
+            @*</NavLink>
+            </div>*@
+
+            <div class="nav-item px-2">
+                <NavLink class="nav-link" href="profil">
+                    <img src="baseline_account_circle_white_24dp.png" alt="mapico" class="icon"/>
+                    <span class="profilNav" aria-hidden="true"></span> Profil
+                </NavLink>
+            </div>
+        </Authorized>
+    </AuthorizeView>
+
+    <AuthorizeView Roles="Administrator">
+        <Authorized>
+
+              <div class="nav-item px-2">
+                  <NavLink class="nav-link" href="administracija">                   
+                    <img src="round_supervisor_account_white_24dp.png" alt="mapico" class="icon"/>
+                      <span class="administracijaNav" aria-hidden="true"></span> Administracija 
+                  </NavLink>
+              </div>
+        </Authorized>
+    </AuthorizeView>
+
+        </nav>
+    </nav>
+</div>
+
+
+
+
+
+
+@code {
+    private List<Zgrada> zgrade =  new List<Zgrada>();
+    private List<Sprat> spratovi = new List<Sprat>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        zgrade = await ZgradaService.VratiSveZgrade();
+        spratovi = await SpratService.VratiSveSpratoveUZgradi("Glavna lamela");
+    }
+
+    private bool collapseNavMenu = true;
+
+#nullable enable
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+#nullable disable
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private string panelClass = "d-none";
+
+    private void ToggleMapaPanel()
+    {
+        panelClass = panelClass == "d-none" ? "" : "d-none";
+    }
+
+    private string panel1Class = "d-none";
+    private string panel2Class = "d-none";
+    private string panel3Class = "d-none";
+
+    private async Task TogglePanel1()
+    {
+        panel1Class = panel1Class == "d-none" ? "" : "d-none";
+
+    }
+
+    private void TogglePanel3()
+    {
+        panel3Class = panel3Class == "d-none" ? "" : "d-none";
+
+    }
+
+    private bool option1 = true;
+    private bool option2;
+
+    private string currentPicture = "/resized/Prizemlje.jpg";
+
+    [Parameter]
+    public string CurrentPicture
+    {
+        get => currentPicture;
+        set
+        {
+            if(currentPicture != value)
+            {
+                currentPicture = value;
+                OnPictureChanged.InvokeAsync(currentPicture); //ovamo je invoke nzm
+            }
+        }
+    }
+
+    [Parameter]
+    public EventCallback<string> OnPictureChanged { get; set; }
+
+    private void ChangePicture(string path)
+    {        
+        currentPicture = $"/resized/{path}";
+        OnPictureChanged.InvokeAsync(currentPicture);
+    }
+}
+

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iSiOTcYC7xLRq2Iqb9RQljwNRULG9HhNRdKidXL9rRYj4oe0zpD02Z+LF2oqvV3Vb9auk8wfrsJrtE5pqNKDDA==",
+  "dgSpecHash": "/K54wmE5JCrcEaUsgJZvmXnd09muWjk4WbSNIVTWEvc1z/hiaxaP1I+2tAWHFlqVr9AOg5xzdxJS9jBfL2/DmQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\krist\\SWE1\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+  "projectFilePath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\krist\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\krist\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

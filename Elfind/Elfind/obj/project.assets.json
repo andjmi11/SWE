@@ -3597,11 +3597,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\krist\\SWE1\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "projectUniqueName": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
       "projectName": "Elfind",
-      "projectPath": "C:\\Users\\krist\\SWE1\\SWE\\Elfind\\Elfind\\Elfind.csproj",
+      "projectPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\Elfind.csproj",
       "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\krist\\SWE1\\SWE\\Elfind\\Elfind\\obj\\",
+      "outputPath": "C:\\Users\\krist\\SWE\\Elfind\\Elfind\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\krist\\AppData\\Roaming\\NuGet\\NuGet.Config",

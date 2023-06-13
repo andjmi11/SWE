@@ -1,0 +1,9 @@
+﻿/*ne vidi ovo iz nekog razloga nzm*/
+
+.sidebar2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: fit-content;
+    height: fit-content;
+}

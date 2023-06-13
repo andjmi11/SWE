@@ -1,0 +1,815 @@
+﻿@page "/mapa"
+@page "/"
+
+@using Elfind.Data
+@using Elfind.Data.Services
+@using Elfind.Data.Model
+@using Elfind.Data.Models
+@inject ProstorijaService prostorijaService
+@inject SpratService spratService
+@inject NastavnoOsobljeService osobljeService
+@inject KursService kursService
+@inject StudentService studentService
+@inject SmerService smerService
+@inject RasporedCasovaService rasporedCasovaService
+@inject IJSRuntime JSRuntime
+
+
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@*@attribute [Authorize(Roles = "Student, NastavnoOsoblje")]
+*@
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+
+@*dodato*@
+@*@inject MainLayout mainLayout
+*@
+@*<AuthorizeView>
+    <NotAuthorized>
+    </NotAuthorized>
+</AuthorizeView>*@
+
+<div class="glavni">
+    @*@onclick="HandleComponentClick*@
+
+    <div class="gornji  justify-content-center">
+        <form @onsubmit="Search" class="pretraga">
+            <input type="text" style="border: 2px solid #fc9fad" @bind="searchQuery" placeholder="Search..." />
+            <button type="submit" style="background-color: #ffb6c1; color: #000000; border: 2px solid #fc9fad;">
+                <img src="\icons\baseline_search_black_24dp.png" alt="search" />
+                @*Search*@
+            </button>
+        </form>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row justify-content-center">
+            <div class="slikeMape">
+
+                <img src="@currentPicture" alt="Picture" class="img-fluid" id="my-picture" @onclick="HandlePictureClick" style="position: relative;  border: 5px solid #ffb6c1; margin: 20px;" /> @*left: 100px; display: flex; justify-content: center; align-items: center;*@
+
+                @if (showPin)
+                {
+                    <div class="pin" style="position: absolute; left: @($"{pinLeft}px"); top: @($"{pinTop}px"); transform: translate(-75%, -100%); z-index: 1">
+                        <img src="\resized\rsz_1pin.png" alt="Pin" />
+                    </div>
+                }
+
+            </div>
+        </div> <!-- Kraj prvog reda -->
+
+
+
+        <div class="liste">
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div class="amfiteatri">
+                        @if (amfiteatri.Count > 0)
+                        {
+                            <label>Amfiteatri</label>
+                            <ul>
+                                @foreach (var amfi in amfiteatri)
+                                {
+                                    <li>@amfi</li>
+                                }
+                            </ul>
+                        }
+
+                    </div>
+                </div> <!-- Kraj kolone za "amfiteatri" -->
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="laboratorije">
+                        @if (laboratorije.Count > 0)
+                        {
+                            <label>Laboratorije</label>
+                            <ul>
+                                @foreach (var lab in laboratorije)
+                                {
+                                    <li>@lab</li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                </div> <!-- Kraj kolone za "laboratorije" -->
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="kancelarije">
+                        @if (kancelarije.Count > 0)
+                        {
+                            <label>Kancelarije</label>
+                            <ul>
+                                @foreach (var kanc in kancelarije)
+                                {
+                                    <li>@kanc</li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                </div> <!-- Kraj kolone za "kancelarije" -->
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="ucionice">
+                        @if (ucionice.Count > 0)
+                        {
+                            <label>Učionice</label>
+                            <ul>
+                                @foreach (var uc in ucionice)
+                                {
+                                    <li>@uc</li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                </div> <!-- Kraj kolone za "ucionice" -->
+            </div>
+        </div> <!-- Kraj drugog reda -->
+    </div>
+
+
+    <Modal @ref="modal">
+        <HeaderTemplate>
+            @if (trenutna != null)
+            {
+                <label style="font-weight: bold">@trenutna.Oznaka</label>
+            }
+        </HeaderTemplate>
+        <BodyTemplate>
+            @poruka
+            @if (trenutna != null) //mozda treba da se izdigne gore
+            {
+                <div class="infoOProst">
+                    <div>
+                        <label>Zgrada: @trenutna.PripadaZgradi.Tip</label>
+                    </div>
+                    <div>
+                        <label>Sprat: @trenutna.Sprat.Naziv </label>
+                    </div>
+                    <div>
+                        <label>Tip prostorije: @trenutna.TipProstorije</label>
+                    </div>
+                    <div>
+                        <label>Kapacitet prostorije: @trenutna.Kapacitet</label> @*mozda da vidi samo prof*@
+                    </div>
+
+                </div>
+
+                @if ((int)trenutna.TipProstorije == 3)
+                {
+                    @if (trenutna.NastavnoOsobljeUKancelariji.Count > 0)
+                    {
+                        <label>Spisak nastavnog osoblja u kancelariji:</label>
+                        <ul>
+                            @foreach (var os in trenutna.NastavnoOsobljeUKancelariji)
+                            {
+                                <li style="display:flex">
+                                    @if (@os.Prisustvo)
+                                    {
+                                        ObojiKruzic();
+                                    }
+                                    <span class="dot @prisutan" />
+                                    @os.Ime @os.Prezime
+                                </li>
+                            }
+                        </ul>
+                    }
+                }
+                else
+                {
+                    <AuthorizeView Roles="NastavnoOsoblje">
+                        <Authorized>
+                            <div class="@Oboji zaZakazivanje">
+
+                                <div class="zakaziDugmeDiv">
+                                    <button class="dugmic" style="background-color: #ffb6c1; color:#000000;border: 2px solid #fc9fad;" @onclick="HandleZakaziClick">
+                                        Zakazivanje
+                                    </button>
+                                </div>
+                                @*forma za zakazivanje*@
+                                @if (showZakazi)
+                                {
+                                    <Zakazivanje Prostorija="trenutna" />
+                                }
+                            </div>
+                        </Authorized>
+                    </AuthorizeView>
+                }
+            }
+        </BodyTemplate>
+        <FooterTemplate>
+            <button class="dugmic" style="background-color: #ffb6c1; color:#000000;border: 2px solid #fc9fad;" @onclick="OnHideModalClick">
+                Ok
+            </button>
+        </FooterTemplate>
+    </Modal>
+
+    <Modal @ref="notFoundModal" Title="Ne postoje podaci o trazenom objektu.">
+        <FooterTemplate>
+            <Button Color="ButtonColor.Primary" @onclick="OnHideModalNotFoundClick">U redu</Button>
+        </FooterTemplate>
+    </Modal>
+
+    <Modal @ref="profModal" Title="Postoji vise clanova nastavnog osoblja datog imena i prezimena. Izaberite: ">
+        <BodyTemplate>
+            @if (moguceOsoblje != null && moguceOsoblje.Count > 0)
+            {
+                @foreach (var o in moguceOsoblje)
+                {
+                    <div>
+                        <input type="radio" value="@o.ID" name="izabranProf" class="opcijaProf" @onchange="HandleProfChosen">
+                        <label for="@o.ID" class="imeProfOpc">@o.Ime @o.Prezime : @o.KorisnickoIme</label>
+                    </div>
+
+                    @*<input type="radio" name="opcijeNove" value="@opc.Tekst" class="opcijaAnkete" data-objava-id="@obj.ID" @onchange="HandleRadioButtonChange">
+            <label for="@opc.ID" class="imeOpcije">@opc.Tekst</label>
+            *@
+                    <br />
+                }
+            }
+        </BodyTemplate>
+
+        <FooterTemplate>
+            <Button Color="ButtonColor.Primary" @onclick="OnHideProfModalClick">U redu</Button>
+        </FooterTemplate>
+    </Modal>
+
+    <Modal @ref="prostModal" Title="Postoji vise prostorija u kojima ce se odrzati cas datog kursa. Izaberite: ">
+        <BodyTemplate>
+            @if (predmProstorije != null && predmProstorije.Count > 0)
+            {
+                @foreach (var p in predmProstorije)
+                {
+                    <div>
+                        <input type="radio" value="@p.ID" name="izabranaProst" class="opcijaProst" @onchange="HandleProstChosen">
+
+                        <label for="@p.ID" class="imeProstOpc">@p.Oznaka </label>
+                    </div>
+
+                    @*<input type="radio" name="opcijeNove" value="@opc.Tekst" class="opcijaAnkete" data-objava-id="@obj.ID" @onchange="HandleRadioButtonChange">
+            <label for="@opc.ID" class="imeOpcije">@opc.Tekst</label>
+            *@
+                    <br />
+                }
+            }
+        </BodyTemplate>
+
+        <FooterTemplate>
+            <Button Color="ButtonColor.Primary" @onclick="OnHideProstModalClick">U redu</Button>
+        </FooterTemplate>
+    </Modal>
+
+</div>
+
+
+<AuthorizeView Roles="NastavnoOsoblje">
+    <Authorized>
+
+        <PopupProvera Question="Da li ste trenutno u prostorijama fakulteta?" OnConfirmation="HandleConfirmation"></PopupProvera>
+    </Authorized>
+</AuthorizeView>
+
+@code {
+    //revise
+    private async Task HandleConfirmation(bool result)
+    {
+        if (result)
+        {
+            // User clicked Yes
+            Console.WriteLine("tu je");
+        }
+        else
+        {
+            // User clicked No
+            Console.WriteLine("tu nije");
+        }
+    }
+}
+
+@*dovde*@
+
+@code {
+
+    #region vars
+    [CascadingParameter]
+    public string CurrentPicture
+    {
+        get
+        {
+            return currentPicture;
+        }
+        set
+        {
+            if (currentPicture != value)
+            {
+                currentPicture = value;
+                UpdateCurrentPictureAsync();
+            }
+        }
+    }
+
+    private string currentPicture; //e jebem li ga sad
+
+
+    [Parameter]
+    public EventCallback<string> OnPictureChanged { get; set; }
+
+    //dodato PROVERI HOW TO CHECK CASCADING PARAMETERS
+    //[CascadingParameter]
+    //public EventCallback UpdateStyle { get; set; }
+
+    //[Inject]
+    //MainLayoutState LayoutState { get; set; }
+
+    //string PicForMain
+    //{
+    //    get => LayoutState.CurrentPic;
+    //    set => LayoutState.CurrentPic = value;
+    //}
+
+    //[Parameter]
+    //public EventCallback<string> ValueSent { get; set; }
+
+    //
+
+    private double pinLeft = 0;
+    private double pinTop = 0;
+
+    private bool showPin { get; set; } = false;
+
+    private Prostorija trenutna;
+
+    private string poruka;
+
+    private string searchQuery;
+
+    private List<Prostorija> prostorije = new List<Prostorija>();
+    private List<string> amfiteatri = new List<string>();
+    private List<string> kancelarije = new List<string>();
+    private List<string> laboratorije = new List<string>();
+    private List<string> ucionice = new List<string>();
+
+    private List<TipP> tipovi = new List<TipP> { TipP.Amfiteatar, TipP.Laboratorija, TipP.Kancelarija, TipP.Ucionica };
+
+    private bool showZakazi = false;
+
+    private string? Oboji => obojenZakaz ? "zakazivanjeBojenje" : null;
+    private string? prisutan => obojenKruzic ? "kruzicBojenje" : null;
+    private bool obojenZakaz = false;
+    private bool obojenKruzic = false;
+
+
+    private List<NastavnoOsoblje> moguceOsoblje = new List<NastavnoOsoblje>();
+
+
+    private string userName;
+    private string userEmail;
+    private NastavnoOsoblje nast = null;
+    private Student student = null;
+    private List<StudentKurs> studentKursevi = new List<StudentKurs>();
+    private List<Kurs> kursevi = new List<Kurs>();
+    private List<Cas> casovi = new List<Cas>();
+    private List<Prostorija> predmProstorije = new List<Prostorija>();
+
+    private int odabraniID;
+    #endregion
+
+    //dodato
+
+    public void ObojiKruzic()
+    {
+        obojenKruzic = true;
+    }
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        userName = user.Identity.Name; // Dohvati korisničko ime
+        userEmail = user.FindFirstValue(ClaimTypes.Email); // Dohvati e-mail adresu
+
+        if (userName != null) //neko je ulogovan
+        {
+
+            if (userName.EndsWith("elfak.rs"))
+            {
+                student = await studentService.PreuzmiStudentaPoKorisnickomImenuKratka(userName);
+
+                if (student != null)
+                {
+                    foreach (var sk in student.Kursevi)
+                    {
+                        kursevi.Add(sk.Kurs);
+                    }
+
+                    //ovde ja sad imam sve kurseve studenta, i on moze samo njih da pretrazi
+                }
+            }
+            else
+            {
+                nast = await osobljeService.PreuzmiNastavnoOsobljePoKIKratkaAsync(userName);
+
+                if (nast != null)
+                {
+                    foreach (var kurs in nast.Kursevi)
+                    {
+                        kursevi.Add(kurs.Kurs);
+                    }
+
+                    //ovde imam sve kurseve ako je profesor
+                }
+            }
+
+        }
+        await UpdateCurrentPictureAsync(); //prebitno da postoji
+
+    }
+
+
+
+    #region pretraga
+    private async Task Search() //jos da se doda za kurs
+    {
+        //mozda postoji optimalniji nacin? doduse on preuzima samo 1 obj iz baze posle pretrage sto ne traje dugo za sad, pitanje za veliki br pod
+        var prostorija = await prostorijaService.PreuzmiProstorijuPoOznaci(searchQuery);
+
+        var osoblje = await osobljeService.PreuzmiNastavnoOsobljePoImenuListaAsync(searchQuery);
+
+        var kurs = await kursService.PreuzmiKursPoNazivuAsync(searchQuery);
+        string prethodni = currentPicture;
+
+        Prostorija prostorijaO = null;
+        Prostorija prostorijaK = null; //dodat
+
+        if (prostorija == null && (osoblje == null || osoblje.Count == 0) && kurs == null)
+        {
+            await ShowModalNotFound();
+            return;
+        }
+        if (osoblje != null && osoblje.Count > 0)
+        {
+            if (osoblje.Count == 1)
+            {
+                var pOid = osoblje[0].Kancelarija; //proveri
+
+                prostorijaO = await prostorijaService.PreuzmiProstoriju(pOid.ID);
+                if (prostorijaO != null && prostorijaO.Sprat != null)
+                    currentPicture = GetPictureForSprat(prostorijaO.Sprat);
+                else return;
+            }
+            else
+            {
+                //ima vise profesora tog imena i prezimena
+                moguceOsoblje = osoblje;
+                await ShowProfModal();
+                //povezivanje izabrane vrednosti sa pO
+                return;
+            }
+        }
+        if (prostorija != null)
+        {
+            currentPicture = GetPictureForSprat(prostorija.Sprat);
+        }
+        if (kurs != null)
+        {
+            //ovo mogu samo prof i student
+
+            List<int> kurseviID = new List<int>();
+
+            foreach (var k in kursevi)
+            {
+                if (!(kurseviID.Contains(k.ID)))
+                {
+                    kurseviID.Add(k.ID);
+                }
+            }
+
+            if (!(kurseviID.Contains(kurs.ID)))
+            {
+                await ShowModalNotFound();
+                return;
+            }
+
+            casovi = kurs.Casovi;
+
+            predmProstorije = new List<Prostorija>();
+
+            //nalazi sve prostorije gde ce se odrzati predmet
+            foreach (var c in casovi)
+            {
+                predmProstorije.Add(c.Prostorija);
+            }
+
+
+
+
+            if (predmProstorije != null && predmProstorije.Count > 0)
+            {
+                if (predmProstorije.Count == 1)
+                {
+                    var pkID = predmProstorije[0].ID;
+                    prostorijaK = await prostorijaService.PreuzmiProstoriju(pkID);
+                    if (prostorijaK != null && prostorijaK.Sprat != null)
+                        currentPicture = GetPictureForSprat(prostorijaK.Sprat);
+                    else return;
+                }
+                else
+                {
+                    await ShowProstModal();
+                    //povezivanje izabrane vrednosti sa pK
+                    return;
+                }
+            }
+        }
+
+        prostorija = prostorija == null ? prostorijaO : prostorija;
+        prostorija = prostorija == null ? prostorijaK : prostorija; //dodat, ako je i dalje null onda je prostK
+
+        await Pin(prostorija, prethodni);
+    }
+
+    //dodato
+
+    private async Task Pin(Prostorija prostorija, string prethodni)
+    {
+        if (prostorija != null)
+        {
+            (double startLeft, double startTop) = await CalculatePictureCoordinates();
+
+            (double centerX, double centerY) = CalculateSquareCenter(prostorija.LeftUpX, prostorija.LeftUpY, prostorija.DownRightX, prostorija.DownRightY);
+
+            pinLeft = startLeft + centerX;
+            pinTop = startTop + centerY;
+
+            showPin = true;
+            showLists(prethodni, prostorija.Sprat);
+        }
+    }
+
+    private async Task HandleProfChosen(ChangeEventArgs e)
+    {
+        odabraniID = Int32.Parse(e.Value.ToString());
+    }
+
+    private async Task HandleProstChosen(ChangeEventArgs e)
+    {
+        odabraniID = Int32.Parse(e.Value.ToString());
+    }
+    //test dovde
+
+    private (double, double) CalculateSquareCenter(double LeftUpX, double LeftUpY, double DownRightX, double DownRightY)
+    {
+        double centerX = (LeftUpX + DownRightX) / 2;
+        double centerY = (LeftUpY + DownRightY) / 2;
+
+        return (centerX, centerY);
+    }
+
+    private async Task<(double left, double top)> CalculatePictureCoordinates()
+    {
+        string pictureElementId = "my-picture";
+
+        var coordinates = await JSRuntime.InvokeAsync<Dictionary<string, double>>("getPictureCoordinates", pictureElementId);
+
+        double left = 0;
+        double top = 0;
+
+        if (coordinates != null)
+        {
+            left = coordinates["left"];
+            top = coordinates["top"];
+        }
+
+        return (left, top);
+    }
+
+    private string GetPictureForSprat(Sprat sprat)
+    {
+        return $"/resized/{sprat.Slika}";
+    }
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    await UpdateCurrentPictureAsync();
+    //}
+
+    private async Task UpdateCurrentPictureAsync()
+    {
+        showPin = false;
+        var sprat = await spratService.PreuzmiSpratPoSlici(currentPicture.Substring(currentPicture.LastIndexOf('/') + 1)); //izmislila toplu vodu
+        if (sprat != null)
+        {
+            await list(sprat);
+
+            //dodato
+            //await OnPictureChanged.InvokeAsync(currentPicture);
+            // Notify the parent component about the picture change HERE
+        }
+    }
+
+    private async Task list(Sprat sprat)
+    {
+        prostorije = await prostorijaService.VratiSveProstorijePoSpratu(sprat.ID);
+
+        amfiteatri.Clear();
+        kancelarije.Clear();
+        laboratorije.Clear();
+        ucionice.Clear();
+
+        if (prostorije != null)
+        {
+            foreach (var prostorija in prostorije)
+            {
+                if (prostorija.TipProstorije == 0)
+                {
+                    ucionice.Add(prostorija.Oznaka);
+                }
+                if ((int)prostorija.TipProstorije == 1) //proveri jel lepo vraca
+                {
+                    amfiteatri.Add(prostorija.Oznaka);
+                }
+                if ((int)prostorija.TipProstorije == 2)
+                {
+                    laboratorije.Add(prostorija.Oznaka);
+                }
+                if ((int)prostorija.TipProstorije == 3)
+                {
+                    kancelarije.Add(prostorija.Oznaka);
+                }
+            }
+        }
+        StateHasChanged();
+    }
+
+    private async void showLists(string prethodni, Sprat sprat)
+    {
+        if (String.Compare(prethodni, $"/resized/{sprat.Slika}") != 0)
+        {
+            await list(sprat);
+
+            StateHasChanged();
+        }
+    }
+    #endregion
+
+    #region klik
+    private async Task HandlePictureClick(MouseEventArgs e)
+    {
+        double clickX = e.ClientX;
+        double clickY = e.ClientY;
+
+        await ProcessPictureClick(clickX, clickY);
+    }
+
+    private async Task ProcessPictureClick(double xFull, double yFull)
+    {
+        var sprat = await spratService.PreuzmiSpratPoSlici(currentPicture.Substring(currentPicture.LastIndexOf('/') + 1));
+
+        (double startLeft, double startTop) = await CalculatePictureCoordinates();
+
+        double x = xFull - startLeft;
+        double y = yFull - startTop;
+
+        Prostorija final = null;
+        foreach (var pr in prostorije)
+        {
+            if (x >= pr.LeftUpX && x <= pr.DownRightX && y >= pr.LeftUpY && y <= pr.DownRightY) //pitanje da li moze da se dobije vise njih
+            {
+                final = pr;
+            }
+        }
+
+        if (final == null)
+        {
+            await ShowModalNotFound();
+            return;
+        }
+
+        (double centerX, double centerY) = CalculateSquareCenter(final.LeftUpX, final.LeftUpY, final.DownRightX, final.DownRightY);
+
+
+        pinLeft = startLeft + centerX;
+        pinTop = startTop + centerY;
+
+        showPin = true;
+
+        trenutna = final;
+        await ShowModal();
+    }
+
+    private void HandleZakaziClick()
+    {
+        showZakazi = !showZakazi;
+        obojenZakaz = !obojenZakaz;
+    }
+
+    private void HidePin()
+    {
+        //mislila sam on scroll, ali treba da se podesi za zajednicki div i da se posalje parametar mapi jer se samo on skroluje
+        showPin = false;
+    }
+    #endregion
+
+    //ovo sam isprobavala za sklanjanje pina, nebitno za sad
+    //private async Task HandleComponentClick(MouseEventArgs e)
+    //{
+    //    try
+    //    {
+    //        // Check if the circuit is still connected
+    //        if (await JSRuntime.InvokeAsync<bool>("isConnected"))
+    //        {
+    //            // Get the target element of the click event
+    //            var targetElement = await JSRuntime.InvokeAsync<ElementReference>("getClickTarget", e);
+
+    //            // Get the picture element
+    //            var pictureElement = await JSRuntime.InvokeAsync<ElementReference>("getElementById", "my-picture");
+
+    //            // Check if the target element is the picture element or its descendant
+    //            bool isDescendant = await JSRuntime.InvokeAsync<bool>("isDescendantOfElement", targetElement, pictureElement);
+
+    //            if (!isDescendant)
+    //            {
+    //                // Clicked outside the picture element
+    //                // Perform your desired action here
+    //                showPin = false;
+    //            }
+    //        }
+    //    }
+    //    catch (JSDisconnectedException)
+    //    {
+    //        // Handle the disconnected state, e.g., by logging or showing an error message
+    //    }
+    //}
+
+    #region modali
+    private Modal modal;
+    private async Task ShowModal()
+    {
+        showZakazi = false;
+        await modal?.ShowAsync();
+    }
+    private async Task OnHideModalClick()
+    {
+        await modal?.HideAsync();
+    }
+
+    private Modal notFoundModal;
+    private async Task ShowModalNotFound()
+    {
+        await notFoundModal?.ShowAsync();
+    }
+    private async Task OnHideModalNotFoundClick()
+    {
+        await notFoundModal?.HideAsync();
+    }
+
+
+    private Modal profModal;
+    private async Task ShowProfModal()
+    {
+        await profModal?.ShowAsync();
+    }
+    private async Task OnHideProfModalClick()
+    {
+        await profModal?.HideAsync();
+        string prethodni = currentPicture;
+
+        var odabraniProf = await osobljeService.PreuzmiNastavnoOsobljeAsync(odabraniID); //proveri
+        var pOid = odabraniProf.Kancelarija; //proveri
+        var prostorijaO = await prostorijaService.PreuzmiProstoriju(pOid.ID);
+        if (prostorijaO != null && prostorijaO.Sprat != null)
+        {
+            currentPicture = GetPictureForSprat(prostorijaO.Sprat);
+            await Pin(prostorijaO, prethodni);
+        }
+        else return;
+    }
+
+
+    private Modal prostModal;
+    private async Task ShowProstModal()
+    {
+        await prostModal?.ShowAsync();
+    }
+    private async Task OnHideProstModalClick()
+    {
+        await prostModal?.HideAsync();
+
+        string prethodni = currentPicture;
+
+
+        var pr = await prostorijaService.PreuzmiProstoriju(odabraniID);
+        if (pr != null && pr.Sprat != null)
+        {
+            currentPicture = GetPictureForSprat(pr.Sprat);
+            await Pin(pr, prethodni);
+        }
+        else return;
+    }
+    #endregion
+}

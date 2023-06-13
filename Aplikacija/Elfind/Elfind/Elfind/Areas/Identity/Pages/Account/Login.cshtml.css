@@ -1,0 +1,37 @@
+﻿/*ne vidi ga*/
+.background-image {
+    display: flex;
+    justify-content: space-between;
+    background-image: url('/other/cool-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200vh;
+}
+
+.custom-btn {
+    background-color: lightpink;
+    color: #000000; 
+    border: 2px solid #fc9fad; 
+}
+
+.coll-gif{
+    /*text-align:center;*/
+}
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.gif-size{
+
+}
+
+namespace Elfind.Areas.Identity.Pages.Account
+{
+    public class Login
+    {
+    }
+}

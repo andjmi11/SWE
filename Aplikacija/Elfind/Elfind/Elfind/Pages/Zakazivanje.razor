@@ -1,0 +1,611 @@
+﻿@using Elfind.Data.Services
+@using Elfind.Data.Model
+@using Elfind.Data.Models
+@using Elfind.Data
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@using System.Globalization;
+@using Microsoft.AspNetCore.SignalR.Client
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject KursService kursService
+@inject NastavnoOsobljeService nastavnoOsobljeService
+@inject CasService casService
+@inject SmerService smerService
+@inject RasporedCasovaService rasporedService
+@inject OsobljeProstorijaRService osobljeProstorijaRService
+@inject NotificationMessageService NotificationMessageService
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JSRuntime
+@attribute [Authorize (Roles ="NastavnoOsoblje")]
+
+<div class="zakazivanjeForma">
+    <div class="izborPredmeta">
+        <select class="biranjeKursa" @onchange="HandleKursaSelection">
+            <option value="">Izabrati kurs...</option>
+
+            @if (kursevi.Count > 0 && kursevi != null)
+            {
+                @foreach (var k in kursevi)
+                {
+                    <option value=@k.Naziv>@k.Naziv</option>
+                }
+            }
+        </select>
+
+        <select @onchange="HandleTipCasaSelection">
+            <option value="">Izabrati tip časa...</option>
+            @foreach(var tip in tipoviCasa)
+            {
+                <option value="@tip">@tip</option>
+            }
+        </select>
+    </div>
+
+    <div class="izborTermina">
+        
+        <div class="biranjeDatuma">
+            <div id="calendarContainer">
+                <Kalendar OnDayClick="HandleDayClick"/>
+            </div>            
+        </div>
+
+        <div class="biranjeVremena">
+                <label>Početak termina:</label>
+                <select @onchange="HandlePocetakTerminaSelection">
+                    @for (int hour = 8; hour <= 19; hour++)
+                    {
+                        for (int minute = 15; minute <= 59; minute += 60)
+                        {
+                            string time = $"{hour:D2}:{minute:D2}";
+                            <option value="@time">@time</option>
+                        }
+                }
+                </select>
+
+                <label>Broj časova:</label>
+                <select @onchange="HandleBrojCasovaSelection">
+                    @for (int brCasova = 1; brCasova <= 11; brCasova++)
+                    {
+                        <option value="@brCasova">@brCasova</option>
+                    }
+                </select>
+        </div>
+    </div>
+
+    <div class="potvrdiZakaz">
+        <button class="dugmic" style="background-color: #ffb6c1; color:#000000;border: 2px solid #fc9fad;" @onclick="ZakaziCas">
+            Potvrdi zakazivanje
+        </button>
+    </div>
+</div>
+
+<Modal @ref="modalZauzeto">
+    <HeaderTemplate>
+        Nije moguce zakazati @Prostorija.Oznaka za @selectedDate.Date.ToString("dd.MM.yy") od @vremeOd.ToString(@"hh\:mm").
+      
+    </HeaderTemplate>
+    <BodyTemplate>
+        Da li želite da pošaljete zahtev za oslobađanje termina?
+    </BodyTemplate>
+    <FooterTemplate>
+        <button class="otkaziRezerv" @onclick="OnHideModalZauzetoClick">Otkaži</button>
+        @if (zahtevaj)
+        {
+            <button class="posaljiZahtevOtkaz" @onclick="SlanjePotvrdjeno">Pošalji zahtev</button>
+        }
+    </FooterTemplate>
+</Modal>
+
+<Modal @ref="modalPotvrdi">
+    <HeaderTemplate>
+        Da li želite da zakažete čas:
+    </HeaderTemplate>
+    <BodyTemplate>
+        @selectedKursa
+        <br />
+        Prostorija: @Prostorija.Oznaka
+        <br />
+        Datum: @selectedDate.Date.ToString("dd.MM.yy")
+        <br />
+        Termin od @vremeOd.ToString(@"hh\:mm") do @vremeDo.ToString(@"hh\:mm")
+        <br />
+    </BodyTemplate>
+    <FooterTemplate>
+        <button class="potvrdaRez" @onclick="OnHideModalPotvrdiClick" disabled="@(!IsConnected)">Potvrdi</button>
+    </FooterTemplate>
+</Modal>
+
+
+<Modal @ref="modalUspesno">
+    <HeaderTemplate>
+
+    </HeaderTemplate>
+    <BodyTemplate>
+        Uspešno dodata rezervacija:
+        <br/>
+        @selectedKursa
+        <br/>
+        Prostorija: @Prostorija.Oznaka 
+        <br/>
+        Datum: @selectedDate.Date.ToString("dd.MM.yy") 
+        <br/>
+        Termin od @vremeOd.ToString(@"hh\:mm") do @vremeDo.ToString(@"hh\:mm")
+    </BodyTemplate>
+    <FooterTemplate>
+        <button class="uspesnaRez" @onclick="OnHideModalUspesnoClick">Ok</button>
+    </FooterTemplate>
+</Modal>
+
+<Modal @ref="modalNeuspesno">
+    <HeaderTemplate>
+    </HeaderTemplate>
+    <BodyTemplate>
+       @porukaNeuspesno
+    </BodyTemplate>
+    <FooterTemplate>
+        <button class="otkaziRezerv" @onclick="OnHideModalNeuspesnoClick">Otkaži</button>
+    </FooterTemplate>
+</Modal>
+
+
+@code {
+
+    //andjelija
+    private NotificationMessage notificationMessage = new NotificationMessage();
+    private NotificationMessageProf notificationMessageProf = new NotificationMessageProf();
+
+    //treba mi jedan za zauzet je pa dugmici odustani, posalji zahtev, otkazi sutra, kad iz baze preuzme profesor svoju listu casova
+    //i jedan za uspesno ste zakazali, info o rezervaciji
+    private List<Kurs> kursevi = new List<Kurs>();
+
+    private NastavnoOsoblje osoba;
+
+    private string userName;
+    private string userEmail;
+    private Student stud = null;
+
+    private string porukaNeuspesno = "";
+
+    private DateTime selectedDate = DateTime.Today;
+
+    private List<TipCasa> tipoviCasa = Enum.GetValues(typeof(TipCasa)).Cast<TipCasa>().ToList();
+
+    //treba da se inicijalizuju na prvu vrednost ako ostane prazno I DA SE DODA PROVERA DA LI JE UNESENO SVE I DA SE KAZE COVEKU AKO NIJE
+    private string selectedKursa = "";
+    private string selectedTipCasa = "Predavanje";
+    private string selectedPocetakTermina = "8:15";
+    private int selectedBrojCasova = 1;
+
+    private TimeSpan vremeOd;
+    private TimeSpan vremeDo;
+
+    private Cas cas;
+    private Cas trebaMiOvaj;
+
+    private bool zahtevaj = true;
+
+    [Parameter]
+    public Prostorija Prostorija { get; set; }
+
+    private async Task HandleDayClick(DateTime clickedDate)
+    {
+        selectedDate = clickedDate;
+        string formattedDate = selectedDate.ToString("dd.MM.yyyy");        
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        hubConnection = new HubConnectionBuilder().WithUrl(NavigationManager.ToAbsoluteUri("/notificationhub")).Build();
+        await hubConnection.StartAsync();
+
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        userName = user.Identity.Name; 
+        userEmail = user.FindFirstValue(ClaimTypes.Email);
+
+        osoba = await nastavnoOsobljeService.PreuzmiNastavnoOsobljePoKorisnickomImenuAsync(userName); //ovo ovde menjam
+        if (osoba != null)
+        {
+            notificationMessage.SenderName = osoba.Ime + " " + osoba.Prezime;
+            notificationMessageProf.SenderName = osoba.Ime + " " + osoba.Prezime;
+            foreach (var k in osoba.Kursevi)
+            {
+                kursevi.Add(k.Kurs);
+            }
+        }
+
+        notificationMessage.Smerovi = null;
+    }
+
+    private async Task OpenCalendar()
+    {
+        await JSRuntime.InvokeVoidAsync("showCalendar");
+    }
+
+    private void HandleKursaSelection(ChangeEventArgs e)
+    {
+        selectedKursa = e.Value.ToString();
+    }
+
+    private void HandleTipCasaSelection(ChangeEventArgs e)
+    {
+        selectedTipCasa = e.Value.ToString();
+    }
+
+    private void HandlePocetakTerminaSelection(ChangeEventArgs e)
+    {
+        selectedPocetakTermina = e.Value.ToString();
+    }
+
+    private void HandleBrojCasovaSelection(ChangeEventArgs e)
+    {
+        selectedBrojCasova = Convert.ToInt32(e.Value);       
+    }
+
+    private async Task ZakaziCas() //da obavestim korisnika ako nesto ne valja
+    {
+
+        if (selectedDate.Date < DateTime.Today)
+        {
+            porukaNeuspesno = "Ne moze se zakazati termin pre danasnjeg datuma.";
+            await ShowNeuspesnoModal();
+            return;
+        }
+
+        if (selectedKursa == "" || selectedKursa == null)
+        {
+            porukaNeuspesno = "Unesite kurs.";
+            await ShowNeuspesnoModal();
+            return;
+        }
+
+        string naziv = String.Concat(selectedKursa, "-", selectedTipCasa);
+
+        Dan dan = Dan.Ponedeljak;
+
+        //UBACI PROVERU DA NE MOZE DA SE ZAKAZE U PROSLOSTI i da ne moze da se se selektuje br termina veci od DO 8 i 15
+
+        //CultureInfo culture = new CultureInfo("en-US");
+        //culture.DateTimeFormat.FirstDayOfWeek = DayOfWeek.Monday;
+        DayOfWeek dayOfWeek = selectedDate.DayOfWeek; //culture.Calendar.GetDayOfWeek
+
+        //int startDayIndex = (int)culture.DateTimeFormat.FirstDayOfWeek;
+        //int dayOfWeekIndex = ((int)dayOfWeek - startDayIndex + 7) % 7;
+
+        //string correctedDayOfWeek = ((DayOfWeek)dayOfWeekIndex).ToString();
+
+        switch (dayOfWeek.ToString()) //correctedDayOfWeek
+        {
+            case "Monday":
+                dan = Dan.Ponedeljak;
+                break;
+            case "Tuesday":
+                dan = Dan.Utorak;
+                break;
+            case "Wednesday":
+                dan = Dan.Sreda;
+                break;
+            case "Thursday":
+                dan = Dan.Cetvrtak;
+                break;
+            case "Friday":
+                dan = Dan.Petak;
+                break;
+            case "Saturday":
+                dan = Dan.Subota;
+                break;
+            case "Sunday":
+                dan = Dan.Nedelja;
+                break;
+            default:
+                break;
+        }
+
+        bool isValid = TimeSpan.TryParse(selectedPocetakTermina, out vremeOd);
+
+        if (!isValid)
+        {
+            porukaNeuspesno = "Unesite validno vreme pocetka casa.";
+            await ShowNeuspesnoModal();
+            return;
+        }
+
+        TimeSpan duration = TimeSpan.FromMinutes(45);
+        TimeSpan totalDuration = duration * selectedBrojCasova;
+        totalDuration += (selectedBrojCasova - 1) * TimeSpan.FromMinutes(15); //treba plus koliko puta 15
+
+        vremeDo = vremeOd.Add(totalDuration);
+
+        TimeSpan latest = new TimeSpan(20, 15, 0);
+        TimeSpan max = latest - vremeOd;
+
+        if (totalDuration.TotalMinutes > max.TotalMinutes)
+        {
+            porukaNeuspesno = "Kraj termina je nakon kraja radnog vremena.";
+            await ShowNeuspesnoModal();
+            return;
+        }
+
+
+        var kurs = await kursService.PreuzmiKursPoNazivuAsync(selectedKursa);
+
+        if (kurs == null)
+        {
+            porukaNeuspesno = "Dati kurs se ne nalazi u bazi.";
+            await ShowNeuspesnoModal();
+            return;
+        }
+
+        List<KursSmer> smerovi = kurs.Smerovi; //dvaput rii
+
+        if (smerovi == null)
+        {
+            porukaNeuspesno = "Izabrani kurs ne slusa nijedan smer.";
+            await ShowNeuspesnoModal();
+            return;
+        }
+        //mali link koji mu kaze da pogleda raspored na profilu za *smer*
+
+        var ostaliCasovi = await casService.VratiSveCasove();
+        //gde i ko, provera smera, rasporeda i prostorije
+
+        bool preklapanje = false;
+
+        var sviSmerovi = await smerService.VratiSveSmerove();
+
+        foreach (var ostali in ostaliCasovi)
+        {
+            if (((vremeOd <= ostali.VremeDo && vremeDo >= ostali.VremeOd) ||
+                (vremeOd == ostali.VremeOd && vremeDo == ostali.VremeDo)) &&
+                dan == ostali.Dan)
+            {
+                foreach (var sm in sviSmerovi)
+                {
+                    foreach (var smBitni in smerovi)
+                    {
+                        if (sm.ID != smBitni.Smer.ID) //onda treba da proveravam prostoriju
+                        {
+                            //provera prostorije, ako nije ista onda break
+                            if (Prostorija.ID != ostali.Prostorija.ID) //proveriti DA LI TREBA DA SE POKLOPI SMER ILI TAKO NESTO
+                            {
+                                break;
+                            }
+                        }
+                        if(ostali.URasporeduCasova != null)
+                        {
+                            if (sm.ID == ostali.URasporeduCasova.ZaSmer.ID) //u rasporedu je
+                            {
+                                preklapanje = true;
+                            }
+
+                        }
+                        else //nije u rasporedu
+                        {
+                            foreach (var osobljekurs in ostali.ZaKurs.NastavnoOsoblje)
+                            {
+                                foreach (var rezPr in osobljekurs.NastavnoOsoblje.RezProstorije)
+                                {
+                                    if (rezPr.datum.Equals(selectedDate))
+                                    {
+                                        preklapanje = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        TipCasa tipCasa = TipCasa.Predavanje;
+
+        switch (selectedTipCasa)
+        {
+            case "Predavanje":
+                tipCasa = TipCasa.Predavanje;
+                break;
+            case "Vezba":
+                tipCasa = TipCasa.Vezba;
+                break;
+            case "Lab_vezba":
+                tipCasa = TipCasa.Lab_vezba;
+                break;
+            case "Vanredno_predavanje":
+                tipCasa = TipCasa.Vanredno_predavanje;
+                break;
+            default:
+                break;
+        }
+
+        trebaMiOvaj = new Cas()
+            {
+                Naziv = naziv,
+                Dan = dan,
+                VremeOd = vremeOd,
+                VremeDo = vremeDo,
+                TipCasa = tipCasa,
+                Prostorija = Prostorija,
+                ZaKurs = kurs
+            };
+
+        
+        notificationMessageProf.Cas = $"{trebaMiOvaj.Naziv}, {trebaMiOvaj.Dan}, {trebaMiOvaj.VremeOd}, {trebaMiOvaj.VremeDo}, {trebaMiOvaj.TipCasa.ToString()}, {trebaMiOvaj.ZaKurs.Naziv}";
+       
+
+        if (preklapanje)
+        {
+            await ShowZauzetoModal();
+            return;
+        }
+
+        List<RasporedCasova> rasporedi = new List<RasporedCasova>();
+
+        foreach (var smer in smerovi)
+        {
+            var raspored = await rasporedService.PreuzmiRasporedCasovaPoSmeru(smer.Smer);
+            rasporedi.Add(raspored);
+        }
+
+        if (rasporedi.Count == 0 || rasporedi == null)
+        {
+            porukaNeuspesno = "Neki od smerova nema dodeljen raspored.";
+            await ShowNeuspesnoModal();
+            return;
+        }
+
+        foreach (RasporedCasova ras in rasporedi)
+        {
+            cas = new Cas()
+                {
+                    Naziv = naziv,
+                    Dan = dan,
+                    VremeOd = vremeOd,
+                    VremeDo = vremeDo,
+                    TipCasa = tipCasa,
+                    Prostorija = Prostorija,
+                    URasporeduCasova = ras,
+                    ZaKurs = kurs,
+                    Zakazao= osoba
+                };
+
+            await ShowPotvrdiModal();
+        }
+    }
+
+    private async Task UbacivanjeCasa(Cas cas, NastavnoOsoblje osoba)
+    {
+        try
+        {
+            var idCasa = await casService.DodajCasBezRasporeda(cas, osoba);
+
+            if (idCasa == -1)
+            {
+                porukaNeuspesno = "Nije moguce dodati cas.";
+                await ShowNeuspesnoModal();
+                return;
+            }
+
+            OsobljeProstorijaR osobljeProstorija = new OsobljeProstorijaR
+                {
+                    Prostorija = Prostorija,
+                    NastavnoOsoblje = osoba,
+                    datum = selectedDate,
+                    VremeOd = vremeOd,
+                    VremeDo = vremeDo
+                };
+
+            //andjelija
+            var c = await casService.PreuzmiCas(idCasa);
+            notificationMessage.Kurs = c.ZaKurs.Naziv;
+
+            await osobljeProstorijaRService.DodajOsobljeProstorijaR(osobljeProstorija);
+
+            if (osoba.RezProstorije.Count > 0)
+            {
+                int x = 5;
+            }
+
+            await ShowUspesnoModal();
+
+
+        }
+        catch(Exception e)
+        {
+            //nesto
+        }
+    }
+
+
+    private async Task SlanjePotvrdjeno()
+    {
+        await OnHideModalZauzetoClick();
+
+        //ovde se salje zahtev samo kao obavestenje i usmerava ga na profil
+        notificationMessageProf.MsgBody=" je poslao zahtev za otkazivanje Vaseg termina:";
+
+
+        await SendProf();
+        StateHasChanged();
+
+    }
+
+
+    #region modals
+    private Modal modalZauzeto;
+    private async Task ShowZauzetoModal()
+    {
+        await modalZauzeto?.ShowAsync();
+    }
+    private async Task OnHideModalZauzetoClick()
+    {
+
+        await modalZauzeto?.HideAsync();
+
+    } 
+
+
+    private Modal modalPotvrdi;
+    private async Task ShowPotvrdiModal()
+    {
+        await modalPotvrdi?.ShowAsync();
+    }
+    private async Task OnHideModalPotvrdiClick()
+    {
+        notificationMessage.MsgBody = "Imas zakazan cas iz predmeta: " + notificationMessage.Kurs;
+        //odavde saljem obavestenje?
+        await modalPotvrdi?.HideAsync();
+        await UbacivanjeCasa(cas, osoba);        
+
+        await Send();
+        StateHasChanged();
+    } 
+
+
+    private Modal modalUspesno;
+    private async Task ShowUspesnoModal()
+    {
+        await modalUspesno?.ShowAsync();
+
+    }
+    private async Task OnHideModalUspesnoClick()
+    {
+        await modalUspesno?.HideAsync();
+
+    }
+
+
+    private Modal modalNeuspesno;
+    private async Task ShowNeuspesnoModal()
+    {
+        await modalNeuspesno?.ShowAsync();
+    }
+    private async Task OnHideModalNeuspesnoClick()
+    {
+        await modalNeuspesno?.HideAsync();
+    }
+    #endregion
+
+    //notifikacije
+    private HubConnection hubConnection;
+
+    public bool IsConnected => hubConnection.State == HubConnectionState.Connected;
+
+    private async Task Send()
+    {
+        await hubConnection.SendAsync("SendNotificationForZakazivanje", notificationMessage.SenderName, notificationMessage.MsgBody,notificationMessage.Smerovi, notificationMessage.Kurs);
+
+        notificationMessage.MsgBody = "";
+    }
+
+    private async Task SendProf()
+    {
+        await hubConnection.SendAsync("SendForZahtev", notificationMessageProf.SenderName, notificationMessageProf.MsgBody,
+       notificationMessageProf.Cas);
+
+        notificationMessageProf.MsgBody = " ";
+
+    }
+}
+

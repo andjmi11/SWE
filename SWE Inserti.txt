@@ -1,0 +1,499 @@
+-----------------------------------------------------------------------------------------
+--Redosled i FK
+-----------------------------------------------------------------------------------------
+--Administrator
+--Forum
+--Kurs
+--Smer
+--Zgrada 
+--Sprat (zgrada)
+--Prostorija (zgrada, sprat)
+--Raspored casova (smer, administrator)
+--Student (raspored casova, smer)
+--Cas (prostorija, respored casova, kurs)
+--Nastavno osoblje (prostorija)
+--Objava (nastavno osoblje, forum)
+--Notifikacija (nastavno osoblje, objava)
+--Opcija (objava)
+
+
+
+-----------------------------------------------------------------------------------------
+--Administratori
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Administratori] values ('Anita', 'Aleksic', 'administrator@elfak.ni.ac.rs');
+Insert into [dbo].[Administratori] values ('Andjelija', 'Mijajlovic', 'admin@elfak.ni.ac.rs');
+Insert into [dbo].[Administratori] values ('Kristina', 'Joksimovic', 'vodicica@elfak.ni.ac.rs');
+
+-----------------------------------------------------------------------------------------
+--Forum
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Forum] values('Forum');
+
+-----------------------------------------------------------------------------------------
+--Kursevi 1. godina
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Kursevi] values ('Matematika 1', '1');
+Insert into [dbo].[Kursevi] values ('Osnovi elektrotehnike 1', '1');
+Insert into [dbo].[Kursevi] values ('Fizika', '1');
+Insert into [dbo].[Kursevi] values ('Uvod u racunarstvo', '1');
+Insert into [dbo].[Kursevi] values ('Uvod u inzenjerstvo', '1');
+Insert into [dbo].[Kursevi] values ('Matematika 2', '1');
+Insert into [dbo].[Kursevi] values ('Osnovi elektrotehnike 2', '1');
+Insert into [dbo].[Kursevi] values ('Algoritmi i programiranje', '1');
+Insert into [dbo].[Kursevi] values ('Elektronske komponente', '1');
+Insert into [dbo].[Kursevi] values ('Uvod u elektroniku', '1');
+-----------------------------------------------------------------------------------------
+--Kursevi RII
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Kursevi] values ('Strukture podataka', '2');
+Insert into [dbo].[Kursevi] values ('Baze podataka', '2');
+Insert into [dbo].[Kursevi] values ('Arhitektura i organizacija racunara 1', '2');
+Insert into [dbo].[Kursevi] values ('Arhitektura i organizacija racunara 2', '2');
+Insert into [dbo].[Kursevi] values ('Diskretna matematika', '2');
+Insert into [dbo].[Kursevi] values ('Objektno orijentisano programiranje', '2');
+Insert into [dbo].[Kursevi] values ('Logicko projektovanje', '2');
+Insert into [dbo].[Kursevi] values ('Digitalna elektronika', '2');
+Insert into [dbo].[Kursevi] values ('Objektno orijentisano projektovanje', '2');
+Insert into [dbo].[Kursevi] values ('Programski jezici', '2');
+Insert into [dbo].[Kursevi] values ('Matricna izracunavanja', '2');
+Insert into [dbo].[Kursevi] values ('Teorija grafova', '2');
+Insert into [dbo].[Kursevi] values ('Numericki algoritmi', '2');
+Insert into [dbo].[Kursevi] values ('Verovatnoca i statistika', '2');
+Insert into [dbo].[Kursevi] values ('Geometrijski metodi i primene', '2');
+
+Insert into [dbo].[Kursevi] values ('Softversko inzenjerstvo', '3');
+Insert into [dbo].[Kursevi] values ('Paralelni sistemi', '3');
+Insert into [dbo].[Kursevi] values ('Sistemi baza podataka', '3');
+Insert into [dbo].[Kursevi] values ('Operativni sistemi', '3');
+Insert into [dbo].[Kursevi] values ('Racunarske mreze', '3');
+Insert into [dbo].[Kursevi] values ('Web programiranje', '3');
+Insert into [dbo].[Kursevi] values ('Informacioni sistemi', '3');
+Insert into [dbo].[Kursevi] values ('Engleski jezik 1', '3');
+Insert into [dbo].[Kursevi] values ('Uvod u teoriju igara', '3');
+Insert into [dbo].[Kursevi] values ('Osnovi analize signala i sistema', '3');
+Insert into [dbo].[Kursevi] values ('Projektovanje i analiza algoritama', '3');
+Insert into [dbo].[Kursevi] values ('Engleski jezik 2', '3');
+Insert into [dbo].[Kursevi] values ('Internet stvari', '3');
+Insert into [dbo].[Kursevi] values ('Interakcija covek-racunar', '3');
+Insert into [dbo].[Kursevi] values ('Razvoj web i viseplatformskih aplikacija', '3');
+Insert into [dbo].[Kursevi] values ('Razvoj mobilnih aplikacija i servisa', '3');
+Insert into [dbo].[Kursevi] values ('Sistemsko programiranje', '3');
+
+Insert into [dbo].[Kursevi] values ('Vestacka inteligencija', '4');
+Insert into [dbo].[Kursevi] values ('Racunarska grafika', '4');
+Insert into [dbo].[Kursevi] values ('Programski prevodioci', '4');
+Insert into [dbo].[Kursevi] values ('Projektovanje racunarskih mreza', '4');
+Insert into [dbo].[Kursevi] values ('Projektovanje racunarskog hardvera', '4');
+Insert into [dbo].[Kursevi] values ('Zastita informacija', '4');
+Insert into [dbo].[Kursevi] values ('Napredne baze podataka', '4');
+Insert into [dbo].[Kursevi] values ('Arhitektura i projektovanje softvera', '4');
+Insert into [dbo].[Kursevi] values ('Testiranje i kvalitet softvera', '4');
+Insert into [dbo].[Kursevi] values ('Tehnologije za podrsku ucenju', '4');
+Insert into [dbo].[Kursevi] values ('Osnovi upravljanja sistemima', '4');
+Insert into [dbo].[Kursevi] values ('Racunarski vid', '4');
+Insert into [dbo].[Kursevi] values ('Distribuirani sistemi', '4');
+Insert into [dbo].[Kursevi] values ('Multimedijalni sistemi', '4');
+Insert into [dbo].[Kursevi] values ('Informacione tehnologije i sistemi', '4');
+Insert into [dbo].[Kursevi] values ('Internet stvari i servisa', '4');
+Insert into [dbo].[Kursevi] values ('Merni sistemi zasnovani na mikroracunarima', '4');
+Insert into [dbo].[Kursevi] values ('Inzenjerstvo podataka i znanja', '4');
+Insert into [dbo].[Kursevi] values ('Masinska inteligencija u logickim igrama', '4');
+Insert into [dbo].[Kursevi] values ('Pretrazivanje informacija', '4');
+Insert into [dbo].[Kursevi] values ('Metodi i sistemi za obradu signala', '4');
+Insert into [dbo].[Kursevi] values ('Mobilni komunikacioni sistemi', '4');
+Insert into [dbo].[Kursevi] values ('Upravljanje projektima', '4');
+Insert into [dbo].[Kursevi] values ('Socijalni, pravni i eticki aspekti informatike', '4');
+Insert into [dbo].[Kursevi] values ('Poslovne komunikacije', '4');
+
+-----------------------------------------------------------------------------------------
+--Kursevi 
+-----------------------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------------------
+--Smerovi
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Smerovi] values('0');
+Insert into [dbo].[Smerovi] values('1');
+Insert into [dbo].[Smerovi] values('2');
+Insert into [dbo].[Smerovi] values('3');
+Insert into [dbo].[Smerovi] values('4');
+Insert into [dbo].[Smerovi] values('5');
+Insert into [dbo].[Smerovi] values('6');
+
+-----------------------------------------------------------------------------------------
+--Zgrade
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Zgrade] values ('0');
+Insert into [dbo].[Zgrade] values ('1');
+Insert into [dbo].[Zgrade] values ('2');
+
+-----------------------------------------------------------------------------------------
+--Spratovi naziv,zgrada,slika 
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Spratovi] values('Prvi sprat', '3', 'Prvi sprat.jpg');
+Insert into [dbo].[Spratovi] values('Drugi sprat', '3', 'Drugi sprat.jpg');
+Insert into [dbo].[Spratovi] values('Treci sprat', '3', 'Treci sprat.jpg');
+Insert into [dbo].[Spratovi] values('Cetvrti sprat', '3', 'Cetvrti sprat.jpg');
+Insert into [dbo].[Spratovi] values('Peti sprat', '3', 'Peti sprat.jpg');
+Insert into [dbo].[Spratovi] values('Prizemlje', '3', 'Prizemlje.jpg');
+Insert into [dbo].[Spratovi] values('M1', '3', 'M1.jpg');
+Insert into [dbo].[Spratovi] values('M2', '3', 'M2.jpg');
+Insert into [dbo].[Spratovi] values('LK1', '3', '1LK.jpg');
+Insert into [dbo].[Spratovi] values('LK2', '3', '2LK.jpg');
+Insert into [dbo].[Spratovi] values('Stare laboratorije', '1', 'Stare laboratorije.jpg');
+
+-----------------------------------------------------------------------------------------
+--Prostorije
+-----------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------
+--Prvi sprat
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Prostorije] values ('120', '1', '3', '3', '30', '642', '143', '670', '190');
+Insert into [dbo].[Prostorije] values ('121', '1', '3', '0', '30', '420', '185', '468', '225');
+Insert into [dbo].[Prostorije] values ('122', '1', '3', '0', '30', '361', '185', '418', '225');
+Insert into [dbo].[Prostorije] values ('123', '1', '3', '0', '30', '301', '185', '358', '225');
+Insert into [dbo].[Prostorije] values ('124', '1', '3', '3', '30', '241', '202', '299', '225');
+Insert into [dbo].[Prostorije] values ('126', '1', '3', '3', '30', '122', '185', '171', '225');
+Insert into [dbo].[Prostorije] values ('127', '1', '3', '3', '30', '62', '185', '119', '225');
+Insert into [dbo].[Prostorije] values ('129', '1', '3', '3', '30', '37', '117', '60', '141');
+Insert into [dbo].[Prostorije] values ('130', '1', '3', '3', '30', '63', '117', '87', '149');
+Insert into [dbo].[Prostorije] values ('131', '1', '3', '0', '30', '90', '117', '171', '157');
+Insert into [dbo].[Prostorije] values ('131A', '1', '3', '2', '30', '225', '117', '299', '157');
+Insert into [dbo].[Prostorije] values ('132', '1', '3', '0', '30', '302', '117', '355', '157');
+Insert into [dbo].[Prostorije] values ('133', '1', '3', '0', '30', '357', '117', '418', '157');
+Insert into [dbo].[Prostorije] values ('134', '1', '3', '0', '30', '420', '117', '469', '157');
+Insert into [dbo].[Prostorije] values ('135', '1', '3', '3', '30', '471', '117', '506', '153');
+Insert into [dbo].[Prostorije] values ('136', '1', '3', '3', '30', '508', '117', '541', '153');
+Insert into [dbo].[Prostorije] values ('137', '1', '3', '3', '30', '543', '117', '575', '153');
+Insert into [dbo].[Prostorije] values ('138', '1', '3', '3', '30', '578', '117', '606', '140');
+Insert into [dbo].[Prostorije] values ('301', '1', '3', '2', '30', '751', '144', '796', '196');
+Insert into [dbo].[Prostorije] values ('302', '1', '3', '2', '30', '751', '199', '796', '255');
+Insert into [dbo].[Prostorije] values ('303', '1', '3', '2', '30', '751', '258', '796', '312');
+Insert into [dbo].[Prostorije] values ('304', '1', '3', '2', '30', '751', '315', '796', '370');
+Insert into [dbo].[Prostorije] values ('305', '1', '3', '2', '30', '751', '373', '796', '436');
+Insert into [dbo].[Prostorije] values ('306', '1', '3', '3', '30', '673', '315', '718', '340');
+Insert into [dbo].[Prostorije] values ('307', '1', '3', '3', '30', '653', '296', '670', '313');
+Insert into [dbo].[Prostorije] values ('308', '1', '3', '3', '30', '673', '268', '718', '293');
+Insert into [dbo].[Prostorije] values ('309', '1', '3', '3', '30', '673', '239', '718', '265');
+Insert into [dbo].[Prostorije] values ('310', '1', '3', '3', '30', '653', '220', '670', '237');
+Insert into [dbo].[Prostorije] values ('311', '1', '3', '3', '30', '673', '191', '718', '218');
+Insert into [dbo].[Prostorije] values ('400', '1', '3', '2', '30', '673', '398', '718', '436');
+Insert into [dbo].[Prostorije] values ('401', '1', '3', '3', '30', '573', '325', '621', '351');
+Insert into [dbo].[Prostorije] values ('402', '1', '3', '3', '30', '554', '306', '571', '323');
+Insert into [dbo].[Prostorije] values ('403', '1', '3', '3', '30', '573', '278', '621', '304');
+Insert into [dbo].[Prostorije] values ('404', '1', '3', '3', '30', '573', '249', '621', '275');
+Insert into [dbo].[Prostorije] values ('405', '1', '3', '3', '30', '554', '230', '571', '247');
+Insert into [dbo].[Prostorije] values ('406', '1', '3', '3', '30', '573', '201', '621', '228');
+-----------------------------------------------------------------------------------------
+--Drugi sprat
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Prostorije] values ('220', '2', '3', '3', '30', '682', '167', '712', '203');
+Insert into [dbo].[Prostorije] values ('221', '2', '3', '0', '30', '446', '196', '496', '237');
+Insert into [dbo].[Prostorije] values ('222', '2', '3', '0', '30', '386', '196', '444', '237');
+Insert into [dbo].[Prostorije] values ('223', '2', '3', '0', '30', '325', '196', '383', '237');
+Insert into [dbo].[Prostorije] values ('224', '2', '3', '3', '30', '264', '196', '322', '237');
+Insert into [dbo].[Prostorije] values ('225A', '2', '3', '3', '30', '225', '196', '261', '237');
+Insert into [dbo].[Prostorije] values ('225B', '2', '3', '3', '30', '194', '213', '223', '237');
+Insert into [dbo].[Prostorije] values ('226', '2', '3', '0', '30', '142', '196', '192', '237');
+Insert into [dbo].[Prostorije] values ('227', '2', '3', '0', '30', '81', '196', '140', '237');
+Insert into [dbo].[Prostorije] values ('229', '2', '3', '3', '30', '56', '128', '79', '151');
+Insert into [dbo].[Prostorije] values ('230', '2', '3', '3', '30', '82', '128', '107', '159');
+Insert into [dbo].[Prostorije] values ('231', '2', '3', '2', '30', '110', '128', '192', '168');
+Insert into [dbo].[Prostorije] values ('231A', '2', '3', '2', '30', '246', '128', '323', '168');
+Insert into [dbo].[Prostorije] values ('232', '2', '3', '0', '30', '326', '128', '380', '168');
+Insert into [dbo].[Prostorije] values ('233', '2', '3', '0', '30', '382', '128', '444', '168');
+Insert into [dbo].[Prostorije] values ('234', '2', '3', '0', '30', '446', '128', '497', '168');
+Insert into [dbo].[Prostorije] values ('235', '2', '3', '3', '30', '499', '128', '533', '165');
+Insert into [dbo].[Prostorije] values ('236', '2', '3', '3', '30', '536', '128', '569', '165');
+Insert into [dbo].[Prostorije] values ('237', '2', '3', '3', '30', '571', '128', '604', '165');
+Insert into [dbo].[Prostorije] values ('238', '2', '3', '3', '30', '607', '128', '636', '153');
+-----------------------------------------------------------------------------------------
+--Treci sprat
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Prostorije] values ('320', '3', '3', '3', '30', '586', '234', '610', '269');
+Insert into [dbo].[Prostorije] values ('321', '3', '3', '2', '30', '385', '264', '427', '304');
+Insert into [dbo].[Prostorije] values ('322', '3', '3', '2', '30', '334', '264', '362', '304');
+Insert into [dbo].[Prostorije] values ('323', '3', '3', '3', '30', '283', '264', '331', '304');
+Insert into [dbo].[Prostorije] values ('324', '3', '3', '2', '30', '231', '264', '280', '304');
+Insert into [dbo].[Prostorije] values ('325', '3', '3', '3', '30', '172', '264', '229', '304');
+Insert into [dbo].[Prostorije] values ('326A', '3', '3', '3', '30', '154', '264', '169', '304');
+Insert into [dbo].[Prostorije] values ('326B', '3', '3', '3', '30', '127', '282', '152', '304');
+Insert into [dbo].[Prostorije] values ('327A', '3', '3', '2', '30', '76', '264', '100', '304');
+Insert into [dbo].[Prostorije] values ('327B', '3', '3', '2', '30', '103', '264', '125', '304');
+Insert into [dbo].[Prostorije] values ('329', '3', '3', '3', '30', '54', '198', '74', '220');
+Insert into [dbo].[Prostorije] values ('330', '3', '3', '3', '30', '76', '198', '97', '229');
+Insert into [dbo].[Prostorije] values ('331', '3', '3', '0', '30', '100', '198', '142', '237');
+Insert into [dbo].[Prostorije] values ('331A', '3', '3', '3', '30', '216', '197', '232', '237');--sta je
+Insert into [dbo].[Prostorije] values ('332', '3', '3', '0', '30', '235', '197', '329', '237');
+Insert into [dbo].[Prostorije] values ('334', '3', '3', '0', '30', '385', '197', '428', '237');
+Insert into [dbo].[Prostorije] values ('335', '3', '3', '3', '30', '430', '197', '459', '232');
+Insert into [dbo].[Prostorije] values ('336', '3', '3', '3', '30', '461', '197', '489', '232');
+Insert into [dbo].[Prostorije] values ('337', '3', '3', '3', '30', '491', '197', '519', '232');
+Insert into [dbo].[Prostorije] values ('338', '3', '3', '3', '30', '521', '197', '546', '220');
+
+-----------------------------------------------------------------------------------------
+--Cetvrti sprat
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Prostorije] values ('421A', '4', '3', '3', '30', '622', '253', '647', '274');
+Insert into [dbo].[Prostorije] values ('421B', '4', '3', '3', '30', '650', '231', '677', '274');
+Insert into [dbo].[Prostorije] values ('422A', '4', '3', '3', '30', '555', '254', '581', '274');
+Insert into [dbo].[Prostorije] values ('422B', '4', '3', '3', '30', '584', '231', '619', '274');
+Insert into [dbo].[Prostorije] values ('423', '4', '3', '3', '30', '488', '231', '552', '274');
+Insert into [dbo].[Prostorije] values ('424', '4', '3', '3', '30', '421', '231', '485', '274');
+Insert into [dbo].[Prostorije] values ('425', '4', '3', '2', '30', '354', '231', '418', '274');
+Insert into [dbo].[Prostorije] values ('426', '4', '3', '2', '30', '287', '231', '351', '274');
+Insert into [dbo].[Prostorije] values ('427', '4', '3', '2', '30', '220', '231', '284', '274');
+Insert into [dbo].[Prostorije] values ('429', '4', '3', '3', '30', '192', '159', '218', '184');
+Insert into [dbo].[Prostorije] values ('430', '4', '3', '3', '30', '220', '159', '248', '192');
+Insert into [dbo].[Prostorije] values ('431', '4', '3', '0', '30', '251', '159', '342', '202');
+Insert into [dbo].[Prostorije] values ('431A', '4', '3', '2', '30', '402', '159', '486', '202');--lab za robotiku
+Insert into [dbo].[Prostorije] values ('432', '4', '3', '0', '30', '488', '159', '549', '202');
+Insert into [dbo].[Prostorije] values ('433', '4', '3', '0', '30', '551', '159', '619', '202');
+Insert into [dbo].[Prostorije] values ('434', '4', '3', '0', '30', '622', '159', '677', '202');
+-----------------------------------------------------------------------------------------
+--Peti sprat
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Prostorije] values ('521', '5', '3', '0', '30', '666', '257', '732', '310');
+Insert into [dbo].[Prostorije] values ('522', '5', '3', '0', '30', '587', '257', '664', '310');
+Insert into [dbo].[Prostorije] values ('523A', '5', '3', '3', '30', '508', '284', '535', '310');
+Insert into [dbo].[Prostorije] values ('523B', '5', '3', '3', '30', '538', '257', '585', '310');
+Insert into [dbo].[Prostorije] values ('524', '5', '3', '3', '30', '429', '257', '506', '310');
+Insert into [dbo].[Prostorije] values ('525', '5', '3', '0', '30', '271', '257', '426', '310');
+Insert into [dbo].[Prostorije] values ('527', '5', '3', '2', '30', '192', '257', '269', '310');
+Insert into [dbo].[Prostorije] values ('529', '5', '3', '3', '30', '158', '171', '189', '201');
+Insert into [dbo].[Prostorije] values ('530', '5', '3', '3', '30', '192', '171', '225', '211');
+Insert into [dbo].[Prostorije] values ('531', '5', '3', '0', '30', '228', '171', '337', '222');
+Insert into [dbo].[Prostorije] values ('531A', '5', '3', '2', '30', '407', '171', '506', '222');
+Insert into [dbo].[Prostorije] values ('532', '5', '3', '0', '30', '509', '171', '580', '222');
+Insert into [dbo].[Prostorije] values ('533', '5', '3', '2', '30', '583', '171', '664', '222');
+Insert into [dbo].[Prostorije] values ('534', '5', '3', '2', '30', '666', '171', '732', '222');
+
+-----------------------------------------------------------------------------------------
+--Prizemlje glavne zgrade
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Prostorije] values ('1', '6', '3', '2', '30', '732', '214', '787', '257');
+Insert into [dbo].[Prostorije] values ('2', '6', '3', '3', '30', '732', '259', '778', '275');
+Insert into [dbo].[Prostorije] values ('3', '6', '3', '2', '30', '732', '278', '787', '315');
+Insert into [dbo].[Prostorije] values ('4', '6', '3', '3', '30', '732', '318', '778', '333');
+Insert into [dbo].[Prostorije] values ('5', '6', '3', '2', '30', '732', '335', '787', '374');
+Insert into [dbo].[Prostorije] values ('6', '6', '3', '2', '30', '732', '377', '778', '396');
+Insert into [dbo].[Prostorije] values ('7', '6', '3', '2', '30', '732', '399', '778', '429');
+Insert into [dbo].[Prostorije] values ('8', '6', '3', '2', '30', '732', '432', '778', '510');
+Insert into [dbo].[Prostorije] values ('9', '6', '3', '3', '30', '606', '390', '652', '412');
+Insert into [dbo].[Prostorije] values ('10', '6', '3', '3', '30', '606', '333', '700', '388');
+Insert into [dbo].[Prostorije] values ('11', '6', '3', '3', '30', '606', '294', '652', '331');
+Insert into [dbo].[Prostorije] values ('12', '6', '3', '3', '30', '606', '270', '652', '291');
+Insert into [dbo].[Prostorije] values ('13', '6', '3', '3', '30', '568', '215', '652', '267');
+Insert into [dbo].[Prostorije] values ('14', '6', '3', '2', '30', '647', '149', '691', '183');
+
+Insert into [dbo].[Prostorije] values ('21', '6', '3', '2', '30', '41', '170', '66', '187');
+Insert into [dbo].[Prostorije] values ('22', '6', '3', '2', '30', '54', '190', '66', '219');
+Insert into [dbo].[Prostorije] values ('23', '6', '3', '2', '30', '95', '170', '116', '219');
+Insert into [dbo].[Prostorije] values ('24', '6', '3', '2', '30', '118', '170', '210', '219');
+Insert into [dbo].[Prostorije] values ('27', '6', '3', '2', '30', '292', '249', '357', '297');
+Insert into [dbo].[Prostorije] values ('30', '6', '3', '3', '30', '142', '261', '173', '297');
+Insert into [dbo].[Prostorije] values ('31', '6', '3', '3', '30', '107', '261', '139', '297');
+												  
+Insert into [dbo].[Prostorije] values ('A1', '6', '3', '1', '30', '332', '316', '449', '423');
+Insert into [dbo].[Prostorije] values ('A3', '6', '3', '1', '30', '287', '87', '379', '167');
+Insert into [dbo].[Prostorije] values ('A4', '6', '3', '1', '30', '428', '86', '520', '167');
+-----------------------------------------------------------------------------------------
+--M1
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Prostorije] values ('A2', '7', '3', '1', '30', '418', '254', '555', '358');
+Insert into [dbo].[Prostorije] values ('M1-1', '7', '3', '3', '30', '409', '185', '447', '229');
+Insert into [dbo].[Prostorije] values ('M1-2', '7', '3', '2', '30', '342', '185', '407', '229');
+Insert into [dbo].[Prostorije] values ('M1-3', '7', '3', '2', '30', '266', '185', '340', '229');
+Insert into [dbo].[Prostorije] values ('M1-4', '7', '3', '2', '30', '180', '185', '263', '229');
+Insert into [dbo].[Prostorije] values ('M1-5', '7', '3', '2', '30', '199', '111', '225', '145');
+Insert into [dbo].[Prostorije] values ('M1-11', '7', '3', '3', '30', '418', '237', '447', '252');
+
+-----------------------------------------------------------------------------------------
+--M2
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Prostorije] values ('M2-1', '8', '3', '3', '30', '677', '313', '719', '334');
+Insert into [dbo].[Prostorije] values ('M2-2', '8', '3', '2', '30', '565', '282', '674', '356');
+Insert into [dbo].[Prostorije] values ('M2-3', '8', '3', '2', '30', '438', '282', '563', '356');
+Insert into [dbo].[Prostorije] values ('M2-4', '8', '3', '2', '30', '295', '282', '436', '356');
+Insert into [dbo].[Prostorije] values ('M2-5A', '8', '3', '2', '30', '200', '156', '245', '220');
+Insert into [dbo].[Prostorije] values ('M2-5B', '8', '3', '2', '30', '248', '156', '293', '198');
+Insert into [dbo].[Prostorije] values ('M2-5C', '8', '3', '2', '30', '295', '156', '341', '198');
+-----------------------------------------------------------------------------------------
+--LK1 [Oznaka],[SpratID],[PripadaZgradiID],[TipProstorije],[Kapacitet],[LeftUpX],[LeftUpY],[DownRightX],[DownRightY]
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Prostorije] values ('101', '9', '3', '3', '30', '661', '179', '709', '228');
+Insert into [dbo].[Prostorije] values ('102', '9', '3', '3', '30', '661', '231', '709', '245');
+Insert into [dbo].[Prostorije] values ('103', '9', '3', '3', '30', '661', '248', '709', '288');
+Insert into [dbo].[Prostorije] values ('105', '9', '3', '3', '30', '661', '369', '709', '409');
+Insert into [dbo].[Prostorije] values ('106', '9', '3', '3', '30', '661', '412', '709', '485');
+Insert into [dbo].[Prostorije] values ('107', '9', '3', '3', '30', '577', '332', '625', '364');
+Insert into [dbo].[Prostorije] values ('108', '9', '3', '3', '30', '577', '307', '625', '329');
+Insert into [dbo].[Prostorije] values ('109', '9', '3', '3', '30', '577', '281', '625', '304');
+Insert into [dbo].[Prostorije] values ('110', '9', '3', '3', '30', '577', '239', '625', '278');
+-----------------------------------------------------------------------------------------
+--LK2
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Prostorije] values ('201', '10', '3', '2', '30', '666', '154', '714', '210');
+Insert into [dbo].[Prostorije] values ('202', '10', '3', '2', '30', '666', '212', '714', '268');
+Insert into [dbo].[Prostorije] values ('203', '10', '3', '2', '30', '666', '270', '714', '323');
+Insert into [dbo].[Prostorije] values ('204', '10', '3', '2', '30', '666', '325', '714', '381');
+Insert into [dbo].[Prostorije] values ('205', '10', '3', '2', '30', '666', '383', '714', '455');
+Insert into [dbo].[Prostorije] values ('206', '10', '3', '3', '30', '548', '336', '632', '362');
+Insert into [dbo].[Prostorije] values ('207', '10', '3', '3', '30', '584', '308', '632', '334');
+Insert into [dbo].[Prostorije] values ('208', '10', '3', '3', '30', '584', '281', '632', '307');
+Insert into [dbo].[Prostorije] values ('209', '10', '3', '3', '30', '584', '255', '632', '280');
+Insert into [dbo].[Prostorije] values ('210', '10', '3', '3', '30', '584', '228', '632', '253');
+Insert into [dbo].[Prostorije] values ('211', '10', '3', '3', '30', '584', '200', '632', '226');
+Insert into [dbo].[Prostorije] values ('212', '10', '3', '3', '30', '531', '168', '583', '212');
+Insert into [dbo].[Prostorije] values ('213', '10', '3', '3', '30', '462', '125', '492', '151');
+Insert into [dbo].[Prostorije] values ('214', '10', '3', '3', '30', '426', '125', '460', '161');
+-----------------------------------------------------------------------------------------
+--Stara zgrada
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Prostorije] values ('51/1', '11', '1', '2', '30', '141', '128', '223', '237');
+Insert into [dbo].[Prostorije] values ('52/2', '11', '1', '2', '30', '226', '128', '309', '237');
+Insert into [dbo].[Prostorije] values ('53/3', '11', '1', '2', '30', '311', '128', '391', '237');
+Insert into [dbo].[Prostorije] values ('54/4', '11', '1', '2', '30', '394', '128', '476', '237');
+Insert into [dbo].[Prostorije] values ('55/5', '11', '1', '2', '30', '479', '128', '563', '237');
+Insert into [dbo].[Prostorije] values ('58/8', '11', '1', '2', '30', '651', '285', '730', '391');
+Insert into [dbo].[Prostorije] values ('59/9', '11', '1', '2', '30', '565', '285', '649', '391');
+Insert into [dbo].[Prostorije] values ('60/10', '11', '1', '2', '30', '482', '285', '563', '391');
+Insert into [dbo].[Prostorije] values ('61/11', '11', '1', '2', '30', '394', '285', '479', '391');
+Insert into [dbo].[Prostorije] values ('62/12', '11', '1', '2', '30', '364', '285', '392', '391');
+Insert into [dbo].[Prostorije] values ('63/12', '11', '1', '2', '30', '318', '285', '361', '391');
+Insert into [dbo].[Prostorije] values ('64/12', '11', '1', '2', '30', '188', '346', '292', '391');
+Insert into [dbo].[Prostorije] values ('65/13', '11', '1', '2', '30', '188', '285', '241', '344');
+Insert into [dbo].[Prostorije] values ('66/14', '11', '1', '2', '30', '141', '285', '186', '391');
+-----------------------------------------------------------------------------------------
+--Rasporedi casova 
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[ResporediCasova] values('1', '1');
+Insert into [dbo].[ResporediCasova] values('2', '1');
+Insert into [dbo].[ResporediCasova] values('3', '1');
+Insert into [dbo].[ResporediCasova] values('4', '1');
+Insert into [dbo].[ResporediCasova] values('5', '1');
+Insert into [dbo].[ResporediCasova] values('6', '1');
+Insert into [dbo].[ResporediCasova] values('7', '1');
+
+-----------------------------------------------------------------------------------------
+--Studenti
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Studenti] values('Anita', 'Aleksic', 'anita.aleksic@elfak.rs', '18068', '2', '0', '3', '2');
+Insert into [dbo].[Studenti] values('Andjelija', 'Mijajlovic', 'mijajlovic.andjelija@elfak.rs', '18247', '2', '0', '3', '2');
+Insert into [dbo].[Studenti] values('Kristina', 'Joksimovic', 'joksimovic.kristina@elfak.rs', '18203', '2', '0', '3', '2');
+Insert into [dbo].[Studenti] values('Uros', 'Miladinovic', 'umilad@elfak.rs', '18252', '2', '0', '3', '2');
+Insert into [dbo].[Studenti] values('Mihajlo', 'Madic', 'mihajlo.madic@elfak.rs', '18234', '2', '0', '3', '2');
+Insert into [dbo].[Studenti] values('Mihajlo', 'Bencun', 'mihajlo.bencun@elfak.rs', '18081', '2', '0', '3', '2');
+Insert into [dbo].[Studenti] values('Sara', 'Prusevic', 'saraprus@elfak.rs', '19027', '2', '0', '3', '2');
+Insert into [dbo].[Studenti] values('Stefan', 'Jovanovic', 'stefan.n.jovanovic@elfak.rs', '18199', '2', '0', '3', '2');
+Insert into [dbo].[Studenti] values('Luka', 'Stojkovic', 'luka.stojkovic@elfak.rs', '18433', '2', '0', '3', '2');
+-----------------------------------------------------------------------------------------
+--Casovi [Naziv],[Dan],[VremeOd],[VremeDo],[TipCasa],[ProstorijaID],[URasporeduCasovaID],[ZaKursID]
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
+--Casovi RII 
+-----------------------------------------------------------------------------------------
+--ponedeljak
+Insert into [dbo].[Casovi] values('Softversko inzenjerstvo predavanja', '0', '09:15:00', '10:00:00', '0', '128', '2', '2');--a1
+Insert into [dbo].[Casovi] values('Softversko inzenjerstvo predavanja', '0', '10:15:00', '11:00:00', '0', '128', '2', '2');--a1
+Insert into [dbo].[Casovi] values('Paralelni sistemi -1- racunske vezbe', '0', '11:15:00', '12:00:00', '1', '10', '2', '2');--131
+Insert into [dbo].[Casovi] values('Paralelni sistemi -1- racunske vezbe', '0', '12:15:00', '13:00:00', '1', '10', '2', '2');--131
+Insert into [dbo].[Casovi] values('Paralelni sistemi -2- racunske vezbe', '0', '13:15:00', '14:00:00', '1', '10', '2', '2');--131
+Insert into [dbo].[Casovi] values('Paralelni sistemi -2- racunske vezbe', '0', '14:15:00', '15:00:00', '1', '10', '2', '2');--131
+Insert into [dbo].[Casovi] values('Softversko inzenjerstvo -2- racunske vezbe', '0', '11:15:00', '12:00:00', '1', '102', '2', '2');--531
+Insert into [dbo].[Casovi] values('Softversko inzenjerstvo -2- racunske vezbe', '0', '12:15:00', '13:00:00', '1', '102', '2', '2');--531
+Insert into [dbo].[Casovi] values('Softversko inzenjerstvo -3- racunske vezbe', '0', '13:15:00', '14:00:00', '1', '102', '2', '2');--531
+Insert into [dbo].[Casovi] values('Softversko inzenjerstvo -3- racunske vezbe', '0', '14:15:00', '15:00:00', '1', '102', '2', '2');--531
+--utorak
+Insert into [dbo].[Casovi] values('Paralelni sistemi predavanja', '1', '09:15:00', '10:00:00', '0', '128', '2', '2');--a1
+Insert into [dbo].[Casovi] values('Paralelni sistemi predavanja', '1', '10:15:00', '11:00:00', '0', '128', '2', '2');--a1
+Insert into [dbo].[Casovi] values('Softversko inzenjerstvo -1- racunske vezbe', '1', '11:15:00', '12:00:00', '1', '10', '2', '2');--131
+Insert into [dbo].[Casovi] values('Softversko inzenjerstvo -1- racunske vezbe', '1', '12:15:00', '13:00:00', '1', '10', '2', '2');--131
+
+Insert into [dbo].[Casovi] values('Paralelni sistemi -3- racunske vezbe', '1', '11:15:00', '12:00:00', '1', '102', '2', '2');--531
+Insert into [dbo].[Casovi] values('Paralelni sistemi -3- racunske vezbe', '1', '12:15:00', '13:00:00', '1', '102', '2', '2');--531
+
+Insert into [dbo].[Casovi] values('Razvoj mobilnih aplikacija i servisa predavanja', '1', '13:15:00', '14:00:00', '0', '130', '2', '2');--a4
+Insert into [dbo].[Casovi] values('Razvoj mobilnih aplikacija i servisa predavanja', '1', '14:15:00', '15:00:00', '0', '130', '2', '2');--a4
+
+Insert into [dbo].[Casovi] values('Razvoj mobilnih aplikacija i servisa racunske vezbe', '1', '15:15:00', '16:00:00', '1', '98', '2', '2');--525
+Insert into [dbo].[Casovi] values('Razvoj mobilnih aplikacija i servisa racunske vezbe', '1', '16:15:00', '17:00:00', '1', '98', '2', '2');--525
+--sreda
+Insert into [dbo].[Casovi] values('Internet stvari predavanja', '2', '08:15:00', '9:00:00', '0', '90', '2', '2');--432
+Insert into [dbo].[Casovi] values('Internet stvari predavanja', '2', '09:15:00', '10:00:00', '0', '90', '2', '2');--432
+
+Insert into [dbo].[Casovi] values('Internet stvari racunske vezbe', '2', '10:15:00', '11:00:00', '1', '90', '2', '2');--432
+Insert into [dbo].[Casovi] values('Internet stvari racunske vezbe', '2', '11:15:00', '12:00:00', '1', '90', '2', '2');--432
+
+Insert into [dbo].[Casovi] values('Razvoj web i viseplatformskih aplikacija predavanja', '2', '12:15:00', '13:00:00', '0', '129', '2', '2');--a3
+Insert into [dbo].[Casovi] values('Razvoj web i viseplatformskih aplikacija predavanja', '2', '13:15:00', '14:00:00', '0', '129', '2', '2');--a3
+
+Insert into [dbo].[Casovi] values('Razvoj web i viseplatformskih aplikacija racunske vezbe', '2', '14:15:00', '15:00:00', '1', '129', '2', '2');--a3
+Insert into [dbo].[Casovi] values('Razvoj web i viseplatformskih aplikacija racunske vezbe', '2', '15:15:00', '16:00:00', '1', '129', '2', '2');--a3
+
+--cetvrtak
+Insert into [dbo].[Casovi] values('Interakcija covek-racunar predavanja', '3', '08:15:00', '9:00:00', '0', '98', '2', '2');--525
+Insert into [dbo].[Casovi] values('Interakcija covek-racunar predavanja', '3', '09:15:00', '10:00:00', '0', '98', '2', '2');--525
+								   
+Insert into [dbo].[Casovi] values('Interakcija covek-racunar racunske vezbe', '3', '10:15:00', '11:00:00', '1', '98', '2', '2');--525
+Insert into [dbo].[Casovi] values('Interakcija covek-racunar racunske vezbe', '3', '11:15:00', '12:00:00', '1', '98', '2', '2');--525
+
+Insert into [dbo].[Casovi] values('Sistemi baza podataka predavanja', '3', '12:15:00', '13:00:00', '0', '129', '2', '2');--a3
+Insert into [dbo].[Casovi] values('Sistemi baza podataka predavanja', '3', '13:15:00', '14:00:00', '0', '129', '2', '2');--a3
+								   
+Insert into [dbo].[Casovi] values('Sistemi baza podataka racunske vezbe', '3', '14:15:00', '15:00:00', '1', '129', '2', '2');--a3
+Insert into [dbo].[Casovi] values('Sistemi baza podataka racunske vezbe', '3', '15:15:00', '16:00:00', '1', '129', '2', '2');--a3
+
+--petak
+Insert into [dbo].[Casovi] values('Sistemsko programiranje predavanja', '4', '08:15:00', '9:00:00', '0', '2', '2', '2');--121
+Insert into [dbo].[Casovi] values('Sistemsko programiranje predavanja', '4', '09:15:00', '10:00:00', '0', '2', '2', '2');--121
+								   
+Insert into [dbo].[Casovi] values('Sistemsko programiranje racunske vezbe', '4', '10:15:00', '11:00:00', '1', '2', '2', '2');--121
+Insert into [dbo].[Casovi] values('Sistemsko programiranje racunske vezbe', '4', '11:15:00', '12:00:00', '1', '2', '2', '2');--121
+
+Insert into [dbo].[Casovi] values('Engleski jezik 2 predavanja', '4', '12:15:00', '13:00:00', '0', '129', '2', '2');--a3
+Insert into [dbo].[Casovi] values('Engleski jezik 2 predavanja', '4', '13:15:00', '14:00:00', '0', '129', '2', '2');--a3
+
+--labovi
+Insert into [dbo].[Casovi] values('Paralelni sistemi laboratorijske vezbe', '0', '14:30:00', '16:00:00', '2', '93', '2', '2');--521
+Insert into [dbo].[Casovi] values('Paralelni sistemi laboratorijske vezbe', '0', '15:00:00', '16:30:00', '2', '94', '2', '2');--522
+Insert into [dbo].[Casovi] values('Paralelni sistemi laboratorijske vezbe', '0', '16:00:00', '17:30:00', '2', '93', '2', '2');--521
+Insert into [dbo].[Casovi] values('Paralelni sistemi laboratorijske vezbe', '0', '16:30:00', '18:00:00', '2', '94', '2', '2');--522
+Insert into [dbo].[Casovi] values('Paralelni sistemi laboratorijske vezbe', '0', '17:30:00', '19:00:00', '2', '93', '2', '2');--521
+
+Insert into [dbo].[Casovi] values('Paralelni sistemi laboratorijske vezbe', '1', '17:00:00', '18:30:00', '2', '93', '2', '2');--521
+Insert into [dbo].[Casovi] values('Paralelni sistemi laboratorijske vezbe', '1', '18:30:00', '20:00:00', '2', '93', '2', '2');--521
+-----------------------------------------------------------------------------------------
+--Nastavno osoblje (proveri ID kancelarije)
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[NastavnoOsoblje] values('Djordje', 'Cikic', 'djordje.cikic@elfak.ni.ac.rs', 'saradnik u nastavi', '105'); --533
+Insert into [dbo].[NastavnoOsoblje] values('Dejan', 'Rancic', 'dejan.rancic@elfak.ni.ac.rs', 'redovni profesor', '138');--M2-1
+Insert into [dbo].[NastavnoOsoblje] values('Aleksandarr', 'Milosavljevic', 'aleksandar.milosavljevic@elfak.ni.ac.rs', 'redovni profesor', '69');--331 
+Insert into [dbo].[NastavnoOsoblje] values('Vladan', 'Mihajlovic', 'vladan.mihajlovic@elfak.ni.ac.rs', 'asistent', '69');--331
+
+-----------------------------------------------------------------------------------------
+--Objava [TipObjave],[Tekst],[OdNastavnogOsobljaID],[ForumID]
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Objave] values('0', 'Au bate', '1', '1');
+Insert into [dbo].[Objave] values('1', 'Ne uci kolovodju:', '4', '1');
+
+-----------------------------------------------------------------------------------------
+--Notifikacija [Poruka],[PosiljalacID],[ZaObjavuID]
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Notifikacije] values('Rok za predaju projekta', '1', '1');
+Insert into [dbo].[Notifikacije] values('Kako bese tekst', '4', '2');
+
+-----------------------------------------------------------------------------------------
+--Opcija [Tekst],[BrojGlasova],[AnketaID]
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Opcije] values('kolo da povede', '4', '2');
+Insert into [dbo].[Opcije] values('kako da zavede', '1', '2');
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[AspNetRoles]
+Values (1, 'Student', 'STUDENT', null),
+	(2, 'NastavnoOsovlje', 'NASTAVNOOSOBLJE', null),
+	(3, 'Administrator', 'AMINISTRATOR',null);
+

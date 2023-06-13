@@ -1,0 +1,18 @@
+﻿.background-image {
+    display: flex;
+    justify-content: space-between;
+    background-image: url('/other/cool-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200vh;
+}
+
+
+
+
+namespace Elfind.Areas.Identity.Pages.Account
+{
+    public class Register
+    {
+    }
+}
