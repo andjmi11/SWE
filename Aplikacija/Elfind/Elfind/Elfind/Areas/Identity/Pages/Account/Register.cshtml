@@ -1,10 +1,8 @@
 ﻿@page
-@model LoginModel
-
+@model RegisterModel
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Registracija";
 }
-
 
 <div class="custom-background">
     <style>
@@ -14,8 +12,6 @@
             margin: 0;
             padding: 0;
             color: white;
-            /background-color: rgb(222, 179, 245);
-            /
         }
     </style>
 
@@ -23,48 +19,33 @@
         <div class="coll-md-4 col-xs-12 align-self-center text-center">
             <img src="/other/logoGIFTransparent.gif" class="img-fluid" alt="Animated GIF" width="500" height="250" />
         </div>
-
         <div class="row align-items-center justify-content-center">
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="container text-center">
                     <h2>@ViewData["Title"]</h2>
                 </div>
-
                 <section>
-                    <form id="account" method="post">
-                        <p style="font:90">Koristite elfak mail za logovanje na sajt.</p>
+                    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <p style="font:90">Napravite novi nalog koristeći vaš elfak mail.</p>
                         <hr />
                         <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                         <div class="form-floating mb-3">
                             <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                            <label asp-for="Input.Email" class="form-label" style="color:black">Email</label>
+                            <label asp-for="Input.Email" style="color:black">Email</label>
                             <span asp-validation-for="Input.Email" class="text-danger"></span>
                         </div>
-                        <div class="form-floating mb-2">
-                            <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
-                            <label asp-for="Input.Password" class="form-label" style="color:black">Password</label>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" data-val="true" data-val-regex="Šifra nije u ispravnom formatu." data-val-regex-pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\da-zA-Z]).{6,}" />
+                            <label asp-for="Input.Password" style="color:black">Password</label>
+
                             <span asp-validation-for="Input.Password" class="text-danger"></span>
                         </div>
-                        <div class="checkbox mb-2">
-                            <label asp-for="Input.RememberMe" class="form-label">
-                                <input class="form-check-input" asp-for="Input.RememberMe" />
-                                @Html.DisplayNameFor(m => m.Input.RememberMe)
-                            </label>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                            <label asp-for="Input.ConfirmPassword" style="color:black">Confirm Password</label>
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                         </div>
-                        <button id="login-submit" type="submit" class="w-100 btn btn-lg" style="background-color: lightpink; color: #000000; border: 2px solid #fc9fad;">
-                            Uloguj se
-                        </button>
-                        <div>
-                            <p style="margin-bottom: 0.5px">
-                                <a style="color: lightpink" onmouseover="this.style.color='#fc9fad';" onmouseout="this.style.color='lightpink';" d="forgot-password" asp-page="./ForgotPassword">Zaboravili ste sifru?</a>
-                            </p>
-                            <p style="margin-bottom:0.5px">
-                                <a style="color: lightpink" onmouseover="this.style.color='#fc9fad';" onmouseout="this.style.color='lightpink';" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registrujte se kao novi korisnik</a>
-                            </p>
-                            @* <p>
-                            <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
-                            </p>*@
-                        </div>
+                        <button id="registerSubmit" type="submit" class="w-100 btn btn-lg" style="background-color: lightpink; color: #000000; border: 2px solid #fc9fad;" @*class="w-100 btn btn-lg btn-primary"*@>Registruj se</button>
                     </form>
                 </section>
             </div>
@@ -72,7 +53,6 @@
     </div>
 </div>
 
-
 @section Scripts {
-    <partial name="_ValidationScriptsPartial"   />
+    <partial name="_ValidationScriptsPartial" />
 }
