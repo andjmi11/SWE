@@ -111,6 +111,7 @@ namespace Elfind.Data.Services
                           //.Include(c => c.Prostorija).ThenInclude(x => x.NastavnoOsobljeR).ThenInclude(x=> x.Prostorija)
                           //.Include(c => c.Prostorija).ThenInclude(x => x.NastavnoOsobljeR).ThenInclude(x=> x.NastavnoOsoblje)
                           .Include(c=> c.Prostorija).ThenInclude( x => x.NastavnoOsobljeR).ThenInclude(x=> x.NastavnoOsoblje)
+                         // .Include(c=> c.Zakazao).ThenInclude(x=>x.RezProstorije).ThenInclude(x=> x.Prostorija) //dodato obrnuto
                         .Include(c => c.URasporeduCasova)
                         .Include(c => c.ZaKurs)
                         .SingleOrDefaultAsync(c => c.ID == ID);

@@ -286,7 +286,7 @@ a {
     border-color: darkgrey;
 }
 
-.posaljiZahtevOtkaz, .uspesnaRez, .potvrdaRez, {
+.uspesnaRez, .potvrdaRez, {
     background-color: #e6697c;
     border-color: #e6697c;
 }
@@ -367,4 +367,8 @@ a {
 .prof-vrednost-style {
     text-align: left !important;
     /* width: max-content !important;*/
+}
+
+.posaljiZahtevOtkaz {
+    background-color: #ffb6c1;
 }

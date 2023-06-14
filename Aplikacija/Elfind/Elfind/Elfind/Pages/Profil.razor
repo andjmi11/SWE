@@ -158,18 +158,24 @@
                 {
                     @foreach (var c in casovi)
                     {
-                        if (c != null && c.Naziv != null && c.Prostorija != null && termini != null)
+                        if (c != null && c.Naziv != null && c.Prostorija != null && termini != null && termini.TryGetValue(@c.ID, out dat))
                         {
                             <div>
                                 <label>
-                                    @c.Naziv
-                                    @c.Prostorija.Oznaka
-                                    @c.Dan.ToString()
-                                    @c.VremeOd - @c.VremeDo
-                                    @if (termini.TryGetValue(@c, out dat))
-                                    {
+                                    @*@if (termini.TryGetValue(@c.ID, out dat))
+                                    {*@
                                         @dat.ToString("dd/MM/yyyy")
-                                    }
+                                    <br/>
+
+                                    <text>
+                                    @c.Naziv 
+                                    @c.Prostorija.Oznaka 
+                                    @c.Dan.ToString() 
+                                    @c.VremeOd - @c.VremeDo
+
+                                    </text>
+                                    <span/>
+                                    @*}*@
                                 </label>
                             </div>
                         }
@@ -192,14 +198,16 @@
                         {
                             <div>
                                 <label>
+                                    @if (termini.TryGetValue(@c.ID, out dat))
+                                    {
+                                        @dat.ToString("dd/MM/yyyy")
+                                    }
+                                    <br/>
                                     @c.Naziv
                                     @c.Prostorija.Oznaka
                                     @c.Dan.ToString()
                                     @c.VremeOd - @c.VremeDo
-                                    @if (termini.TryGetValue(@c, out dat))
-                                    {
-                                        @dat.ToString("dd/MM/yyyy")
-                                    }
+                                    <span/>
                                 </label>
 
                                 <button class="otkaziCas" @onclick="() => OtkaziCas(c.ID)" value="@c.ID">Otkazi</button>
@@ -508,7 +516,7 @@
     private NastavnoOsoblje nast = null;
     private List<Cas> casovi = new List<Cas>();
     private List<OsobljeProstorijaR> rezProstorije = new List<OsobljeProstorijaR>();
-    private Dictionary<Cas, DateTime> termini = new Dictionary<Cas, DateTime>();
+    private Dictionary<int, DateTime> termini = new Dictionary<int, DateTime>(); //bilo je cas,dt
 
     private List<Smer> smerovi = new List<Smer>();
     private List<Smer> smeroviNast = new List<Smer>();
@@ -553,31 +561,52 @@
             }
 
             //LISTA ZAKAZANIH CASOVA VAN RASPOREDA TODO
-            //treba druga funkcija da se koristi jer su kursevi studenta prazni
-            List<Cas> moguciCasovi = new List<Cas>();
 
-            if (stud.Kursevi != null)
+            List<Kurs> kursevi = new List<Kurs>();
+            List<Cas> sviCasovi = new List<Cas>();
+
+            if(stud != null && stud.NaSmeru != null && stud.NaSmeru.Kursevi != null)
             {
-                foreach (var sk in stud.Kursevi)
+                foreach(var kurs in stud.NaSmeru.Kursevi)
                 {
-                    if (sk.Kurs != null && sk.Kurs.Casovi != null && sk.Kurs.Casovi.Count > 0)
+                    if (kurs.Kurs.Godina == stud.Godina)
                     {
-                        moguciCasovi.AddRange(sk.Kurs.Casovi);
+                        var kCeo = await KursService.PreuzmiKursAsync(kurs.ID);
+                        kursevi.Add(kCeo);
                     }
                 }
             }
 
-            if (moguciCasovi != null && moguciCasovi.Count > 0)
+            if (kursevi != null)
             {
-                foreach (var mc in moguciCasovi)
+                foreach (var k in kursevi)
                 {
-                    if (mc != null && mc.URasporeduCasova == null)
+                    sviCasovi.AddRange(k.Casovi);
+                }
+            }
+
+            foreach (var cas in sviCasovi)
+            {
+                if (cas.URasporeduCasova == null)
+                { //she's sooo crazy
+                    casovi.Add(cas);
+
+                    Cas izBaze = await casService.PreuzmiCasPrilagodjena(cas.ID);
+                    if (izBaze != null)
                     {
-                        casovi.Add(mc);
+                        List<OsobljeProstorijaR> osobPr = izBaze.Prostorija.NastavnoOsobljeR;
+
+
+                        foreach (var op in osobPr)
+                        {
+                            if (!(termini.ContainsKey(cas.ID))) 
+                                termini.Add(cas.ID, op.datum); 
+                        }
                     }
                 }
             }
 
+            
             //casovi
 
             prikaziFormuRaspored = true; //student uvek vidi raspored
@@ -595,8 +624,6 @@
         else
         {
             nast = await NastavnoOsobljeService.PreuzmiNastavnoOsobljePoKIKratkaAsync(userName);
-
-            //rasporedi su problem po sebi
 
             List<KursSmer> kursSmerovi = new List<KursSmer>();
             List<Kurs> kursevi = new List<Kurs>();
@@ -660,13 +687,11 @@
                         //da nadje po idjevima datum..sta ako 2 termina sve isto samo razl datum ONDA NE ZNAM
                         List<OsobljeProstorijaR> osobPr = izBaze.Prostorija.NastavnoOsobljeR;
 
+
                         foreach (var op in osobPr)
                         {
-                            if (op.NastavnoOsoblje != null && op.NastavnoOsoblje.ID == nast.ID)
-                            {
-                                if (!(termini.ContainsKey(cas)))
-                                    termini.Add(cas, op.datum);
-                            }
+                                if (!(termini.ContainsKey(cas.ID)))
+                                    termini.Add(cas.ID, op.datum);                            
                         }
                     }
                 }
@@ -705,6 +730,7 @@
     {
         await ShowSigurnoModal();
 
+        //ovde ga ne ceka NE RAZUMEM
         if (sigurno)
         {
             int code = await casService.ObrisiCas(id);

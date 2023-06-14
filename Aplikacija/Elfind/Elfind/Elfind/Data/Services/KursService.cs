@@ -39,7 +39,7 @@ namespace Elfind.Data.Services
                 {
                     Kurs kurs = await context.Kursevi
                         .Include(x=>x.Studenti)
-                        .Include(x=>x.Casovi)
+                        .Include(x=>x.Casovi).ThenInclude(x=> x.Prostorija) //dodato
                        .Include(x=>x.Smerovi)
                        .Include(x=>x.NastavnoOsoblje)
                        .SingleOrDefaultAsync(k => k.ID == ID);

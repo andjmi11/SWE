@@ -206,7 +206,8 @@
 
     <Modal @ref="notFoundModal" Title="Ne postoje podaci o trazenom objektu.">
         <FooterTemplate>
-            <Button Color="ButtonColor.Primary" @onclick="OnHideModalNotFoundClick">U redu</Button>
+           @* //<Button Color="ButtonColor.Primary" @onclick="OnHideModalNotFoundClick">U redu</Button>*@
+            <button class="otkaziRezerv" @onclick="OnHideModalNotFoundClick">U redu</button>
         </FooterTemplate>
     </Modal>
 
@@ -230,7 +231,7 @@
         </BodyTemplate>
 
         <FooterTemplate>
-            <Button Color="ButtonColor.Primary" @onclick="OnHideProfModalClick">U redu</Button>
+            <button class="otkaziRezerv" @onclick="OnHideProfModalClick">U redu</button>
         </FooterTemplate>
     </Modal>
 

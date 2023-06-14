@@ -36,14 +36,16 @@ namespace Elfind.Data.Services
             {
                 using (var context = dbContextFactory.CreateDbContext())
                 {
-                    Smer smer = await context.Smerovi.Include(x=>x.Kursevi).SingleOrDefaultAsync(s => s.ID == ID);
+                    Smer smer = await context.Smerovi.Include(x=>x.Kursevi)
+                        .ThenInclude(x => x.Kurs)
+                        .SingleOrDefaultAsync(s => s.ID == ID);
 
-                    List<KursSmer> kursevi = await context.KursSmerSpoj
-                        .Include(x => x.Kurs)
-                        .Include(c => c.Smer)
-                        .Where(x => x.Smer.ID == smer.ID).ToListAsync();
+                    //List<KursSmer> kursevi = await context.KursSmerSpoj
+                    //    .Include(x => x.Kurs)
+                    //    .Include(c => c.Smer)
+                    //    .Where(x => x.Smer.ID == smer.ID).ToListAsync();
 
-                    smer.Kursevi.AddRange(kursevi);
+                    //smer.Kursevi.AddRange(kursevi);
                     return smer;
                 }
             }

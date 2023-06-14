@@ -212,6 +212,28 @@
             }
 
         </div>
+
+
+        <Modal @ref="modalUspesno">
+            <BodyTemplate>
+                @porukaUspesno
+            </BodyTemplate>
+            <FooterTemplate>
+                <button class="uspesnaRez" @onclick="OnHideModalUspesnoClick">Ok</button>
+            </FooterTemplate>
+        </Modal>
+
+        <Modal @ref="modalNeuspesno">
+            <HeaderTemplate>
+            </HeaderTemplate>
+            <BodyTemplate>
+                @porukaNeuspesno
+            </BodyTemplate>
+            <FooterTemplate>
+                <button class="otkaziRezerv" @onclick="OnHideModalNeuspesnoClick">Otkaži</button>
+            </FooterTemplate>
+        </Modal>
+
     </Authorized>
 </AuthorizeView>
 
@@ -347,6 +369,11 @@
     private async Task ObrisiObjavu(Data.Model.Objava objava)
     {
         await ObjavaService.ObrisiObjavu(objava.ID);
+
+        //if nesto?
+        porukaUspesno = "Objava uspesno obrisana.";
+        await ShowUspesnoModal();
+
         StateHasChanged();
     }
 
@@ -437,6 +464,8 @@
             objavaVidljiva = true;
 
 
+
+
             //sveObjave = await ObjavaService.VratiSveObjave(); ubaci za administratora
             if (nID > 0)
             {
@@ -465,17 +494,29 @@
                 notificationMessage.Smerovi[i] = sacuvaniSmerovi[i].Naziv;
             }
 
+            //krissy dodala, ovde puca ako nije izabran predmet:)
+            if(izabraniPredmet == "" || izabraniPredmet == null)
+            {
+                porukaNeuspesno = "Izabrati kurs.";
+                await ShowNeuspesnoModal();
+                return;
+            }
+
             Kurs izabraniKurs = await KursService.PreuzmiKursPoNazivuAsync(izabraniPredmet);
+
+            //andj ako zelis pomeri negde drugde gde je sigurno da je objava uspesno ubacena, otvara se modal samo za obavestenje
+            await ShowUspesnoModal();
 
             notificationMessage.Kurs = izabraniKurs.Naziv;
             await Send();
-            StateHasChanged();
-
+            //StateHasChanged();
+            InvokeAsync(StateHasChanged);
 
         }
         catch (Exception e)
         {
             Console.WriteLine("Objava već postoji.");
+            await ShowNeuspesnoModal();
         }
     }
 
@@ -623,4 +664,34 @@
 
         notificationMessage.MsgBody = "";
     }
+
+    #region modali
+
+    private string porukaUspesno = "Uspešno postavljena objava."; //da bi moglo da se menja ako treba
+
+    private Modal modalUspesno;
+    private async Task ShowUspesnoModal()
+    {
+        await modalUspesno?.ShowAsync();
+
+    }
+    private async Task OnHideModalUspesnoClick()
+    {
+        await modalUspesno?.HideAsync();
+
+    }
+
+    private string porukaNeuspesno = "Nije moguce dodati objavu."; //zbog _________
+
+    private Modal modalNeuspesno;
+    private async Task ShowNeuspesnoModal()
+    {
+        await modalNeuspesno?.ShowAsync();
+    }
+    private async Task OnHideModalNeuspesnoClick()
+    {
+        await modalNeuspesno?.HideAsync();
+    }
+
+    #endregion
 }
