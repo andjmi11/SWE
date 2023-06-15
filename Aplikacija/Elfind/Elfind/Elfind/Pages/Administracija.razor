@@ -12,7 +12,7 @@
 @inject CasService casService
 @inject KursService kursService
 @inject SmerService smerService
-
+@inject NavigationManager NavigationManager
 @inject IJSRuntime JSRuntime
 @attribute [Authorize(Roles="Administrator")]
 
@@ -71,27 +71,7 @@
                     <input type="text" class="form-control" @bind="indeksS">
                 </div>
                 <br />
-                <div class="form-group">
-                    <label for="naSmeruId">Smer:</label>
-                    <select class="form-control" @bind="smerS">
-                        <option value=""></option>
-                        @foreach (var s in smerovi)
-                        {
-                            <option>@s.Naziv</option>
-                        }
-                    </select>
-                </div>
                 <br />
-                <div class="form-group">
-                    <label for="tipStudija">Tip studija:</label>
-                    <select class="form-control" @bind="tipStudijaS">
-                        <option value=""></option>
-                        @foreach (var t in tipoviStudija)
-                        {
-                            <option>@t.ToString()</option>
-                        }
-                    </select>
-                </div>
                 <br />
                 <div class="form-group">
                     <label for="godina">Godina:</label>
@@ -103,6 +83,26 @@
                     </select>
                 </div>
                 <br />
+                <div class="form-group">
+                    <label for="naSmeruId">Smer:</label>
+                    <select class="form-control" @bind="smerS">
+                        <option value=""></option>
+                        @foreach (var s in smerovi)
+                        {
+                            <option>@s.Naziv</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tipStudija">Tip studija:</label>
+                    <select class="form-control" @bind="tipStudijaS" >
+                        <option value=""></option>
+                        @foreach (var t in tipoviStudija)
+                        {
+                            <option>@t.ToString() </option>
+                        }
+                    </select>
+                </div>
                 <div class="form-group d-flex justify-content-center">
                     <button type="button" class="custom-button" @onclick="async() => { PrikaziFormuStudent(); await SacuvajIzmeneS(); await popuniListuRasporedCasova();}" disabled="@disableButtonS">Sačuvaj</button>
                     <button type="button" class="custom-button" @onclick="ObrisiStudenta">Obriši</button>
@@ -411,6 +411,10 @@
     //dodala
     private bool crtajRaspored = false;
 
+    private async Task PopuniListuSmerova()
+    {
+        smerovi = await smerService.VratiSveSmerovePoTipuStudija(tipStudijaS);
+    }
 
     private void PrikaziFormuStudent()
     {
@@ -583,6 +587,46 @@
             }
             nevalidnoKImeS = false;
             disableButtonS = false;
+
+            smerovi = await smerService.VratiSveSmerove();
+            if(student == null)
+            {
+                if(tipStudijaS == "OAS")
+                {
+                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("OAS");
+                }
+                else if(tipStudijaS == "MAS")
+                {
+                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("MAS");
+                }
+                else
+                {
+                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("DAS");
+                }
+            }
+            if(student != null && smerovi.Count == 0)
+            {
+                if (tipStudijaS == "OAS")
+                {
+                    oasFlag = true;
+                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("OAS");
+
+                }
+                else if (tipStudijaS == "MAS")
+                {
+                    masFlag = true;
+                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("MAS");
+                }
+                else 
+                {
+                    dasFlag = true;
+                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("DAS");
+                }
+
+
+            }
+
+
         }
         else
         {
@@ -616,6 +660,8 @@
         {
             await DodajNovogStudenta();
         }
+        NavigationManager.NavigateTo("/administracija", forceLoad: true);
+
     }
 
     private async Task IzmeniStudenta()
@@ -627,7 +673,9 @@
         postojiS = false;
         blokirajS = false;
         await studentService.AzurirajStudenta(student);
+        StateHasChanged();
     }
+
 
     private async Task DodajNovogStudenta()
     {
@@ -641,12 +689,14 @@
             //blokirajS = false;
             await studentService.DodajStudenta(student);
             provereno = true;
+
         }
         else
         {
             //postojiIndeks = true;
             //disableButtonS = true;
         }
+        StateHasChanged();
     }
 
     private async Task PopuniPodacimaS()
@@ -745,6 +795,7 @@
         {
             await DodajNovogNastavnika();
         }
+        NavigationManager.NavigateTo("/administracija", forceLoad: true);
     }
 
     private async Task IzmeniNastavnika()
@@ -759,6 +810,9 @@
     {
         nastavnik = new NastavnoOsoblje();
         nastavnik.KorisnickoIme = korisnickoImeN;
+
+        nastavnik.Kancelarija = await prostorijaService.PreuzmiProstorijuPoOznaci(kancelarijaN);
+        nastavnik.Tip = tipN;
         await PopuniPodacimaN();
         //postojiN = false;
         //blokirajN = false;
@@ -1174,20 +1228,24 @@
     private async Task ObrisiStudenta()
     {
         await studentService.ObrisiStudenta(korisnickoImeS);
-        StateHasChanged();
+        NavigationManager.NavigateTo("/administracija", forceLoad: true);
     }
 
     private async Task ObrisiNastavnika()
     {
         await nastavnoOsobljeService.ObrisiNastavnoOsobljeAsync(korisnickoImeN);
-        StateHasChanged();
+        NavigationManager.NavigateTo("/administracija", forceLoad: true);
     }
 
     private async Task ObrisiRaspored()
     {
-        int god = int.Parse(izabranaGodina);
-        await rasporedCasovaService.ObrisiRasporedCasova(IzabraniSmerId, god);
-        StateHasChanged();
+        izabranaGodina = izabranaGodina.Replace(".", "");
+        int god;
+        if (int.TryParse(izabranaGodina, out god))
+        {
+            await rasporedCasovaService.ObrisiRasporedCasova(IzabraniSmerId, god);
+            NavigationManager.NavigateTo("/administracija", forceLoad: true);
+        }
 
     }
     private string porukaNeuspesno = "";

@@ -374,7 +374,7 @@
         porukaUspesno = "Objava uspesno obrisana.";
         await ShowUspesnoModal();
 
-        StateHasChanged();
+        NavigationManager.NavigateTo("/forum", forceLoad: true);
     }
 
 

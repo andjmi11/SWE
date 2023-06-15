@@ -238,6 +238,21 @@ namespace Elfind.Data.Services
                         throw new Exception("Nastavno osoblje sa datim ID-jem ne postoji!");
                     }
 
+                    List<Data.Model.Objava> objave = await context.Objave.Where(x => x.OdNastavnogOsoblja.KorisnickoIme == korisnickoIme).ToListAsync();
+                    foreach(var obj in objave)
+                    {
+                        List<ObjavaStudent> objSt = await context.ObjavaStudent.Where(x => x.Objava.ID == obj.ID).ToListAsync();
+                        foreach(var os in objSt)
+                        {
+                            context.ObjavaStudent.Remove(os);
+                        }
+                        List<Opcija> opc = await context.Opcije.Where(x => x.Anketa.ID == obj.ID).ToListAsync();
+                        foreach(var o in opc)
+                        {
+                            context.Opcije.Remove(o);
+                        }
+                        context.Objave.Remove(obj);
+                    }
                     List<OsobljeRaspored> osobljeRasp = await context.OsobljeRasporedSpoj.Where(os => os.NastavnoOsoblje.KorisnickoIme == korisnickoIme).ToListAsync();
                     context.OsobljeRasporedSpoj.RemoveRange(osobljeRasp);
 
@@ -247,8 +262,7 @@ namespace Elfind.Data.Services
                     List<OsobljeKurs> osobljeKurs = await context.OsobljeKursSpoj.Where(x => x.NastavnoOsoblje.KorisnickoIme == korisnickoIme).ToListAsync();
                     context.OsobljeKursSpoj.RemoveRange(osobljeKurs);
 
-                    List<Data.Model.Objava> objave = await context.Objave.Where(o => o.OdNastavnogOsoblja.KorisnickoIme==korisnickoIme).ToListAsync();
-                    context.Objave.RemoveRange(objave);
+                    
 
                     foreach (var p in context.Prostorije)
                     {

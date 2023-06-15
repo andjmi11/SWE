@@ -142,7 +142,10 @@ namespace Elfind.Data.Services
                     }
 
                     List<Student> studenti = await context.Studenti.Where(o => o.RasporedCasova.ID == rasporedCasova.ID).ToListAsync();
-                    context.Studenti.RemoveRange(studenti);
+                    foreach(var s in studenti)
+                    {
+                        s.RasporedCasova = null;
+                    }
 
                     List<Cas> casovi = await context.Casovi.Where(x => x.URasporeduCasova.ID == rasporedCasova.ID).ToListAsync();
                     context.Casovi.RemoveRange(casovi);

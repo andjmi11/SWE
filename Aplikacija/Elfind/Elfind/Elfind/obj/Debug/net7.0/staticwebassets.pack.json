@@ -1,211 +1,211 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Elfind.bundle.scp.css",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Elfind.bundle.scp.css",
       "PackagePath": "staticwebassets\\Elfind.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_account_circle_white_24dp.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_account_circle_white_24dp.png",
       "PackagePath": "staticwebassets\\baseline_account_circle_white_24dp.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_forum_white_24dp.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_forum_white_24dp.png",
       "PackagePath": "staticwebassets\\baseline_forum_white_24dp.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_map_white_24dp.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_map_white_24dp.png",
       "PackagePath": "staticwebassets\\baseline_map_white_24dp.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_account_circle_white_24dp2x.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_account_circle_white_24dp2x.png",
       "PackagePath": "staticwebassets\\icons\\baseline_account_circle_white_24dp2x.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_forum_white_24dp2x.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_forum_white_24dp2x.png",
       "PackagePath": "staticwebassets\\icons\\baseline_forum_white_24dp2x.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_map_white_24dp2x.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_map_white_24dp2x.png",
       "PackagePath": "staticwebassets\\icons\\baseline_map_white_24dp2x.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_search_black_24dp.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_search_black_24dp.png",
       "PackagePath": "staticwebassets\\icons\\baseline_search_black_24dp.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_search_black_24dp2x.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_search_black_24dp2x.png",
       "PackagePath": "staticwebassets\\icons\\baseline_search_black_24dp2x.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dp.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dp.png",
       "PackagePath": "staticwebassets\\icons\\round_logout_white_24dp.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dp2x.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dp2x.png",
       "PackagePath": "staticwebassets\\icons\\round_logout_white_24dp2x.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dprsz.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dprsz.jpg",
       "PackagePath": "staticwebassets\\icons\\round_logout_white_24dprsz.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_notifications_white_24dp2x.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_notifications_white_24dp2x.png",
       "PackagePath": "staticwebassets\\icons\\round_notifications_white_24dp2x.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_notifications_white_24dprsz.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_notifications_white_24dprsz.jpg",
       "PackagePath": "staticwebassets\\icons\\round_notifications_white_24dprsz.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\backgroundTrans.js",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\backgroundTrans.js",
       "PackagePath": "staticwebassets\\js\\backgroundTrans.js"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\clickEvents.js",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\clickEvents.js",
       "PackagePath": "staticwebassets\\js\\clickEvents.js"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\datepicker.js",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\datepicker.js",
       "PackagePath": "staticwebassets\\js\\datepicker.js"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\interop.js",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\interop.js",
       "PackagePath": "staticwebassets\\js\\interop.js"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\notification\\ikr.notification.css",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\notification\\ikr.notification.css",
       "PackagePath": "staticwebassets\\notification\\ikr.notification.css"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\cool-background-reversed.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\cool-background-reversed.png",
       "PackagePath": "staticwebassets\\other\\cool-background-reversed.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\cool-background.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\cool-background.png",
       "PackagePath": "staticwebassets\\other\\cool-background.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\favicon.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\favicon.png",
       "PackagePath": "staticwebassets\\other\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logo.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logo.jpg",
       "PackagePath": "staticwebassets\\other\\logo.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoGIF.gif",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoGIF.gif",
       "PackagePath": "staticwebassets\\other\\logoGIF.gif"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoGIFTransparent.gif",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoGIFTransparent.gif",
       "PackagePath": "staticwebassets\\other\\logoGIFTransparent.gif"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoImgTransparent.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoImgTransparent.png",
       "PackagePath": "staticwebassets\\other\\logoImgTransparent.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\moje-srce.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\moje-srce.jpg",
       "PackagePath": "staticwebassets\\other\\moje-srce.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\pin.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\pin.png",
       "PackagePath": "staticwebassets\\other\\pin.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\1LK.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\1LK.jpg",
       "PackagePath": "staticwebassets\\resized\\1LK.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\2LK.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\2LK.jpg",
       "PackagePath": "staticwebassets\\resized\\2LK.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Cetvrti sprat.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Cetvrti sprat.jpg",
       "PackagePath": "staticwebassets\\resized\\Cetvrti sprat.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Drugi sprat.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Drugi sprat.jpg",
       "PackagePath": "staticwebassets\\resized\\Drugi sprat.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\M1.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\M1.jpg",
       "PackagePath": "staticwebassets\\resized\\M1.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\M2.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\M2.jpg",
       "PackagePath": "staticwebassets\\resized\\M2.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Peti sprat.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Peti sprat.jpg",
       "PackagePath": "staticwebassets\\resized\\Peti sprat.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Prizemlje.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Prizemlje.jpg",
       "PackagePath": "staticwebassets\\resized\\Prizemlje.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Prvi sprat.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Prvi sprat.jpg",
       "PackagePath": "staticwebassets\\resized\\Prvi sprat.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Stare laboratorije.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Stare laboratorije.jpg",
       "PackagePath": "staticwebassets\\resized\\Stare laboratorije.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Treci sprat.jpg",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Treci sprat.jpg",
       "PackagePath": "staticwebassets\\resized\\Treci sprat.jpg"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\elfind.mp4",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\elfind.mp4",
       "PackagePath": "staticwebassets\\resized\\elfind.mp4"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\elfind.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\elfind.png",
       "PackagePath": "staticwebassets\\resized\\elfind.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_11rsz_pin.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_11rsz_pin.png",
       "PackagePath": "staticwebassets\\resized\\rsz_11rsz_pin.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1logo.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1logo.png",
       "PackagePath": "staticwebassets\\resized\\rsz_1logo.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1pin.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1pin.png",
       "PackagePath": "staticwebassets\\resized\\rsz_1pin.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1rsz_pin.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1rsz_pin.png",
       "PackagePath": "staticwebassets\\resized\\rsz_1rsz_pin.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_3logoimgtransparent.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_3logoimgtransparent.png",
       "PackagePath": "staticwebassets\\resized\\rsz_3logoimgtransparent.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_login_white_24dp.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_login_white_24dp.png",
       "PackagePath": "staticwebassets\\round_login_white_24dp.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_logout_white_24dp.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_logout_white_24dp.png",
       "PackagePath": "staticwebassets\\round_logout_white_24dp.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_notifications_white_24dp.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_notifications_white_24dp.png",
       "PackagePath": "staticwebassets\\round_notifications_white_24dp.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_supervisor_account_white_24dp.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_supervisor_account_white_24dp.png",
       "PackagePath": "staticwebassets\\round_supervisor_account_white_24dp.png"
     },
     {
-      "Id": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_support_agent_white_24dp.png",
+      "Id": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_support_agent_white_24dp.png",
       "PackagePath": "staticwebassets\\round_support_agent_white_24dp.png"
     },
     {
