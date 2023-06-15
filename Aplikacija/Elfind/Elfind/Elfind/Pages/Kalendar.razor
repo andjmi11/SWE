@@ -1,4 +1,22 @@
-﻿<div class="ceoKalendar">
+﻿@using Elfind.Data.Models;
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@using Elfind.Data.Model
+@using Elfind.Data.Services@using Microsoft.JSInterop
+@inject StudentService StudentService
+@inject NastavnoOsobljeService NastavnoOsobljeService
+@inject SmerService SmerService
+@inject RasporedCasovaService RasporedCasovaService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject CasService casService
+@inject ProstorijaService prostorijaService
+@inject NavigationManager navManager
+@inject KursService KursService
+@inject IJSRuntime JSRuntime
+@attribute [Authorize(Roles = "Student, NastavnoOsoblje")]
+
+
+<div class="ceoKalendar">
     <h5>@MonthYear</h5>
     <table>
         <thead>
@@ -17,16 +35,48 @@
             {
                 <tr>
                     @foreach (var day in week)
-                    {
-                        <td @onclick="() => OnDayClick.InvokeAsync(new DateTime(CurrentMonthYear.Year, CurrentMonthYear.Month, day))">@day</td>
+                    {//pa hajmo videt
+                        var maxDaysInMonth = DateTime.DaysInMonth(CurrentMonthYear.Year, CurrentMonthYear.Month);
+                        var validDay = day <= maxDaysInMonth;
+
+                        // Create the DateTime object only if the day is valid
+                        var currentDate = validDay ? new DateTime(CurrentMonthYear.Year, CurrentMonthYear.Month, day) : DateTime.MinValue;
+                        //var isColored = termini.Values.Contains(currentDate);
+                        var isColored = termini.Values.Any(dt => dt.Date == currentDate);
+
+                        <td class="@(isColored ? "coloredDay" : "")" @onclick="() => ShowModal(new DateTime(CurrentMonthYear.Year, CurrentMonthYear.Month, day))">@day</td>
                     }
                 </tr>
             }
         </tbody>
     </table>
-    <button style="background-color: #ffb6c1; color: #000000; border: 2px solid #fc9fad;" @onclick="PreviousMonth">Prethodni</button>
-    <button style="background-color: #ffb6c1; color: #000000; border: 2px solid #fc9fad;" @onclick="NextMonth">Sledeci</button>@*position: absolute; right: 0;*@
+    <button style="margin: 5px; background-color: #ffb6c1; color: #000000; border: 2px solid #fc9fad;" @onclick="PreviousMonth">Prethodni</button>
+    <button style="margin: 5px; background-color: #ffb6c1; color: #000000; border: 2px solid #fc9fad;" @onclick="NextMonth">Sledeci</button>@*position: absolute; right: 0;*@
 </div>
+
+    <Modal @ref="modal" class="modal-kalendar">
+        <BodyTemplate>
+        <label>Zakazani časovi: </label>
+        <br/>
+        @if (casoviDatuma != null)
+        {
+            @foreach (var cD in casoviDatuma)
+            {
+                if (cD != null && cD.Naziv != null && cD.Prostorija != null)
+                {
+                    <label>
+                        @cD.Naziv
+                        @cD.Prostorija.Oznaka
+                        <br/>
+                        @cD.Dan.ToString()
+                        @cD.VremeOd.ToString(@"hh\:mm") - @cD.VremeDo.ToString(@"hh\:mm")
+                    </label>
+                    <br/>
+                }
+            }
+        }
+        </BodyTemplate>
+    </Modal>
 
 @code {
     private DateTime CurrentMonthYear { get; set; } = DateTime.Today;
@@ -35,7 +85,169 @@
 
     [Parameter]
     public EventCallback<DateTime> OnDayClick { get; set; }
-    
+
+    private string userName;
+    private string userEmail;
+
+    private Student stud = null;
+    private NastavnoOsoblje nast = null;
+    private List<Cas> casovi = new List<Cas>();
+    private List<OsobljeProstorijaR> rezProstorije = new List<OsobljeProstorijaR>();
+    private Dictionary<int, DateTime> termini = new Dictionary<int, DateTime>(); //bilo je cas,dt
+
+    private List<Cas> zakazaniCasovi = new List<Cas>();
+
+    private List<Smer> smerovi = new List<Smer>();
+    private List<Smer> smeroviNast = new List<Smer>();
+
+    private DateTime? selectedDate;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authenticationState.User;
+
+        userName = user.Identity.Name; // Dohvati korisničko ime
+        userEmail = user.FindFirstValue(ClaimTypes.Email); // Dohvati e-mail adresu
+
+        if (userName != null) //ako je neko ulogovan
+        {
+            if (userName.EndsWith("elfak.rs"))
+            {
+                var studenti = await StudentService.VratiSveStudente();
+
+                foreach (var student in studenti)
+                {
+                    if (student.KorisnickoIme == userName)
+                    {
+                        var smer = await SmerService.PreuzmiSmer(student.NaSmeru.ID);
+                        var raspored = await RasporedCasovaService.PreuzmiRasporedCasova(student.RasporedCasova.ID);
+                        stud = new Student
+                            {
+                                ID = student.ID,
+                                Ime = student.Ime,
+                                Prezime = student.Prezime,
+                                KorisnickoIme = student.KorisnickoIme,
+                                Indeks = student.Indeks,
+                                NaSmeru = smer,
+                                TipStudija = student.TipStudija,
+                                Godina = student.Godina,
+                                RasporedCasova = raspored
+                            };
+
+                        break;
+                    }
+                }
+
+                //LISTA ZAKAZANIH CASOVA VAN RASPOREDA 
+
+                List<Kurs> kursevi = new List<Kurs>();
+                List<Cas> sviCasovi = new List<Cas>();
+
+                if (stud != null && stud.NaSmeru != null && stud.NaSmeru.Kursevi != null)
+                {
+                    foreach (var kurs in stud.NaSmeru.Kursevi)
+                    {
+                        if (kurs.Kurs.Godina == stud.Godina)
+                        {
+                            var kCeo = await KursService.PreuzmiKursAsync(kurs.ID);
+                            kursevi.Add(kCeo);
+                        }
+                    }
+                }
+
+                if (kursevi != null)
+                {
+                    foreach (var k in kursevi)
+                    {
+                        sviCasovi.AddRange(k.Casovi);
+                    }
+                }
+
+                foreach (var cas in sviCasovi)
+                {
+                    if (cas.URasporeduCasova == null)
+                    { //she's sooo crazy
+                        casovi.Add(cas);
+
+                        Cas izBaze = await casService.PreuzmiCasPrilagodjena(cas.ID);
+                        if (izBaze != null)
+                        {
+                            List<OsobljeProstorijaR> osobPr = izBaze.Prostorija.NastavnoOsobljeR;
+
+
+                            foreach (var op in osobPr)
+                            {
+                                if (!(termini.ContainsKey(cas.ID)) && cas.VremeOd == op.VremeOd && cas.VremeDo == op.VremeDo) //dodato nakon contains
+                                {
+                                    DateTime unos = op.datum.Add(cas.VremeOd);
+
+                                    termini.Add(cas.ID, unos);
+                                    zakazaniCasovi.Add(cas);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                nast = await NastavnoOsobljeService.PreuzmiNastavnoOsobljePoKIKratkaAsync(userName);
+
+                List<Kurs> kursevi = new List<Kurs>();
+                List<Cas> sviCasovi = new List<Cas>();
+
+                if (nast != null)
+                {
+                    foreach (var kurs in nast.Kursevi)
+                    {
+                        kursevi.Add(kurs.Kurs);
+                    }
+                }
+
+                if (kursevi != null)
+                {
+                    foreach (var k in kursevi)
+                    {
+                        sviCasovi.AddRange(k.Casovi);
+                    }
+                }
+
+                foreach (var cas in sviCasovi)
+                {
+                    if (cas.URasporeduCasova == null)
+                    { //she's sooo crazy
+                        casovi.Add(cas);
+
+                        Cas izBaze = await casService.PreuzmiCasPrilagodjena(cas.ID);
+                        if (izBaze != null)
+                        {
+                            //da nadje po idjevima datum..sta ako 2 termina sve isto samo razl datum ONDA NE ZNAM
+                            List<OsobljeProstorijaR> osobPr = izBaze.Prostorija.NastavnoOsobljeR;
+
+
+                            foreach (var op in osobPr)
+                            {
+                                if (!(termini.ContainsKey(cas.ID)) && cas.VremeOd == op.VremeOd && cas.VremeDo == op.VremeDo) //dodato nakon contains
+                                {
+                                    DateTime unos = op.datum.Add(cas.VremeOd);
+
+                                    termini.Add(cas.ID, unos);
+                                    zakazaniCasovi.Add(cas);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private bool colorD = false;
+#nullable enable
+    private string? CalendarCssClass = "coloredDay"; //=> colorD ? "coloredDay" : null;
+    #nullable disable
+
 
     private List<List<int>> GenerateCalendarWeeks(DateTime monthYear)
     {
@@ -96,5 +308,51 @@
     private void NextMonth()
     {
         CurrentMonthYear = CurrentMonthYear.AddMonths(1);
+    }
+
+
+
+
+
+    private List<Cas> casoviDatuma = new List<Cas>();
+    private Modal modal;
+    private async Task ShowModal(DateTime clickedDate)
+    {
+        selectedDate = clickedDate;
+        var matchingDates = termini.Values.Where(dt => dt.Date == clickedDate.Date).ToList();
+
+        //imam listu zakazanih casova, imam dictionary sa id casa i datumom i imam listu datuma,
+        //treba da nadjem idjeve casova kojima odgovara datum i da na osnovu idjeva nadjem cas u listi casova
+
+        casoviDatuma = new List<Cas>();
+
+        //foreach (var mdt in matchingDates)
+        if (termini != null)
+        {
+            foreach (var trm in termini)
+            {
+                if (matchingDates.Contains(trm.Value))
+                {
+                    //treba na osnovu njegovog idja da ubacim cas u listu casova tog dana
+                    if (zakazaniCasovi != null)
+                    {
+                        foreach (var cZ in zakazaniCasovi)
+                        {
+                            if (cZ.ID == trm.Key)
+                            {
+                                casoviDatuma.Add(cZ);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        await modal?.ShowAsync();
+        await OnDayClick.InvokeAsync(clickedDate);
+    }
+
+    private async Task OnHideModalClick()
+    {
+        await modal?.HideAsync();
     }
 }

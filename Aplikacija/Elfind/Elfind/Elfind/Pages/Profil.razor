@@ -13,6 +13,7 @@
 @inject ProstorijaService prostorijaService
 @inject NavigationManager navManager
 @inject KursService KursService
+@inject NavigationManager NavigationManager
 @attribute [Authorize(Roles = "Student, NastavnoOsoblje")]
 
 
@@ -141,7 +142,7 @@
 
                 @if (TrenutniSmer != null)
                 {
-                    <button type="button" class="custom-btn" @onclick="async() => { await popuniListuRasporedCasova(); PrikaziFormuRaspored();}">Prikaži raspored</button>
+                    <button type="button" class="custom-btn prikaziRas" @onclick="async() => { await popuniListuRasporedCasova(); PrikaziFormuRaspored();}">Prikaži raspored</button>
                 }
             }
         </Authorized>
@@ -161,7 +162,7 @@
                         if (c != null && c.Naziv != null && c.Prostorija != null && termini != null && termini.TryGetValue(@c.ID, out dat))
                         {
                             <div>
-                                <label>
+                                <label class="casZ">
                                     @*@if (termini.TryGetValue(@c.ID, out dat))
                                     {*@
                                         @dat.ToString("dd/MM/yyyy")
@@ -171,7 +172,7 @@
                                     @c.Naziv 
                                     @c.Prostorija.Oznaka 
                                     @c.Dan.ToString() 
-                                    @c.VremeOd - @c.VremeDo
+                                    @c.VremeOd.ToString(@"hh\:mm") - @c.VremeDo.ToString(@"hh\:mm")
 
                                     </text>
                                     <span/>
@@ -197,7 +198,7 @@
                         if (c != null && c.Naziv != null && c.Prostorija != null && termini != null)
                         {
                             <div>
-                                <label>
+                                <label class="casZ">
                                     @if (termini.TryGetValue(@c.ID, out dat))
                                     {
                                         @dat.ToString("dd/MM/yyyy")
@@ -206,11 +207,11 @@
                                     @c.Naziv
                                     @c.Prostorija.Oznaka
                                     @c.Dan.ToString()
-                                    @c.VremeOd - @c.VremeDo
+                                    @c.VremeOd.ToString(@"hh\:mm") - @c.VremeDo.ToString(@"hh\:mm")
                                     <span/>
                                 </label>
 
-                                <button class="otkaziCas" @onclick="() => OtkaziCas(c.ID)" value="@c.ID">Otkazi</button>
+                                <button class="otkaziCas" @onclick="() => ShowSigurnoModal(c.ID)" value="@c.ID">Otkazi</button>
                             </div>
                         }
                     }
@@ -560,7 +561,7 @@
                 }
             }
 
-            //LISTA ZAKAZANIH CASOVA VAN RASPOREDA TODO
+            //LISTA ZAKAZANIH CASOVA VAN RASPOREDA 
 
             List<Kurs> kursevi = new List<Kurs>();
             List<Cas> sviCasovi = new List<Cas>();
@@ -606,7 +607,7 @@
                 }
             }
 
-            
+
             //casovi
 
             prikaziFormuRaspored = true; //student uvek vidi raspored
@@ -667,7 +668,7 @@
             }
             //
 
-             if (kursevi != null)
+            if (kursevi != null)
             {
                 foreach (var k in kursevi)
                 {
@@ -690,8 +691,8 @@
 
                         foreach (var op in osobPr)
                         {
-                                if (!(termini.ContainsKey(cas.ID)))
-                                    termini.Add(cas.ID, op.datum);                            
+                            if (!(termini.ContainsKey(cas.ID)) && cas.VremeOd == op.VremeOd && cas.VremeDo == op.VremeDo)
+                                termini.Add(cas.ID, op.datum);                            
                         }
                     }
                 }
@@ -727,9 +728,7 @@
     //do ovde
 
     private async Task OtkaziCas(int id)
-    {
-        await ShowSigurnoModal();
-
+    {        
         //ovde ga ne ceka NE RAZUMEM
         if (sigurno)
         {
@@ -768,6 +767,7 @@
     private async Task OnHideModalNeuspesnoClick()
     {
         await modalNeuspesno?.HideAsync();
+        NavigationManager.NavigateTo("/profil", forceLoad: true);
     }
 
 
@@ -780,7 +780,8 @@
     {
         await modalPotvrdi?.HideAsync();
 
-        navManager.NavigateTo("/");
+        //navManager.NavigateTo("/");
+        NavigationManager.NavigateTo("/", forceLoad: true);
         //await ShowZakaziModal();
     }
 
@@ -795,16 +796,18 @@
         await modalZakazi?.HideAsync();
     }
 
-
+    private int idOtkazan;
     private Modal modalSigurno;
-    private async Task ShowSigurnoModal()
+    private async Task ShowSigurnoModal(int id)
     {
+        idOtkazan = id;
         await modalSigurno?.ShowAsync();
     }
     private async Task OnHideModalSigurnoClick()
     {
         sigurno = true;
         await modalSigurno?.HideAsync();
+        await OtkaziCas(idOtkazan);
     }
     #endregion
 }

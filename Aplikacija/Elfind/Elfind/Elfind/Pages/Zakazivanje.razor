@@ -501,15 +501,8 @@
             notificationMessage.Kurs = c.ZaKurs.Naziv;
 
             await osobljeProstorijaRService.DodajOsobljeProstorijaR(osobljeProstorija);
-
-            if (osoba.RezProstorije.Count > 0)
-            {
-                int x = 5;
-            }
-
+                     
             await ShowUspesnoModal();
-
-
         }
         catch(Exception e)
         {
@@ -572,7 +565,7 @@
     private async Task OnHideModalUspesnoClick()
     {
         await modalUspesno?.HideAsync();
-
+        NavigationManager.NavigateTo("/mapa", forceLoad: true);
     }
 
 

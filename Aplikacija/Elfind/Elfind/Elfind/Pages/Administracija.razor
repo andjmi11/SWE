@@ -368,6 +368,7 @@
         </div>
     </BodyTemplate>
     <FooterTemplate>
+        <button class="brisanjeCas" @onclick="async() => { PoljeObrisi(); await ShowBrisanjeModal();}">Obriši</button>
         <button class="potvrdaRez" @onclick="async() => { /*popuniPodacimaCas();*/ await KreirajCas(); await CloseModal(); }">Potvrdi</button>
     </FooterTemplate>
 </Modal>
@@ -379,7 +380,7 @@
         @porukaNeuspesno
     </BodyTemplate>
     <FooterTemplate>
-        <button class="otkaziRezerv" @onclick="OnHideModalNeuspesnoClick">Otkazi</button>
+        <button class="otkaziRezerv" @onclick="OnHideModalNeuspesnoClick">Ok</button>
     </FooterTemplate>
 </Modal>
 
@@ -387,11 +388,11 @@
     <HeaderTemplate>
     </HeaderTemplate>
     <BodyTemplate>
-        Ne moze se zakati postojeci cas. Da li zelite da obrisete cas?
+        @porukaNeuspesno Da li želite da obrišete čas?
     </BodyTemplate>
     <FooterTemplate>
-        <button class="otkaziRezerv" @onclick="OnHideModalBrisanjeClick">Potvrdi</button>
         <button class="otkaziRezerv" @onclick="OnHideModalBrisanje">Ne</button>
+        <button class="potvrdaRez" @onclick="OnHideModalBrisanjeClick">Potvrdi</button>
     </FooterTemplate>
 </Modal>
 
@@ -400,7 +401,7 @@
 
 
 @code {
-    private int i = 0; //PUCA JUJUJU
+    private int i = 0; 
     private RasporedCasova rasporedZaPrikaz;
     #region Forme
     private bool prikaziFormuStudent = false;
@@ -696,7 +697,8 @@
             //postojiIndeks = true;
             //disableButtonS = true;
         }
-        StateHasChanged();
+        //StateHasChanged();
+        NavigationManager.NavigateTo("/administracija", forceLoad: true); //dodato
     }
 
     private async Task PopuniPodacimaS()
@@ -899,7 +901,6 @@
                 }
             }
         }
-
     }
 
     private async Task HandleRadioButtonChangeIzborSmera(ChangeEventArgs e)
@@ -999,7 +1000,7 @@
         else
         {
             prikaziFormuRaspored = false;
-            porukaNeuspesno = "Raspored nije nadjen.";
+            porukaNeuspesno = "Raspored nije nađen.";
             ShowNeuspesnoModal();
         }
     }
@@ -1142,6 +1143,7 @@
 
         if (ZauzetCas != null)
         {
+            porukaNeuspesno = "Ne može se zakazati postojeći čas.";
             await ShowBrisanjeModal();
             return;
         }
@@ -1151,16 +1153,21 @@
 
         if (idUb == -1)
         {
-            porukaNeuspesno = "Cas nije moguce dodati.";
+            porukaNeuspesno = "Čas nije moguće dodati.";
             await ShowNeuspesnoModal();
             return;
+        }
+        else
+        {
+            porukaNeuspesno = "Čas uspešno dodat.";
+            await ShowNeuspesnoModal();
         }
 
 
 
-        popuniCeoRaspored(); //pa da phroba
+        //popuniCeoRaspored(); //pa da phroba
 
-        await InvokeAsync(StateHasChanged);
+        //await InvokeAsync(StateHasChanged);
         //        StateHasChanged();
     }
 
@@ -1170,7 +1177,7 @@
     {
         if (tipCasaF == "" || tipCasaF == null)
         {
-            porukaNeuspesno = "Uneti tip casa.";
+            porukaNeuspesno = "Uneti tip časa.";
             await ShowNeuspesnoModal();
             return -1;
         }
@@ -1258,6 +1265,8 @@
     private async Task OnHideModalNeuspesnoClick()
     {
         await modalNeuspesno?.HideAsync();
+        NavigationManager.NavigateTo("/administracija", forceLoad: true);
+
     }
 
     private Modal modalBrisanje;
@@ -1268,19 +1277,53 @@
     private async Task OnHideModalBrisanjeClick()
     {
         await modalBrisanje?.HideAsync();
-        var idO = await casService.ObrisiCas(ZauzetCas.ID);
+        if (ZauzetCas != null)
+        {
+            await ObrisiCas();
+        }
+        else
+        {
+            porukaNeuspesno = "Nije moguće obrisati čas.";
+            await ShowNeuspesnoModal();
+        }
+    }
+
+    private void PoljeObrisi()
+    {
+        TimeSpan vOF, vDF;
+        TimeSpan.TryParse(vremeOdF, out vOF);
+        TimeSpan.TryParse(vremeDoF, out vDF);
+
+        foreach(var casR in rasporedZaPrikaz.SpisakCasova)
+        {
+            if(vOF == casR.VremeOd &&
+            vDF == casR.VremeDo &&
+            danF == casR.Dan.ToString())
+            {
+                ZauzetCas = casR;
+            }
+        }
+
+        //if(ZauzetCas != null)
+        //{
+        //    await ObrisiCas();
+        //}
+    }
+
+    private async Task ObrisiCas(){
+        var idO = await casService.ObrisiCas(ZauzetCas.ID); //zauzetcas was null
 
         ZauzetCas = null;
 
         if (idO == -1)
         {
-            porukaNeuspesno = "Nije moguce obrisati cas.";
-            ShowNeuspesnoModal();
+            porukaNeuspesno = "Nije moguće obrisati čas.";
+            await ShowNeuspesnoModal();
         }
         else
         {
-            porukaNeuspesno = "Cas je obrisan.";
-            ShowNeuspesnoModal();
+            porukaNeuspesno = "Čas je obrisan.";
+            await ShowNeuspesnoModal();
         }
     }
 

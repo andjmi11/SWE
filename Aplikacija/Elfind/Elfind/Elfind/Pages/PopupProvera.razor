@@ -47,27 +47,37 @@
 
     private async Task OnYesClick()
     {
-        NastavnoOsoblje nastavnoOsoblje = await NastavnoOsobljeService.PreuzmiNastavnoOsobljePoKorisnickomImenuAsync(nast.KorisnickoIme);
-        nastavnoOsoblje.Prisustvo = true;
-        await NastavnoOsobljeService.AzurirajNastavnoOsobljeAsync(nastavnoOsoblje);
+        if (nast != null && nast.KorisnickoIme != null)
+        {
+            NastavnoOsoblje nastavnoOsoblje = await NastavnoOsobljeService.PreuzmiNastavnoOsobljePoKorisnickomImenuAsync(nast.KorisnickoIme);
 
-     
+            if (nastavnoOsoblje != null)
+            {
+                nastavnoOsoblje.Prisustvo = true;
+                await NastavnoOsobljeService.AzurirajNastavnoOsobljeAsync(nastavnoOsoblje);
 
-        await OnConfirmation.InvokeAsync(true);
+
+
+                await OnConfirmation.InvokeAsync(true);
+            }
+        }
         ClosePopup();
     }
 
     private async Task OnNoClick()
     {
-        NastavnoOsoblje nastavnoOsoblje = await NastavnoOsobljeService.PreuzmiNastavnoOsobljePoKorisnickomImenuAsync(nast.KorisnickoIme);
-        if (nastavnoOsoblje.Prisustvo == true)
+        if (nast != null && nast.KorisnickoIme != null)
         {
-            nastavnoOsoblje.Prisustvo = false;
-            await NastavnoOsobljeService.AzurirajNastavnoOsobljeAsync(nastavnoOsoblje);
+            NastavnoOsoblje nastavnoOsoblje = await NastavnoOsobljeService.PreuzmiNastavnoOsobljePoKorisnickomImenuAsync(nast.KorisnickoIme);
+            if (nastavnoOsoblje != null && nastavnoOsoblje.Prisustvo == true)
+            {
+                nastavnoOsoblje.Prisustvo = false;
+                await NastavnoOsobljeService.AzurirajNastavnoOsobljeAsync(nastavnoOsoblje);
+            }
+
+
+            await OnConfirmation.InvokeAsync(false);
         }
-
-
-        await OnConfirmation.InvokeAsync(false);
         ClosePopup();
     }
 
