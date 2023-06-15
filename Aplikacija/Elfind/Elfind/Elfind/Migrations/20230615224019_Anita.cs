@@ -487,21 +487,17 @@ namespace Elfind.Migrations
                     SenderName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MsgBody = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MsgDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ReceiveNameID = table.Column<int>(type: "int", nullable: true),
-                    CasID = table.Column<int>(type: "int", nullable: true),
-                    VidjenaPoruka = table.Column<bool>(type: "bit", nullable: false)
+                    ReceiveEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Cas = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    VidjenaPoruka = table.Column<bool>(type: "bit", nullable: false),
+                    NastavnoOsobljeID = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_NotificationProf", x => x.MsgID);
                     table.ForeignKey(
-                        name: "FK_NotificationProf_Casovi_CasID",
-                        column: x => x.CasID,
-                        principalTable: "Casovi",
-                        principalColumn: "ID");
-                    table.ForeignKey(
-                        name: "FK_NotificationProf_NastavnoOsoblje_ReceiveNameID",
-                        column: x => x.ReceiveNameID,
+                        name: "FK_NotificationProf_NastavnoOsoblje_NastavnoOsobljeID",
+                        column: x => x.NastavnoOsobljeID,
                         principalTable: "NastavnoOsoblje",
                         principalColumn: "ID");
                 });
@@ -721,14 +717,9 @@ namespace Elfind.Migrations
                 column: "KancelarijaID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_NotificationProf_CasID",
+                name: "IX_NotificationProf_NastavnoOsobljeID",
                 table: "NotificationProf",
-                column: "CasID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_NotificationProf_ReceiveNameID",
-                table: "NotificationProf",
-                column: "ReceiveNameID");
+                column: "NastavnoOsobljeID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_NotifikacijaStudent_NotifikacijaMsgID",
@@ -860,6 +851,9 @@ namespace Elfind.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Casovi");
+
+            migrationBuilder.DropTable(
                 name: "KursSmerSpoj");
 
             migrationBuilder.DropTable(
@@ -893,19 +887,16 @@ namespace Elfind.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Casovi");
-
-            migrationBuilder.DropTable(
                 name: "Notifications");
 
             migrationBuilder.DropTable(
                 name: "Objave");
 
             migrationBuilder.DropTable(
-                name: "Studenti");
+                name: "Kursevi");
 
             migrationBuilder.DropTable(
-                name: "Kursevi");
+                name: "Studenti");
 
             migrationBuilder.DropTable(
                 name: "Forum");

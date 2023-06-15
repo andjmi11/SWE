@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Elfind.Migrations
 {
     [DbContext(typeof(ElfindContext))]
-    [Migration("20230612185043_Anita")]
+    [Migration("20230615224019_Anita")]
     partial class Anita
     {
         /// <inheritdoc />
@@ -589,8 +589,8 @@ namespace Elfind.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MsgID"));
 
-                    b.Property<int?>("CasID")
-                        .HasColumnType("int");
+                    b.Property<string>("Cas")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MsgBody")
                         .HasColumnType("nvarchar(max)");
@@ -598,8 +598,11 @@ namespace Elfind.Migrations
                     b.Property<DateTime>("MsgDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("ReceiveNameID")
+                    b.Property<int?>("NastavnoOsobljeID")
                         .HasColumnType("int");
+
+                    b.Property<string>("ReceiveEmail")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SenderName")
                         .HasColumnType("nvarchar(max)");
@@ -609,9 +612,7 @@ namespace Elfind.Migrations
 
                     b.HasKey("MsgID");
 
-                    b.HasIndex("CasID");
-
-                    b.HasIndex("ReceiveNameID");
+                    b.HasIndex("NastavnoOsobljeID");
 
                     b.ToTable("NotificationProf");
                 });
@@ -1033,17 +1034,9 @@ namespace Elfind.Migrations
 
             modelBuilder.Entity("Elfind.Data.NotificationMessageProf", b =>
                 {
-                    b.HasOne("Elfind.Data.Model.Cas", "Cas")
-                        .WithMany()
-                        .HasForeignKey("CasID");
-
-                    b.HasOne("Elfind.Data.Model.NastavnoOsoblje", "ReceiveName")
+                    b.HasOne("Elfind.Data.Model.NastavnoOsoblje", null)
                         .WithMany("Notifikacije")
-                        .HasForeignKey("ReceiveNameID");
-
-                    b.Navigation("Cas");
-
-                    b.Navigation("ReceiveName");
+                        .HasForeignKey("NastavnoOsobljeID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
