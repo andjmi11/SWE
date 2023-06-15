@@ -686,7 +686,7 @@
     }
     #endregion
 
-    
+
     #region modali
     private Modal modal;
     private async Task ShowModal()
@@ -720,15 +720,18 @@
         await profModal?.HideAsync();
         string prethodni = currentPicture;
 
-        var odabraniProf = await osobljeService.PreuzmiNastavnoOsobljeAsync(odabraniID); 
-        var pOid = odabraniProf.Kancelarija; 
-        var prostorijaO = await prostorijaService.PreuzmiProstoriju(pOid.ID);
-        if (prostorijaO != null && prostorijaO.Sprat != null)
+        var odabraniProf = await osobljeService.PreuzmiNastavnoOsobljeAsync(odabraniID);
+        if (odabraniProf != null)
         {
-            currentPicture = GetPictureForSprat(prostorijaO.Sprat);
-            await Pin(prostorijaO, prethodni);
+            var pOid = odabraniProf.Kancelarija;
+            var prostorijaO = await prostorijaService.PreuzmiProstoriju(pOid.ID);
+            if (prostorijaO != null && prostorijaO.Sprat != null)
+            {
+                currentPicture = GetPictureForSprat(prostorijaO.Sprat);
+                await Pin(prostorijaO, prethodni);
+            }
+            else return;
         }
-        else return;
     }
 
 
