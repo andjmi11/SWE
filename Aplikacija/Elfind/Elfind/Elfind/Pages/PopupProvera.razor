@@ -94,7 +94,7 @@
     private bool IsPopupShown;
     protected override async Task OnInitializedAsync()
     {
-     
+
 
         var authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
         var user = authenticationState.User;
@@ -106,21 +106,24 @@
         if (userName.EndsWith("elfak.ni.ac.rs"))
         {
             var nastavnoOsoblje = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
-            foreach (var n in nastavnoOsoblje)
+            if (nastavnoOsoblje != null)
             {
-                if (n.KorisnickoIme == userName)
+                foreach (var n in nastavnoOsoblje)
                 {
-                    nast = new NastavnoOsoblje()
-                        {
-                            ID = n.ID,
-                            Ime = n.Ime,
-                            Prezime = n.Prezime,
-                            KorisnickoIme = n.KorisnickoIme,
-                            Tip = n.Tip,
-                            Kancelarija = n.Kancelarija,
-                            Objave = n.Objave
-                        };
-                    break;
+                    if (n.KorisnickoIme == userName)
+                    {
+                        nast = new NastavnoOsoblje()
+                            {
+                                ID = n.ID,
+                                Ime = n.Ime,
+                                Prezime = n.Prezime,
+                                KorisnickoIme = n.KorisnickoIme,
+                                Tip = n.Tip,
+                                Kancelarija = n.Kancelarija,
+                                Objave = n.Objave
+                            };
+                        break;
+                    }
                 }
             }
         }

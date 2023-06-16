@@ -261,8 +261,8 @@
                         await NotificationMessageProfService.SetPorukaVidjena(obj.MsgID, nID);
                     }
                 }
-                  neprProf.RemoveAll(obj => obj.MsgBody == msgBody);
-                 proProf = await NotificationMessageProfService.VratiProcitanePoruke(nast);
+                neprProf.RemoveAll(obj => obj.MsgBody == msgBody);
+                proProf = await NotificationMessageProfService.VratiProcitanePoruke(nast);
             }
         }
     }
@@ -372,36 +372,42 @@
             {
                 var studenti = await StudentService.VratiSveStudente();
 
-                foreach (var student in studenti)
+                if (studenti != null)
                 {
-                    if (student.KorisnickoIme == userName)
+                    foreach (var student in studenti)
                     {
-                        sID = student.ID;
-                        stud = student.KorisnickoIme;
-                    }
-                    await AddToGroup(student.NaSmeru.Naziv);
+                        if (student.KorisnickoIme == userName)
+                        {
+                            sID = student.ID;
+                            stud = student.KorisnickoIme;
+                        }
+                        await AddToGroup(student.NaSmeru.Naziv);
 
 
-                    List<Kurs> kurseviZaSmer = await KursService.VratiKurseveNaSmeru(student.NaSmeru.Naziv);
-                    foreach (var k in kurseviZaSmer)
-                    {
-                        await AddToGroup(k.Naziv);
+                        List<Kurs> kurseviZaSmer = await KursService.VratiKurseveNaSmeru(student.NaSmeru.Naziv);
+                        foreach (var k in kurseviZaSmer)
+                        {
+                            await AddToGroup(k.Naziv);
+                        }
                     }
                 }
             }
             else
             {
                 var nastavnoOsoblje = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
-                foreach (var n in nastavnoOsoblje)
+                if (nastavnoOsoblje != null)
                 {
-                    if (n.KorisnickoIme == userName)
+                    foreach (var n in nastavnoOsoblje)
                     {
-                        nID = n.ID;
-                        stud = n.KorisnickoIme;
-                        nast = n.KorisnickoIme;
-                    }
-                    await AddToGroup(n.KorisnickoIme);//za slanje po prof
+                        if (n.KorisnickoIme == userName)
+                        {
+                            nID = n.ID;
+                            stud = n.KorisnickoIme;
+                            nast = n.KorisnickoIme;
+                        }
+                        await AddToGroup(n.KorisnickoIme);//za slanje po prof
 
+                    }
                 }
                 await AddToGroup("NastavnoOsoblje"); //kunem se ne znam sta cu s ovim
             }
