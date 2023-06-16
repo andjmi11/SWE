@@ -445,9 +445,9 @@
                 ZaKurs = kurs
             };
 
-        
+
         notificationMessageProf.Cas = $"{trebaMiOvaj.Naziv}, {trebaMiOvaj.Dan}, {trebaMiOvaj.VremeOd}, {trebaMiOvaj.VremeDo}, {trebaMiOvaj.TipCasa.ToString()}, {trebaMiOvaj.ZaKurs.Naziv}";
-       
+
 
         if (preklapanje)
         {
@@ -516,7 +516,7 @@
             notificationMessage.Kurs = c.ZaKurs.Naziv;
 
             await osobljeProstorijaRService.DodajOsobljeProstorijaR(osobljeProstorija);
-                     
+
             await ShowUspesnoModal();
         }
         catch(Exception e)
@@ -535,7 +535,7 @@
 
 
         await SendProf();
-        StateHasChanged();
+        NavigationManager.NavigateTo("/mapa", forceLoad: true);
 
     }
 

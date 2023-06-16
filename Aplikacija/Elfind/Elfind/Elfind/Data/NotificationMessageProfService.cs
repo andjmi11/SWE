@@ -3,6 +3,7 @@ using Elfind.Data.Model;
 using Elfind.Data.Models;
 using Elfind.Data.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Elfind.Data
 {
@@ -15,6 +16,7 @@ namespace Elfind.Data
         {
             this.dbContextFactory = dbContextFactory;
             _nasobljeService = nastavno;
+
         }
 
 
@@ -56,12 +58,14 @@ namespace Elfind.Data
                     NastavnoOsobljeService sService = new NastavnoOsobljeService(dbContextFactory);
                     NastavnoOsoblje student = await sService.PreuzmiNastavnoOsobljePoKorisnickomImenuAsync(korisnickoIme);
 
-                    List<NotificationMessageProf> lista = null;
+                    List<NotificationMessageProf> lista = new List<NotificationMessageProf>();
 
                     foreach(var not in student.Notifikacije)
                     {
+                       // not.VidjenaPoruka = true;
                         if(not.VidjenaPoruka==true)
                                 lista.Add(not);
+
                     }
 
                 
@@ -114,15 +118,18 @@ namespace Elfind.Data
             {
                 using (var context = dbContextFactory.CreateDbContext())
                 {
+                    NastavnoOsoblje osoblje = await _nasobljeService.PreuzmiNastavnoOsobljeAsync(nID);
+                    //NastavnoOsoblje nast = await context.NastavnoOsoblje.Include(x=>x.Notifikacije).FirstOrDefaultAsync(x => x.ID == nID);
 
-                    var notifikacija =await  context.NotificationProf.FirstOrDefaultAsync(x => x.MsgID == msgId);
-                    var nast = await context.NastavnoOsoblje.FirstOrDefaultAsync(x => x.ID == nID);
-
-                    foreach(var n in nast.Notifikacije)
+                    foreach(var n in osoblje.Notifikacije)
                     {
-                        if(n.MsgID == msgId)
+                        if (n.MsgID == msgId)
+                        {
                             n.VidjenaPoruka = true;
-                    }                
+                            context.Entry(n).State = EntityState.Modified;
+                        }
+                    }
+
 
                     await context.SaveChangesAsync();
                 }

@@ -63,7 +63,7 @@
                                 {
 
                                             <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" data-type="student" style="background-color:mediumpurple" @onclick='() => Rutiraj("student", obj.MsgBody)'>
-                                        <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+                                        <h4 class="ikrNotuFromPropName">@obj.SenderName</h4>
 
                                         <div class="ikrNotificationBody">@obj.MsgBody</div>
                                         <div class="ikrNotiCreateDate">@obj.MsgDate</div>
@@ -72,7 +72,7 @@
                                 @foreach (var obj in neprocitanePoruke)
                                 {
                                             <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" data-type="student" style="background-color:mediumpurple" @onclick='() => Rutiraj("student", obj.MsgBody)'>
-                                        <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+                                        <h4 class="ikrNotuFromPropName">@obj.SenderName</h4>
 
                                         <div class="ikrNotificationBody">@obj.MsgBody</div>
                                         <div class="ikrNotiCreateDate">@obj.MsgDate</div>
@@ -81,7 +81,7 @@
                                 @foreach (var obj in procitanePoruke)
                                 {
                                             <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" data-type="student" @onclick='() => Rutiraj("student", obj.MsgBody)'>
-                                        <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+                                        <h4 class="ikrNotuFromPropName">@obj.SenderName</h4>
 
                                         <div class="ikrNotificationBody">@obj.MsgBody</div>
                                         <div class="ikrNotiCreateDate">@obj.MsgDate</div>
@@ -117,7 +117,7 @@
                                 {
 
                                             <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" data-type="nastavnik" style="background-color:mediumpurple" @onclick='() => Rutiraj("nastavnik", obj.MsgBody)'>
-                                        <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+                                        <h4 class="ikrNotuFromPropName">@obj.SenderName</h4>
 
                                         <div class="ikrNotificationBody">@obj.MsgBody</div>
                                         <div class="ikrNotificationBody">@obj.Cas</div>
@@ -127,7 +127,7 @@
                                 @foreach (var obj in neprProf)
                                 {
                                             <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" data-type="nastavnik" style="background-color:mediumpurple" @onclick='() => Rutiraj("nastavnik", obj.MsgBody)'>
-                                        <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+                                        <h4 class="ikrNotuFromPropName">@obj.SenderName</h4>
 
                                         <div class="ikrNotificationBody">@obj.MsgBody</div>
                                                 <div class="ikrNotificationBody">@obj.Cas</div>
@@ -141,7 +141,7 @@
                                             @foreach (var obj in proProf)
                                             {
                                                 <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" data-type="nastavnik" @onclick='() => Rutiraj("nastavnik", obj.MsgBody)'>
-                                                    <h4 class="ikrNotuFromPropName">Sender : @obj.SenderName</h4>
+                                                    <h4 class="ikrNotuFromPropName">@obj.SenderName</h4>
 
                                                     <div class="ikrNotificationBody">@obj.MsgBody</div>
                                                     <div class="ikrNotificationBody">@obj.Cas</div>
@@ -251,15 +251,19 @@
         {
             navManager.NavigateTo("/profil");
 
-            foreach(var obj in neprProf)
+
+            if (neprProf != null)
             {
-                if (obj.MsgBody == msgBody)
+                foreach (var obj in neprProf)
                 {
-                    await NotificationMessageProfService.SetPorukaVidjena(obj.MsgID, nID);
+                    if (obj.MsgBody == msgBody)
+                    {
+                        await NotificationMessageProfService.SetPorukaVidjena(obj.MsgID, nID);
+                    }
                 }
+                  neprProf.RemoveAll(obj => obj.MsgBody == msgBody);
+                 proProf = await NotificationMessageProfService.VratiProcitanePoruke(nast);
             }
-            neprProf.RemoveAll(obj => obj.MsgBody == msgBody);
-            proProf = await NotificationMessageProfService.VratiProcitanePoruke(nast);
         }
     }
     //dodato

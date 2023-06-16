@@ -54,8 +54,11 @@ namespace Elfind.Data
 
             await _notificationMessageProfService.SaveNotification(notification);
             List<NastavnoOsoblje> no = await _nastavnoOsobljeService.VratiSveNastavnikeAsync();
-            
+
+            await RemoveFromGroup("NastavnoOsoblje");
+
             await Clients.Group("NastavnoOsoblje").SendAsync("ReceiveMessageForZahtev", user, message, cas);
+            
         }
         public async Task SendNotificationForObjava(string user, string message, string[] sm, string k)
         {
