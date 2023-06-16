@@ -414,7 +414,7 @@
 
 
             if (izabraniPredmet == "" || izabraniPredmet == null || text==null || text == "")
-        {
+            {
                 porukaNeuspesno = "Niste uneli sve podatke potrebne za objavu.";
                 await ShowNeuspesnoModal();
                 return;
@@ -514,7 +514,7 @@
 
             notificationMessage.Kurs = izabraniKurs.Naziv;
             await Send();
-            
+
             InvokeAsync(StateHasChanged); // za sta je ovo
 
         }
@@ -595,12 +595,15 @@
         else
         {
             var nastavnici = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
-            foreach (var s in nastavnici)
+            if (nastavnici != null)
             {
-                if (s.KorisnickoIme == userName)
+                foreach (var s in nastavnici)
                 {
-                    nID = s.ID;
-                    break;
+                    if (s.KorisnickoIme == userName)
+                    {
+                        nID = s.ID;
+                        break;
+                    }
                 }
             }
         }
