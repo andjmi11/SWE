@@ -48,12 +48,19 @@ namespace Elfind.Data.Services
                 {
                     NastavnoOsoblje nastavnoOsoblje = await context.NastavnoOsoblje.AsNoTracking()
                         .Include(n => n.Kancelarija)
-                        .Include(x=>x.Objave)
-                        .Include(x=>x.Kursevi)
-                        .Include(x=>x.RezProstorije)
-                        .Include(x=>x.Raspored)
-                        .Include(x=>x.Notifikacije)
+                        .Include(x => x.Objave)
+                        .Include(x => x.Kursevi)
+                        .Include(x => x.RezProstorije)
+                        .Include(x => x.Raspored)
+                        .Include(x => x.Notifikacije)
                         .FirstOrDefaultAsync(n => n.ID == ID);
+
+                    List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+
+                    foreach (var no in notif)
+                        if (no.SenderName != (nastavnoOsoblje.Ime + " " + nastavnoOsoblje.Prezime))
+                            nastavnoOsoblje.Notifikacije.Add(no);
+
                     return nastavnoOsoblje;
                 }
             }
@@ -72,35 +79,39 @@ namespace Elfind.Data.Services
                 {
                     NastavnoOsoblje n = await context.NastavnoOsoblje.AsNoTracking()
                         .Include(n => n.Kancelarija)
-                        
+
                         .FirstAsync(x => x.KorisnickoIme == korisnickoIme);
-                                       
+
 
                     List<Data.Model.Objava> objave = await context.Objave
-                        .Include(x=>x.OdNastavnogOsoblja)
+                        .Include(x => x.OdNastavnogOsoblja)
                         .Where(x => x.OdNastavnogOsoblja.ID == n.ID).ToListAsync();
 
                     //falice za sad notifikacije dok izmislime
                     List<OsobljeKurs> kursevi = await context.OsobljeKursSpoj
-                        .Include(x=>x.Kurs).ThenInclude(x => x.Casovi)
-                        .Include(x=>x.NastavnoOsoblje)
-                        .Where(x=>x.NastavnoOsoblje.ID==n.ID).ToListAsync();
+                        .Include(x => x.Kurs).ThenInclude(x => x.Casovi)
+                        .Include(x => x.NastavnoOsoblje)
+                        .Where(x => x.NastavnoOsoblje.ID == n.ID).ToListAsync();
                     List<OsobljeProstorijaR> rezProstorije = await context.OsobljeProstorijaRSpoj
-                        .Include(x=>x.Prostorija)
-                        .Include(x=>x.NastavnoOsoblje)
+                        .Include(x => x.Prostorija)
+                        .Include(x => x.NastavnoOsoblje)
                         .Where(x => x.NastavnoOsoblje.ID == n.ID).ToListAsync();
                     List<OsobljeRaspored> rasporedi = await context.OsobljeRasporedSpoj
-                        .Include(x=>x.NastavnoOsoblje)
-                        .Include(x=>x.RasporedCasova)
-                        .Where(x=>x.NastavnoOsoblje.ID != n.ID).ToListAsync();
+                        .Include(x => x.NastavnoOsoblje)
+                        .Include(x => x.RasporedCasova)
+                        .Where(x => x.NastavnoOsoblje.ID != n.ID).ToListAsync();
                     List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
-                        
+
+                    foreach (var no in notif)
+                        if (no.SenderName != (n.Ime + " " + n.Prezime))
+                            n.Notifikacije.Add(no);
+
+
 
                     n.Objave.AddRange(objave);
                     n.Kursevi.AddRange(kursevi);
                     n.RezProstorije.AddRange(rezProstorije);
                     n.Raspored.AddRange(rasporedi);
-                    n.Notifikacije.AddRange(notif);
                     return n;
                 }
             }
