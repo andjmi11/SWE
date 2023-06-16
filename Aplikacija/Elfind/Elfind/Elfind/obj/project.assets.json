@@ -12301,25 +12301,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\": {}
-=======
     "C:\\Users\\Anita\\.nuget\\packages\\": {}
->>>>>>> 4340c59cb6270372081452f722e040614524b8fc
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj",
-      "projectName": "Elfind",
-      "projectPath": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj",
-      "packagesPath": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\AndjelijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
       "projectUniqueName": "C:\\Users\\Anita\\Desktop\\SWE GLAVNA APP\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj",
       "projectName": "Elfind",
       "projectPath": "C:\\Users\\Anita\\Desktop\\SWE GLAVNA APP\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj",
@@ -12328,7 +12314,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 4340c59cb6270372081452f722e040614524b8fc
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

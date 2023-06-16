@@ -117,9 +117,64 @@ Insert into [dbo].[Kursevi] values ('Metrologija elektricnih velicina', '2');
 
 Insert into [dbo].[Kursevi] values ('Elektronska merenja', '3');
 -----------------------------------------------------------------------------------------
---Kursevi 
+--Kursevi KIT ,[Naziv],[Godina]
 -----------------------------------------------------------------------------------------
+Insert into [dbo].[Kursevi] values ('Osnovi telekomunikacija', '2');
+Insert into [dbo].[Kursevi] values ('Elektricna kola i signali', '2');
+Insert into [dbo].[Kursevi] values ('Softverski alati', '2');
+Insert into [dbo].[Kursevi] values ('Komunikaciona akustika', '2');
+Insert into [dbo].[Kursevi] values ('Uvod u digitalne komunikacije', '2');
+Insert into [dbo].[Kursevi] values ('Primenjena elektromagnetika', '2');
+Insert into [dbo].[Kursevi] values ('Strukture podataka i algoritmi', '2');
+Insert into [dbo].[Kursevi] values ('Komponente za telekomunikacije', '2');
 
+
+Insert into [dbo].[Kursevi] values ('Digitalne komunikacije', '3');
+Insert into [dbo].[Kursevi] values ('Teorija telekomunikacija', '3');
+Insert into [dbo].[Kursevi] values ('Mreze i protokoli', '3');
+Insert into [dbo].[Kursevi] values ('Internet inteligentnih objekata', '3');
+Insert into [dbo].[Kursevi] values ('Programiranje razvojnih platformi', '3');
+Insert into [dbo].[Kursevi] values ('Arhitekture digitalnih sistema', '3');
+Insert into [dbo].[Kursevi] values ('M2M komunikacija', '3');
+Insert into [dbo].[Kursevi] values ('Bezicne komunikacione tehnologije', '3');
+Insert into [dbo].[Kursevi] values ('Teorija informacija i primene', '3');
+Insert into [dbo].[Kursevi] values ('Opticke komunikacije', '3');
+Insert into [dbo].[Kursevi] values ('Laboratorijski praktikum 1', '3');
+Insert into [dbo].[Kursevi] values ('Softversko-hardverski intefejs u telekomunikacionim platformama', '3');
+Insert into [dbo].[Kursevi] values ('Masinsko ucenje i komunikacija', '3');
+Insert into [dbo].[Kursevi] values ('Numericki algoritmi', '3');
+
+Insert into [dbo].[Kursevi] values ('Digitalna obrada signala', '4');
+Insert into [dbo].[Kursevi] values ('Zastitno kodovanje', '4');
+Insert into [dbo].[Kursevi] values ('Poslovne komunikacije', '4');
+Insert into [dbo].[Kursevi] values ('Inzenjersko preduzetnistvo', '4');
+Insert into [dbo].[Kursevi] values ('Kreativna laboratorija', '4');
+Insert into [dbo].[Kursevi] values ('Senzorske mreze', '4');
+Insert into [dbo].[Kursevi] values ('Kreativna laboratorija', '4');
+Insert into [dbo].[Kursevi] values ('Antene i prostiranje', '4');
+Insert into [dbo].[Kursevi] values ('VoIP', '4');
+Insert into [dbo].[Kursevi] values ('Web programiranje', '4');
+Insert into [dbo].[Kursevi] values ('Opticke mreze', '4');
+Insert into [dbo].[Kursevi] values ('Radarska tehnika i radiolokacija', '4');
+Insert into [dbo].[Kursevi] values ('Audio i video sistemi', '4');
+Insert into [dbo].[Kursevi] values ('Satelitske telekomunikacije', '4');
+Insert into [dbo].[Kursevi] values ('Uvod u baze podataka', '4');
+Insert into [dbo].[Kursevi] values ('Racunarske igre', '4');
+Insert into [dbo].[Kursevi] values ('Osnove mehatronike', '4');
+Insert into [dbo].[Kursevi] values ('racunarski sistemi za akviziciju podataka', '4');
+Insert into [dbo].[Kursevi] values ('Bezbednost i zastita telekomunikacionog prenosa', '4');
+Insert into [dbo].[Kursevi] values ('Laboratorijski praktikum 2', '4');
+Insert into [dbo].[Kursevi] values ('Modelovanje i simulacija telekomunikacionih sistema', '4');
+Insert into [dbo].[Kursevi] values ('Sirokopojasne telekomunikacije', '4');
+Insert into [dbo].[Kursevi] values ('Razvoj mobilnih aplikacija i servisa', '4');
+Insert into [dbo].[Kursevi] values ('Matematicke osnove statistickog ucenja', '4');
+Insert into [dbo].[Kursevi] values ('Slucajni procesi u sistemima', '4');
+Insert into [dbo].[Kursevi] values ('Vestacka inteligencija u obradi signala', '4');
+Insert into [dbo].[Kursevi] values ('napredni RF integrisanih kola', '4');
+Insert into [dbo].[Kursevi] values ('Digitalna obrada slike', '4');
+Insert into [dbo].[Kursevi] values ('Strucna praksa', '4');
+Insert into [dbo].[Kursevi] values ('Zavrsni rad - istrazivacki rad', '4');
+Insert into [dbo].[Kursevi] values ('Zavrsni rad', '4');
 
 -----------------------------------------------------------------------------------------
 --Smerovi
@@ -541,6 +596,16 @@ Insert into [dbo].[Casovi] values('Paralelni sistemi laboratorijske vezbe', '0',
 Insert into [dbo].[Casovi] values('Paralelni sistemi laboratorijske vezbe', '1', '17:00:00', '18:30:00', '2', '93', '2', '2');--521
 Insert into [dbo].[Casovi] values('Paralelni sistemi laboratorijske vezbe', '1', '18:30:00', '20:00:00', '2', '93', '2', '2');--521
 
+
+-----------------------------------------------------------------------------------------
+--Casovi KIT
+-----------------------------------------------------------------------------------------
+Insert into [dbo].[Casovi] values('Teorija informacija i primena - predavanja', '3', '08:15:00', '9:00:00', '0', '50', '7', '7');--232
+Insert into [dbo].[Casovi] values('Teorija informacija i primena - predavanja', '3', '09:15:00', '10:00:00', '0', '50', '7', '7');--232
+								   
+Insert into [dbo].[Casovi] values('Teorija informacija i primena -  racunske vezbe', '3', '10:15:00', '11:00:00', '1', '50', '7', '7');--232
+Insert into [dbo].[Casovi] values('Teorija informacija i primena -  racunske vezbe', '3', '11:15:00', '12:00:00', '1', '50', '7', '7');--232
+
 -----------------------------------------------------------------------------------------
 --Nastavno osoblje (proveri ID kancelarije)
 -----------------------------------------------------------------------------------------
@@ -549,6 +614,15 @@ Insert into [dbo].[NastavnoOsoblje] values('Dejan', 'Rancic', 'dejan.rancic@elfa
 Insert into [dbo].[NastavnoOsoblje] values('Aleksandar', 'Milosavljevic', 'aleksandar.milosavljevic@elfak.ni.ac.rs', 'redovni profesor', '69', '0');--331 
 Insert into [dbo].[NastavnoOsoblje] values('Vladan', 'Mihajlovic', 'vladan.mihajlovic@elfak.ni.ac.rs', 'asistent', '69', '0');--331
 Insert into [dbo].[NastavnoOsoblje] values('Djordje', 'Cikic', 'djordje1.cikic@elfak.ni.ac.rs', 'saradnik u nastavi', '86', '0');
+Insert into [dbo].[NastavnoOsoblje] values('Nikola', 'Davidovic', 'nikola.davidovic@elfak.ni.ac.rs', 'asistent', '138', '0');--lupila
+Insert into [dbo].[NastavnoOsoblje] values('Dragan', 'Stojanovic', 'dragan.stojanovic@elfak.ni.ac.rs', 'profesor', '53', '0');--235
+
+--nece plaky
+--Insert into [dbo].[NastavnoOsoblje] values('Biljana', 'Stosic', 'biljana.stosic@elfak.ni.ac.rs', 'asistent sa doktoratom', '207', '0');--lupamo kanc nadalje
+--Insert into [dbo].[NastavnoOsoblje] values('Emina', 'Milovanovic', 'emina.milovanovic@elfak.ni.ac.rs', 'profesor', '208', '0');
+--Insert into [dbo].[NastavnoOsoblje] values('Leonid', 'Stoimenov', 'leonid.stoimenov@elfak.ni.ac.rs', 'profesor', '209', '0');
+--Insert into [dbo].[NastavnoOsoblje] values('Aleksandar', 'Dimitrijevic', 'aleksandar.dimitrijevic@elfak.ni.ac.rs ', 'asistent', '210', '0');
+--Insert into [dbo].[NastavnoOsoblje] values('Darko', 'Puflovic', 'darko.puflovic@elfak.ni.ac.rs', 'asistent', '211', '0');
 
 -----------------------------------------------------------------------------------------
 --Objava [TipObjave],[Tekst],[OdNastavnogOsobljaID],[ForumID]

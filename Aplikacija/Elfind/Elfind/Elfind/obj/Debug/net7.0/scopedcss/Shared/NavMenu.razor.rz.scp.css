@@ -16,23 +16,23 @@
 }
 
 .oi[b-761ltm08kf] {
-    width: 2rem;
+    width: 1.5rem;
     font-size: 1.1rem;
     vertical-align: text-top;
     top: -2px;
 }
 
 .nav-item[b-761ltm08kf] {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding-bottom: 0.5rem;
 }
 
     .nav-item:first-of-type[b-761ltm08kf] {
-        padding-top: 1rem;
+        padding-top: 0.5rem;
     }
 
     .nav-item:last-of-type[b-761ltm08kf] {
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
     }
 
     .nav-item[b-761ltm08kf]  a {
@@ -46,12 +46,13 @@
 
         .nav-item[b-761ltm08kf]  a.active {
             background-color: rgba(255,255,255,0.25);
-            color: white;
+            color: lightpink;
+           
         }
 
         .nav-item[b-761ltm08kf]  a:hover {
             background-color: rgba(255,255,255,0.1);
-            color: white;
+            color: lightblue;
         }
 
 @media (min-width: 641px) {
@@ -80,3 +81,4 @@
 .icon[b-761ltm08kf]{
     margin:5px;
 }
+

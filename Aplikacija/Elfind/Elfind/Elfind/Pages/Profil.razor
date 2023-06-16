@@ -41,37 +41,6 @@
                 </div>
             </div>
 
-
-            <div class="row">
-                <div class=" col-md-3 col-sm-6 prof-vrednost-style">
-                    <p>Smer:</p>
-                </div>
-                <div class=" col-md-6 col-sm-6 prof-vrednost-style">
-                    <p style=" prof-vrednost-style ">@stud.NaSmeru.Naziv.ToString()</p>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-3 col-sm-6 prof-vrednost-style">
-                    <p>Korisničko ime:</p>
-                </div>
-                <div class="col-md-6 col-sm-6 prof-vrednost-style">
-                    <p>@stud.KorisnickoIme</p>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class=" col-md-3 col-sm-6 prof-vrednost-style">
-                    <p>Tip studija:</p>
-                </div>
-                <div class=" col-md-6 col-sm-6 prof-vrednost-style">
-                    <p>@stud.TipStudija</p>
-                </div>
-            </div>
-
-
             <div class="row">
                 <div class="col-md-3 col-sm-6 prof-vrednost-style">
                     <p>Prezime:</p>
@@ -82,11 +51,11 @@
             </div>
 
             <div class="row">
-                <div class=" col-md-3 col-sm-6 prof-vrednost-style">
-                    <p>Godina:</p>
+                <div class="col-md-3 col-sm-6 prof-vrednost-style">
+                    <p>Korisničko ime:</p>
                 </div>
-                <div class=" col-md-6 col-sm-6 prof-vrednost-style">
-                    <p>@stud.Godina.</p>
+                <div class="col-md-6 col-sm-6 prof-vrednost-style">
+                    <p>@stud.KorisnickoIme</p>
                 </div>
             </div>
 
@@ -100,10 +69,102 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class=" col-md-3 col-sm-6 prof-vrednost-style">
+                    <p>Tip studija:</p>
+                </div>
+                <div class=" col-md-6 col-sm-6 prof-vrednost-style">
+                    <p>@stud.TipStudija</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class=" col-md-3 col-sm-6 prof-vrednost-style">
+                    <p>Smer:</p>
+                </div>
+                <div class=" col-md-6 col-sm-6 prof-vrednost-style">
+                    <p style=" prof-vrednost-style ">@stud.NaSmeru.Naziv.ToString()</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="row">
+                <div class=" col-md-3 col-sm-6 prof-vrednost-style">
+                    <p>Godina:</p>
+                </div>
+                <div class=" col-md-6 col-sm-6 prof-vrednost-style">
+                    <p>@stud.Godina.</p>
+                </div>
+            </div>
+
+
+
 
         </div>
     }
     else if (nast != null)
+    {
+        <h4 style="margin-left: 30px;">Nastavno osoblje</h4>
+
+        <div class="container" style="margin-left:50px">
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 prof-vrednost-style">
+                    <p>Ime:</p>
+                </div>
+                <div class="col-md-6 col-sm-6 prof-vrednost-style">
+                    <p>@nast.Ime</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 prof-vrednost-style">
+                    <p>Prezime:</p>
+                </div>
+                <div class="col-md-6 col-sm-6 prof-vrednost-style">
+                    <p>@nast.Prezime</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 prof-vrednost-style">
+                    <p>Korisničko ime:</p>
+                </div>
+                <div class="col-md-6 col-sm-6 prof-vrednost-style">
+                    <p>@nast.KorisnickoIme</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 prof-vrednost-style">
+                    <p>Tip:</p>
+                </div>
+                <div class="col-md-6 col-sm-6 prof-vrednost-style">
+                    <p>@nast.Tip</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6 prof-vrednost-style">
+                    <p>Kancelarija:</p>
+                </div>
+                <div class="col-md-6 col-sm-6 prof-vrednost-style">
+                    <p>@nast.Kancelarija.Oznaka</p>
+                </div>
+            </div>
+
+        </div>
+
+
+    }
+    @*else if (nast != null)
     {
         <h5 style="margin-left: 30px;">Nastavno osoblje</h5>
 
@@ -121,7 +182,7 @@
             </div>
 
         </div>
-    }
+    }*@
 
     <AuthorizeView Roles="NastavnoOsoblje">
         <Authorized>
@@ -303,7 +364,7 @@
 
                                         <td class="trAdm" style="vertical-align: middle;">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" disabled @onclick="async() => { trenutnaKolona = columnName; trenutnaVrsta = rowName;}" @bind="trenutnoPoljeI"> @*vrv mi ne treba bind*@
+                                                <input type="text" class="form-control" readonly @onclick="async() => { trenutnaKolona = columnName; trenutnaVrsta = rowName;}" @bind="trenutnoPoljeI"> @*vrv mi ne treba bind*@
                                             </div>
                                         </td>
 

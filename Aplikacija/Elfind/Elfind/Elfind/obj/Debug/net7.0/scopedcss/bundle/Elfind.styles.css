@@ -106,6 +106,42 @@ namespace Elfind.Pages[b-z3roq4gc36] {
     padding 15px !important;
     width: 165px !important;
 }
+/* _content/Elfind/Pages/Profil.razor.rz.scp.css */
+.custom-button[b-2wszrytj6i] {
+    background-color: #ffb6c1;
+    width: 200px;
+    height: 50px;
+    color: #000000;
+    border: 2px solid #fc9fad;
+    margin: 15px;
+}
+
+.custom-btn[b-2wszrytj6i] {
+    background-color: #ffb6c1;
+    width: 200px;
+    height: 40px;
+    color: #000000;
+    border: 2px solid #fc9fad;
+    margin: 15px;
+}
+
+.table-responsive-md[b-2wszrytj6i] {
+    border: 2px solid #fc9fad;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.thAdm[b-2wszrytj6i], .trAdm[b-2wszrytj6i] {
+    padding 15px !important;
+    width: 165px !important;
+}
+
+namespace Elfind.Pages[b-2wszrytj6i]
+{
+    public class Profil
+    {
+    }
+}
 /* _content/Elfind/Shared/MainLayout.razor.rz.scp.css */
 .page[b-ki87sz4i9n] {
     position: relative;
@@ -412,23 +448,23 @@ main[b-ki87sz4i9n] {
 }
 
 .oi[b-761ltm08kf] {
-    width: 2rem;
+    width: 1.5rem;
     font-size: 1.1rem;
     vertical-align: text-top;
     top: -2px;
 }
 
 .nav-item[b-761ltm08kf] {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding-bottom: 0.5rem;
 }
 
     .nav-item:first-of-type[b-761ltm08kf] {
-        padding-top: 1rem;
+        padding-top: 0.5rem;
     }
 
     .nav-item:last-of-type[b-761ltm08kf] {
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
     }
 
     .nav-item[b-761ltm08kf]  a {
@@ -442,12 +478,13 @@ main[b-ki87sz4i9n] {
 
         .nav-item[b-761ltm08kf]  a.active {
             background-color: rgba(255,255,255,0.25);
-            color: white;
+            color: lightpink;
+           
         }
 
         .nav-item[b-761ltm08kf]  a:hover {
             background-color: rgba(255,255,255,0.1);
-            color: white;
+            color: lightblue;
         }
 
 @media (min-width: 641px) {
@@ -476,6 +513,7 @@ main[b-ki87sz4i9n] {
 .icon[b-761ltm08kf]{
     margin:5px;
 }
+
 /* _content/Elfind/Shared/RightSidebar.razor.rz.scp.css */
 /*ne vidi ovo iz nekog razloga nzm*/
 

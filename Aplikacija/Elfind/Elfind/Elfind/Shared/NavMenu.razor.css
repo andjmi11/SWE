@@ -16,23 +16,23 @@
 }
 
 .oi {
-    width: 2rem;
+    width: 1.5rem;
     font-size: 1.1rem;
     vertical-align: text-top;
     top: -2px;
 }
 
 .nav-item {
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding-bottom: 0.5rem;
 }
 
     .nav-item:first-of-type {
-        padding-top: 1rem;
+        padding-top: 0.5rem;
     }
 
     .nav-item:last-of-type {
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
     }
 
     .nav-item ::deep a {
@@ -46,12 +46,13 @@
 
         .nav-item ::deep a.active {
             background-color: rgba(255,255,255,0.25);
-            color: white;
+            color: lightpink;
+           
         }
 
         .nav-item ::deep a:hover {
             background-color: rgba(255,255,255,0.1);
-            color: white;
+            color: lightblue;
         }
 
 @media (min-width: 641px) {
@@ -80,3 +81,4 @@
 .icon{
     margin:5px;
 }
+

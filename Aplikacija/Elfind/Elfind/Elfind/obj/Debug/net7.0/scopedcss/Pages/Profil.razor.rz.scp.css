@@ -1,0 +1,35 @@
+.custom-button[b-2wszrytj6i] {
+    background-color: #ffb6c1;
+    width: 200px;
+    height: 50px;
+    color: #000000;
+    border: 2px solid #fc9fad;
+    margin: 15px;
+}
+
+.custom-btn[b-2wszrytj6i] {
+    background-color: #ffb6c1;
+    width: 200px;
+    height: 40px;
+    color: #000000;
+    border: 2px solid #fc9fad;
+    margin: 15px;
+}
+
+.table-responsive-md[b-2wszrytj6i] {
+    border: 2px solid #fc9fad;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.thAdm[b-2wszrytj6i], .trAdm[b-2wszrytj6i] {
+    padding 15px !important;
+    width: 165px !important;
+}
+
+namespace Elfind.Pages[b-2wszrytj6i]
+{
+    public class Profil
+    {
+    }
+}
