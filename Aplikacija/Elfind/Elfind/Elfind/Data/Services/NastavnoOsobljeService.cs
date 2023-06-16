@@ -141,8 +141,8 @@ namespace Elfind.Data.Services
                         
                         .FirstAsync(x => x.KorisnickoIme == korisnickoIme);
 
-                    List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
-                        n.Notifikacije.AddRange(notif);
+                    //List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+                    //    n.Notifikacije.AddRange(notif);
 
                     return n;
                 }

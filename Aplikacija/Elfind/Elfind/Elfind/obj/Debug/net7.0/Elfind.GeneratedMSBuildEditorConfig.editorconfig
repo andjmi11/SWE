@@ -9,149 +9,149 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Elfind
 build_property.RootNamespace = Elfind
-build_property.ProjectDir = C:\Users\Anita\Desktop\SWE GLAVNA APP\SWE\Aplikacija\Elfind\Elfind\Elfind\
+build_property.ProjectDir = C:\Users\krist\SWE\Aplikacija\Elfind\Elfind\Elfind\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Anita\Desktop\SWE GLAVNA APP\SWE\Aplikacija\Elfind\Elfind\Elfind
+build_property.MSBuildProjectDirectory = C:\Users\krist\SWE\Aplikacija\Elfind\Elfind\Elfind
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/App.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Forum.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Forum.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9ydW0ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Index.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Kalendar.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Kalendar.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS2FsZW5kYXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Login.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Mapa.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Mapa.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFwYS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Objava.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Objava.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT2JqYXZhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Otkazivanje.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Otkazivanje.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3RrYXppdmFuamUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/PopupProvera.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/PopupProvera.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9wdXBQcm92ZXJhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Zakazivanje.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Zakazivanje.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcWmFrYXppdmFuamUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Shared/LoginDisplay.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Shared/LoginDisplay.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luRGlzcGxheS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Shared/RedirectToLogin.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Shared/RedirectToLogin.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlZGlyZWN0VG9Mb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/_Imports.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Administracija.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Administracija.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5pc3RyYWNpamEucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-z3roq4gc36
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Profil.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Profil.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-2wszrytj6i
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Shared/MainLayout.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-ki87sz4i9n
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Shared/NavMenu.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-761ltm08kf
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Shared/RightSidebar.razor]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Shared/RightSidebar.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJpZ2h0U2lkZWJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-jpxquko7r7
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Logout.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/_ViewImports.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Error.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Shared/_Layout.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Shared/_LoginPartial.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/_Host.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/_ViewImports.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Login.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-8k43oy0vpw
 
-[C:/Users/Anita/Desktop/SWE GLAVNA APP/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Register.cshtml]
+[C:/Users/krist/SWE/Aplikacija/Elfind/Elfind/Elfind/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-rzvtlbybxz
