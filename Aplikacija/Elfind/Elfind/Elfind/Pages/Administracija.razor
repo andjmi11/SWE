@@ -14,7 +14,7 @@
 @inject SmerService smerService
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JSRuntime
-@attribute [Authorize(Roles="Administrator")]
+@attribute [Authorize(Roles = "Administrator")]
 
 <p style="font:100">Kliknite na dugme da biste otvorili formu za izmene!</p>
 
@@ -23,7 +23,7 @@
 
 <div class="container">
     <button type="button" class="custom-button" @onclick="async() => { PrikaziFormuStudent(); await popuniListuSmerova(); await popuniListuRasporedCasova(); }">STUDENT</button>
-    <button type="button" class="custom-button" @onclick="async() => { PrikaziFormuNastavnoOsoblje(); await popuniListuKancelarija(); }">NASTAVNO OSOBLJE</button>
+    <button type="button" class="custom-button" @onclick="async() => { PrikaziFormuNastavnoOsoblje(); await popuniListuKancelarija(); await popuniListuProstorija(); }">NASTAVNO OSOBLJE</button>
     <button type="button" class="custom-button" @onclick="async() => { PrikaziRadioButton(); /*await popuniListuSmerova(); popuniListuVreme(); */ await popuniListuProstorija();  /*await popuniListuKurseva();*/ }">RASPORED</button>
 </div>
 
@@ -42,8 +42,28 @@
                     <div class="error-message">Niste uneli validno korisničko ime (mora se završavati sa "@@elfak.rs")</div>
                 }
                 <br />
+                @*<div class="form-group">*@
+                <label for="tipStudija">Tip studija:</label>
+                <select class="form-control" @bind="tipStudijaS" disabled="@postojiS">
+                    <option value=""></option>
+                    @foreach (var t in tipoviStudija)
+                    {
+                        <option>@t.ToString() </option>
+                    }
+                </select>
+                @*<button type="button" class="custom-btn" @onclick="NadjiStudenta">Promeni tip studija</button>*@
+                @*</div>*@
+                @*@if (tipStudijaS == null)
+            {
+            <div class="error-message">Morate popuniti ovo polje!</div>
+            }*@
+                <br />
                 <button type="button" class="custom-btn" @onclick="NadjiStudenta">Nađi/kreiraj studenta</button>
                 @if (!nevalidnoKImeS)
+                {
+                    <div class="error-message"></div>
+                }
+                @if (tipStudijaS != null)
                 {
                     <div class="error-message"></div>
                 }
@@ -52,7 +72,9 @@
                     postojiS = true;
                 }
             </div>
-            @if (otvoriOstatakS && !nevalidnoKImeS)
+            <br />
+
+            @if (otvoriOstatakS && !nevalidnoKImeS && tipStudijaS != null)
             {
                 @*nisi stavila blokiraj true*@
                 <br />
@@ -68,10 +90,8 @@
                 <br />
                 <div class="form-group">
                     <label for="indeks">Indeks:</label>
-                    <input type="text" class="form-control" @bind="indeksS">
+                    <input type="text" class="form-control" @bind="indeksS" readonly="@postojiS">
                 </div>
-                <br />
-                <br />
                 <br />
                 <div class="form-group">
                     <label for="godina">Godina:</label>
@@ -89,20 +109,14 @@
                         <option value=""></option>
                         @foreach (var s in smerovi)
                         {
-                            <option>@s.Naziv</option>
+                            if (s.TipStudija.ToString() == tipStudijaS)
+                            {
+                                <option>@s.Naziv</option>
+                            }
                         }
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="tipStudija">Tip studija:</label>
-                    <select class="form-control" @bind="tipStudijaS" >
-                        <option value=""></option>
-                        @foreach (var t in tipoviStudija)
-                        {
-                            <option>@t.ToString() </option>
-                        }
-                    </select>
-                </div>
+                <br />
                 <div class="form-group d-flex justify-content-center">
                     <button type="button" class="custom-button" @onclick="async() => { PrikaziFormuStudent(); await SacuvajIzmeneS(); await popuniListuRasporedCasova();}" disabled="@disableButtonS">Sačuvaj</button>
                     <button type="button" class="custom-button" @onclick="ObrisiStudenta">Obriši</button>
@@ -155,9 +169,22 @@
                 </div>
                 <br />
                 <div class="form-group">
-                    <label for="kancelarija">Kancelarija:</label>
-                    <input type="text" class="form-control" @bind="kancelarijaN">
+                    <label for="uKancelariji">Kancelarija:</label>
+                    <select class="form-control" @bind="kancelarijaN">
+                        <option value=""></option>
+                        @foreach (var p in prostorije)
+                        {
+                            if (p.TipProstorije.ToString() == "Kancelarija" || p.TipProstorije.ToString() == "Laboratorija")
+                            {
+                                <option>@p.Oznaka</option>
+                            }
+                        }
+                    </select>
                 </div>
+                @*<div class="form-group">
+        <label for="kancelarija">Kancelarija:</label>
+        <input type="text" class="form-control" @bind="kancelarijaN">
+        </div>*@
                 <br />
                 <div class="form-group d-flex justify-content-center">
                     <button type="button" class="custom-button" @onclick="async() => { PrikaziFormuNastavnoOsoblje(); await SacuvajIzmeneN(); }" disabled="@disableButtonN">Sačuvaj</button>
@@ -221,7 +248,6 @@
 }
 @if (prikaziFormuRaspored)
 {
-
     <div class="form-container">
         <form>
 
@@ -401,7 +427,7 @@
 
 
 @code {
-    private int i = 0; 
+    private int i = 0;
     private RasporedCasova rasporedZaPrikaz;
     #region Forme
     private bool prikaziFormuStudent = false;
@@ -572,83 +598,88 @@
     private async Task NadjiStudenta()
     {
         otvoriOstatakS = true;
-        if (korisnickoImeS.EndsWith("@elfak.rs"))
+        if (korisnickoImeS != null && korisnickoImeS != "")
         {
-            blokirajS = true;
-            student = await studentService.PreuzmiStudentaPoKorisnickomImenu(korisnickoImeS);
-            if (student != null)
+            if (korisnickoImeS.EndsWith("@elfak.rs"))
             {
-                imeS = student.Ime;
-                prezimeS = student.Prezime;
-                indeksS = student.Indeks;
-                smerS = student.NaSmeru.Naziv;
-                tipStudijaS = student.TipStudija.ToString();
-                godinaS = student.Godina;
-                //postojiIndeks = false;
-            }
-            nevalidnoKImeS = false;
-            disableButtonS = false;
+                blokirajS = true;
+                student = await studentService.PreuzmiStudentaPoKorisnickomImenu(korisnickoImeS);
+                if (student != null)
+                {
+                    imeS = student.Ime;
+                    prezimeS = student.Prezime;
+                    indeksS = student.Indeks;
+                    smerS = student.NaSmeru.Naziv;
+                    tipStudijaS = student.TipStudija.ToString();
+                    godinaS = student.Godina;
+                    //postojiIndeks = false;
+                }
+                nevalidnoKImeS = false;
+                disableButtonS = false;
 
-            smerovi = await smerService.VratiSveSmerove();
-            if(student == null)
+                smerovi = await smerService.VratiSveSmerove();
+                if (student == null)
+                {
+                    if (tipStudijaS == "OAS")
+                    {
+                        smerovi = await smerService.VratiSveSmerovePoTipuStudija("OAS");
+                    }
+                    else if (tipStudijaS == "MAS")
+                    {
+                        smerovi = await smerService.VratiSveSmerovePoTipuStudija("MAS");
+                    }
+                    else
+                    {
+                        smerovi = await smerService.VratiSveSmerovePoTipuStudija("DAS");
+                    }
+                }
+                if (student != null && smerovi != null && smerovi.Count == 0)
+                {
+                    if (tipStudijaS == "OAS")
+                    {
+                        oasFlag = true;
+                        smerovi = await smerService.VratiSveSmerovePoTipuStudija("OAS");
+
+                    }
+                    else if (tipStudijaS == "MAS")
+                    {
+                        masFlag = true;
+                        smerovi = await smerService.VratiSveSmerovePoTipuStudija("MAS");
+                    }
+                    else
+                    {
+                        dasFlag = true;
+                        smerovi = await smerService.VratiSveSmerovePoTipuStudija("DAS");
+                    }
+                }
+            }
+            else
             {
-                if(tipStudijaS == "OAS")
-                {
-                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("OAS");
-                }
-                else if(tipStudijaS == "MAS")
-                {
-                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("MAS");
-                }
-                else
-                {
-                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("DAS");
-                }
+                nevalidnoKImeS = true;
+                disableButtonS = true;
             }
-            if(student != null && smerovi.Count == 0)
-            {
-                if (tipStudijaS == "OAS")
-                {
-                    oasFlag = true;
-                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("OAS");
-
-                }
-                else if (tipStudijaS == "MAS")
-                {
-                    masFlag = true;
-                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("MAS");
-                }
-                else 
-                {
-                    dasFlag = true;
-                    smerovi = await smerService.VratiSveSmerovePoTipuStudija("DAS");
-                }
-
-
-            }
-
-
         }
         else
         {
-            nevalidnoKImeS = true;
-            disableButtonS = true;
+            porukaNeuspesno = "Polje korisnicko ime je prazno!";
+            await ShowNeuspesnoModal();
+            return;
         }
     }
-    private async Task UcitajStudenta()
-    {
-        postojiIndeks = false;
-        student = await studentService.PreuzmiStudentaPoIndeksu(indeksS);
-        if (student != null)
-        {
-            imeS = student.Ime;
-            prezimeS = student.Prezime;
-            indeksS = student.Indeks;
-            smerS = student.NaSmeru.Naziv;
-            tipStudijaS = student.TipStudija.ToString();
-            godinaS = student.Godina;
-        }
-    }
+    //private async Task UcitajStudenta()
+    //{
+    //    postojiIndeks = false;
+    //    student = await studentService.PreuzmiStudentaPoIndeksu(indeksS);
+    //    if (student != null)
+    //    {
+    //        imeS = student.Ime;
+    //        prezimeS = student.Prezime;
+    //        indeksS = student.Indeks;
+    //        smerS = student.NaSmeru.Naziv;
+    //        tipStudijaS = student.TipStudija.ToString();
+    //        godinaS = student.Godina;
+    //    }
+    //}
     private async Task SacuvajIzmeneS()
     {
         otvoriOstatakS = false;
@@ -661,6 +692,9 @@
         {
             await DodajNovogStudenta();
         }
+
+        blokirajS = false;
+        postojiS = false;
         NavigationManager.NavigateTo("/administracija", forceLoad: true);
 
     }
@@ -674,7 +708,13 @@
         postojiS = false;
         blokirajS = false;
         await studentService.AzurirajStudenta(student);
-        StateHasChanged();
+        //OVDE PORUKA USPESNO
+
+        //porukaNeuspesno = "Polje korisnicko ime je prazno!";
+        //await ShowNeuspesnoModal();
+        //return;
+        //StateHasChanged();
+        NavigationManager.NavigateTo("/administracija", forceLoad: true); //dodato
     }
 
 
@@ -698,6 +738,11 @@
             //disableButtonS = true;
         }
         //StateHasChanged();
+        //OVDE PORUKA USPESNO
+
+        //porukaNeuspesno = "Polje korisnicko ime je prazno!";
+        //await ShowNeuspesnoModal();
+        //return;
         NavigationManager.NavigateTo("/administracija", forceLoad: true); //dodato
     }
 
@@ -706,9 +751,33 @@
         var postojiSIndeks = await studentService.PreuzmiStudentaPoIndeksu(indeksS);
         if (postojiS || postojiSIndeks == null)
         {
+            if (imeS == null || imeS == "")
+            {
+                porukaNeuspesno = "Polje ime je prazno!";
+                await ShowNeuspesnoModal();
+                return;
+            }
             student.Ime = imeS;
+            if (prezimeS == null || prezimeS == "")
+            {
+                porukaNeuspesno = "Polje prezime je prazno!";
+                await ShowNeuspesnoModal();
+                return;
+            }
             student.Prezime = prezimeS;
+            if (indeksS <= 9999 || indeksS > 99999)
+            {
+                porukaNeuspesno = "Polje indeks nije validno!";
+                await ShowNeuspesnoModal();
+                return;
+            }
             student.Indeks = indeksS;
+            if (smerS == "" || smerS == null)
+            {
+                porukaNeuspesno = "Polje smer je prazno!";
+                await ShowNeuspesnoModal();
+                return;
+            }
             foreach (var s in smerovi)
             {
                 if (s.Naziv == smerS)
@@ -725,6 +794,12 @@
                     break;
                 }
             }
+            if (tipStudijaS == null || tipStudijaS == "")
+            {
+                porukaNeuspesno = "Polje tip studija je prazno!";
+                await ShowNeuspesnoModal();
+                return;
+            }
             foreach (var t in tipoviStudija)
             {
                 if (t.ToString() == tipStudijaS)
@@ -733,7 +808,15 @@
                     break;
                 }
             }
+            if (godinaS < 1 || godinaS > 4)
+            {
+                porukaNeuspesno = "Polje godina nije validno!";
+                await ShowNeuspesnoModal();
+                return;
+            }
             student.Godina = godinaS;
+
+
             //postojiIndeks = false;
             //disableButtonS = false;
             //provereno = true;
@@ -764,6 +847,12 @@
     private async Task NadjiNastavnika()
     {
         otvoriOstatakN = true;
+        if (korisnickoImeN == null || korisnickoImeN == "")
+        {
+            porukaNeuspesno = "Polje korisnicko ime je prazno!";
+            await ShowNeuspesnoModal();
+            return;
+        }
         if (korisnickoImeN.EndsWith("@elfak.ni.ac.rs"))
         {
             blokirajN = true;
@@ -790,7 +879,6 @@
         otvoriOstatakS = false;
         if (postojiN)
         {
-
             await IzmeniNastavnika();
         }
         else
@@ -813,8 +901,8 @@
         nastavnik = new NastavnoOsoblje();
         nastavnik.KorisnickoIme = korisnickoImeN;
 
-        nastavnik.Kancelarija = await prostorijaService.PreuzmiProstorijuPoOznaci(kancelarijaN);
-        nastavnik.Tip = tipN;
+        //nastavnik.Kancelarija = await prostorijaService.PreuzmiProstorijuPoOznaci(kancelarijaN);
+        //nastavnik.Tip = tipN;
         await PopuniPodacimaN();
         //postojiN = false;
         //blokirajN = false;
@@ -823,13 +911,40 @@
 
     private async Task PopuniPodacimaN()
     {
-        nastavnik.Ime = imeN;
-        nastavnik.Prezime = prezimeN;
-        nastavnik.Tip = tipN;
-        kancelarija = await prostorijaService.PreuzmiProstorijuPoOznaci(kancelarijaN);
-        if (kancelarija != null && kancelarija.TipProstorije == TipP.Kancelarija)
+        if (imeN == null || imeN == "")
         {
+            porukaNeuspesno = "Polje ime je prazno!";
+            await ShowNeuspesnoModal();
+            return;
+        }
+        nastavnik.Ime = imeN;
+        if (prezimeN == null || prezimeN == "")
+        {
+            porukaNeuspesno = "Polje prezime je prazno!";
+            await ShowNeuspesnoModal();
+            return;
+        }
+
+        nastavnik.Prezime = prezimeN;
+        if (tipN == null || tipN == "")
+        {
+            porukaNeuspesno = "Polje tip je prazno!";
+            await ShowNeuspesnoModal();
+            return;
+        }
+        nastavnik.Tip = tipN;
+
+        if (kancelarijaN != null && kancelarijaN != "" /*&& kancelarija.TipProstorije == TipP.Kancelarija*/)
+        {
+            //kancelarija.TipProstorije == TipP.Kancelarija  bila bi provera al mnogi su u lab prostorijama
+            kancelarija = await prostorijaService.PreuzmiProstorijuPoOznaci(kancelarijaN);
             nastavnik.Kancelarija = kancelarija;
+        }
+        else
+        {
+            porukaNeuspesno = "Polje kancelarija nije validno!";
+            await ShowNeuspesnoModal();
+            return;
         }
     }
     #endregion
@@ -1115,7 +1230,7 @@
         //preuzmiPodatkeIzFormeCas();
         var popu = await popuniPodacimaCas();
 
-        if(popu == -1)
+        if (popu == -1)
         {
             return;
         }
@@ -1294,9 +1409,9 @@
         TimeSpan.TryParse(vremeOdF, out vOF);
         TimeSpan.TryParse(vremeDoF, out vDF);
 
-        foreach(var casR in rasporedZaPrikaz.SpisakCasova)
+        foreach (var casR in rasporedZaPrikaz.SpisakCasova)
         {
-            if(vOF == casR.VremeOd &&
+            if (vOF == casR.VremeOd &&
             vDF == casR.VremeDo &&
             danF == casR.Dan.ToString())
             {
@@ -1310,7 +1425,8 @@
         //}
     }
 
-    private async Task ObrisiCas(){
+    private async Task ObrisiCas()
+    {
         var idO = await casService.ObrisiCas(ZauzetCas.ID); //zauzetcas was null
 
         ZauzetCas = null;
