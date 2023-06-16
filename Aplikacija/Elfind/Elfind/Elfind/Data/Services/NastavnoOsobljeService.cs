@@ -52,7 +52,7 @@ namespace Elfind.Data.Services
                         .Include(x => x.Kursevi)
                         .Include(x => x.RezProstorije)
                         .Include(x => x.Raspored)
-                        //.Include(x => x.Notifikacije)
+                        .Include(x => x.Notifikacije)
                         .FirstOrDefaultAsync(n => n.ID == ID);
 
                     //List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
@@ -79,6 +79,7 @@ namespace Elfind.Data.Services
                 {
                     NastavnoOsoblje n = await context.NastavnoOsoblje.AsNoTracking()
                         .Include(n => n.Kancelarija)
+                        .Include(x => x.Notifikacije)
 
                         .FirstAsync(x => x.KorisnickoIme == korisnickoIme);
 
@@ -318,7 +319,7 @@ namespace Elfind.Data.Services
                         .Include(x=>x.Objave)
                         .Include(x=>x.RezProstorije).ThenInclude(x=>x.Prostorija)
                         .Include(x=>x.Raspored)
-                        //.Include(x=>x.Notifikacije)
+                        .Include(x=>x.Notifikacije)
                         .ToListAsync();
 
                     //List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
