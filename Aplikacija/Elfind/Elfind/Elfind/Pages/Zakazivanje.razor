@@ -264,18 +264,9 @@
 
         Dan dan = Dan.Ponedeljak;
 
-        //UBACI PROVERU DA NE MOZE DA SE ZAKAZE U PROSLOSTI i da ne moze da se se selektuje br termina veci od DO 8 i 15
+        DayOfWeek dayOfWeek = selectedDate.DayOfWeek; 
 
-        //CultureInfo culture = new CultureInfo("en-US");
-        //culture.DateTimeFormat.FirstDayOfWeek = DayOfWeek.Monday;
-        DayOfWeek dayOfWeek = selectedDate.DayOfWeek; //culture.Calendar.GetDayOfWeek
-
-        //int startDayIndex = (int)culture.DateTimeFormat.FirstDayOfWeek;
-        //int dayOfWeekIndex = ((int)dayOfWeek - startDayIndex + 7) % 7;
-
-        //string correctedDayOfWeek = ((DayOfWeek)dayOfWeekIndex).ToString();
-
-        switch (dayOfWeek.ToString()) //correctedDayOfWeek
+        switch (dayOfWeek.ToString()) 
         {
             case "Monday":
                 dan = Dan.Ponedeljak;
@@ -313,7 +304,7 @@
 
         TimeSpan duration = TimeSpan.FromMinutes(45);
         TimeSpan totalDuration = duration * selectedBrojCasova;
-        totalDuration += (selectedBrojCasova - 1) * TimeSpan.FromMinutes(15); //treba plus koliko puta 15
+        totalDuration += (selectedBrojCasova - 1) * TimeSpan.FromMinutes(15);
 
         vremeDo = vremeOd.Add(totalDuration);
 
@@ -337,7 +328,7 @@
             return;
         }
 
-        List<KursSmer> smerovi = kurs.Smerovi; //dvaput rii
+        List<KursSmer> smerovi = kurs.Smerovi; 
 
         if (smerovi == null)
         {
@@ -364,31 +355,55 @@
                 {
                     foreach (var smBitni in smerovi)
                     {
-                        if (sm.ID != smBitni.Smer.ID) //onda treba da proveravam prostoriju
+                        if (sm.ID != smBitni.Smer.ID) //onda treba da proveri prostoriju
                         {
                             //provera prostorije, ako nije ista onda break
-                            if (Prostorija.ID != ostali.Prostorija.ID) //proveriti DA LI TREBA DA SE POKLOPI SMER ILI TAKO NESTO
+                            if (Prostorija.ID == ostali.Prostorija.ID) //proveriti DA LI TREBA DA SE POKLOPI SMER ILI TAKO NESTO
                             {
-                                break;
-                            }
-                        }
-                        if(ostali.URasporeduCasova != null)
-                        {
-                            if (sm.ID == ostali.URasporeduCasova.ZaSmer.ID) //u rasporedu je
-                            {
-                                preklapanje = true;
-                            }
-
-                        }
-                        else //nije u rasporedu
-                        {
-                            foreach (var osobljekurs in ostali.ZaKurs.NastavnoOsoblje)
-                            {
-                                foreach (var rezPr in osobljekurs.NastavnoOsoblje.RezProstorije)
+                                if (ostali.URasporeduCasova != null)
                                 {
-                                    if (rezPr.datum.Equals(selectedDate))
+                                    if (sm.ID == ostali.URasporeduCasova.ZaSmer.ID) //u rasporedu je
                                     {
                                         preklapanje = true;
+                                    }
+
+                                }
+                                else //nije u rasporedu
+                                {
+                                    foreach (var osobljekurs in ostali.ZaKurs.NastavnoOsoblje)
+                                    {
+                                        foreach (var rezPr in osobljekurs.NastavnoOsoblje.RezProstorije)
+                                        {
+                                            if (rezPr.datum.Equals(selectedDate))
+                                            {
+                                                preklapanje = true;
+                                            }
+                                        }
+                                    }
+                                }
+                                //break;
+                            }
+                        }
+                        else //isti smer
+                        {
+                            if (ostali.URasporeduCasova != null)
+                            {
+                                if (sm.ID == ostali.URasporeduCasova.ZaSmer.ID) //u rasporedu je
+                                {
+                                    preklapanje = true;
+                                }
+
+                            }
+                            else //nije u rasporedu
+                            {
+                                foreach (var osobljekurs in ostali.ZaKurs.NastavnoOsoblje)
+                                {
+                                    foreach (var rezPr in osobljekurs.NastavnoOsoblje.RezProstorije)
+                                    {
+                                        if (rezPr.datum.Equals(selectedDate))
+                                        {
+                                            preklapanje = true;
+                                        }
                                     }
                                 }
                             }

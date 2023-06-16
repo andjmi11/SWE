@@ -130,7 +130,7 @@ main[b-ki87sz4i9n] {
 
 .ikrNoti_Counter[b-ki87sz4i9n] {
     display: block;
-    width: 15px;
+    width: 20px;
     position: absolute;
     background: #e1141e;
     color: #fff;
@@ -142,7 +142,7 @@ main[b-ki87sz4i9n] {
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     z-index: 1;
-    transform: translate(-450%, -10%);
+    transform: translate(-350%, -10%);
 }
 
 

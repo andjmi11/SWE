@@ -67,29 +67,30 @@
                     <div class="amfiteatri">
                         @if (amfiteatri.Count > 0)
                         {
-                            <label>Amfiteatri</label>
-                            <ul>
+                            <select class="form-control">
+                            <option value="">amfiteatri</option>
                                 @foreach (var amfi in amfiteatri)
                                 {
-                                    <li>@amfi</li>
+                                    <option>@amfi.ToString() </option>
                                 }
-                            </ul>
+                            </select>
                         }
 
                     </div>
                 </div> <!-- Kraj kolone za "amfiteatri" -->
 
+
                 <div class="col-md-3 col-xs-6">
                     <div class="laboratorije">
                         @if (laboratorije.Count > 0)
                         {
-                            <label>Laboratorije</label>
-                            <ul>
+                            <select class="form-control">
+                                <option value="">laboratorije</option>
                                 @foreach (var lab in laboratorije)
                                 {
-                                    <li>@lab</li>
+                                    <option>@lab.ToString() </option>
                                 }
-                            </ul>
+                            </select>
                         }
                     </div>
                 </div> <!-- Kraj kolone za "laboratorije" -->
@@ -98,13 +99,13 @@
                     <div class="kancelarije">
                         @if (kancelarije.Count > 0)
                         {
-                            <label>Kancelarije</label>
-                            <ul>
+                            <select class="form-control">
+                                <option value="">kancelarije</option>
                                 @foreach (var kanc in kancelarije)
                                 {
-                                    <li>@kanc</li>
+                                    <option>@kanc.ToString()</option>
                                 }
-                            </ul>
+                            </select>
                         }
                     </div>
                 </div> <!-- Kraj kolone za "kancelarije" -->
@@ -113,13 +114,13 @@
                     <div class="ucionice">
                         @if (ucionice.Count > 0)
                         {
-                            <label>Učionice</label>
-                            <ul>
+                            <select class="form-control">
+                                <option value="">ucionice</option>
                                 @foreach (var uc in ucionice)
                                 {
-                                    <li>@uc</li>
+                                    <option>@uc.ToString()</option>
                                 }
-                            </ul>
+                            </select>
                         }
                     </div>
                 </div> <!-- Kraj kolone za "ucionice" -->
@@ -592,6 +593,7 @@
         laboratorije.Clear();
         ucionice.Clear();
 
+
         if (prostorije != null)
         {
             foreach (var prostorija in prostorije)
@@ -686,7 +688,7 @@
     }
     #endregion
 
-    
+
     #region modali
     private Modal modal;
     private async Task ShowModal()
@@ -720,15 +722,18 @@
         await profModal?.HideAsync();
         string prethodni = currentPicture;
 
-        var odabraniProf = await osobljeService.PreuzmiNastavnoOsobljeAsync(odabraniID); 
-        var pOid = odabraniProf.Kancelarija; 
-        var prostorijaO = await prostorijaService.PreuzmiProstoriju(pOid.ID);
-        if (prostorijaO != null && prostorijaO.Sprat != null)
+        var odabraniProf = await osobljeService.PreuzmiNastavnoOsobljeAsync(odabraniID);
+        if (odabraniProf != null)
         {
-            currentPicture = GetPictureForSprat(prostorijaO.Sprat);
-            await Pin(prostorijaO, prethodni);
+            var pOid = odabraniProf.Kancelarija;
+            var prostorijaO = await prostorijaService.PreuzmiProstoriju(pOid.ID);
+            if (prostorijaO != null && prostorijaO.Sprat != null)
+            {
+                currentPicture = GetPictureForSprat(prostorijaO.Sprat);
+                await Pin(prostorijaO, prethodni);
+            }
+            else return;
         }
-        else return;
     }
 
 
