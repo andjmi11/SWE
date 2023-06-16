@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anita\\Desktop\\SWE GLAVNA APP\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj": {}
+    "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anita\\Desktop\\SWE GLAVNA APP\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj": {
+    "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anita\\Desktop\\SWE GLAVNA APP\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj",
+        "projectUniqueName": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj",
         "projectName": "Elfind",
-        "projectPath": "C:\\Users\\Anita\\Desktop\\SWE GLAVNA APP\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj",
-        "packagesPath": "C:\\Users\\Anita\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anita\\Desktop\\SWE GLAVNA APP\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\",
+        "projectPath": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\Elfind.csproj",
+        "packagesPath": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Anita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AndjelijaMijajlovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
