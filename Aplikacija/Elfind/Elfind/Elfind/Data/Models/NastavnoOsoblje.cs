@@ -21,8 +21,6 @@ namespace Elfind.Data.Model
 
        
 
-        [NotMapped]
-        public List<Cas> ListaZakazanihCasova { get; set; } = new List<Cas>();
         public List<NotificationMessageProf> Notifikacije { get; set; } = new List<NotificationMessageProf>();
         public List<Objava> Objave { get; set; } = new List<Objava>();
    
@@ -30,5 +28,7 @@ namespace Elfind.Data.Model
         public List<OsobljeProstorijaR> RezProstorije { get; set; } = new List<OsobljeProstorijaR>();
         public List<OsobljeRaspored> Raspored { get; set; } = new List<OsobljeRaspored>();
 
+        [NotMapped]
+        public List<Cas> ListaZakazanihCasova { get; set; } = new List<Cas>();
     }
 }

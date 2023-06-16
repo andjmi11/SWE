@@ -37,6 +37,11 @@ namespace Elfind.Data
             await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
         }
 
+        public async Task RemoveFromGroup(string groupName)
+        {
+            await Groups.RemoveFromGroupAsync(Context.ConnectionId, groupName);
+        }
+
         public async Task SendForZahtev(string user, string message,string cas)
         {
             var notification = new NotificationMessageProf
@@ -49,11 +54,7 @@ namespace Elfind.Data
 
             await _notificationMessageProfService.SaveNotification(notification);
             List<NastavnoOsoblje> no = await _nastavnoOsobljeService.VratiSveNastavnikeAsync();
-            foreach(var n in no)
-            {
-                n.Notifikacije.Add(notification);
-            }
-
+            
             await Clients.Group("NastavnoOsoblje").SendAsync("ReceiveMessageForZahtev", user, message, cas);
         }
         public async Task SendNotificationForObjava(string user, string message, string[] sm, string k)

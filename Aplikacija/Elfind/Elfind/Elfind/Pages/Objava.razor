@@ -160,7 +160,7 @@
                 @*<h4>Sve objave:</h4>*@
                 <br />
                 <div>
-                    @foreach (Data.Model.Objava obj in sveObjave)
+                    @foreach (Data.Model.Objava obj in sveObjave.AsEnumerable().Reverse())
                     {
                         <div class="jednaObjava">
                             <div class="imePrezime">
@@ -243,7 +243,7 @@
         {
             <h4 style="padding-left: 25px;">Objave:</h4>
             <div class="sveObjave" style="padding-left: 30px;">
-                @foreach (Data.Model.Objava obj in sveObjave)
+                @foreach (Data.Model.Objava obj in sveObjave.AsEnumerable().Reverse())
                 {
                     <div class="row jednaObjava">
                         <div class="col-md-12">
@@ -267,9 +267,13 @@
                                 </div>
                             }
                         </div>
+                        @if(obj.Opcije.Count > 0)
+                        {
                         <div class="col-md-12 element-style">
                             <button class="dugmiciForum" @onclick="() => SacuvajIzbor(odabranaOpcijaTekst)" disabled="@sacuvano">Sacuvaj izbor</button> @*zovi submit*@
                         </div>
+                            
+                        }
                     </div>
                 }
             </div>
@@ -285,7 +289,7 @@
                 @*<h4>Sve objave:</h4>*@
                 <br />
                 <div>
-                    @foreach (Data.Model.Objava obj in sveObjave)
+                    @foreach (Data.Model.Objava obj in sveObjave.AsEnumerable().Reverse())
                     {
                         <div class="jednaObjava">
                             <div class="imePrezime">
@@ -352,6 +356,7 @@
     private Dictionary<string, List<Opcija>> objave = new Dictionary<string, List<Opcija>>();
     private string tags; // Dodato polje za tagove
     private List<Data.Model.Objava> sveObjave = new List<Data.Model.Objava>();
+
     //private string pomIzabranPredmet;
 
     //private string firstOption; //prvobitno je samo jedno polje, na klik se dodaje u bazu i dugme i novo polje i tako za svaku
@@ -408,6 +413,12 @@
             else tipObjave = Data.Model.TipObjave.Obavestenje;
 
 
+            if (izabraniPredmet == "" || izabraniPredmet == null || text==null || text == "")
+        {
+                porukaNeuspesno = "Niste uneli sve podatke potrebne za objavu.";
+                await ShowNeuspesnoModal();
+                return;
+            }
 
             // Ovde treba da ubacimo u bazu u tekst
             var novaAnketa = new Data.Model.Objava()
@@ -495,12 +506,6 @@
             }
 
             //krissy dodala, ovde puca ako nije izabran predmet:)
-            if(izabraniPredmet == "" || izabraniPredmet == null)
-            {
-                porukaNeuspesno = "Izabrati kurs.";
-                await ShowNeuspesnoModal();
-                return;
-            }
 
             Kurs izabraniKurs = await KursService.PreuzmiKursPoNazivuAsync(izabraniPredmet);
 
@@ -509,8 +514,8 @@
 
             notificationMessage.Kurs = izabraniKurs.Naziv;
             await Send();
-            //StateHasChanged();
-            InvokeAsync(StateHasChanged);
+            
+            InvokeAsync(StateHasChanged); // za sta je ovo
 
         }
         catch (Exception e)
@@ -694,4 +699,9 @@
     }
 
     #endregion
+
+    private async Task RemoveFromGroup(string groupName)
+    {
+        await hubConnection.InvokeAsync("RemoveFromGroup", groupName);
+    }
 }

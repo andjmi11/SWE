@@ -52,6 +52,7 @@ namespace Elfind.Data.Services
                         .Include(x=>x.Kursevi)
                         .Include(x=>x.RezProstorije)
                         .Include(x=>x.Raspored)
+                        .Include(x=>x.Notifikacije)
                         .FirstOrDefaultAsync(n => n.ID == ID);
                     return nastavnoOsoblje;
                 }
@@ -71,6 +72,7 @@ namespace Elfind.Data.Services
                 {
                     NastavnoOsoblje n = await context.NastavnoOsoblje.AsNoTracking()
                         .Include(n => n.Kancelarija)
+                        
                         .FirstAsync(x => x.KorisnickoIme == korisnickoIme);
                                        
 
@@ -91,12 +93,14 @@ namespace Elfind.Data.Services
                         .Include(x=>x.NastavnoOsoblje)
                         .Include(x=>x.RasporedCasova)
                         .Where(x=>x.NastavnoOsoblje.ID != n.ID).ToListAsync();
+                    List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+                        
 
                     n.Objave.AddRange(objave);
                     n.Kursevi.AddRange(kursevi);
                     n.RezProstorije.AddRange(rezProstorije);
                     n.Raspored.AddRange(rasporedi);
-
+                    n.Notifikacije.AddRange(notif);
                     return n;
                 }
             }
@@ -123,8 +127,11 @@ namespace Elfind.Data.Services
                         .Include(x => x.RezProstorije).ThenInclude(x => x.Prostorija)
                         .Include(x=> x.Raspored).ThenInclude(x => x.RasporedCasova).ThenInclude(x=> x.SpisakCasova)
                         .Include(x=> x.Raspored).ThenInclude(x => x.RasporedCasova).ThenInclude(x=> x.ZaSmer)
+                        
                         .FirstAsync(x => x.KorisnickoIme == korisnickoIme);
 
+                    List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+                        n.Notifikacije.AddRange(notif);
 
                     return n;
                 }
@@ -184,6 +191,7 @@ namespace Elfind.Data.Services
                             .Include(x => x.Kursevi)
                             .Include(x => x.RezProstorije)
                             .Include(x => x.Raspored)
+                            .Include(x=>x.Notifikacije)
                             .Where(x => x.Ime == delovi[0] && x.Prezime == delovi[1])
                             .ToListAsync();
 
@@ -215,7 +223,7 @@ namespace Elfind.Data.Services
                 using (var context = dbContextFactory.CreateDbContext())
                 {
                     //context.Entry(nastavnoOsoblje).State = EntityState.Detached;
-
+                    
                     context.NastavnoOsoblje.Update(n);
                     await context.SaveChangesAsync();
                 }
@@ -296,7 +304,16 @@ namespace Elfind.Data.Services
                         .Include(x=>x.Objave)
                         .Include(x=>x.RezProstorije).ThenInclude(x=>x.Prostorija)
                         .Include(x=>x.Raspored)
+                        .Include(x=>x.Notifikacije)
                         .ToListAsync();
+
+                    List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+                    foreach(var n in nastavnoOsoblje)
+                    {
+                        foreach (var no in notif)
+                            if (no.SenderName != (n.Ime + " " + n.Prezime))
+                                n.Notifikacije.Add(no);
+                    }
                     return nastavnoOsoblje;
                 }
             }

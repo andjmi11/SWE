@@ -9,11 +9,14 @@ namespace Elfind.Data
     public class NotificationMessageProfService
     {
         private IDbContextFactory<ElfindContext> dbContextFactory;
+        private NastavnoOsobljeService _nasobljeService;
 
-        public NotificationMessageProfService(IDbContextFactory<ElfindContext> dbContextFactory)
+        public NotificationMessageProfService(IDbContextFactory<ElfindContext> dbContextFactory, NastavnoOsobljeService nastavno)
         {
             this.dbContextFactory = dbContextFactory;
+            _nasobljeService = nastavno;
         }
+
 
         public async Task SaveNotification(NotificationMessageProf notification)
         {
@@ -22,6 +25,7 @@ namespace Elfind.Data
                 using (var context = dbContextFactory.CreateDbContext())
                 {
                     context.NotificationProf.Add(notification);
+
                     await context.SaveChangesAsync();
                 }
             }
@@ -31,6 +35,16 @@ namespace Elfind.Data
             }
         }
 
+        public async Task DodajNotifikacijuNastavnomOsoblju(NotificationMessageProf notification)
+        {
+            List<NastavnoOsoblje> no = await _nasobljeService.VratiSveNastavnikeAsync();
+
+            foreach (var n in no)
+            {
+                n.Notifikacije.Add(notification);
+                await _nasobljeService.AzurirajNastavnoOsobljeAsync(n); // Ažurirajte objekat nastavnog osoblja u bazi podataka
+            }
+        }
 
         public async Task<List<NotificationMessageProf>> VratiProcitanePoruke(string korisnickoIme)
         {
@@ -59,7 +73,7 @@ namespace Elfind.Data
             {
                 Console.WriteLine(ex.Message);
                 // return new List<NotificationMessage>();
-                return null;
+                return new List<NotificationMessageProf>();
             }
         }
 
@@ -73,7 +87,7 @@ namespace Elfind.Data
                     NastavnoOsobljeService sService = new NastavnoOsobljeService(dbContextFactory);
                     NastavnoOsoblje student = await sService.PreuzmiNastavnoOsobljePoKorisnickomImenuAsync(korisnickoIme);
 
-                    List<NotificationMessageProf> lista = null;
+                    List<NotificationMessageProf> lista = new List<NotificationMessageProf>();
 
                     foreach (var not in student.Notifikacije)
                     {
@@ -90,37 +104,26 @@ namespace Elfind.Data
             {
                 Console.WriteLine(ex.Message);
                 // return new List<NotificationMessage>();
-                return null;
+                return new List<NotificationMessageProf>();
             }
         }
 
-
-      /*  public async Task<NotificationMessageProf> PreuzmiNotifikaciju(int ID)
+        public async Task SetPorukaVidjena(int msgId, int nID)
         {
             try
             {
                 using (var context = dbContextFactory.CreateDbContext())
                 {
-                    //NotificationMessageProf mess = await context.Notifications.FirstOrDefaultAsync(x => x.MsgID == ID);
-                    return null;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return null;
-            }
-        }
 
-        public async Task AzurirajNotifikacije(NotificationMessage m)
-        {
-            try
-            {
-                using (var context = dbContextFactory.CreateDbContext())
-                {
-                    //context.Entry(nastavnoOsoblje).State = EntityState.Detached;
+                    var notifikacija =await  context.NotificationProf.FirstOrDefaultAsync(x => x.MsgID == msgId);
+                    var nast = await context.NastavnoOsoblje.FirstOrDefaultAsync(x => x.ID == nID);
 
-                    context.Notifications.Update(m);
+                    foreach(var n in nast.Notifikacije)
+                    {
+                        if(n.MsgID == msgId)
+                            n.VidjenaPoruka = true;
+                    }                
+
                     await context.SaveChangesAsync();
                 }
             }
@@ -130,60 +133,6 @@ namespace Elfind.Data
             }
         }
 
-        public async Task<List<NotificationMessage>> NeprocitaneUProcitane(string korisnickoIme)
-        {
-            try
-            {
-                using (var context = dbContextFactory.CreateDbContext())
-                {
-
-                    StudentService sService = new StudentService(dbContextFactory);
-                    Student student = await sService.PreuzmiStudentaPoKorisnickomImenu(korisnickoIme);
-
-                    List<NotifikacijaStudent> lista = await context.NotifikacijaStudent
-                        .Where(x => x.VidjenaPoruka == false && x.Student.ID == student.ID)
-                        .ToListAsync();
-
-                    foreach (var l in lista)
-                    {
-                        l.VidjenaPoruka = true;
-                    }
-
-                    List<NotificationMessage> poruka = await context.Notifications.ToListAsync();
-
-                    List<NotificationMessage> procitane = poruka
-                        .Where(p => lista.Any(l => l.Notifikacija.MsgID == p.MsgID))
-                        .ToList();
-
-                    return procitane;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return new List<NotificationMessage>();
-            }
-        }
-
-        public async Task UpdateVidjenaPorukaForNotifications(List<NotificationMessage> notifications)
-        {
-            try
-            {
-                using (var context = dbContextFactory.CreateDbContext())
-                {
-                    foreach (var notification in notifications)
-                    {
-                        context.Notifications.Update(notification);
-                    }
-
-                    await context.SaveChangesAsync();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }*/
 
     }
 }
