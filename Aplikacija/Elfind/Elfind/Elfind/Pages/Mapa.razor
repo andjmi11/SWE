@@ -29,6 +29,14 @@
     </NotAuthorized>
 </AuthorizeView>*@
 
+
+<style>
+    .zajednicki{
+        height: 93vh!important;
+        /*overflow-block:auto;*/
+    }
+</style>
+
 <div class="glavni">
     @*@onclick="HandleComponentClick*@
 
@@ -115,7 +123,7 @@
                         @if (ucionice.Count > 0)
                         {
                             <select class="form-control">
-                                <option value="">ucionice</option>
+                                <option value="">učionice</option>
                                 @foreach (var uc in ucionice)
                                 {
                                     <option>@uc.ToString()</option>
@@ -236,7 +244,7 @@
         </FooterTemplate>
     </Modal>
 
-    <Modal @ref="prostModal" Title="Postoji više prostorija u kojima će se održati ćas datog kursa. Izaberite: ">
+    <Modal @ref="prostModal" Title="Postoji više prostorija u kojima će se održati čas datog kursa. Izaberite: ">
         <BodyTemplate>
             @if (predmProstorije != null && predmProstorije.Count > 0)
             {

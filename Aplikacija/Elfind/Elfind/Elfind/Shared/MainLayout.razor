@@ -33,7 +33,7 @@
         <main>
             <div class="top-row px-4">
                 <div>
-                    <img src="\resized\rsz_3logoimgtransparent.png" alt="Logo" class="logic" />
+                    <img src="\resized\imageedit_6_7140612380.jpg" alt="Logo" class="logic" style="width:90px; height:45px;" />
                     @* <img src="/resized/elfind.png" alt="Logo" class="logic"/> treba da se resize*@
                     @*<h4 style="color:white">@tabName</h4>*@
                 </div>
@@ -111,7 +111,7 @@
                             <img src="round_notifications_white_24dp.png" alt="ringbell" class="zvonce" @onclick="NotificationHideShow" />
                         </div>
                         <div class="ikrNotifications" style="display:@BoxCSS !important">
-                            <h3>Notifications (<span class="notiCounterOnHead">@neprProf.Count()</span>)</h3>
+                            <h3>Notifikacije (<span class="notiCounterOnHead">@neprProf.Count()</span>)</h3>
                             <div class="ikrNotificationItems">
                                 @foreach (var obj in currNotProf)
                                 {
@@ -229,7 +229,7 @@
         if(targetType == "student")
         {
 
-            if (msgBody == "je postavio novu anketu!" || msgBody == "je postavio novo obavestenje!")
+            if (msgBody == "je postavio novu anketu!" || msgBody == "je postavio novo obaveštenje!")
             {
 
                 navManager.NavigateTo("/forum");
