@@ -56,6 +56,16 @@ namespace Elfind.Data.Services
                         .FirstOrDefaultAsync(n => n.ID == ID);
 
                     List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+<<<<<<< HEAD
+=======
+                    if(notif != null && nastavnoOsoblje != null)
+                    {
+                        foreach (var no in notif)
+                            if (no.SenderName != (nastavnoOsoblje.Ime + " " + nastavnoOsoblje.Prezime))
+                                nastavnoOsoblje.Notifikacije.Add(no);
+
+                    }
+>>>>>>> 8649b1fa64687dda1400c848e93f0c47d6c356e1
 
                     if (notif != null)
                     {
@@ -102,17 +112,30 @@ namespace Elfind.Data.Services
                         .Include(x => x.NastavnoOsoblje)
                         .Include(x => x.RasporedCasova)
                         .Where(x => x.NastavnoOsoblje.ID != n.ID).ToListAsync();
+<<<<<<< HEAD
                     List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
 
                     if (notif != null)
+=======
+                   List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+
+                    if (notif != null && n!= null)
+>>>>>>> 8649b1fa64687dda1400c848e93f0c47d6c356e1
                     {
                         foreach (var no in notif)
                             if (no.SenderName != (n.Ime + " " + n.Prezime))
                                 n.Notifikacije.Add(no);
+<<<<<<< HEAD
                         n.Notifikacije.AddRange(notif);
                     }
 
 
+=======
+                    }
+
+
+                    n.Notifikacije.AddRange(notif);
+>>>>>>> 8649b1fa64687dda1400c848e93f0c47d6c356e1
                     n.Objave.AddRange(objave);
                     n.Kursevi.AddRange(kursevi);
                     n.RezProstorije.AddRange(rezProstorije);
@@ -147,12 +170,21 @@ namespace Elfind.Data.Services
                         .FirstAsync(x => x.KorisnickoIme == korisnickoIme);
 
                     List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+<<<<<<< HEAD
                     if(notif!= null)
                     {
                         n.Notifikacije.AddRange(notif);
 
                     }
 
+=======
+                    if (notif != null && n != null)
+                    {
+                        foreach (var no in notif)
+                            if (no.SenderName != (n.Ime + " " + n.Prezime))
+                                n.Notifikacije.AddRange(notif);
+                    }
+>>>>>>> 8649b1fa64687dda1400c848e93f0c47d6c356e1
                     return n;
                 }
             }
@@ -328,6 +360,7 @@ namespace Elfind.Data.Services
                         .ToListAsync();
 
                     List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+<<<<<<< HEAD
                     if (notif != null)
                     {
                         foreach(var n in nastavnoOsoblje)
@@ -336,6 +369,20 @@ namespace Elfind.Data.Services
                                 if (no.SenderName != (n.Ime + " " + n.Prezime))
                                     n.Notifikacije.Add(no);
                         }
+=======
+                    if(nastavnoOsoblje!= null)
+                    {
+                    foreach(var n in nastavnoOsoblje)
+                    {
+                            if(notif != null && n  != null)
+                            {
+                                foreach (var no in notif)
+                                    if (no.SenderName != (n.Ime + " " + n.Prezime))
+                                        n.Notifikacije.Add(no);
+
+                            }
+                    }
+>>>>>>> 8649b1fa64687dda1400c848e93f0c47d6c356e1
 
                     }
 

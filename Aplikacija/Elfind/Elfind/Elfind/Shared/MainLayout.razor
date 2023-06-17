@@ -124,16 +124,22 @@
                                         <div class="ikrNotiCreateDate">@obj.MsgDate</div>
                                     </div>
                                 }
-                                @foreach (var obj in neprProf)
-                                {
-                                            <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" data-type="nastavnik" style="background-color:mediumpurple" @onclick='() => Rutiraj("nastavnik", obj.MsgBody)'>
-                                        <h4 class="ikrNotuFromPropName">@obj.SenderName</h4>
+                                        @if (currNotProf.Count == 0)
+                                        {
 
-                                        <div class="ikrNotificationBody">@obj.MsgBody</div>
-                                                <div class="ikrNotificationBody">@obj.Cas</div>
-                                        <div class="ikrNotiCreateDate">@obj.MsgDate</div>
-                                    </div>
-                                }
+
+                                            @foreach (var obj in neprProf)
+                                            {
+                                                <div class="ikrSingleNotiDiv" notiId="@obj.MsgID" data-type="nastavnik" style="background-color:mediumpurple" @onclick='() => Rutiraj("nastavnik", obj.MsgBody)'>
+                                                    <h4 class="ikrNotuFromPropName">@obj.SenderName</h4>
+
+                                                    <div class="ikrNotificationBody">@obj.MsgBody</div>
+                                                    <div class="ikrNotificationBody">@obj.Cas</div>
+                                                    <div class="ikrNotiCreateDate">@obj.MsgDate</div>
+
+                                                </div>
+                                            }
+                                        }
                                         @if (proProf != null)
                                         {
 
@@ -226,10 +232,11 @@
 
     private async Task Rutiraj(string targetType, string msgBody)
     {
+            currNotProf.Clear();
         if(targetType == "student")
         {
-
-            if (msgBody == "je postavio novu anketu!" || msgBody == "je postavio novo obaveštenje!")
+            currentUserMsgList.Clear();
+            if (msgBody == "je postavio novu anketu!" || msgBody == "je postavio novo obavestenje!")
             {
 
                 navManager.NavigateTo("/forum");
@@ -247,7 +254,7 @@
             neprocitanePoruke.RemoveAll(obj => obj.MsgBody == msgBody); // Ukloni sve neprocitane poruke sa odgovarajućim msgBody-em
             procitanePoruke = await NotificationMessageService.VratiProcitanePoruke(stud);
         }
-        else if (msgBody == " je poslao zahtev za otkazivanje termina:")
+        else if (msgBody == " je poslao zahtev za otkazivanje termina, u zamenu za:")
         {
             navManager.NavigateTo("/profil");
 

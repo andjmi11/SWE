@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1a2mmpLFUKoEYMhZLM/ZvW0MrFECh2Gq7Z6+Rr/vFdI=",
+  "Hash": "W1AUnBhQOUQ9XBdnLcrUtsD7F1JNklcR1MUU6qJbYrg=",
   "Source": "Elfind",
   "BasePath": "_content/Elfind",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Elfind\\wwwroot",
       "Source": "Elfind",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\Blazor.Bootstrap.bundle.scp.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\Blazor.Bootstrap.bundle.scp.css",
       "SourceId": "Blazor.Bootstrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\",
       "BasePath": "_content/Blazor.Bootstrap",
       "RelativePath": "Blazor.Bootstrap.bundle.scp.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\Blazor.Bootstrap.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\Blazor.Bootstrap.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\blazor.bootstrap.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\blazor.bootstrap.css",
       "SourceId": "Blazor.Bootstrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\",
       "BasePath": "_content/Blazor.Bootstrap",
       "RelativePath": "blazor.bootstrap.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\blazor.bootstrap.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\blazor.bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\blazor.bootstrap.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\blazor.bootstrap.js",
       "SourceId": "Blazor.Bootstrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\",
       "BasePath": "_content/Blazor.Bootstrap",
       "RelativePath": "blazor.bootstrap.js",
       "AssetKind": "All",
@@ -65,13 +65,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\blazor.bootstrap.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\blazor.bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\icon\\128X128.png",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\icon\\128X128.png",
       "SourceId": "Blazor.Bootstrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\",
       "BasePath": "_content/Blazor.Bootstrap",
       "RelativePath": "icon/128X128.png",
       "AssetKind": "All",
@@ -82,13 +82,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\icon\\128X128.png"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\blazor.bootstrap\\1.8.0\\staticwebassets\\icon\\128X128.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\BlazorStrap.bundle.scp.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\BlazorStrap.bundle.scp.css",
       "SourceId": "BlazorStrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\",
       "BasePath": "_content/BlazorStrap",
       "RelativePath": "BlazorStrap.bundle.scp.css",
       "AssetKind": "All",
@@ -99,13 +99,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\BlazorStrap.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\BlazorStrap.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\blazorstrap.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\blazorstrap.js",
       "SourceId": "BlazorStrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\",
       "BasePath": "_content/BlazorStrap",
       "RelativePath": "blazorstrap.js",
       "AssetKind": "All",
@@ -116,13 +116,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\blazorstrap.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\blazorstrap.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\blazorstrap.min.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\blazorstrap.min.js",
       "SourceId": "BlazorStrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\",
       "BasePath": "_content/BlazorStrap",
       "RelativePath": "blazorstrap.min.js",
       "AssetKind": "All",
@@ -133,13 +133,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\blazorstrap.min.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\blazorstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\popper.min.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\popper.min.js",
       "SourceId": "BlazorStrap",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\",
       "BasePath": "_content/BlazorStrap",
       "RelativePath": "popper.min.js",
       "AssetKind": "All",
@@ -150,13 +150,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\popper.min.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\blazorstrap\\5.1.101\\staticwebassets\\popper.min.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\css\\site.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\css\\site.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -167,13 +167,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\css\\site.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\favicon.ico",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\favicon.ico",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -184,13 +184,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\favicon.ico"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\js\\site.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\js\\site.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -201,13 +201,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\js\\site.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -218,13 +218,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -235,13 +235,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -252,13 +252,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -269,13 +269,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -286,13 +286,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -303,13 +303,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -320,13 +320,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -354,13 +354,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -371,13 +371,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -388,13 +388,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -405,13 +405,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -422,13 +422,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -439,13 +439,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -456,13 +456,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -473,13 +473,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -490,13 +490,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -507,13 +507,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -524,13 +524,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -541,13 +541,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -558,13 +558,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -575,13 +575,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -592,13 +592,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -609,13 +609,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -626,13 +626,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -643,13 +643,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -660,13 +660,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -677,13 +677,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -694,13 +694,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -711,13 +711,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -728,13 +728,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -745,13 +745,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -762,13 +762,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -779,13 +779,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -796,13 +796,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -813,13 +813,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -830,13 +830,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -847,13 +847,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -864,13 +864,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -881,13 +881,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -898,13 +898,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -915,13 +915,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -932,13 +932,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -949,13 +949,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -966,13 +966,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -983,13 +983,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1000,13 +1000,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1017,13 +1017,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1034,13 +1034,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1051,13 +1051,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1068,13 +1068,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1085,13 +1085,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1102,13 +1102,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1119,13 +1119,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1136,13 +1136,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1153,13 +1153,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Microsoft.AspNetCore.Identity.UI",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
+      "ContentRoot": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\",
       "BasePath": "Identity",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1170,13 +1170,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+      "OriginalItemSpec": "C:\\Users\\krist\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.5\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Elfind.styles.css",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Elfind.styles.css",
       "SourceId": "Elfind",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "Elfind.styles.css",
       "AssetKind": "All",
@@ -1187,13 +1187,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Elfind.styles.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\bundle\\Elfind.styles.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Elfind.bundle.scp.css",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Elfind.bundle.scp.css",
       "SourceId": "Elfind",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "Elfind.bundle.scp.css",
       "AssetKind": "All",
@@ -1204,13 +1204,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Elfind.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Elfind.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_account_circle_white_24dp.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_account_circle_white_24dp.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "baseline_account_circle_white_24dp.png",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\baseline_account_circle_white_24dp.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_forum_white_24dp.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_forum_white_24dp.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "baseline_forum_white_24dp.png",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\baseline_forum_white_24dp.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_map_white_24dp.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\baseline_map_white_24dp.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "baseline_map_white_24dp.png",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\baseline_map_white_24dp.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\css\\site.css",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_account_circle_white_24dp2x.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_account_circle_white_24dp2x.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/baseline_account_circle_white_24dp2x.png",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\baseline_account_circle_white_24dp2x.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_forum_white_24dp2x.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_forum_white_24dp2x.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/baseline_forum_white_24dp2x.png",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\baseline_forum_white_24dp2x.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_map_white_24dp2x.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_map_white_24dp2x.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/baseline_map_white_24dp2x.png",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\baseline_map_white_24dp2x.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_search_black_24dp.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_search_black_24dp.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/baseline_search_black_24dp.png",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\baseline_search_black_24dp.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_search_black_24dp2x.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\baseline_search_black_24dp2x.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/baseline_search_black_24dp2x.png",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\baseline_search_black_24dp2x.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\expand_more_FILL0_wght400_GRAD0_opsz48.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\expand_more_FILL0_wght400_GRAD0_opsz48.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/expand_more_FILL0_wght400_GRAD0_opsz48.png",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\expand_more_FILL0_wght400_GRAD0_opsz48.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\menu_open_FILL0_wght400_GRAD0_opsz48.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\menu_open_FILL0_wght400_GRAD0_opsz48.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/menu_open_FILL0_wght400_GRAD0_opsz48.png",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\menu_open_FILL0_wght400_GRAD0_opsz48.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dp.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dp.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/round_logout_white_24dp.png",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\round_logout_white_24dp.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dp2x.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dp2x.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/round_logout_white_24dp2x.png",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\round_logout_white_24dp2x.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dprsz.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_logout_white_24dprsz.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/round_logout_white_24dprsz.jpg",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\round_logout_white_24dprsz.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_notifications_white_24dp2x.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_notifications_white_24dp2x.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/round_notifications_white_24dp2x.png",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\round_notifications_white_24dp2x.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_notifications_white_24dprsz.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\icons\\round_notifications_white_24dprsz.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "icons/round_notifications_white_24dprsz.jpg",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\icons\\round_notifications_white_24dprsz.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\backgroundTrans.js",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\backgroundTrans.js",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "js/backgroundTrans.js",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\js\\backgroundTrans.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\clickEvents.js",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\clickEvents.js",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "js/clickEvents.js",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\js\\clickEvents.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\datepicker.js",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\datepicker.js",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "js/datepicker.js",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\js\\datepicker.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\interop.js",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\js\\interop.js",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "js/interop.js",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\js\\interop.js"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\notification\\ikr.notification.css",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\notification\\ikr.notification.css",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "notification/ikr.notification.css",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\notification\\ikr.notification.css"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\cool-background.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\cool-background.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "other/cool-background.png",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\other\\cool-background.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\cool-background-reversed.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\cool-background-reversed.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "other/cool-background-reversed.png",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\other\\cool-background-reversed.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\favicon.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\favicon.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "other/favicon.png",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\other\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logo.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logo.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "other/logo.jpg",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\other\\logo.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoGIF.gif",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoGIF.gif",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "other/logoGIF.gif",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\other\\logoGIF.gif"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoGIFTransparent.gif",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoGIFTransparent.gif",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "other/logoGIFTransparent.gif",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\other\\logoGIFTransparent.gif"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoImgTransparent.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\logoImgTransparent.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "other/logoImgTransparent.png",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\other\\logoImgTransparent.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\moje-srce.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\moje-srce.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "other/moje-srce.jpg",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\other\\moje-srce.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\pin.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\other\\pin.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "other/pin.png",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\other\\pin.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\1LK.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\1LK.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/1LK.jpg",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\1LK.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\2LK.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\2LK.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/2LK.jpg",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\2LK.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Cetvrti sprat.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Cetvrti sprat.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/Cetvrti sprat.jpg",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\Cetvrti sprat.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Drugi sprat.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Drugi sprat.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/Drugi sprat.jpg",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\Drugi sprat.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\elfind.mp4",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\elfind.mp4",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/elfind.mp4",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\elfind.mp4"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\elfind.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\elfind.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/elfind.png",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\elfind.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\imageedit_6_7140612380.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\imageedit_6_7140612380.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/imageedit_6_7140612380.jpg",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\imageedit_6_7140612380.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\M1.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\M1.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/M1.jpg",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\M1.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\M2.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\M2.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/M2.jpg",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\M2.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Peti sprat.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Peti sprat.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/Peti sprat.jpg",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\Peti sprat.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Prizemlje.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Prizemlje.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/Prizemlje.jpg",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\Prizemlje.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Prvi sprat.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Prvi sprat.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/Prvi sprat.jpg",
       "AssetKind": "All",
@@ -1921,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\Prvi sprat.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_11rsz_pin.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_11rsz_pin.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/rsz_11rsz_pin.png",
       "AssetKind": "All",
@@ -1938,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\rsz_11rsz_pin.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1logo.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1logo.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/rsz_1logo.png",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\rsz_1logo.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1pin.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1pin.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/rsz_1pin.png",
       "AssetKind": "All",
@@ -1972,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\rsz_1pin.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1rsz_pin.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_1rsz_pin.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/rsz_1rsz_pin.png",
       "AssetKind": "All",
@@ -1989,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\rsz_1rsz_pin.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_3logoimgtransparent.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\rsz_3logoimgtransparent.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/rsz_3logoimgtransparent.png",
       "AssetKind": "All",
@@ -2006,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\rsz_3logoimgtransparent.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Stare laboratorije.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Stare laboratorije.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/Stare laboratorije.jpg",
       "AssetKind": "All",
@@ -2023,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\Stare laboratorije.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Treci sprat.jpg",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\resized\\Treci sprat.jpg",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "resized/Treci sprat.jpg",
       "AssetKind": "All",
@@ -2040,10 +2040,10 @@
       "OriginalItemSpec": "wwwroot\\resized\\Treci sprat.jpg"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_login_white_24dp.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_login_white_24dp.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "round_login_white_24dp.png",
       "AssetKind": "All",
@@ -2057,10 +2057,10 @@
       "OriginalItemSpec": "wwwroot\\round_login_white_24dp.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_logout_white_24dp.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_logout_white_24dp.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "round_logout_white_24dp.png",
       "AssetKind": "All",
@@ -2074,10 +2074,10 @@
       "OriginalItemSpec": "wwwroot\\round_logout_white_24dp.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_notifications_white_24dp.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_notifications_white_24dp.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "round_notifications_white_24dp.png",
       "AssetKind": "All",
@@ -2091,10 +2091,10 @@
       "OriginalItemSpec": "wwwroot\\round_notifications_white_24dp.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_supervisor_account_white_24dp.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_supervisor_account_white_24dp.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "round_supervisor_account_white_24dp.png",
       "AssetKind": "All",
@@ -2108,10 +2108,10 @@
       "OriginalItemSpec": "wwwroot\\round_supervisor_account_white_24dp.png"
     },
     {
-      "Identity": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_support_agent_white_24dp.png",
+      "Identity": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\round_support_agent_white_24dp.png",
       "SourceId": "Elfind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\AndjelijaMijajlovic\\Desktop\\elfak\\Softversko inzenjerstvo\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\krist\\SWE\\Aplikacija\\Elfind\\Elfind\\Elfind\\wwwroot\\",
       "BasePath": "_content/Elfind",
       "RelativePath": "round_support_agent_white_24dp.png",
       "AssetKind": "All",

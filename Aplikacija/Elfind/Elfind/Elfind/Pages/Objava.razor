@@ -166,7 +166,8 @@
                             <div class="imePrezime">
                                 @if (!string.IsNullOrEmpty(izabraniPredmet))
                                 {
-                                    <p>@obj.OdNastavnogOsoblja.Ime @obj.OdNastavnogOsoblja.Prezime je postavio @(obj.TipObjave.ToString() == "anketa" ? "anketu" : "objavu") za predmet: @izabraniPredmet!</p>
+                                    
+                                    <p>@obj.OdNastavnogOsoblja.Ime @obj.OdNastavnogOsoblja.Prezime je postavio @(obj.TipObjave.ToString() == "anketa" ? "anketu" : "objavu")!</p>
                                 }
                                 else
                                 {
@@ -278,6 +279,26 @@
                 }
             </div>
         }
+
+        <Modal @ref="modalUspesno">
+            <BodyTemplate>
+                @porukaUspesno
+            </BodyTemplate>
+            <FooterTemplate>
+                <button class="uspesnaRez" @onclick="OnHideModalUspesnoClick">Ok</button>
+            </FooterTemplate>
+        </Modal>
+
+        <Modal @ref="modalNeuspesno">
+            <HeaderTemplate>
+            </HeaderTemplate>
+            <BodyTemplate>
+                @porukaNeuspesno
+            </BodyTemplate>
+            <FooterTemplate>
+                <button class="otkaziRezerv" @onclick="OnHideModalNeuspesnoClick">Otkaži</button>
+            </FooterTemplate>
+        </Modal>
     </Authorized>
 </AuthorizeView>
 <AuthorizeView Roles="Administrator">
@@ -295,7 +316,7 @@
                             <div class="imePrezime">
                                 @if (!string.IsNullOrEmpty(izabraniPredmet))
                                 {
-                                    <p>@obj.OdNastavnogOsoblja.Ime @obj.OdNastavnogOsoblja.Prezime je postavio @(obj.TipObjave.ToString() == "anketa" ? "anketu" : "objavu") za predmet: @izabraniPredmet!</p>
+                                    <p>@obj.OdNastavnogOsoblja.Ime @obj.OdNastavnogOsoblja.Prezime je postavio @(obj.TipObjave.ToString() == "anketa" ? "anketu" : "objavu")</p>
                                 }
                                 else
                                 {
@@ -341,6 +362,26 @@
             }
 
         </div>
+
+        <Modal @ref="modalUspesno">
+            <BodyTemplate>
+                @porukaUspesno
+            </BodyTemplate>
+            <FooterTemplate>
+                <button class="uspesnaRez" @onclick="OnHideModalUspesnoClick">Ok</button>
+            </FooterTemplate>
+        </Modal>
+
+        <Modal @ref="modalNeuspesno">
+            <HeaderTemplate>
+            </HeaderTemplate>
+            <BodyTemplate>
+                @porukaNeuspesno
+            </BodyTemplate>
+            <FooterTemplate>
+                <button class="otkaziRezerv" @onclick="OnHideModalNeuspesnoClick">Otkaži</button>
+            </FooterTemplate>
+        </Modal>
 </Authorized>
 </AuthorizeView>
 
@@ -356,7 +397,7 @@
     private Dictionary<string, List<Opcija>> objave = new Dictionary<string, List<Opcija>>();
     private string tags; // Dodato polje za tagove
     private List<Data.Model.Objava> sveObjave = new List<Data.Model.Objava>();
-
+    string pomocniPredmet;
     //private string pomIzabranPredmet;
 
     //private string firstOption; //prvobitno je samo jedno polje, na klik se dodaje u bazu i dugme i novo polje i tako za svaku
@@ -580,29 +621,32 @@
 
         var userName = user.Identity.Name;
 
-        if (userName.EndsWith("elfak.rs"))
+        if (userName != null)
         {
-            var studenti = await StudentService.VratiSveStudente();
-            foreach (var s in studenti)
+            if (userName.EndsWith("elfak.rs"))
             {
-                if (s.KorisnickoIme == userName)
-                {
-                    sID = s.ID;
-                    break;
-                }
-            }
-        }
-        else
-        {
-            var nastavnici = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
-            if (nastavnici != null)
-            {
-                foreach (var s in nastavnici)
+                var studenti = await StudentService.VratiSveStudente();
+                foreach (var s in studenti)
                 {
                     if (s.KorisnickoIme == userName)
                     {
-                        nID = s.ID;
+                        sID = s.ID;
                         break;
+                    }
+                }
+            }
+            else
+            {
+                var nastavnici = await NastavnoOsobljeService.VratiSveNastavnikeAsync();
+                if (nastavnici != null)
+                {
+                    foreach (var s in nastavnici)
+                    {
+                        if (s.KorisnickoIme == userName)
+                        {
+                            nID = s.ID;
+                            break;
+                        }
                     }
                 }
             }
