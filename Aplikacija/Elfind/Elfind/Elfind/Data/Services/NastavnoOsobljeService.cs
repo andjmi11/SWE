@@ -52,15 +52,17 @@ namespace Elfind.Data.Services
                         .Include(x => x.Kursevi)
                         .Include(x => x.RezProstorije)
                         .Include(x => x.Raspored)
-                        .Include(x => x.Notifikacije)
+                       // .Include(x => x.Notifikacije)
                         .FirstOrDefaultAsync(n => n.ID == ID);
 
-                    //List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+                    List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
 
-                    //foreach (var no in notif)
-                    //    if (no.SenderName != (nastavnoOsoblje.Ime + " " + nastavnoOsoblje.Prezime))
-                    //        nastavnoOsoblje.Notifikacije.Add(no);
-
+                    if (notif != null)
+                    {
+                        foreach (var no in notif)
+                            if (no.SenderName != (nastavnoOsoblje.Ime + " " + nastavnoOsoblje.Prezime))
+                                nastavnoOsoblje.Notifikacije.Add(no);
+                    }
                     return nastavnoOsoblje;
                 }
             }
@@ -79,8 +81,7 @@ namespace Elfind.Data.Services
                 {
                     NastavnoOsoblje n = await context.NastavnoOsoblje.AsNoTracking()
                         .Include(n => n.Kancelarija)
-                        .Include(x => x.Notifikacije)
-
+                        //.Include(x => x.Notifikacije)
                         .FirstAsync(x => x.KorisnickoIme == korisnickoIme);
 
 
@@ -101,17 +102,17 @@ namespace Elfind.Data.Services
                         .Include(x => x.NastavnoOsoblje)
                         .Include(x => x.RasporedCasova)
                         .Where(x => x.NastavnoOsoblje.ID != n.ID).ToListAsync();
-                    //List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+                    List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
 
-                    //if (notif != null)
-                    //{
-                    //    foreach (var no in notif)
-                    //        if (no.SenderName != (n.Ime + " " + n.Prezime))
-                    //            n.Notifikacije.Add(no);
-                    //}
+                    if (notif != null)
+                    {
+                        foreach (var no in notif)
+                            if (no.SenderName != (n.Ime + " " + n.Prezime))
+                                n.Notifikacije.Add(no);
+                        n.Notifikacije.AddRange(notif);
+                    }
 
 
-                    //n.Notifikacije.AddRange(notif);
                     n.Objave.AddRange(objave);
                     n.Kursevi.AddRange(kursevi);
                     n.RezProstorije.AddRange(rezProstorije);
@@ -145,8 +146,12 @@ namespace Elfind.Data.Services
                         
                         .FirstAsync(x => x.KorisnickoIme == korisnickoIme);
 
-                    //List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
-                    //    n.Notifikacije.AddRange(notif);
+                    List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+                    if(notif!= null)
+                    {
+                        n.Notifikacije.AddRange(notif);
+
+                    }
 
                     return n;
                 }
@@ -322,13 +327,17 @@ namespace Elfind.Data.Services
                         .Include(x=>x.Notifikacije)
                         .ToListAsync();
 
-                    //List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
-                    //foreach(var n in nastavnoOsoblje)
-                    //{
-                    //    foreach (var no in notif)
-                    //        if (no.SenderName != (n.Ime + " " + n.Prezime))
-                    //            n.Notifikacije.Add(no);
-                    //}
+                    List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+                    if (notif != null)
+                    {
+                        foreach(var n in nastavnoOsoblje)
+                        {
+                            foreach (var no in notif)
+                                if (no.SenderName != (n.Ime + " " + n.Prezime))
+                                    n.Notifikacije.Add(no);
+                        }
+
+                    }
 
                     return nastavnoOsoblje;
                 }
