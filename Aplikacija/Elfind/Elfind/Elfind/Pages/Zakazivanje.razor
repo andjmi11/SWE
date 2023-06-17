@@ -531,7 +531,7 @@
         await OnHideModalZauzetoClick();
 
         //ovde se salje zahtev samo kao obavestenje i usmerava ga na profil
-        notificationMessageProf.MsgBody=" je poslao zahtev za otkazivanje termina:";
+        notificationMessageProf.MsgBody=" je poslao zahtev za otkazivanje termina, u zamenu za:";
 
 
         await SendProf();
@@ -561,7 +561,7 @@
     }
     private async Task OnHideModalPotvrdiClick()
     {
-        notificationMessage.MsgBody = "Imas zakazan cas iz predmeta: " + notificationMessage.Kurs;
+        notificationMessage.MsgBody = "Imas zakazan novi cas! ";
         //odavde saljem obavestenje?
         await modalPotvrdi?.HideAsync();
         await UbacivanjeCasa(cas, osoba);        

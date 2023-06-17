@@ -1,5 +1,5 @@
 ﻿@page "/forum"
-
+@attribute [Authorize(Roles = "Student, NastavnoOsoblje, Administrator")]
 <Objava/>
 
 
