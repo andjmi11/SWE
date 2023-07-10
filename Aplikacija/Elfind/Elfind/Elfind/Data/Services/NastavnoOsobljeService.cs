@@ -52,11 +52,13 @@ namespace Elfind.Data.Services
                         .Include(x => x.Kursevi)
                         .Include(x => x.RezProstorije)
                         .Include(x => x.Raspored)
-                        .Include(x => x.Notifikacije)
+                        // .Include(x => x.Notifikacije)
                         .FirstOrDefaultAsync(n => n.ID == ID);
 
                     List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
-                    if(notif != null && nastavnoOsoblje != null)
+
+
+                    if (nastavnoOsoblje != null && notif != null)
                     {
                         foreach (var no in notif)
                             if (no.SenderName != (nastavnoOsoblje.Ime + " " + nastavnoOsoblje.Prezime))
@@ -64,6 +66,8 @@ namespace Elfind.Data.Services
 
                     }
 
+
+                 
                     return nastavnoOsoblje;
                 }
             }
@@ -82,8 +86,7 @@ namespace Elfind.Data.Services
                 {
                     NastavnoOsoblje n = await context.NastavnoOsoblje.AsNoTracking()
                         .Include(n => n.Kancelarija)
-                        .Include(x => x.Notifikacije)
-
+                        //.Include(x => x.Notifikacije)
                         .FirstAsync(x => x.KorisnickoIme == korisnickoIme);
 
 
@@ -104,17 +107,27 @@ namespace Elfind.Data.Services
                         .Include(x => x.NastavnoOsoblje)
                         .Include(x => x.RasporedCasova)
                         .Where(x => x.NastavnoOsoblje.ID != n.ID).ToListAsync();
-                   List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
 
-                    if (notif != null && n!= null)
-                    {
-                        foreach (var no in notif)
-                            if (no.SenderName != (n.Ime + " " + n.Prezime))
-                                n.Notifikacije.Add(no);
-                    }
+                    List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+
+                    
+
+                        if (notif != null && n != null)
+                        {
+                            foreach (var no in notif)
+                                if (no.SenderName != (n.Ime + " " + n.Prezime))
+                                    n.Notifikacije.Add(no);
+
+                            n.Notifikacije.AddRange(notif);
+                        }
+                    
+
+
+
 
 
                     n.Notifikacije.AddRange(notif);
+
                     n.Objave.AddRange(objave);
                     n.Kursevi.AddRange(kursevi);
                     n.RezProstorije.AddRange(rezProstorije);
@@ -122,6 +135,7 @@ namespace Elfind.Data.Services
                     return n;
                 }
             }
+
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
@@ -149,12 +163,21 @@ namespace Elfind.Data.Services
                         .FirstAsync(x => x.KorisnickoIme == korisnickoIme);
 
                     List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
+
+                    if(notif!= null)
+                    {
+                        n.Notifikacije.AddRange(notif);
+
+                    }
+
+
                     if (notif != null && n != null)
                     {
                         foreach (var no in notif)
                             if (no.SenderName != (n.Ime + " " + n.Prezime))
                                 n.Notifikacije.AddRange(notif);
                     }
+
                     return n;
                 }
             }
@@ -323,31 +346,46 @@ namespace Elfind.Data.Services
                 {
                     List<NastavnoOsoblje> nastavnoOsoblje = await context.NastavnoOsoblje
                         .Include(n => n.Kancelarija)
-                        .Include(x=>x.Objave)
-                        .Include(x=>x.RezProstorije).ThenInclude(x=>x.Prostorija)
-                        .Include(x=>x.Raspored)
-                        .Include(x=>x.Notifikacije)
+                        .Include(x => x.Objave)
+                        .Include(x => x.RezProstorije).ThenInclude(x => x.Prostorija)
+                        .Include(x => x.Raspored)
+                        .Include(x => x.Notifikacije)
                         .ToListAsync();
 
                     List<NotificationMessageProf> notif = await context.NotificationProf.ToListAsync();
-                    if(nastavnoOsoblje!= null)
+
+                    if (notif != null)
                     {
-                    foreach(var n in nastavnoOsoblje)
-                    {
-                            if(notif != null && n  != null)
+                        foreach (var n in nastavnoOsoblje)
+                        {
+                            foreach (var no in notif)
+                                if (no.SenderName != (n.Ime + " " + n.Prezime))
+                                    n.Notifikacije.Add(no);
+                        }
+
+                        if (nastavnoOsoblje != null)
+                        {
+                            foreach (var n in nastavnoOsoblje)
                             {
-                                foreach (var no in notif)
-                                    if (no.SenderName != (n.Ime + " " + n.Prezime))
-                                        n.Notifikacije.Add(no);
+                                if (notif != null && n != null)
+                                {
+                                    foreach (var no in notif)
+                                        if (no.SenderName != (n.Ime + " " + n.Prezime))
+                                            n.Notifikacije.Add(no);
 
+                                }
                             }
-                    }
 
+
+
+                        }
                     }
 
                     return nastavnoOsoblje;
                 }
             }
+            
+
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
