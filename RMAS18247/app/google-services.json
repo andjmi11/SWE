@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1051509873328",
+    "project_id": "rmas-26c07",
+    "storage_bucket": "rmas-26c07.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051509873328:android:960217ffa2ea67aa1ab975",
+        "android_client_info": {
+          "package_name": "elfak.mosis.rmas18247"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051509873328-2jn4hbkjecinqssp8ulsr2287vuu437f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZC6QLJbRn7EdiR8ECUCbn9F_G27BTWkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051509873328-2jn4hbkjecinqssp8ulsr2287vuu437f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
